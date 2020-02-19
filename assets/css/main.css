@@ -1,0 +1,130 @@
+.flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto Condensed', sans-serif;
+  line-height: 20px;
+}
+
+nav {
+  background-color: #212121;
+  height: 50px;
+}
+
+nav .flex #logo img {
+  height: 55px;
+}
+
+nav .flex #logo:hover {
+  -webkit-transform: rotateZ(-10deg);
+          transform: rotateZ(-10deg);
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+nav .flex a {
+  padding: 13px 25px 5px 25px;
+  text-decoration: none;
+  color: white;
+  font-size: 15px;
+  height: 50%;
+  letter-spacing: 0.1em;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+nav .flex .lang_picker {
+  margin-left: auto;
+  padding-top: 6px;
+}
+
+nav .flex .lang_picker .flag {
+  width: 25px;
+  height: 25px;
+  margin-top: 7px;
+}
+
+nav .flex .lang_picker h2 {
+  font-weight: bold;
+  margin: 8px 0px;
+  padding: 0px 8px;
+  text-decoration: none;
+  color: white;
+  line-height: 24px;
+  font-size: 15px;
+  letter-spacing: 0.1em;
+}
+
+nav .flex .lang_picker i {
+  color: white;
+  padding-top: 6px;
+  margin-right: 10px;
+}
+
+nav .flex .lang_picker ul {
+  display: none;
+}
+
+nav .flex #free-trial {
+  background-color: #f99919;
+  overflow: hidden;
+  height: 100%;
+  padding: 12px 30px 18px;
+}
+
+nav .flex #join {
+  background-color: white;
+  height: 100%;
+  color: #f99919;
+  padding: 12px 30px 18px;
+}
+
+footer {
+  margin-top: 200px;
+  width: 100%;
+  padding: 55px 0 45px 0;
+  background-color: black;
+}
+
+footer #grey {
+  color: #686868;
+  font-size: 13px;
+}
+
+footer .footer-wrapper {
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin: 0 auto;
+  width: 80%;
+}
+
+footer .footer-wrapper .left .icons {
+  word-spacing: 25px;
+}
+
+footer .footer-wrapper .left .icons i {
+  color: white;
+}
+
+footer .footer-wrapper .left p {
+  color: white;
+}
+
+footer .footer-wrapper .right {
+  max-width: 430px;
+  margin: 0 0 0 auto;
+  padding: 0;
+  text-align: right;
+  width: 64%;
+}
+
+footer .footer-wrapper .right p {
+  color: white;
+}
+/*# sourceMappingURL=main.css.map */
