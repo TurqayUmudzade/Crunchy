@@ -11,6 +11,10 @@ body {
   line-height: 20px;
 }
 
+p {
+  margin: 0;
+}
+
 nav {
   background-color: #212121;
   height: 50px;
@@ -126,5 +130,189 @@ footer .footer-wrapper .right {
 
 footer .footer-wrapper .right p {
   color: white;
+}
+
+.progress-indicator {
+  position: relative;
+}
+
+.progress-indicator ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  list-style: none;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.progress-indicator ul li .step {
+  width: 36px;
+  height: 36px;
+  border-radius: 100%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  background-color: #f06880;
+  margin: 10px auto;
+}
+
+.progress-indicator ul li .step .no {
+  font-size: 30px;
+  padding-top: 4px;
+  font-family: Cervo, Helvetica, Arial, sans-serif;
+  line-height: 1;
+  color: #fff;
+  width: 100%;
+  display: block;
+}
+
+.progress-indicator ul li .step .label {
+  font-weight: 700;
+  color: #c8c8c8;
+  margin-top: 1.1rem;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: 0 auto;
+}
+
+#login {
+  background: #f3f3f4;
+}
+
+.login-container {
+  background: #f3f3f4;
+  max-width: 50%;
+  margin: 0 auto;
+  padding: 100px 0px;
+}
+
+.location .header {
+  border-radius: 6px;
+  background: #364e72;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 10px 0;
+}
+
+.location .header .header-text {
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.location .header .header-text .step {
+  width: 36px;
+  height: 36px;
+  border-radius: 100%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  background-color: white;
+}
+
+.location .header .header-text .step .no {
+  font-size: 30px;
+  padding-top: 4px;
+  font-family: Cervo, Helvetica, Arial, sans-serif;
+  line-height: 1;
+  color: #364e72;
+  width: 100%;
+  display: block;
+}
+
+.location .header .header-text .header-p {
+  margin: 10px;
+}
+
+.location .header .header-text .header-p p {
+  color: white;
+  font-size: 30px;
+}
+
+.location .foot {
+  border-radius: 6px;
+  background: white;
+  font-size: 30px;
+  padding: 75px 0px;
+}
+
+.location .foot .selector {
+  width: 60%;
+  margin: 0 auto;
+}
+
+.location .foot .selector p {
+  color: #009fdf;
+  margin: 16px 0;
+  font-weight: bold;
+  padding: 0px;
+}
+
+.location .foot .selector select {
+  border-left: 5px solid #009fdf;
+  width: 100%;
+  height: 40px;
+  color: #364e72;
+  cursor: pointer;
+  line-height: 1.15;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.location .foot .icons {
+  display: none;
+  margin-top: 20px;
+}
+
+.location .foot .icons .hidden-text {
+  margin: 10px 0px;
+}
+
+.location .foot .icons .hidden-text i {
+  color: #364e72;
+  height: 28px;
+  width: 28px;
+}
+
+.location .foot .icons .hidden-text p {
+  display: inline;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: 1.4;
+  color: #666;
+  font-size: 16px;
+}
+
+.next {
+  padding: 30px;
+  margin-top: 10px;
+  border-radius: 6px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background: white;
+}
+
+.next a {
+  padding: 20px 30px;
+  font-size: 25px;
+  border-radius: 5px;
+  cursor: default;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  background-color: rgba(214, 214, 214, 0.5);
+  color: #7b7b7b;
+  text-decoration: none;
 }
 /*# sourceMappingURL=main.css.map */
