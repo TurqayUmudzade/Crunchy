@@ -41,6 +41,11 @@
     background: #f3f3f4;
 }
 
+.container60 {
+    width: 60%;
+    margin: 0 auto;
+}
+
 .login-container {
     background: #f3f3f4;
     max-width: 50%;
@@ -129,6 +134,35 @@
             }
         }
     }
+}
+
+.membership {
+    background: white;
+    p {
+        color: #009fdf;
+        margin: 16px 0;
+        font-weight: bold;
+        padding: 0px;
+    }
+    .membership-type-selector {
+        display: flex;
+        .tab {
+            flex-basis: 0;
+            text-align: center;
+            margin: 20px 0;
+            flex: 1;
+            padding-bottom: 5px;
+            font-size: 35px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #f3f3f4;
+            cursor: pointer;
+            color: #364e72;
+        }
+        .active {
+            border-bottom: 6px solid #364e72;
+        }
+    }
+    .montly-membership {}
 }
 
 .next {
