@@ -182,8 +182,8 @@ footer .footer-wrapper .right p {
   background: #f3f3f4;
 }
 
-.container60 {
-  width: 60%;
+.container70 {
+  width: 70%;
   margin: 0 auto;
 }
 
@@ -195,7 +195,7 @@ footer .footer-wrapper .right p {
 }
 
 .location .header {
-  border-radius: 6px;
+  border-radius: 6px 6px 0 0;
   background: #364e72;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -295,14 +295,16 @@ footer .footer-wrapper .right p {
 }
 
 .membership {
+  border-radius: 6px;
   background: white;
 }
 
 .membership p {
-  color: #009fdf;
+  color: #0090d9;
   margin: 16px 0;
   font-weight: bold;
-  padding: 0px;
+  padding: 20px 0px;
+  font-size: 30px;
 }
 
 .membership .membership-type-selector {
@@ -329,6 +331,320 @@ footer .footer-wrapper .right p {
 
 .membership .membership-type-selector .active {
   border-bottom: 6px solid #364e72;
+}
+
+.membership .montly-membership {
+  color: white;
+  margin-bottom: 20px;
+}
+
+.membership .montly-membership .flex {
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.membership .montly-membership .flex .option h1 {
+  font-size: 90px;
+  text-align: center;
+  margin: 60px 0px 40px;
+}
+
+.membership .montly-membership .flex .option h3 {
+  font-size: 24px;
+  text-align: center;
+}
+
+.membership .montly-membership .flex .option .icons {
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  width: 60%;
+  margin: 0 auto;
+}
+
+.membership .montly-membership .flex .option .icons i {
+  font-size: 26px;
+  margin: 15px;
+}
+
+.membership .montly-membership .flex .option .select-icon {
+  border-radius: 100%;
+  height: 50px;
+  width: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.membership .montly-membership .flex .option .select-icon i {
+  font-size: 30px;
+  position: relative;
+  top: 20%;
+}
+
+.membership .montly-membership .flex .basic {
+  width: 35%;
+  background: #0090d9;
+  border-radius: 14px;
+  z-index: 10;
+}
+
+.membership .montly-membership .flex .basic p {
+  margin: 30px 0 4px 0px;
+  color: white;
+  font-size: 20px;
+  padding: 0;
+  text-align: center;
+}
+
+.membership .montly-membership .flex .basic p span {
+  font-size: 50px;
+  padding: 0;
+  text-align: center;
+}
+
+.membership .montly-membership .flex .basic #permonth {
+  margin: 0;
+}
+
+.membership .montly-membership .flex .basic .select-icon {
+  margin: 30px 0 30px 90px;
+  background: white;
+}
+
+.membership .montly-membership .flex .basic .select-icon i {
+  color: black;
+}
+
+.membership .montly-membership .flex .basic .select-icon-active {
+  background: white;
+}
+
+.membership .montly-membership .flex .premium {
+  width: 65%;
+  position: relative;
+  left: -12px;
+  background: #f3f3f4;
+  color: #858585;
+  border-radius: 14px;
+  z-index: 9;
+}
+
+.membership .montly-membership .flex .premium p {
+  margin: 30px 0 4px 0px;
+  font-size: 20px;
+  color: #858585;
+  padding: 0;
+  text-align: center;
+}
+
+.membership .montly-membership .flex .premium p span {
+  font-size: 50px;
+  padding: 0;
+  text-align: center;
+}
+
+.membership .montly-membership .flex .premium #permonth {
+  margin: 0;
+}
+
+.membership .montly-membership .flex .premium .select-icon {
+  margin: 30px 0 30px 0px;
+  background: #d5d4d4;
+  position: relative;
+  left: 45%;
+}
+
+.membership .montly-membership .flex .premium .icons {
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.membership .daily-membership {
+  display: none;
+}
+
+.membership .daily-membership .wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 6px 0px;
+  background-color: #f06880;
+  color: white;
+  border-radius: 6px;
+}
+
+.membership .daily-membership .wrapper .price {
+  position: relative;
+  top: 10px;
+  position: relative;
+  left: 20%;
+  background: white;
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  font-size: 24px;
+  color: #31476b;
+  text-align: center;
+  margin: 0;
+  line-height: .9;
+}
+
+.membership .daily-membership .wrapper .price p {
+  color: #31476b;
+  font-size: 20px;
+}
+
+.membership .daily-membership .wrapper .price p #price {
+  color: #f06880;
+}
+
+.membership .daily-membership .wrapper .price p #price #bigprice {
+  font-size: 40px;
+}
+
+.membership .daily-membership .wrapper .try-it {
+  width: 50%;
+  position: relative;
+  left: 25%;
+}
+
+.membership .daily-membership .wrapper .try-it h1 {
+  font-size: 38px;
+}
+
+.membership .daily-membership .wrapper .try-it select {
+  border-left: 5px solid #0090d9;
+  width: 100%;
+  height: 40px;
+  color: #364e72;
+  cursor: pointer;
+  line-height: 1.15;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.bonuses .wrapper .header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 17px;
+  background-color: #f3f3f4;
+  cursor: pointer;
+  border-radius: 6px;
+  margin-top: 10px;
+  position: relative;
+}
+
+.bonuses .wrapper .header i {
+  background-color: #0090d9;
+  border-radius: 50%;
+  position: relative;
+  left: 7px;
+  font-size: 18px;
+  color: white;
+  padding: 7px;
+}
+
+.bonuses .wrapper .header ::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  left: 14px;
+  width: 4px;
+  height: 16px;
+  background-color: #f3f3f4;
+  border-radius: 1rem;
+  -webkit-transition: -webkit-transform .5s;
+  transition: -webkit-transform .5s;
+  transition: transform .5s;
+  transition: transform .5s, -webkit-transform .5s;
+}
+
+.bonuses .wrapper .header h2 {
+  font-size: 22px;
+  color: #364e72;
+  padding-left: 50px;
+  position: relative;
+  top: 6px;
+  margin: 0;
+}
+
+.bonuses .wrapper .bonunes-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 20px 0;
+}
+
+.bonuses .wrapper .bonunes-list h2 {
+  margin-top: 0;
+  border-radius: 12px 12px 0 0;
+  color: #fff;
+  padding: 10px 15px;
+  font-size: 26px;
+}
+
+.bonuses .wrapper .bonunes-list ul {
+  list-style: none;
+  padding: 0;
+}
+
+.bonuses .wrapper .bonunes-list ul li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.bonuses .wrapper .bonunes-list ul li i {
+  font-size: 28px;
+  margin: 0 17.5px;
+}
+
+.bonuses .wrapper .bonunes-list ul li p {
+  font-size: 14px;
+  margin: 0;
+  padding: 0;
+  font-weight: 400;
+  color: black;
+  padding: 15px 15px 15px 0;
+  position: relative;
+  bottom: 10px;
+}
+
+.bonuses .wrapper .bonunes-list .basic-list {
+  margin-bottom: 52px;
+  background-color: #f3f3f4;
+  border-radius: 12px;
+  margin-right: 5px;
+}
+
+.bonuses .wrapper .bonunes-list .basic-list h2 {
+  background-color: #0090d9;
+}
+
+.bonuses .wrapper .bonunes-list .basic-list i {
+  color: #0090d9;
+}
+
+.bonuses .wrapper .bonunes-list .premium-list {
+  margin-bottom: 52px;
+  background-color: #f3f3f4;
+  border-radius: 12px;
+  margin-left: 5px;
+}
+
+.bonuses .wrapper .bonunes-list .premium-list h2 {
+  background-color: #7aa130;
+}
+
+.bonuses .wrapper .bonunes-list .premium-list i {
+  color: #7aa130;
 }
 
 .next {
