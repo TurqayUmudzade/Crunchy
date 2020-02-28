@@ -187,7 +187,7 @@ footer .footer-wrapper .right p {
 }
 
 .container70 {
-  width: 70%;
+  width: 90%;
   margin: 0 auto;
 }
 
@@ -198,7 +198,7 @@ footer .footer-wrapper .right p {
   padding: 100px 0px;
 }
 
-.location .header {
+.join .header {
   border-radius: 6px 6px 0 0;
   background: #364e72;
   display: -webkit-box;
@@ -207,14 +207,14 @@ footer .footer-wrapper .right p {
   padding: 10px 0;
 }
 
-.location .header .header-text {
+.join .header .header-text {
   margin: 0 auto;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
 
-.location .header .header-text .step {
+.join .header .header-text .step {
   width: 36px;
   height: 36px;
   border-radius: 100%;
@@ -225,7 +225,7 @@ footer .footer-wrapper .right p {
   background-color: white;
 }
 
-.location .header .header-text .step .no {
+.join .header .header-text .step .no {
   font-size: 30px;
   padding-top: 4px;
   font-family: Cervo, Helvetica, Arial, sans-serif;
@@ -235,35 +235,35 @@ footer .footer-wrapper .right p {
   display: block;
 }
 
-.location .header .header-text .header-p {
+.join .header .header-text .header-p {
   margin: 10px;
 }
 
-.location .header .header-text .header-p p {
+.join .header .header-text .header-p p {
   color: white;
   font-size: 30px;
 }
 
-.location .foot {
+.join .foot {
   border-radius: 6px;
   background: white;
   font-size: 30px;
   padding: 75px 0px;
 }
 
-.location .foot .selector {
+.join .foot .selector {
   width: 60%;
   margin: 0 auto;
 }
 
-.location .foot .selector p {
+.join .foot .selector p {
   color: #009fdf;
   margin: 16px 0;
   font-weight: bold;
   padding: 0px;
 }
 
-.location .foot .selector select {
+.join .foot .selector select {
   border-left: 5px solid #009fdf;
   width: 100%;
   height: 40px;
@@ -274,21 +274,21 @@ footer .footer-wrapper .right p {
   font-weight: bold;
 }
 
-.location .foot .icons {
+.join .foot .icons {
   margin-top: 20px;
 }
 
-.location .foot .icons .hidden-text {
+.join .foot .icons .hidden-text {
   margin: 10px 0px;
 }
 
-.location .foot .icons .hidden-text i {
+.join .foot .icons .hidden-text i {
   color: #364e72;
   height: 28px;
   width: 28px;
 }
 
-.location .foot .icons .hidden-text p {
+.join .foot .icons .hidden-text p {
   display: inline;
   font-weight: 400;
   letter-spacing: 0;
@@ -829,5 +829,75 @@ footer .footer-wrapper .right p {
 
 .next .active:hover {
   background-color: #e94960;
+}
+
+.login-container2 {
+  background: #f3f3f4;
+  max-width: 66%;
+  margin: 0 auto;
+  padding: 100px 0px;
+}
+
+.foot form .form-row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin: 30px 40px;
+}
+
+.foot form .form-row label {
+  -webkit-box-flex: 4;
+      -ms-flex: 4;
+          flex: 4;
+  padding: 12px 0px;
+  font-size: 15px;
+  font-weight: 400;
+  text-align: left;
+  letter-spacing: 0;
+  line-height: 1.4;
+  color: #666;
+}
+
+.foot form .form-row label span {
+  color: red;
+  padding: 0 3px;
+}
+
+.foot form .form-row input {
+  -webkit-box-flex: 6;
+      -ms-flex: 6;
+          flex: 6;
+  -webkit-transition: all .15s ease-in-out;
+  transition: all .15s ease-in-out;
+  border: 1px solid #d6d6d6;
+  border-left: 5px solid #0090d9;
+  background-color: #fff;
+  line-height: normal;
+  font-size: 20px;
+  outline: 0;
+  color: #364e72;
+  width: 100%;
+  padding: 10px;
+  height: 23px;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.foot form .form-row #gender-label {
+  -webkit-box-flex: 0;
+      -ms-flex: 0;
+          flex: 0;
+}
+
+.foot form .form-row .checkboxes {
+  -webkit-box-flex: 6;
+      -ms-flex: 6;
+          flex: 6;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 /*# sourceMappingURL=main.css.map */
