@@ -938,4 +938,29 @@ footer .footer-wrapper .right p {
       -ms-flex: 10;
           flex: 10;
 }
+
+#member-area .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  max-width: 1312px;
+  margin: auto;
+  position: relative;
+  width: 100%;
+  padding: 0 20px;
+}
+
+#member-area .container .nav-pane {
+  width: 25%;
+  padding-top: 60px;
+}
+
+#member-area .container .nav-pane .left-navigation .nav-menue .expandable .nav-sub-menu {
+  display: none;
+}
+
+#member-area .container .content-pane {
+  width: 75%;
+  padding-top: 60px;
+}
 /*# sourceMappingURL=main.css.map */
