@@ -51,3 +51,12 @@ $(".bonuses").on("click", function() {
         //transform: translateY(-50%) rotate(88deg);
     }
 });
+
+
+
+$("#promo").on("click", function() {
+    console.log("da");
+    $("#bottom").removeClass("hidden");
+
+
+});

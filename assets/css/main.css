@@ -19,6 +19,49 @@ p {
   display: none;
 }
 
+.tick {
+  margin-top: 7px;
+  border-radius: 50%;
+  background-color: #f3f3f4;
+  border-color: #d6d6d6;
+  pointer-events: none;
+  display: block;
+  width: 22px;
+  height: 22px;
+  cursor: pointer;
+  position: absolute;
+  top: -1px;
+  left: -1px;
+  background-color: #f3f3f4;
+  border: 1px solid #d6d6d6;
+  -webkit-transition: background-color .15s ease-in-out, border-color .15s ease-in-out;
+  transition: background-color .15s ease-in-out, border-color .15s ease-in-out;
+}
+
+input[type=radio]:checked + .tick {
+  border: 1px solid #31476b;
+  background-color: white;
+}
+
+input[type=radio]:checked + .tick:after {
+  content: "";
+  border-radius: 50%;
+  width: 14px;
+  height: 14px;
+  position: absolute;
+  top: 11px;
+  left: 11px;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  background-color: #009fdf;
+  border: none;
+  z-index: 2;
+}
+
+input[type=radio]:hover + .tick {
+  border: 1px solid #009fdf;
+}
+
 nav {
   background-color: #212121;
   height: 50px;
@@ -719,49 +762,6 @@ footer .footer-wrapper .right p {
   margin: 30px 0;
 }
 
-#promocode .wrapper .tick {
-  margin-top: 7px;
-  border-radius: 50%;
-  background-color: #f3f3f4;
-  border-color: #d6d6d6;
-  pointer-events: none;
-  display: block;
-  width: 22px;
-  height: 22px;
-  cursor: pointer;
-  position: absolute;
-  top: -1px;
-  left: -1px;
-  background-color: #f3f3f4;
-  border: 1px solid #d6d6d6;
-  -webkit-transition: background-color .15s ease-in-out, border-color .15s ease-in-out;
-  transition: background-color .15s ease-in-out, border-color .15s ease-in-out;
-}
-
-#promocode .wrapper input[type=radio]:checked + .tick {
-  border: 1px solid #31476b;
-  background-color: white;
-}
-
-#promocode .wrapper input[type=radio]:checked + .tick:after {
-  content: "";
-  border-radius: 50%;
-  width: 14px;
-  height: 14px;
-  position: absolute;
-  top: 11px;
-  left: 11px;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
-  background-color: #009fdf;
-  border: none;
-  z-index: 2;
-}
-
-#promocode .wrapper input[type=radio]:hover + .tick {
-  border: 1px solid #0090d9;
-}
-
 #promocode .wrapper label {
   font-size: 30px;
   line-height: 1.2;
@@ -892,12 +892,50 @@ footer .footer-wrapper .right p {
           flex: 0;
 }
 
-.foot form .form-row .checkboxes {
+.foot form .form-row .radios {
   -webkit-box-flex: 6;
       -ms-flex: 6;
           flex: 6;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+.foot form .form-row .radios .block {
+  width: 50%;
+  position: relative;
+}
+
+.foot form .form-row .radios .block input {
+  display: none;
+}
+
+.foot form .form-row .radios .block label {
+  margin-left: 30px;
+}
+
+.foot form .form-row .radios .block .tick {
+  display: inline;
+  top: 0px;
+  left: 0px;
+  margin-top: 4px;
+}
+
+.foot form .disability {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+.foot form .disability #left {
+  -webkit-box-flex: 10;
+      -ms-flex: 10;
+          flex: 10;
 }
 /*# sourceMappingURL=main.css.map */

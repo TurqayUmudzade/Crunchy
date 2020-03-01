@@ -156,11 +156,16 @@
                         </div>
                         <div class="form-row">
                             <label for="">Gender<span>*</span></label>
-                            <div class="checkboxes">
-                                <label for="male" id="gender-label">Male</label>
-                                <input type="checkbox" name="male" id="male">
-                                <label for="male" id="gender-label">Female</label>
-                                <input type="checkbox" name="female" id="female">
+                            <div class="radios">
+                                <div class="block">
+                                    <label for="male" id="gender-label">Male</label>
+                                    <input type="radio" name="male" id="male">
+                                    <span class="tick"></span></div>
+                                <div class="block">
+                                    <label for="male" id="gender-label">Female</label>
+                                    <input type="radio" name="female" id="female">
+                                    <span class="tick"></span>
+                                </div>
                             </div>
                         </div>
                         <div class="form-row">
@@ -170,6 +175,24 @@
                         <div class="form-row">
                             <label for="">Postcode<span>*</span></label>
                             <input type="text" name="postcode" id="">
+                        </div>
+                        <div class="form-row">
+                            <label for="">There are times that our gyms may be remotely supervised with no staff present. To ensure your safety and well-being, please answer the following question:</label>
+
+                        </div>
+                        <div class="form-row disability">
+                            <label id="left" for="">Do you have a disability that we may need to make reasonable adjustments for or any health conditions that could affect you while you’re in the gym?<span>*</span></label>
+                            <div class="radios">
+                                <div class="block">
+                                    <label for="disability" id="gender-label">Yes</label>
+                                    <input type="radio" name="disability" id="dis=yes">
+                                    <span class="tick"></span></div>
+                                <div class="block">
+                                    <label for="disability" id="gender-label">No</label>
+                                    <input type="radio" name="disability" id="dis-no">
+                                    <span class="tick"></span>
+                                </div>
+                            </div>
                         </div>
                     </form>
                 </div>
