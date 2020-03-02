@@ -9,21 +9,173 @@
         .nav-pane {
             width: 25%;
             padding-top: 60px;
-            background-color: red;
+            max-width: 312px;
             .left-navigation {
-                h2 {}
-                .nav-menue {
+                .title {
+                    color: #333;
+                    margin-bottom: 15px;
+                    overflow: hidden;
+                    display: block;
+                    h2 {
+                        width: 100%;
+                        font-size: 30px;
+                        margin: 0;
+                        padding-left: 30px;
+                        pointer-events: none;
+                    }
+                }
+                .nav-menu {
+                    list-style: none;
+                    padding-left: 0px;
                     .expandable {
+                        font-size: 16px;
+                        font-weight: 700;
+                        padding: 15px 15px 15px 30px;
+                        position: relative;
+                        a {
+                            color: #31476b;
+                            cursor: pointer;
+                            text-decoration: none;
+                        }
+                        &::after {
+                            content: '+';
+                            position: absolute;
+                            right: 20px;
+                            top: 10px;
+                            font-size: 25px;
+                        }
                         .nav-sub-menu {
+                            height: 0;
                             display: none;
+                            padding: 0 0 0 20px;
+                            li {
+                                a {
+                                    padding: 15px 15px 15px 30px;
+                                    color: #31476b;
+                                    display: block;
+                                    font-weight: 400;
+                                    span {
+                                        &:hover {
+                                            border-bottom: 1px solid black;
+                                        }
+                                    }
+                                }
+                            }
                         }
                     }
                 }
             }
         }
-        .content-pane {
+        .content {
+            margin-left: 30px;
             width: 75%;
             padding-top: 60px;
+            .header {
+                display: flex;
+                justify-content: space-between;
+                padding: 0 60px 30 0px;
+                margin-top: 0;
+                //margin-left: 30px;
+                margin-bottom: 30px;
+                color: #009fdf;
+                border-bottom: 1px solid #d6d6d6;
+                h2 {
+                    font-size: 38px;
+                    line-height: 1.2107
+                }
+            }
+            .body {
+                .text {
+                    background-color: #f3f3f4;
+                    padding: 10px 20px;
+                    border-radius: 6px;
+                    margin-bottom: 40px;
+                    display: flex;
+                    span {
+                        color: #0090d9;
+                    }
+                    p {
+                        font-size: 30px;
+                        color: #364e72;
+                        line-height: 1.2;
+                    }
+                    .status {
+                        margin-right: 30px;
+                    }
+                    .pin {
+                        padding-left: 30px;
+                        border-left: 1px solid black;
+                    }
+                }
+                .goals {
+                    text-align: center;
+                    .goal-wrapper {
+                        .goal {
+                            background-color: #f9f9f9;
+                            border-radius: 10px;
+                            padding: 37px;
+                            margin-bottom: 20px;
+                            height: 160px;
+                            display: inline-block;
+                            h3 {
+                                font-size: 22px;
+                                line-height: 1.2;
+                                color: #364e72;
+                                span {
+                                    color: $green;
+                                    font-size: 30px;
+                                }
+                            }
+                            a {
+                                outline: 0;
+                                color: $blue;
+                                font-size: 22px;
+                                padding-right: 10px;
+                                &:hover {
+                                    color: #007cb1;
+                                    text-decoration: underline;
+                                }
+                                i {
+                                    font-size: 15px;
+                                    padding-left: 5px;
+                                }
+                            }
+                        }
+                    }
+                }
+                .gym-visits {
+                    border-radius: 10px;
+                    padding: 20px;
+                    margin-bottom: 20px;
+                    background: url(./../image/member-area.svg);
+                    color: white;
+                    text-align: center;
+                    .goal-body-wrapper {
+                        h2 {}
+                        .headline-support {
+                            margin-bottom: 20px;
+                            line-height: 1.5;
+                        }
+                        .goal-heading {
+                            font-size: 22px;
+                            margin-bottom: -10px;
+                        }
+                        .goal-title {
+                            font-size: 30px;
+                        }
+                        .goal-amend {
+                            font-size: 16px;
+                        }
+                        .goal-circles {
+                            .goal-circle-wrapper {}
+                        }
+                    }
+                }
+            }
         }
     }
+}
+
+.container80 {
+    width: 80%;
 }

@@ -9,14 +9,31 @@ body {
   padding: 0;
   font-family: 'Roboto Condensed', sans-serif !important;
   line-height: 20px;
+  font-size: 14px;
 }
 
 p {
+  margin: 0;
+  line-height: 1.5;
+  margin-bottom: 10px;
+}
+
+.title {
+  color: #364e72;
+}
+
+h2 {
+  font-size: 38px;
+  line-height: 1.2;
   margin: 0;
 }
 
 .hidden {
   display: none;
+}
+
+li {
+  list-style: none;
 }
 
 .tick {
@@ -953,14 +970,190 @@ footer .footer-wrapper .right p {
 #member-area .container .nav-pane {
   width: 25%;
   padding-top: 60px;
+  max-width: 312px;
 }
 
-#member-area .container .nav-pane .left-navigation .nav-menue .expandable .nav-sub-menu {
+#member-area .container .nav-pane .left-navigation .title {
+  color: #333;
+  margin-bottom: 15px;
+  overflow: hidden;
+  display: block;
+}
+
+#member-area .container .nav-pane .left-navigation .title h2 {
+  width: 100%;
+  font-size: 30px;
+  margin: 0;
+  padding-left: 30px;
+  pointer-events: none;
+}
+
+#member-area .container .nav-pane .left-navigation .nav-menu {
+  list-style: none;
+  padding-left: 0px;
+}
+
+#member-area .container .nav-pane .left-navigation .nav-menu .expandable {
+  font-size: 16px;
+  font-weight: 700;
+  padding: 15px 15px 15px 30px;
+  position: relative;
+}
+
+#member-area .container .nav-pane .left-navigation .nav-menu .expandable a {
+  color: #31476b;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+#member-area .container .nav-pane .left-navigation .nav-menu .expandable::after {
+  content: '+';
+  position: absolute;
+  right: 20px;
+  top: 10px;
+  font-size: 25px;
+}
+
+#member-area .container .nav-pane .left-navigation .nav-menu .expandable .nav-sub-menu {
+  height: 0;
   display: none;
+  padding: 0 0 0 20px;
 }
 
-#member-area .container .content-pane {
+#member-area .container .nav-pane .left-navigation .nav-menu .expandable .nav-sub-menu li a {
+  padding: 15px 15px 15px 30px;
+  color: #31476b;
+  display: block;
+  font-weight: 400;
+}
+
+#member-area .container .nav-pane .left-navigation .nav-menu .expandable .nav-sub-menu li a span:hover {
+  border-bottom: 1px solid black;
+}
+
+#member-area .container .content {
+  margin-left: 30px;
   width: 75%;
   padding-top: 60px;
+}
+
+#member-area .container .content .header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 0 60px 30 0px;
+  margin-top: 0;
+  margin-bottom: 30px;
+  color: #009fdf;
+  border-bottom: 1px solid #d6d6d6;
+}
+
+#member-area .container .content .header h2 {
+  font-size: 38px;
+  line-height: 1.2107;
+}
+
+#member-area .container .content .body .text {
+  background-color: #f3f3f4;
+  padding: 10px 20px;
+  border-radius: 6px;
+  margin-bottom: 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+#member-area .container .content .body .text span {
+  color: #0090d9;
+}
+
+#member-area .container .content .body .text p {
+  font-size: 30px;
+  color: #364e72;
+  line-height: 1.2;
+}
+
+#member-area .container .content .body .text .status {
+  margin-right: 30px;
+}
+
+#member-area .container .content .body .text .pin {
+  padding-left: 30px;
+  border-left: 1px solid black;
+}
+
+#member-area .container .content .body .goals {
+  text-align: center;
+}
+
+#member-area .container .content .body .goals .goal-wrapper .goal {
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  padding: 37px;
+  margin-bottom: 20px;
+  height: 160px;
+  display: inline-block;
+}
+
+#member-area .container .content .body .goals .goal-wrapper .goal h3 {
+  font-size: 22px;
+  line-height: 1.2;
+  color: #364e72;
+}
+
+#member-area .container .content .body .goals .goal-wrapper .goal h3 span {
+  color: #7aa130;
+  font-size: 30px;
+}
+
+#member-area .container .content .body .goals .goal-wrapper .goal a {
+  outline: 0;
+  color: #0090d9;
+  font-size: 22px;
+  padding-right: 10px;
+}
+
+#member-area .container .content .body .goals .goal-wrapper .goal a:hover {
+  color: #007cb1;
+  text-decoration: underline;
+}
+
+#member-area .container .content .body .goals .goal-wrapper .goal a i {
+  font-size: 15px;
+  padding-left: 5px;
+}
+
+#member-area .container .content .body .gym-visits {
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 20px;
+  background: url(./../image/member-area.svg);
+  color: white;
+  text-align: center;
+}
+
+#member-area .container .content .body .gym-visits .goal-body-wrapper .headline-support {
+  margin-bottom: 20px;
+  line-height: 1.5;
+}
+
+#member-area .container .content .body .gym-visits .goal-body-wrapper .goal-heading {
+  font-size: 22px;
+  margin-bottom: -10px;
+}
+
+#member-area .container .content .body .gym-visits .goal-body-wrapper .goal-title {
+  font-size: 30px;
+}
+
+#member-area .container .content .body .gym-visits .goal-body-wrapper .goal-amend {
+  font-size: 16px;
+}
+
+.container80 {
+  width: 80%;
 }
 /*# sourceMappingURL=main.css.map */

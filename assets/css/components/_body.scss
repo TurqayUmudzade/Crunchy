@@ -4,14 +4,31 @@ body {
     //font-family: 'Roboto Mono', monospace;
     font-family: 'Roboto Condensed', sans-serif !important;
     line-height: 20px;
+    font-size: 14px;
 }
 
 p {
+    margin: 0;
+    line-height: 1.5;
+    margin-bottom: 10px;
+}
+
+.title {
+    color: #364e72;
+}
+
+h2 {
+    font-size: 38px;
+    line-height: 1.2;
     margin: 0;
 }
 
 .hidden {
     display: none;
+}
+
+li {
+    list-style: none;
 }
 
 //Radio
