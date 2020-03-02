@@ -243,7 +243,7 @@
                                 <p class="headline-support">Time to hit the gym.</p>
                                 <p class="goal-heading">Your goal is to:</p>
                                 <p class="goal-title">Attend the gym 4+ times per week</p>
-                                <p class="goal-amend"><a href="/member-area/survey/#questions=6" class="chevron">Edit goal</a></p>
+                                <p class="goal-amend"><a href="/member-area/survey/#questions=6">Edit goal<i class="fas fa-chevron-right"></i></a></p>
                                 <div class="goal-circles">
                                     <div class="goal-circle-wrapper">
                                         <figure class="goal-circle" data-max-goal-value="4" data-current-goal-value="0">
@@ -258,7 +258,7 @@
                                     </div>
                                     <div class="goal-circle-wrapper">
                                         <figure class="goal-circle time">
-                                            <div class="goal-circle-inner">
+                                            <div class="goal-circle-inner" id="time-inner">
                                                 <span class="count number-value">0</span>
                                                 <span class="unit">mins</span>
                                             </div>
@@ -305,48 +305,10 @@
                                     </ul>
                                 </div>
                             </div>
-                            <section class="component faq">
-                                <h4 class="js-trigger-open">
-                                    <div class="gym-visits-goal-component__graph-title-wrapper">
-                                        <span class="gym-visits-goal-component__icons">
-                        <span class="icon-plus" style="background-image: none;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15 15"><path d="M9 2v11c0 .8-.7 1.5-1.5 1.5S6 13.8 6 13V2C6 1.2 6.7.5 7.5.5S9 1.2 9 2z"></path><path d="M13 9H2C1.2 9 .5 8.3.5 7.5S1.2 6 2 6h11c.8 0 1.5.7 1.5 1.5S13.8 9 13 9z"></path></svg></span>
-                                        <span class="icon-minus" style="background-image: none;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15 4"><path d="M13 3.5H2C1.2 3.5.5 2.8.5 2S1.2.5 2 .5h11c.8 0 1.5.7 1.5 1.5s-.7 1.5-1.5 1.5z"></path></svg></span>
-                                        </span>
-                                        <span class="gym-visits-goal-component__graph-title">
-                        <span class="gym-visits-goal-component__graph-title--show"> See your workout breakdown</span>
-                                        <span class="gym-visits-goal-component__graph-title--hide"> Close your workout breakdown</span>
-                                        </span>
-                                    </div>
-                                </h4>
-                                <div class="answer" style="display: none;">
-                                    <div>
-                                        <div class="block membergymusagechartblock">
-                                            <section class="component usage-chart">
-                                                <div class="mobile-scroll">
-                                                    <div class="wrapper-chart">
-                                                        <canvas class="js-bar-chart" width="734" height="400" style="display: block; width: 734px; height: 400px;"></canvas>
-                                                    </div>
-                                                </div>
-                                                <div id="js-legend" class="chart-legend">
-                                                    <h2 class="legend-heading">February</h2>
-                                                    <a href="/member-area/?d=31-01-2020" class="button arrow prev js-legend-pag" data-tgg-leg-pag="prev" title="from 02 January 2020 to 31 January 2020">
-                                                        <span class="icon-chevron" style="background-image: none;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 6 9.5"><path d="M1.2 9.3C1 9.3.7 9.2.5 9c-.4-.4-.4-1 0-1.4l2.8-2.8L.5 1.9c-.2-.2-.3-.4-.3-.7C.2.9.3.7.5.5c.2-.2.5-.3.7-.3.3 0 .5.1.7.3L5.5 4c.4.4.4 1 0 1.4L1.9 9c-.1.2-.4.3-.7.3z"></path></svg></span>
-                                                    </a>
-                                                    <a href="/member-area/?d=01-03-2020" class="button arrow next js-legend-pag " data-tgg-leg-pag="next" title="from 02 March 2020 to 01 March 2020">
-                                                        <span class="icon-chevron" style="background-image: none;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 6 9.5"><path d="M1.2 9.3C1 9.3.7 9.2.5 9c-.4-.4-.4-1 0-1.4l2.8-2.8L.5 1.9c-.2-.2-.3-.4-.3-.7C.2.9.3.7.5.5c.2-.2.5-.3.7-.3.3 0 .5.1.7.3L5.5 4c.4.4.4 1 0 1.4L1.9 9c-.1.2-.4.3-.7.3z"></path></svg></span>
-                                                    </a>
-                                                    <ul class="js-legend-list" style="display: none;">
-                                                        <li><span style="border-color: rgba(0,159,223,1);" class="legend-icon"></span><span class="legend-text">Usage</span></li>
-                                                    </ul>
-                                                </div>
-                                            </section>
-                                            <script type="text/javascript">
-                                                window.newData = {}
-                                            </script>
-                                        </div>
-                                    </div>
-                                </div>
-                            </section>
+                            <div class="footer">
+                                <i class="fas fa-plus"></i>
+                                <h3>See your workout breakdown</h3>
+                            </div>
                         </div>
 
                     </div>
@@ -376,7 +338,7 @@
     </footer>
 
     <script src="assets/js/navbar.js "></script>
-    <script src="assets/js/login.js "></script>
+    <script src="assets/js/member-area.js "></script>
 </body>
 
 

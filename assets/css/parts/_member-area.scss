@@ -158,17 +158,112 @@
                         }
                         .goal-heading {
                             font-size: 22px;
+                            font-weight: 700;
                             margin-bottom: -10px;
                         }
                         .goal-title {
                             font-size: 30px;
+                            font-weight: 700;
                         }
                         .goal-amend {
                             font-size: 16px;
+                            font-weight: 700;
+                            a {
+                                color: #fff;
+                                font-size: 16px;
+                                i {
+                                    padding-left: 4px;
+                                    font-size: 14px;
+                                }
+                            }
                         }
                         .goal-circles {
-                            .goal-circle-wrapper {}
+                            display: flex;
+                            justify-content: space-evenly;
+                            .goal-circle-wrapper {
+                                .goal-circle {
+                                    height: 118px;
+                                    width: 118px;
+                                    margin: 0 auto;
+                                    background-color: #364e72;
+                                    position: relative;
+                                    border-radius: 50%;
+                                    .goal-circle-inner {
+                                        position: absolute;
+                                        top: 40%;
+                                        left: 35%;
+                                        span {
+                                            font-size: 72px;
+                                        }
+                                        .unit {
+                                            font-size: 40px;
+                                        }
+                                    }
+                                    #time-inner {
+                                        left: 22%;
+                                        width: 100%;
+                                    }
+                                }
+                                .circle-caption {
+                                    line-height: 20px;
+                                    font-size: 14px;
+                                    font-weight: 700;
+                                }
+                            }
                         }
+                    }
+                }
+                .workouts {
+                    padding: 10px 50px 20px;
+                    border-top: 1px solid #fff;
+                    border-bottom: 1px solid #fff;
+                    max-width: 603px;
+                    margin: 50px auto;
+                    .workout-titles {
+                        text-align: center;
+                        margin-bottom: 15px;
+                        font-size: 30px;
+                    }
+                    .calender-scroll-container {
+                        margin-top: 30px;
+                        ul {
+                            justify-content: space-evenly;
+                            display: flex;
+                            li {
+                                .dot {
+                                    width: 10px;
+                                    height: 10px;
+                                    border-radius: 50%;
+                                    background-color: #fff;
+                                    margin-left: auto;
+                                    margin-right: auto;
+                                    margin-bottom: 15px;
+                                }
+                                .workout-days {
+                                    font-size: 26px;
+                                }
+                            }
+                        }
+                    }
+                }
+                .footer {
+                    display: flex;
+                    justify-content: center;
+                    i {
+                        border-radius: 50%;
+                        background-color: white;
+                        color: $blue;
+                        width: 18px;
+                        height: 18px;
+                        padding: 7px;
+                        position: relative;
+                        top: 18px;
+                        font-size: 18px;
+                    }
+                    h3 {
+                        cursor: pointer;
+                        font-size: 26px;
+                        margin-left: 15px;
                     }
                 }
             }

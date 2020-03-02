@@ -18,6 +18,10 @@ p {
   margin-bottom: 10px;
 }
 
+a {
+  text-decoration: none;
+}
+
 .title {
   color: #364e72;
 }
@@ -1142,15 +1146,139 @@ footer .footer-wrapper .right p {
 
 #member-area .container .content .body .gym-visits .goal-body-wrapper .goal-heading {
   font-size: 22px;
+  font-weight: 700;
   margin-bottom: -10px;
 }
 
 #member-area .container .content .body .gym-visits .goal-body-wrapper .goal-title {
   font-size: 30px;
+  font-weight: 700;
 }
 
 #member-area .container .content .body .gym-visits .goal-body-wrapper .goal-amend {
   font-size: 16px;
+  font-weight: 700;
+}
+
+#member-area .container .content .body .gym-visits .goal-body-wrapper .goal-amend a {
+  color: #fff;
+  font-size: 16px;
+}
+
+#member-area .container .content .body .gym-visits .goal-body-wrapper .goal-amend a i {
+  padding-left: 4px;
+  font-size: 14px;
+}
+
+#member-area .container .content .body .gym-visits .goal-body-wrapper .goal-circles {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+#member-area .container .content .body .gym-visits .goal-body-wrapper .goal-circles .goal-circle-wrapper .goal-circle {
+  height: 118px;
+  width: 118px;
+  margin: 0 auto;
+  background-color: #364e72;
+  position: relative;
+  border-radius: 50%;
+}
+
+#member-area .container .content .body .gym-visits .goal-body-wrapper .goal-circles .goal-circle-wrapper .goal-circle .goal-circle-inner {
+  position: absolute;
+  top: 40%;
+  left: 35%;
+}
+
+#member-area .container .content .body .gym-visits .goal-body-wrapper .goal-circles .goal-circle-wrapper .goal-circle .goal-circle-inner span {
+  font-size: 72px;
+}
+
+#member-area .container .content .body .gym-visits .goal-body-wrapper .goal-circles .goal-circle-wrapper .goal-circle .goal-circle-inner .unit {
+  font-size: 40px;
+}
+
+#member-area .container .content .body .gym-visits .goal-body-wrapper .goal-circles .goal-circle-wrapper .goal-circle #time-inner {
+  left: 22%;
+  width: 100%;
+}
+
+#member-area .container .content .body .gym-visits .goal-body-wrapper .goal-circles .goal-circle-wrapper .circle-caption {
+  line-height: 20px;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+#member-area .container .content .body .workouts {
+  padding: 10px 50px 20px;
+  border-top: 1px solid #fff;
+  border-bottom: 1px solid #fff;
+  max-width: 603px;
+  margin: 50px auto;
+}
+
+#member-area .container .content .body .workouts .workout-titles {
+  text-align: center;
+  margin-bottom: 15px;
+  font-size: 30px;
+}
+
+#member-area .container .content .body .workouts .calender-scroll-container {
+  margin-top: 30px;
+}
+
+#member-area .container .content .body .workouts .calender-scroll-container ul {
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+#member-area .container .content .body .workouts .calender-scroll-container ul li .dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #fff;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 15px;
+}
+
+#member-area .container .content .body .workouts .calender-scroll-container ul li .workout-days {
+  font-size: 26px;
+}
+
+#member-area .container .content .body .footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+#member-area .container .content .body .footer i {
+  border-radius: 50%;
+  background-color: white;
+  color: #0090d9;
+  width: 18px;
+  height: 18px;
+  padding: 7px;
+  position: relative;
+  top: 18px;
+  font-size: 18px;
+}
+
+#member-area .container .content .body .footer h3 {
+  cursor: pointer;
+  font-size: 26px;
+  margin-left: 15px;
 }
 
 .container80 {
