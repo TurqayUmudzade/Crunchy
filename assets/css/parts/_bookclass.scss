@@ -1,0 +1,18 @@
+.calender {
+    background-color: red;
+    .tab-nav {
+        margin-bottom: 13px;
+        ul {
+            display: flex;
+            justify-content: space-between;
+            li {
+                padding: 0 10px 10px;
+                flex-grow: 1;
+                a {
+                    .day {}
+                    .date {}
+                }
+            }
+        }
+    }
+}

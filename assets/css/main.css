@@ -83,6 +83,21 @@ input[type=radio]:hover + .tick {
   border: 1px solid #009fdf;
 }
 
+select {
+  border: 1px solid #d6d6d6;
+  background-color: #fff;
+  border-left: 5px solid #009fdf;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  line-height: 1.15;
+  border-radius: 0;
+  font-size: 20px;
+  padding: 10px 30px 10px 10px;
+  outline: 0;
+  color: #364e72;
+  width: 100%;
+}
+
 nav {
   background-color: #212121;
   height: 50px;
@@ -1291,5 +1306,29 @@ footer .footer-wrapper .right p {
 
 .container80 {
   width: 80%;
+}
+
+.calender {
+  background-color: red;
+}
+
+.calender .tab-nav {
+  margin-bottom: 13px;
+}
+
+.calender .tab-nav ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.calender .tab-nav ul li {
+  padding: 0 10px 10px;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
 }
 /*# sourceMappingURL=main.css.map */
