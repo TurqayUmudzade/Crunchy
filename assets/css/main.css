@@ -1018,9 +1018,17 @@ footer .footer-wrapper .right p {
   font-size: 25px;
 }
 
+#member-area .container .nav-pane .left-navigation .nav-menu .expandable .nav-sub-menue-open {
+  height: 300px !important;
+  -webkit-transition: ease-in 0.3s;
+  transition: ease-in 0.3s;
+}
+
 #member-area .container .nav-pane .left-navigation .nav-menu .expandable .nav-sub-menu {
+  -webkit-transition: ease-out 0.3s;
+  transition: ease-out 0.3s;
   height: 0;
-  display: none;
+  overflow: hidden;
   padding: 0 0 0 20px;
 }
 

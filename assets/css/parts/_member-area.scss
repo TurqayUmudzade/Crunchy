@@ -44,9 +44,14 @@
                             top: 10px;
                             font-size: 25px;
                         }
+                        .nav-sub-menue-open {
+                            height: 300px !important;
+                            transition: ease-in 0.3s;
+                        }
                         .nav-sub-menu {
+                            transition: ease-out 0.3s;
                             height: 0;
-                            display: none;
+                            overflow: hidden;
                             padding: 0 0 0 20px;
                             li {
                                 a {
