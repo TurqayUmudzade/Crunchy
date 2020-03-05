@@ -47,8 +47,6 @@
                         border-style: solid;
                         border-width: 7.5px 7.5px 0;
                     }
-                    .day {}
-                    .date {}
                 }
             }
         }
@@ -69,6 +67,9 @@ article {
         .icon-plus {
             background-color: #567800
         }
+        .class.bg-pickle .time-duration {
+            background-color: #567800;
+        }
         .button {
             background-color: #4b6900;
         }
@@ -88,6 +89,9 @@ article {
         .icon-plus {
             background-color: #ee516c
         }
+        .class.bg-pink .time-duration {
+            background-color: #f06880;
+        }
         .button {
             background-color: #ee516c;
         }
@@ -99,6 +103,28 @@ article {
         .no {
             color: #fff;
             background-color: #f7aebb;
+        }
+    }
+    .bg-blue {
+        color: #fff;
+        background-color: #3e5a83;
+        .icon-plus {
+            background-color: #2e4261;
+        }
+        .class.bg-pink .time-duration {
+            background-color: #364e72;
+        }
+        .button {
+            background-color: #2e4261;
+        }
+        .yes {
+            color: #fff;
+            background-color: #2e4261;
+            border-color: transparent;
+        }
+        .no {
+            color: #fff;
+            background-color: #466695;
         }
     }
     .class {

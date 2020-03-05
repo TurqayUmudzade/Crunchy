@@ -32,6 +32,11 @@ h2 {
   margin: 0;
 }
 
+h3 {
+  font-size: 30px;
+  line-height: 1.2;
+}
+
 h4 {
   font-size: 26px;
   line-height: 1.231;
@@ -1399,6 +1404,10 @@ article .bg-pickle .icon-plus {
   background-color: #567800;
 }
 
+article .bg-pickle .class.bg-pickle .time-duration {
+  background-color: #567800;
+}
+
 article .bg-pickle .button {
   background-color: #4b6900;
 }
@@ -1423,6 +1432,10 @@ article .bg-pink .icon-plus {
   background-color: #ee516c;
 }
 
+article .bg-pink .class.bg-pink .time-duration {
+  background-color: #f06880;
+}
+
 article .bg-pink .button {
   background-color: #ee516c;
 }
@@ -1436,6 +1449,34 @@ article .bg-pink .yes {
 article .bg-pink .no {
   color: #fff;
   background-color: #f7aebb;
+}
+
+article .bg-blue {
+  color: #fff;
+  background-color: #3e5a83;
+}
+
+article .bg-blue .icon-plus {
+  background-color: #2e4261;
+}
+
+article .bg-blue .class.bg-pink .time-duration {
+  background-color: #364e72;
+}
+
+article .bg-blue .button {
+  background-color: #2e4261;
+}
+
+article .bg-blue .yes {
+  color: #fff;
+  background-color: #2e4261;
+  border-color: transparent;
+}
+
+article .bg-blue .no {
+  color: #fff;
+  background-color: #466695;
 }
 
 article .class {
@@ -1603,5 +1644,9 @@ article .class .message .no {
 .confirm-action .check:checked + .action + .confirm + .yes,
 .confirm-action .check:checked + .action + .confirm + .yes + .no {
   display: inline;
+}
+
+.sub-heading {
+  color: #364e72;
 }
 /*# sourceMappingURL=main.css.map */
