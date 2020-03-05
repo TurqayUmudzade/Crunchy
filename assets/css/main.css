@@ -32,6 +32,15 @@ h2 {
   margin: 0;
 }
 
+h4 {
+  font-size: 26px;
+  line-height: 1.231;
+}
+
+h5 {
+  font-size: 22px;
+}
+
 .hidden {
   display: none;
 }
@@ -1308,15 +1317,11 @@ footer .footer-wrapper .right p {
   width: 80%;
 }
 
-.calender {
-  background-color: red;
-}
-
-.calender .tab-nav {
+.calendar .tab-nav {
   margin-bottom: 13px;
 }
 
-.calender .tab-nav ul {
+.calendar .tab-nav ul {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1325,10 +1330,278 @@ footer .footer-wrapper .right p {
           justify-content: space-between;
 }
 
-.calender .tab-nav ul li {
+.calendar .tab-nav ul li {
   padding: 0 10px 10px;
   -webkit-box-flex: 1;
       -ms-flex-positive: 1;
           flex-grow: 1;
+}
+
+.calendar .tab-nav ul li .active {
+  background-color: #f06880;
+  color: #fff;
+  text-decoration: none;
+}
+
+.calendar .tab-nav ul li .active:after {
+  border-color: #f06880;
+  background-color: white !important;
+}
+
+.calendar .tab-nav ul li a {
+  display: block;
+  font-size: 16px;
+  position: relative;
+  min-width: 40px;
+  padding: 7px 0;
+  color: #009fdf;
+  line-height: 1.4;
+  font-weight: 700;
+  text-align: center;
+  border-radius: 6px;
+}
+
+.calendar .tab-nav ul li a:hover {
+  background: #f3f3f4;
+  color: #364e72;
+  text-decoration: underline;
+}
+
+.calendar .tab-nav ul li a:hover::after {
+  border-top-color: #f3f3f4;
+}
+
+.calendar .tab-nav ul li a:after {
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  position: absolute;
+  bottom: -7px;
+  left: 50%;
+  width: 0;
+  height: 0;
+  content: '';
+  border-color: transparent;
+  border-style: solid;
+  border-width: 7.5px 7.5px 0;
+}
+
+.classes-header h4 {
+  text-align: center;
+  color: #666;
+}
+
+article .bg-pickle {
+  color: #fff;
+  background-color: #5d8200;
+}
+
+article .bg-pickle .icon-plus {
+  background-color: #567800;
+}
+
+article .bg-pickle .button {
+  background-color: #4b6900;
+}
+
+article .bg-pickle .yes {
+  color: #fff;
+  background-color: #4b6900;
+  border-color: transparent;
+}
+
+article .bg-pickle .no {
+  color: #fff;
+  background-color: #94cf00;
+}
+
+article .bg-pink {
+  color: #fff;
+  background-color: #f27f94;
+}
+
+article .bg-pink .icon-plus {
+  background-color: #ee516c;
+}
+
+article .bg-pink .button {
+  background-color: #ee516c;
+}
+
+article .bg-pink .yes {
+  color: #fff;
+  background-color: #eb3a59;
+  border-color: transparent;
+}
+
+article .bg-pink .no {
+  color: #fff;
+  background-color: #f7aebb;
+}
+
+article .class {
+  position: relative;
+  border-bottom: 1px solid #fff;
+  border-top-left-radius: 6px;
+}
+
+article .class .details {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  position: relative;
+  min-height: 97px;
+  padding: 14px 20px 14px 115px;
+}
+
+article .class .details .time-duration {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-size: 15px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  float: left;
+  width: 100px;
+  height: 100%;
+  padding: 10px;
+  padding-top: 23px;
+  text-align: center;
+  border-right: 1px solid #fff;
+  border-top-left-radius: 6px;
+}
+
+article .class .details .time-duration .time {
+  font-weight: 700;
+}
+
+article .class .details .time-duration .duration {
+  font-size: 14px;
+}
+
+article .class .details .class-name {
+  position: relative;
+  display: inline-block;
+  margin-top: 7px;
+  margin-bottom: 2px;
+  line-height: 1;
+}
+
+article .class .details .weekly {
+  display: none;
+}
+
+article .class .details .class-status {
+  margin: 0 0 5px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+article .class .icon-plus {
+  position: absolute;
+  top: 24px;
+  right: 20px;
+  display: block;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  color: white;
+  font-size: 24px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+article .class .actions {
+  padding: 18px 92px 18px 20px;
+  overflow: hidden;
+  border-top: .10px solid #fff;
+}
+
+article .class .actions .class-description {
+  line-height: 1.5;
+  margin-bottom: 10px;
+}
+
+article .class .actions .button {
+  float: left;
+  margin-top: 15px;
+  font-weight: 400;
+  text-decoration: none;
+  color: #fff;
+  font-size: 28px;
+  border-radius: 6px;
+  padding: 12px 32px;
+  display: inline-block;
+  text-align: center;
+}
+
+article .class .actions .spaces {
+  display: inline-block;
+  padding: 12px;
+  margin-top: 15px;
+  font-size: 20px;
+}
+
+article .class .actions .spaces span {
+  font-weight: 800;
+}
+
+article .class .message {
+  font-size: 22px;
+  height: 65px;
+  padding: 17px 20px;
+  border-top: 1px solid #fff;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+article .class .message label {
+  margin-right: 100px;
+  position: relative;
+  text-decoration: underline;
+}
+
+article .class .message span {
+  font-weight: 700;
+}
+
+article .class .message .confirm-action {
+  float: right;
+  font-size: 22px;
+  position: relative;
+  display: inline-block;
+}
+
+article .class .message .confirm-action .confirm {
+  display: none;
+  font-weight: 400;
+}
+
+article .class .message .confirm-action .check {
+  display: none;
+  visibility: hidden;
+}
+
+article .class .message .confirm-action .check:checked + .action {
+  display: none;
+}
+
+article .class .message .yes,
+article .class .message .no {
+  display: none;
+  padding: 3px 15px;
+  border: 1px solid transparent;
+  border-radius: 6px;
+}
+
+.confirm-action .check:checked + .action + .confirm,
+.confirm-action .check:checked + .action + .confirm + .yes,
+.confirm-action .check:checked + .action + .confirm + .yes + .no {
+  display: inline;
 }
 /*# sourceMappingURL=main.css.map */
