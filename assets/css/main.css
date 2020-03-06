@@ -1649,4 +1649,91 @@ article .class .message .no {
 .sub-heading {
   color: #364e72;
 }
+
+.body p {
+  line-height: 1.5;
+  margin-bottom: 10px;
+  color: #666;
+}
+
+.body .trainers {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.body .trainers .trainer {
+  width: 32%;
+  margin: 0 auto 34px;
+  overflow: hidden;
+  background-color: #fff;
+  border-radius: 6px;
+  background-clip: padding-box;
+  border: 1px solid #d6d6d6;
+  text-align: center;
+}
+
+.body .trainers .trainer .top {
+  position: relative;
+  width: 100%;
+  min-height: 78px;
+  background: url(./../image/trainers.jpg);
+}
+
+.body .trainers .trainer .top .circle {
+  border-radius: 50%;
+  overflow: hidden;
+  position: absolute;
+  background-clip: padding-box;
+  top: 100%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  height: 110px;
+  width: 110px;
+  border: .3rem solid #fff;
+}
+
+.body .trainers .trainer .top img {
+  width: 100%;
+}
+
+.body .trainers .trainer .bottom {
+  margin-top: 65px;
+}
+
+.body .trainers .trainer .bottom .about {
+  border-bottom: 1px solid #d6d6d6;
+  width: 80%;
+  margin: 0 auto;
+  margin-bottom: 20px;
+}
+
+.body .trainers .trainer .bottom .about .name {
+  color: #364e72;
+}
+
+.body .trainers .trainer .bottom .about p {
+  line-height: 1.5;
+  margin-bottom: 10px;
+  font-size: 14px;
+  color: #666;
+}
+
+.body .trainers .trainer .bottom .foot {
+  padding: 20px 0;
+}
+
+.body .trainers .trainer .bottom .foot .trainer-info-a {
+  text-decoration: none;
+  color: #009fdf;
+  font-size: 22px;
+}
+
+.body .trainers .trainer .bottom .foot .trainer-info-a i {
+  padding-left: 10px;
+  font-size: 18px;
+}
 /*# sourceMappingURL=main.css.map */
