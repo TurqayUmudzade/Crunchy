@@ -5,6 +5,7 @@ body {
     font-family: 'Roboto Condensed', sans-serif !important;
     line-height: 20px;
     font-size: 14px;
+    color: #666;
 }
 
 p {
@@ -47,6 +48,37 @@ h5 {
 
 li {
     list-style: none;
+}
+
+.table {
+    width: 100%;
+    overflow: auto;
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        border-width: 0;
+        thead {
+            background-color: #364e72;
+            color: #fff;
+            font-size: 22px;
+            th {
+                border-width: 0;
+                padding: 13px 20px;
+                white-space: nowrap;
+                text-align: left;
+            }
+        }
+        tbody {
+            tr {
+                td {
+                    border-width: 0;
+                    padding: 13px 20px;
+                    white-space: nowrap;
+                    text-align: left;
+                }
+            }
+        }
+    }
 }
 
 //Radio

@@ -10,6 +10,7 @@ body {
   font-family: 'Roboto Condensed', sans-serif !important;
   line-height: 20px;
   font-size: 14px;
+  color: #666;
 }
 
 p {
@@ -52,6 +53,37 @@ h5 {
 
 li {
   list-style: none;
+}
+
+.table {
+  width: 100%;
+  overflow: auto;
+}
+
+.table table {
+  width: 100%;
+  border-collapse: collapse;
+  border-width: 0;
+}
+
+.table table thead {
+  background-color: #364e72;
+  color: #fff;
+  font-size: 22px;
+}
+
+.table table thead th {
+  border-width: 0;
+  padding: 13px 20px;
+  white-space: nowrap;
+  text-align: left;
+}
+
+.table table tbody tr td {
+  border-width: 0;
+  padding: 13px 20px;
+  white-space: nowrap;
+  text-align: left;
 }
 
 .tick {
@@ -1735,5 +1767,12 @@ article .class .message .no {
 .body .trainers .trainer .bottom .foot .trainer-info-a i {
   padding-left: 10px;
   font-size: 18px;
+}
+
+.content .heading {
+  font-size: 30px;
+  /* font-size: 3rem; */
+  color: #364e72;
+  margin-bottom: 3rem;
 }
 /*# sourceMappingURL=main.css.map */
