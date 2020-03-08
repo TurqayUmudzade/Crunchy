@@ -158,12 +158,12 @@
                             <label for="">Gender<span>*</span></label>
                             <div class="radios">
                                 <div class="block">
-                                    <label for="male" id="gender-label">Male</label>
-                                    <input type="radio" name="male" id="male">
+                                    <label for="gender" id="gender-label">Male</label>
+                                    <input type="radio" name="gender" id="male">
                                     <span class="tick"></span></div>
                                 <div class="block">
-                                    <label for="male" id="gender-label">Female</label>
-                                    <input type="radio" name="female" id="female">
+                                    <label for="gender" id="gender-label">Female</label>
+                                    <input type="radio" name="gender" id="female">
                                     <span class="tick"></span>
                                 </div>
                             </div>
@@ -171,6 +171,10 @@
                         <div class="form-row">
                             <label for="">Birth Date<span>*</span></label>
                             <input type="date">
+                        </div>
+                        <div class="form-row">
+                            <label for="">Town/City<span>*</span></label>
+                            <input type="text" name="town" id="">
                         </div>
                         <div class="form-row">
                             <label for="">Postcode<span>*</span></label>
@@ -182,7 +186,7 @@
                         </div>
                         <div class="form-row disability">
                             <label id="left" for="">Do you have a disability that we may need to make reasonable adjustments for or any health conditions that could affect you while you’re in the gym?<span>*</span></label>
-                            <div class="radios">
+                            <div id="padding" class="radios">
                                 <div class="block">
                                     <label for="disability" id="gender-label">Yes</label>
                                     <input type="radio" name="disability" id="dis=yes">

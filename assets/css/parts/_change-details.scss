@@ -1,0 +1,28 @@
+.details {
+    padding: 33px 0;
+    border-top: 1px solid #f3f3f4;
+    border-bottom: 1px solid #f3f3f4;
+    .form-group {
+        width: 100%;
+        margin: 23px 0;
+        display: flex;
+        justify-content: space-between;
+        label {
+            width: 50%;
+            font-size: 15px;
+        }
+        span {
+            width: 50%;
+            font-weight: bold;
+            font-size: 15px;
+        }
+    }
+}
+
+#edit {
+    margin-top: 40px
+}
+
+#flex1 {
+    flex: 1;
+}
