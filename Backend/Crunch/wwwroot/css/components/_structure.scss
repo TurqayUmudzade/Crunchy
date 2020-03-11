@@ -1,0 +1,22 @@
+.flex {
+    display: flex;
+}
+
+.button {
+    font-family: 'Roboto Condensed', sans-serif !important;
+    background-color: #f06880;
+    font-size: 30px;
+    border-radius: 6px;
+    padding: 6px 18px 5px;
+    display: inline-block;
+    color: #fff;
+    text-transform: uppercase;
+    text-align: center;
+    outline: 0;
+    cursor: pointer;
+    border: 1px solid transparent;
+    line-height: 1;
+    &:hover {
+        background-color: #e94960;
+    }
+}

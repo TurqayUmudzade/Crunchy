@@ -1,0 +1,63 @@
+nav {
+    background-color: $navbar-color;
+    height: 50px;
+    .flex {
+        #logo {
+            img {
+                height: 55px;
+            }
+            &:hover {
+                transform: rotateZ(-10deg);
+                transition: all 0.3s;
+            }
+        }
+        a {
+            padding: 13px 25px 5px 25px;
+            text-decoration: none;
+            color: white;
+            font-size: 15px;
+            height: 50%;
+            letter-spacing: 0.1em;
+            transition: all 0.3s;
+        }
+        .lang_picker {
+            margin-left: auto;
+            padding-top: 6px;
+            .flag {
+                width: 25px;
+                height: 25px;
+                margin-top: 7px;
+            }
+            h2 {
+                font-weight: bold;
+                margin: 8px 0px;
+                padding: 0px 8px;
+                text-decoration: none;
+                color: white;
+                line-height: 24px;
+                font-size: 15px;
+                letter-spacing: 0.1em;
+            }
+            i {
+                color: white;
+                padding-top: 6px;
+                margin-right: 10px;
+            }
+            ul {
+                display: none;
+            }
+        }
+        #free-trial {
+            background-color: $navbar-orange;
+            overflow: hidden;
+            height: 100%;
+            padding: 12px 30px 18px;
+        }
+        #join {
+            background-color: white;
+            height: 100%;
+            color: $navbar-orange;
+            padding: 12px 30px 18px;
+        }
+    }
+}
