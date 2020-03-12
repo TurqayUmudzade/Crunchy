@@ -30,8 +30,7 @@ namespace Crunch.ViewModels
         [Required(ErrorMessage = "Entered Password ")]
         [MaxLength(50)]
         [DataType(DataType.Password)]
-        [Display(Name = "Password")]
-        public string Password { get; set; }
+        public string Pin { get; set; }
 
         public bool RememberMe { get; set; }
     }

@@ -1,13 +1,12 @@
-﻿
-/*using Crunch.Injection;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Crunch.Injection;
 
-namespace Devita.Filters
+namespace Crunch.Filters
 {
     public class CheckAuth : ActionFilterAttribute
     {
@@ -22,8 +21,8 @@ namespace Devita.Filters
         {
             if (_auth.User == null)
             {
-                context.Result = new RedirectResult("~/account/index");
+                context.Result = new RedirectResult("~/Home/index");
             }
         }
     }
-}*/
+}

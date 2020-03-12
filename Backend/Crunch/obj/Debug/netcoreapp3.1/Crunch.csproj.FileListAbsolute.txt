@@ -322,3 +322,4 @@ C:\Users\Turqay\source\repos\Crunch\obj\Debug\netcoreapp3.1\Crunch.Views.pdb
 C:\Users\Turqay\source\repos\Crunch\obj\Debug\netcoreapp3.1\Crunch.csproj.CopyComplete
 C:\Users\Turqay\source\repos\Crunch\obj\Debug\netcoreapp3.1\Crunch.dll
 C:\Users\Turqay\source\repos\Crunch\obj\Debug\netcoreapp3.1\Crunch.pdb
+C:\Users\Turqay\source\repos\Crunch\obj\Debug\netcoreapp3.1\Razor\Views\Account\Login.cshtml.g.cs

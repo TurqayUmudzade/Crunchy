@@ -10,6 +10,9 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.EntityFrameworkCore;
 using Crunch.Data;
+using Microsoft.Extensions.DependencyInjection.Extensions;
+using Microsoft.AspNetCore.Http;
+using Crunch.Injection;
 
 namespace Crunch
 {
@@ -31,6 +34,11 @@ namespace Crunch
 
                options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"))
             );
+
+            services.TryAddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+
+           services.AddTransient<IAuth, Auth>();
+         
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
