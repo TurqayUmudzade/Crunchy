@@ -64,7 +64,7 @@ namespace Crunch.Controllers
                         Email = registerViewModel.User.Email,
                         number = registerViewModel.User.number,
                         Town = registerViewModel.User.Town,
-                        Postcode = registerViewModel.User.firstName,
+                        Postcode = registerViewModel.User.Postcode,
                         dateOfBirth = registerViewModel.User.dateOfBirth,
                         Gender = registerViewModel.User.Gender,
                         disability = registerViewModel.User.disability,

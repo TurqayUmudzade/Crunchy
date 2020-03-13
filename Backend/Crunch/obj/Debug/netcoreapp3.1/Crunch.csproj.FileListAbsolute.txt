@@ -323,3 +323,7 @@ C:\Users\Turqay\source\repos\Crunch\obj\Debug\netcoreapp3.1\Crunch.csproj.CopyCo
 C:\Users\Turqay\source\repos\Crunch\obj\Debug\netcoreapp3.1\Crunch.dll
 C:\Users\Turqay\source\repos\Crunch\obj\Debug\netcoreapp3.1\Crunch.pdb
 C:\Users\Turqay\source\repos\Crunch\obj\Debug\netcoreapp3.1\Razor\Views\Account\Login.cshtml.g.cs
+C:\Users\Turqay\source\repos\Crunch\obj\Debug\netcoreapp3.1\Razor\Views\MemberArea\Edit.cshtml.g.cs
+C:\Users\Turqay\source\repos\Crunch\obj\Debug\netcoreapp3.1\Razor\Views\MemberArea\ChangeDetails.cshtml.g.cs
+C:\Users\Turqay\source\repos\Crunch\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Layout2.cshtml.g.cs
+C:\Users\Turqay\source\repos\Crunch\obj\Debug\netcoreapp3.1\Razor\Views\MemberArea\BookClass.cshtml.g.cs

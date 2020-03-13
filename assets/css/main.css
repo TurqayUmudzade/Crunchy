@@ -24,6 +24,11 @@
   background-color: #e94960;
 }
 
+form input[readonly=readonly] {
+  cursor: not-allowed;
+  opacity: .5;
+}
+
 body {
   margin: 0;
   padding: 0;

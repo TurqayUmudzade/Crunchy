@@ -17,6 +17,8 @@ namespace Crunch.Data
         }
 
         public DbSet<User> users { get; set; }
+        public DbSet<Class> classes { get; set; }
+        public DbSet<Trainer> trainers { get; set; }
 
     }
 }

@@ -1,3 +1,8 @@
+﻿
+@{
+    ViewData["Title"] = "Layout2";
+}
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,7 +10,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- MY CSS -->
-    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="~/css/main.css">
     <!-- FONT AWESOME -->
     <script src="https://kit.fontawesome.com/e3658e79d2.js" crossorigin="anonymous"></script>
     <!-- GOOGLE FONTS -->
@@ -36,7 +41,8 @@
                 <i class="fas fa-sort-down"></i>
                 <ul class="chooser">
                     <li class="opened">
-                        <a><img class="flag" src="https://dj7w0h47bhjwk.cloudfront.net/assets/core/flags/en-07772f1861e8e765c83be31bb1af70a23ecf038fc73041705d6f67f26ae4521a.png" alt="En">
+                        <a>
+                            <img class="flag" src="https://dj7w0h47bhjwk.cloudfront.net/assets/core/flags/en-07772f1861e8e765c83be31bb1af70a23ecf038fc73041705d6f67f26ae4521a.png" alt="En">
                             <p class="lang_long_name">United States</p>
                             <p class="arrow"></p>
                         </a>
@@ -54,17 +60,20 @@
                         </ul>
                     </li>
                     <li>
-                        <a href="https://www.crunch.com.au/" target="_blank"><img class="flag" src="https://dj7w0h47bhjwk.cloudfront.net/assets/core/flags/en-AU-11a08e93915063e28b9bf32ea439cce104d97c8b5c809f012656950d750b2337.png" alt="En au">
+                        <a href="https://www.crunch.com.au/" target="_blank">
+                            <img class="flag" src="https://dj7w0h47bhjwk.cloudfront.net/assets/core/flags/en-AU-11a08e93915063e28b9bf32ea439cce104d97c8b5c809f012656950d750b2337.png" alt="En au">
                             <p class="lang_long_name">Australia</p>
                         </a>
                     </li>
                     <li>
-                        <a href="https://www.crunchfitness.ca" target="_blank"><img class="flag" src="https://dj7w0h47bhjwk.cloudfront.net/assets/core/flags/en-CA-a47ac4281a264334d74288c85c70de4bb1f7cb6439f5b2156bcde5e365b44fd7.png" alt="En ca">
+                        <a href="https://www.crunchfitness.ca" target="_blank">
+                            <img class="flag" src="https://dj7w0h47bhjwk.cloudfront.net/assets/core/flags/en-CA-a47ac4281a264334d74288c85c70de4bb1f7cb6439f5b2156bcde5e365b44fd7.png" alt="En ca">
                             <p class="lang_long_name">Canada</p>
                         </a>
                     </li>
                     <li>
-                        <a><img class="flag" src="https://dj7w0h47bhjwk.cloudfront.net/assets/core/flags/es-cr-ba792778a97c8236d38a8d164c5bee2c10e439c12b0a977ce454f56896e3ab02.png" alt="Es cr">
+                        <a>
+                            <img class="flag" src="https://dj7w0h47bhjwk.cloudfront.net/assets/core/flags/es-cr-ba792778a97c8236d38a8d164c5bee2c10e439c12b0a977ce454f56896e3ab02.png" alt="Es cr">
                             <p class="lang_long_name">Costa Rica</p>
                             <p class="arrow"></p>
                         </a>
@@ -77,7 +86,8 @@
                         </ul>
                     </li>
                     <li>
-                        <a href="https://cr7crunch.fitness/es" target="_blank"><img class="flag" src="https://dj7w0h47bhjwk.cloudfront.net/assets/core/flags/es-8b91bd57e960c9078897020e6e0b09db748c562f96849a91e29d079f95143e49.png" alt="Es">
+                        <a href="https://cr7crunch.fitness/es" target="_blank">
+                            <img class="flag" src="https://dj7w0h47bhjwk.cloudfront.net/assets/core/flags/es-8b91bd57e960c9078897020e6e0b09db748c562f96849a91e29d079f95143e49.png" alt="Es">
                             <p class="lang_long_name">Spain</p>
                         </a>
                     </li>
@@ -217,79 +227,7 @@
                     </ul>
                 </div>
             </div>
-            <div class="content ">
-                <div class="container80">
-
-                    <div class="body">
-                        <h2 class="heading">My Details</h2>
-                        <div class="details foot">
-                            <form action="">
-                                <div class="form-row">
-                                    <label for="">First Name <span>*</span></label>
-                                    <input class="readonly" type="text" readonly="readonly" name="firstname" id="">
-                                </div>
-                                <div class="form-row">
-                                    <label for="">Last Name<span>*</span></label>
-                                    <input class="readonly" type="text" readonly="readonly" name="lastname" id="">
-                                </div>
-                                <div class="form-row">
-                                    <label for="">Gender<span>*</span></label>
-                                    <div class="radios">
-                                        <div class="block">
-                                            <label for="gender" id="gender-label">Male</label>
-                                            <input type="radio" name="gender" checked id="male">
-                                            <span class="tick"></span></div>
-                                        <div class="block">
-                                            <label for="gender" id="gender-label">Female</label>
-                                            <input type="radio" name="gender" id="female">
-                                            <span class="tick"></span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="form-row">
-                                    <label for="">Email<span>*</span></label>
-                                    <input type="email" name="email" id="">
-                                </div>
-                                <div class="form-row">
-                                    <label for="">Mobile Number<span>*</span></label>
-                                    <input type="text" name="phonenumber" id="">
-                                </div>
-
-                                <div class="form-row">
-                                    <label for="">Birth Date<span>*</span></label>
-                                    <input class="readonly" readonly="readonly" type="date">
-                                </div>
-                                <div class="form-row">
-                                    <label for="">Town/City<span>*</span></label>
-                                    <input type="text" name="town" id="">
-                                </div>
-                                <div class="form-row">
-                                    <label for="">Postcode<span>*</span></label>
-                                    <input type="text" name="postcode" id="">
-                                </div>
-                                <div class="contact-preferences">
-                                    <h2 class="heading">Contact preferences</h2>
-                                    <p>We'd love to keep you up to date with information about your membership, relevant offers and news from The Gym Group and will never sell your data to other companies.</p>
-                                    <p>But if you'd prefer not to hear from us you can opt-out by removing the tick from one or both of the boxes below.</p>
-                                    <div class="form-row">
-                                        <input type="checkbox" id="flex1" name="contact-sms" id="">
-                                        <label for="contact-sms">Contact me by SMS</label>
-                                    </div>
-                                    <div class="form-row">
-                                        <input type="checkbox" id="flex1" name="contact-mail" id="">
-                                        <label for="contact-mail">Contact me by email</label>
-                                    </div>
-                                    <p>&nbsp;</p>
-                                    <p>Please be aware that if you opt-out of either of the above you may miss helpful information about your membership or about your local Gym's services. If you change your mind you can come back and update your preferences
-                                        at any time.</p>
-                                </div>
-
-                            </form>
-                        </div>
-                        <button id="edit" type="submit" class="button">Save Changes</button>
-                    </div>
-                </div>
-            </div>
+            @RenderBody()
         </div>
     </section>
     <footer>
@@ -306,16 +244,18 @@
             </div>
             <div class=" right ">
                 <p>FREE TRIAL</p>
-                <p id=" grey ">OWN A CRUNCH • CONTACT • FAQ • CORPORATE MEMBERSHIPS • CAREERS • TERMS OF USE • PRIVACY • POLICY
+                <p id=" grey ">
+                    OWN A CRUNCH • CONTACT • FAQ • CORPORATE MEMBERSHIPS • CAREERS • TERMS OF USE • PRIVACY • POLICY
                 </p>
             </div>
 
         </div>
     </footer>
 
-    <script src=" assets/js/navbar.js "></script>
-    <script src=" assets/js/member-area.js "></script>
+    <script src="~/js/navbar.js"></script>
+    <script src="~/js/login.js"></script>
 </body>
 
 
 </html>
+
