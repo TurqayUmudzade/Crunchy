@@ -8,9 +8,9 @@ namespace Crunch.ViewModels
 {
     public class BookClassViewModel
     {
-        User user { get; set; }
+        public User user { get; set; }
 
-        List<List<Class>> classes{ get; set; }
+       public List<List<Class>> classes{ get; set; }
 
     }
 }

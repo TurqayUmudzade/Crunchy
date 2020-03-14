@@ -8,6 +8,7 @@ using Crunch.Data;
 using Crunch.Injection;
 using Crunch.Filters;
 using Crunch.Models;
+using Crunch.ViewModels;
 
 namespace Crunch.Controllers
 {
@@ -28,9 +29,36 @@ namespace Crunch.Controllers
             return View();
         }
 
+
+        [TypeFilter(typeof(CheckAuth))]
         public IActionResult BookClass()
         {
-            return View();
+            //Get the user
+            User loggedInUser = _context.users.Find(_auth.User.UserID);
+
+            //Get the classes from Users Locations
+            List<List<Class>> classesList = new List<List<Class>>();
+
+            for (int i=0;i<7;i++) {
+                classesList.Add(_context.classes.Where(c => c.gymLocation == loggedInUser.gymLocation && c.dateTime.Date ==  DateTime.Today.AddDays(i).Date).ToList());
+            }
+            
+
+            BookClassViewModel model = new BookClassViewModel() {
+                user= loggedInUser,
+                classes=classesList
+            };
+
+            String s="";
+            foreach (List<Class> item in classesList)
+            {
+                s +=  item.Count.ToString();
+            }
+
+
+
+            
+            return View(model);
         }
 
 

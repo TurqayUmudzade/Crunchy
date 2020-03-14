@@ -265,3 +265,12 @@ article {
 .confirm-action .check:checked+.action+.confirm+.yes+.no {
     display: inline
 }
+
+.icon-container {
+    i {
+        position: relative;
+        left: 83%;
+        bottom: 40px;
+        font-size: 40px;
+    }
+}

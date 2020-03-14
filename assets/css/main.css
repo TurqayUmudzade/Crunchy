@@ -1071,17 +1071,24 @@ article .class .message .no {
   display: inline;
 }
 
+.icon-container i {
+  position: relative;
+  left: 83%;
+  bottom: 40px;
+  font-size: 40px;
+}
+
 .sub-heading {
   color: #364e72;
 }
 
-.body p {
+.trainer-body p {
   line-height: 1.5;
   margin-bottom: 10px;
   color: #666;
 }
 
-.body .trainers {
+.trainer-body .trainers {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1089,7 +1096,7 @@ article .class .message .no {
       flex-wrap: wrap;
 }
 
-.body .trainers .trainer {
+.trainer-body .trainers .trainer {
   width: 32%;
   margin: 0 auto 34px;
   overflow: hidden;
@@ -1100,14 +1107,14 @@ article .class .message .no {
   text-align: center;
 }
 
-.body .trainers .trainer .top {
+.trainer-body .trainers .trainer .top {
   position: relative;
   width: 100%;
   min-height: 78px;
   background: url(./../image/trainers.jpg);
 }
 
-.body .trainers .trainer .top .circle {
+.trainer-body .trainers .trainer .top .circle {
   border-radius: 50%;
   overflow: hidden;
   position: absolute;
@@ -1121,43 +1128,43 @@ article .class .message .no {
   border: .3rem solid #fff;
 }
 
-.body .trainers .trainer .top img {
+.trainer-body .trainers .trainer .top img {
   width: 100%;
 }
 
-.body .trainers .trainer .bottom {
+.trainer-body .trainers .trainer .bottom {
   margin-top: 65px;
 }
 
-.body .trainers .trainer .bottom .about {
+.trainer-body .trainers .trainer .bottom .about {
   border-bottom: 1px solid #d6d6d6;
   width: 80%;
   margin: 0 auto;
   margin-bottom: 20px;
 }
 
-.body .trainers .trainer .bottom .about .name {
+.trainer-body .trainers .trainer .bottom .about .name {
   color: #364e72;
 }
 
-.body .trainers .trainer .bottom .about p {
+.trainer-body .trainers .trainer .bottom .about p {
   line-height: 1.5;
   margin-bottom: 10px;
   font-size: 14px;
   color: #666;
 }
 
-.body .trainers .trainer .bottom .foot {
+.trainer-body .trainers .trainer .bottom .foot {
   padding: 20px 0;
 }
 
-.body .trainers .trainer .bottom .foot .trainer-info-a {
+.trainer-body .trainers .trainer .bottom .foot .trainer-info-a {
   text-decoration: none;
   color: #009fdf;
   font-size: 22px;
 }
 
-.body .trainers .trainer .bottom .foot .trainer-info-a i {
+.trainer-body .trainers .trainer .bottom .foot .trainer-info-a i {
   padding-left: 10px;
   font-size: 18px;
 }
