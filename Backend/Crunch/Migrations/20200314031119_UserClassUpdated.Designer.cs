@@ -4,14 +4,16 @@ using Crunch.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Crunch.Migrations
 {
     [DbContext(typeof(Context))]
-    partial class ContextModelSnapshot : ModelSnapshot
+    [Migration("20200314031119_UserClassUpdated")]
+    partial class UserClassUpdated
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -72,17 +74,11 @@ namespace Crunch.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("Qualifications")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<string>("Speciality")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("aboutMe")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("email")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("fullName")
@@ -159,36 +155,6 @@ namespace Crunch.Migrations
                     b.HasKey("UserID");
 
                     b.ToTable("users");
-                });
-
-            modelBuilder.Entity("Crunch.Models.UserClass", b =>
-                {
-                    b.Property<int>("UserID")
-                        .HasColumnType("int");
-
-                    b.Property<int>("ClassID")
-                        .HasColumnType("int");
-
-                    b.HasKey("UserID", "ClassID");
-
-                    b.HasIndex("ClassID");
-
-                    b.ToTable("UserClass");
-                });
-
-            modelBuilder.Entity("Crunch.Models.UserClass", b =>
-                {
-                    b.HasOne("Crunch.Models.Class", "class")
-                        .WithMany("userClasses")
-                        .HasForeignKey("ClassID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("Crunch.Models.User", "user")
-                        .WithMany("userClasses")
-                        .HasForeignKey("UserID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
                 });
 #pragma warning restore 612, 618
         }

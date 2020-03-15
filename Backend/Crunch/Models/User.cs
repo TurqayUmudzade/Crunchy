@@ -13,7 +13,6 @@ namespace Crunch.Models
         [Required]
         public int UserID { get; set; }
 
-
         public String firstName { get; set; }
 
         public String lastName { get; set; }
@@ -46,6 +45,7 @@ namespace Crunch.Models
 
         public string Token { get; set; }
 
+        public List<UserClass> userClasses { get; set; }
 
     }
 }

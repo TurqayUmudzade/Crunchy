@@ -1,0 +1,59 @@
+﻿
+@{
+    ViewData["Title"] = "AboutTrainer";
+    Layout = "~/Views/Shared/Layout2.cshtml";
+}
+
+@model Trainer
+
+       
+    <div class="content ">
+        <div class="container80">
+            <div class="info">
+                <div class="about">
+                    <h3 class="heading">Experience & philosophy</h3>
+                    <p>
+                        @Model.aboutMe
+                    </p>
+                </div>
+                <div class="image">
+
+                    <img src="~/image/@Model.image" alt="trainer-image">
+
+                </div>
+            </div>
+            <div class="contact-box">
+                <div class="contact-info">
+                    <h3 class="name">@Model.title @Model.fullName</h3>
+                    <div class="email">
+                        <i class="fas fa-envelope-square"></i>
+                        <span class="email">@Model.email</span>
+                    </div>
+                </div>
+            </div>
+            <div class="details">
+                <h3 class="heading">Qualifications</h3>
+
+                @{
+                    String[] Qualifications  =Model.Qualifications.Split('|');
+                    String[] Specialities  =Model.Speciality.Split('|');
+
+                }
+                <ul class="list">
+                   @foreach (String str in Qualifications) {
+                    <li>@str</li>
+                   }
+                </ul>
+                <hr class="hr">
+                <h3 class="heading">Specialist areas</h3>
+                <ul class="list">
+                    @foreach (String str in Specialities)
+                    {
+                        <li>@str</li>
+                    }
+                </ul>
+            </div>
+
+        </div>
+    </div>
+

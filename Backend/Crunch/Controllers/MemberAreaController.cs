@@ -29,6 +29,18 @@ namespace Crunch.Controllers
             return View();
         }
 
+        [HttpGet]
+        [TypeFilter(typeof(CheckAuth))]
+        public ContentResult BookTheClass(int ClassID)
+        {
+            Class selectedClass = _context.classes.Find(ClassID);
+            selectedClass.spaceUsed++;
+            _context.SaveChanges();
+
+            return Content(ClassID.ToString());
+
+        }
+
 
         [TypeFilter(typeof(CheckAuth))]
         public IActionResult BookClass()
@@ -39,25 +51,22 @@ namespace Crunch.Controllers
             //Get the classes from Users Locations
             List<List<Class>> classesList = new List<List<Class>>();
 
-            for (int i=0;i<7;i++) {
-                classesList.Add(_context.classes.Where(c => c.gymLocation == loggedInUser.gymLocation && c.dateTime.Date ==  DateTime.Today.AddDays(i).Date).ToList());
+            for (int i = 0; i < 7; i++) {
+                classesList.Add(_context.classes.Where(c => c.gymLocation == loggedInUser.gymLocation && c.dateTime.Date == DateTime.Today.AddDays(i).Date).ToList());
             }
-            
+
 
             BookClassViewModel model = new BookClassViewModel() {
-                user= loggedInUser,
-                classes=classesList
+                user = loggedInUser,
+                classes = classesList
             };
 
-            String s="";
+            String s = "";
             foreach (List<Class> item in classesList)
             {
-                s +=  item.Count.ToString();
+                s += item.Count.ToString();
             }
 
-
-
-            
             return View(model);
         }
 
@@ -88,11 +97,29 @@ namespace Crunch.Controllers
 
             return View("~/Views/MemberArea/ChangeDetails", user);
         }
+
         //The page which redirects to Edit
         [TypeFilter(typeof(CheckAuth))]
         public IActionResult ChangeDetails() {
             User user = _context.users.Find(_auth.User.UserID);
             return View(user);
         }
+
+
+        public IActionResult Trainers()
+        {
+            List<Trainer> trainers= _context.trainers.ToList();
+
+            return View(trainers);
+        }
+
+        [HttpGet]
+        public IActionResult AboutTrainer(int trainerID)
+        {
+           Trainer trainer=_context.trainers.Find(trainerID);   
+
+            return View(trainer);
+        }
+
     }
 }

@@ -23,10 +23,13 @@ namespace Crunch.Models
 
 
         public String aboutMe { get; set; }
+
+        public String email { get; set; }
+
         //mr or mrs
         public String title { get; set; }
 
-       // public List<String> Qualifications { get; set; }
+       public String Qualifications { get; set; }
 
         /*[NotMapped]
         public HttpPostedFileBase Upload { get; set; }*/

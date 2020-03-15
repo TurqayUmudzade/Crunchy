@@ -327,3 +327,5 @@ C:\Users\Turqay\source\repos\Crunch\obj\Debug\netcoreapp3.1\Razor\Views\MemberAr
 C:\Users\Turqay\source\repos\Crunch\obj\Debug\netcoreapp3.1\Razor\Views\MemberArea\ChangeDetails.cshtml.g.cs
 C:\Users\Turqay\source\repos\Crunch\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Layout2.cshtml.g.cs
 C:\Users\Turqay\source\repos\Crunch\obj\Debug\netcoreapp3.1\Razor\Views\MemberArea\BookClass.cshtml.g.cs
+C:\Users\Turqay\source\repos\Crunch\obj\Debug\netcoreapp3.1\Razor\Views\MemberArea\Trainers.cshtml.g.cs
+C:\Users\Turqay\source\repos\Crunch\obj\Debug\netcoreapp3.1\Razor\Views\MemberArea\AboutTrainer.cshtml.g.cs

@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
+using Crunch.Models;
 namespace Crunch.Models
 {
     public class Class
     {
         [Key]
-        public int ID { get; set; }
+        public int ClassID { get; set; }
 
         [Required]
         public String name { get; set; }
@@ -30,5 +31,7 @@ namespace Crunch.Models
         public String type { get; set; }
         
         public String icon { get; set; }
+
+        public List<UserClass> userClasses { get; set; }
     }
 }

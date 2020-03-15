@@ -4,14 +4,16 @@ using Crunch.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Crunch.Migrations
 {
     [DbContext(typeof(Context))]
-    partial class ContextModelSnapshot : ModelSnapshot
+    [Migration("20200314032924_UserClassCreated")]
+    partial class UserClassCreated
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -72,17 +74,11 @@ namespace Crunch.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("Qualifications")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<string>("Speciality")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("aboutMe")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("email")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("fullName")

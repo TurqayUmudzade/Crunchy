@@ -20536,6 +20536,16 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\Turqay\\Desktop\\Crunch\\Backend\\Crunch\\Views\\MemberArea\\AboutTrainer.cshtml",
+      "TargetPath": "Views\\MemberArea\\AboutTrainer.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Turqay\\Desktop\\Crunch\\Backend\\Crunch\\Views\\MemberArea\\Trainers.cshtml",
+      "TargetPath": "Views\\MemberArea\\Trainers.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\Turqay\\Desktop\\Crunch\\Backend\\Crunch\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
       "TargetPath": "Views\\Shared\\_ValidationScriptsPartial.cshtml",
       "FileKind": "mvc"
