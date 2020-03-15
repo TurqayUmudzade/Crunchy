@@ -1868,4 +1868,84 @@ article .class .message .no {
 .next .active:hover {
   background-color: #e94960;
 }
+
+.info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.info .about {
+  -webkit-box-flex: 2;
+      -ms-flex: 2;
+          flex: 2;
+}
+
+.info .about h3 {
+  margin-bottom: 20px !important;
+}
+
+.info .image {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+.info .image img {
+  border-radius: 50%;
+  width: 100%;
+  padding: 50px 15px;
+}
+
+.contact-box {
+  background-color: #364e72;
+  border-radius: 6px;
+  padding: 15px 30px;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+.contact-box .contact-info .name {
+  color: #fff;
+  margin: 0;
+}
+
+.contact-box .contact-info .email {
+  color: white;
+}
+
+.contact-box .contact-info .email i {
+  font-size: 25px;
+  background: white;
+  color: #364e72;
+  border-radius: 50%;
+  padding: 8px;
+}
+
+.contact-box .contact-info .email span {
+  padding-left: 5px;
+  color: #0bbcff;
+  line-height: 36px;
+  font-weight: 700;
+  font-size: 16px;
+}
+
+.details h3 {
+  margin: 0 !important;
+}
+
+.details .list {
+  -webkit-column-count: 2;
+          column-count: 2;
+  -webkit-column-gap: 6.7px;
+          column-gap: 6.7px;
+  width: 65%;
+  padding-left: 16px;
+  list-style-type: disc !important;
+}
+
+.details .list li {
+  list-style-type: disc !important;
+  margin-bottom: 6px;
+}
 /*# sourceMappingURL=main.css.map */
