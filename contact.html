@@ -1,8 +1,3 @@
-﻿
-@{
-    ViewData["Title"] = "Layout2";
-}
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- MY CSS -->
-    <link rel="stylesheet" href="~/css/main.css">
+    <link rel="stylesheet" href="assets/css/main.css">
     <!-- FONT AWESOME -->
     <script src="https://kit.fontawesome.com/e3658e79d2.js" crossorigin="anonymous"></script>
     <!-- GOOGLE FONTS -->
@@ -20,7 +15,7 @@
     <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
     <!-- Chart -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.min.js"></script>
-    <!--ReCapture-->
+    <!--ReCapture-->>
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <title>Document</title>
 </head>
@@ -43,8 +38,7 @@
                 <i class="fas fa-sort-down"></i>
                 <ul class="chooser">
                     <li class="opened">
-                        <a>
-                            <img class="flag" src="https://dj7w0h47bhjwk.cloudfront.net/assets/core/flags/en-07772f1861e8e765c83be31bb1af70a23ecf038fc73041705d6f67f26ae4521a.png" alt="En">
+                        <a><img class="flag" src="https://dj7w0h47bhjwk.cloudfront.net/assets/core/flags/en-07772f1861e8e765c83be31bb1af70a23ecf038fc73041705d6f67f26ae4521a.png" alt="En">
                             <p class="lang_long_name">United States</p>
                             <p class="arrow"></p>
                         </a>
@@ -62,20 +56,17 @@
                         </ul>
                     </li>
                     <li>
-                        <a href="https://www.crunch.com.au/" target="_blank">
-                            <img class="flag" src="https://dj7w0h47bhjwk.cloudfront.net/assets/core/flags/en-AU-11a08e93915063e28b9bf32ea439cce104d97c8b5c809f012656950d750b2337.png" alt="En au">
+                        <a href="https://www.crunch.com.au/" target="_blank"><img class="flag" src="https://dj7w0h47bhjwk.cloudfront.net/assets/core/flags/en-AU-11a08e93915063e28b9bf32ea439cce104d97c8b5c809f012656950d750b2337.png" alt="En au">
                             <p class="lang_long_name">Australia</p>
                         </a>
                     </li>
                     <li>
-                        <a href="https://www.crunchfitness.ca" target="_blank">
-                            <img class="flag" src="https://dj7w0h47bhjwk.cloudfront.net/assets/core/flags/en-CA-a47ac4281a264334d74288c85c70de4bb1f7cb6439f5b2156bcde5e365b44fd7.png" alt="En ca">
+                        <a href="https://www.crunchfitness.ca" target="_blank"><img class="flag" src="https://dj7w0h47bhjwk.cloudfront.net/assets/core/flags/en-CA-a47ac4281a264334d74288c85c70de4bb1f7cb6439f5b2156bcde5e365b44fd7.png" alt="En ca">
                             <p class="lang_long_name">Canada</p>
                         </a>
                     </li>
                     <li>
-                        <a>
-                            <img class="flag" src="https://dj7w0h47bhjwk.cloudfront.net/assets/core/flags/es-cr-ba792778a97c8236d38a8d164c5bee2c10e439c12b0a977ce454f56896e3ab02.png" alt="Es cr">
+                        <a><img class="flag" src="https://dj7w0h47bhjwk.cloudfront.net/assets/core/flags/es-cr-ba792778a97c8236d38a8d164c5bee2c10e439c12b0a977ce454f56896e3ab02.png" alt="Es cr">
                             <p class="lang_long_name">Costa Rica</p>
                             <p class="arrow"></p>
                         </a>
@@ -88,8 +79,7 @@
                         </ul>
                     </li>
                     <li>
-                        <a href="https://cr7crunch.fitness/es" target="_blank">
-                            <img class="flag" src="https://dj7w0h47bhjwk.cloudfront.net/assets/core/flags/es-8b91bd57e960c9078897020e6e0b09db748c562f96849a91e29d079f95143e49.png" alt="Es">
+                        <a href="https://cr7crunch.fitness/es" target="_blank"><img class="flag" src="https://dj7w0h47bhjwk.cloudfront.net/assets/core/flags/es-8b91bd57e960c9078897020e6e0b09db748c562f96849a91e29d079f95143e49.png" alt="Es">
                             <p class="lang_long_name">Spain</p>
                         </a>
                     </li>
@@ -229,7 +219,54 @@
                     </ul>
                 </div>
             </div>
-            @RenderBody()
+            <div class="content ">
+                <div class="container80">
+
+                    <div class="body">
+                        <h2 class="header">Contact us</h2>
+                        <p>Do you have a question that is not answered on our website? Or would you like to make a general enquiry? Whatever it may be, please call us on 0300 303 4800 so that we can help assist you.</p>
+                        <div class=" foot">
+                            <form class="contact-form" action="">
+                                <div class="form-row">
+                                    <label for="">Nature of contact<span>*</span></label>
+                                    <select class="js-department open" id="Nature" name="Nature"><option value="">Please select</option>
+                                        <option value="General">General enquiry</option>
+                                        <option value="Feedback">Feedback </option>
+                                        <option value="Fitness">Fitness</option>
+                                        </select>
+                                </div>
+                                <div class="form-row">
+                                    <label for=""> Gym this enquiry relates to<span>*</span></label>
+                                    <select class="js-department open"><option value="">Please select</option>
+                                        <option value="General">Baku</option>
+                                        <option value="Feedback">Feedback </option>
+                                        <option value="Fitness">Fitness</option>
+                                        </select>
+                                </div>
+
+                                <div class="form-row">
+                                    <label for="">Subject<span>*</span></label>
+                                    <input type="text">
+                                </div>
+                                <div class="form-row">
+                                    <label for="">Details<span>*</span></label>
+                                    <textarea name="" id="" cols="30" rows="10"></textarea>
+                                </div>
+
+                                <div class="form-row">
+                                    <label for="">Security<span>*</span></label>
+                                    <div class="g-recaptcha" data-sitekey="your_site_key"></div>
+                                    <br/>
+                                </div>
+
+                                <button id="" type="submit" class="button">Send Enquiry</button>
+
+                            </form>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
     <footer>
@@ -246,18 +283,25 @@
             </div>
             <div class=" right ">
                 <p>FREE TRIAL</p>
-                <p id=" grey ">
-                    OWN A CRUNCH • CONTACT • FAQ • CORPORATE MEMBERSHIPS • CAREERS • TERMS OF USE • PRIVACY • POLICY
+                <p id=" grey ">OWN A CRUNCH • CONTACT • FAQ • CORPORATE MEMBERSHIPS • CAREERS • TERMS OF USE • PRIVACY • POLICY
                 </p>
             </div>
 
         </div>
     </footer>
+    <script>
+        grecaptcha.ready(function() {
+            grecaptcha.execute('6Lc1f-EUAAAAAOj-0rlupT6aZvGGqvCWz2v3OA_c', {
+                action: 'homepage'
+            }).then(function(token) {
+                document.getElementById("g-token").value = token;
+            });
+        });
+    </script>
 
-    <script src="~/js/navbar.js"></script>
-    <script src="~/js/login.js"></script>
+    <script src=" assets/js/navbar.js "></script>
+    <script src=" assets/js/member-area.js "></script>
 </body>
 
 
 </html>
-

@@ -298,7 +298,6 @@ C:\Users\Turqay\source\repos\Crunch\bin\Debug\netcoreapp3.1\runtimes\win\lib\net
 C:\Users\Turqay\source\repos\Crunch\obj\Debug\netcoreapp3.1\Crunch.csprojAssemblyReference.cache
 C:\Users\Turqay\source\repos\Crunch\obj\Debug\netcoreapp3.1\staticwebassets\Crunch.StaticWebAssets.Manifest.cache
 C:\Users\Turqay\source\repos\Crunch\obj\Debug\netcoreapp3.1\staticwebassets\Crunch.StaticWebAssets.xml
-C:\Users\Turqay\source\repos\Crunch\obj\Debug\netcoreapp3.1\Crunch.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\Turqay\source\repos\Crunch\obj\Debug\netcoreapp3.1\Crunch.RazorAssemblyInfo.cache
 C:\Users\Turqay\source\repos\Crunch\obj\Debug\netcoreapp3.1\Crunch.RazorAssemblyInfo.cs
 C:\Users\Turqay\source\repos\Crunch\obj\Debug\netcoreapp3.1\Crunch.AssemblyInfoInputs.cache
@@ -329,3 +328,8 @@ C:\Users\Turqay\source\repos\Crunch\obj\Debug\netcoreapp3.1\Razor\Views\Shared\L
 C:\Users\Turqay\source\repos\Crunch\obj\Debug\netcoreapp3.1\Razor\Views\MemberArea\BookClass.cshtml.g.cs
 C:\Users\Turqay\source\repos\Crunch\obj\Debug\netcoreapp3.1\Razor\Views\MemberArea\Trainers.cshtml.g.cs
 C:\Users\Turqay\source\repos\Crunch\obj\Debug\netcoreapp3.1\Razor\Views\MemberArea\AboutTrainer.cshtml.g.cs
+C:\Users\Turqay\source\repos\Crunch\obj\Debug\netcoreapp3.1\Razor\Views\MyGym\Contact.cshtml.g.cs
+C:\Users\Turqay\source\repos\Crunch\bin\Debug\netcoreapp3.1\MailKit.dll
+C:\Users\Turqay\source\repos\Crunch\bin\Debug\netcoreapp3.1\MimeKit.dll
+C:\Users\Turqay\source\repos\Crunch\bin\Debug\netcoreapp3.1\BouncyCastle.Crypto.dll
+C:\Users\Turqay\source\repos\Crunch\obj\Debug\netcoreapp3.1\Crunch.MvcApplicationPartsAssemblyInfo.cache
