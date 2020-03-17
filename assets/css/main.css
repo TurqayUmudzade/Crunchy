@@ -535,6 +535,7 @@ footer .footer-wrapper .right p {
           justify-content: space-between;
   padding: 0 60px 30 0px;
   margin-top: 0;
+  padding-bottom: 20px;
   margin-bottom: 30px;
   color: #009fdf;
   border-bottom: 1px solid #d6d6d6;
@@ -563,6 +564,7 @@ footer .footer-wrapper .right p {
   font-size: 30px;
   color: #364e72;
   line-height: 1.2;
+  margin-bottom: 0px !important;
 }
 
 #member-area .container .content .body .text .status {
@@ -1988,5 +1990,39 @@ article .class .message .no {
   border-left: 5px solid #009fdf;
   font-family: 'Roboto Condensed', sans-serif !important;
   font-size: 20px;
+}
+
+#member-area .page-description {
+  margin-bottom: 30px;
+}
+
+#member-area .page-description .grid-wrapper {
+  padding: 0 40px;
+  font-size: 16px;
+}
+
+#member-area #changegym {
+  margin: 30px 0;
+  width: 70%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#member-area #changegym label {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  font-weight: 800;
+  font-size: 16px;
+}
+
+#member-area #changegym select {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
 }
 /*# sourceMappingURL=main.css.map */
