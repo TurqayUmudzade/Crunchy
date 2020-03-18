@@ -1,12 +1,4 @@
-@import './login';
-@import './login2';
-@import './member-area';
-@import './bookclass';
-@import './avgUserChart';
-@import './trainer';
-@import './myClasses';
-@import './change-details';
-@import './register';
-@import './trainer-about';
-@import './contact';
-@import './changeHomeGym';
+// Login and Regiter pages
+@import './login/index';
+//for member-area
+@import './member-area/index'

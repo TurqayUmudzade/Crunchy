@@ -1,0 +1,31 @@
+#PaymentDetails {
+    p {
+        font-size: 14px;
+    }
+    h3 {
+        color: #00aeef;
+        padding: 12px 0;
+        border-top: 1px solid rgba(54, 78, 114, 0.1);
+        border-bottom: 1px solid rgba(54, 78, 114, 0.1);
+        font-size: 25px;
+        text-align: left;
+        margin-bottom: 40px;
+    }
+    .payments {
+        margin-bottom: 12px;
+        .flex {
+            padding: 7px 28px;
+            justify-content: space-between;
+            font-size: 14px;
+        }
+        .blue {
+            color: white;
+            background-color: #00aeef;
+            border: 10px solid rgba(255, 255, 255, 0);
+            font-weight: bold;
+            p {
+                margin-bottom: 0px;
+            }
+        }
+    }
+}
