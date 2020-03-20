@@ -18,7 +18,7 @@
                         <span class="no">1</span>
 
                     </div>
-                    <span class="label">Gym membership</span>
+                    <span class="label">Personal details</span>
                 </li>
                 <li class="">
                     <div class="step">
@@ -26,7 +26,7 @@
                         <span class="no">2</span>
 
                     </div>
-                    <span class="label">Personal details</span>
+                    <span class="label">Gym membership </span>
                 </li>
                 <li class="">
                     <div class="step">
@@ -36,12 +36,7 @@
                     </div>
                     <span class="label">Bank payment</span>
                 </li>
-                <li class="">
-                    <div class="step">
-                        <span class="no">4</span>
-                    </div>
-                    <span class="label">Membership created</span>
-                </li>
+                
             </ul>
         </section>
 
@@ -49,7 +44,7 @@
             <div class="header">
                 <div class="header-text">
                     <div class="step">
-                        <span class="no">2</span>
+                        <span class="no">1</span>
                     </div>
                     <div class="header-p">
                         <p>Personal Data</p>
@@ -62,18 +57,23 @@
                     <div class="form-row">
                         <label asp-for="User.firstName">First Name <span>*</span></label>
                         <input type="text" asp-for="User.firstName" id="">
+                        <span asp-validation-for="User.firstName"></span>
                     </div>
                     <div class="form-row">
                         <label asp-for="User.lastName">Last Name<span>*</span></label>
                         <input type="text" asp-for="User.lastName" id="">
+                        <span asp-validation-for="User.lastName"></span>
                     </div>
                     <div class="form-row">
                         <label asp-for="User.Email">Email<span>*</span></label>
                         <input type="email" asp-for="User.Email" id="">
+                        <span asp-validation-for="User.Email"></span>
+                        @Html.ValidationMessage("Email")
                     </div>
                     <div class="form-row">
                         <label asp-for="User.number">Mobile Number<span>*</span></label>
                         <input type="text" asp-for="User.number" id="">
+                        <span asp-validation-for="User.number"></span>
                     </div>
                     <div class="form-row">
                         <label asp-for="User.Gender">Gender<span>*</span></label>
@@ -88,11 +88,14 @@
                                 <input type="radio" asp-for="User.Gender" value="Female" id="female">
                                 <span class="tick"></span>
                             </div>
+                            
                         </div>
+                        <span asp-validation-for="User.Gender"></span>
                     </div>
                     <div class="form-row">
                         <label asp-for="User.dateOfBirth">Birth Date<span>*</span></label>
                         <input type="date" asp-for="User.dateOfBirth">
+                        <span asp-validation-for="User.dateOfBirth "></span>
                     </div>
                     <div class="form-row">
                         <label asp-for="User.Town">Town/City<span>*</span></label>
@@ -126,7 +129,7 @@
 
         </div>
         <div class="next">
-            <button type="submit" form="login2">NEXT</button>
+            <button type="submit" class="button" form="login2">NEXT</button>
         </div>
         </div>
 </section>

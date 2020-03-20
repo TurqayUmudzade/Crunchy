@@ -27,18 +27,41 @@ namespace Crunch.Controllers
             _auth = auth;
         }
 
-
-        public IActionResult Index()
+        [TypeFilter(typeof(CheckAuth))]
+        public IActionResult Home()
         {
-            return View();
+            User loggedInUser = _context.users.Find(_auth.User.UserID);
+            return View(loggedInUser);
+        }
+
+        [TypeFilter(typeof(CheckAuth))]
+        public IActionResult MyGymUsage()
+        {
+            User loggedInUser = _context.users.Find(_auth.User.UserID);
+            return View(loggedInUser);
+        }
+
+        [TypeFilter(typeof(CheckAuth))]
+        public IActionResult AverageUsage()
+        {
+            User loggedInUser = _context.users.Find(_auth.User.UserID);
+            loggedInUser.gymLocation = _context.users.Include("gym").Where(u => u.UserID == loggedInUser.UserID).FirstOrDefault().gym.gymLocation;
+
+            return View(loggedInUser);
         }
 
         [HttpGet]
+        [TypeFilter(typeof(CheckAuth))]
         public IActionResult Contact()
         {
-            
+            User loggedInUser = _context.users.Find(_auth.User.UserID);
+            loggedInUser.gymLocation = _context.users.Include("gym").Where(u => u.UserID == loggedInUser.UserID).FirstOrDefault().gym.gymLocation;
+            ContactMemberViewModel model = new ContactMemberViewModel
+            {
+                user = loggedInUser
+            };
 
-            return View();
+            return View(model);
         }
 
         [HttpPost]
@@ -51,10 +74,11 @@ namespace Crunch.Controllers
 
             MailboxAddress from = new MailboxAddress("User", "testing@gmail.com");
 
-            if (loggedInUser!=null) {
-                 from = new MailboxAddress(loggedInUser.firstName, "testing@gmail.com");
+            if (loggedInUser != null)
+            {
+                from = new MailboxAddress(loggedInUser.firstName, "testing@gmail.com");
             }
-            
+
             message.From.Add(from);
 
             MailboxAddress to = new MailboxAddress("Admin", "crunchgymemailbot@gmail.com");
@@ -62,7 +86,7 @@ namespace Crunch.Controllers
 
             message.Subject = email.Subject;
 
-            String text = "Nature of contact:" + email.Nature + "\r\nGym this enquiry relates to" + email.Gym + "\r\nThe Message:"+email.Body;
+            String text = "Nature of contact:" + email.Nature + "\r\nGym this enquiry relates to" + email.Gym + "\r\nThe Message:" + email.Body;
 
             message.Body = new TextPart("plain") { Text = text };
 
@@ -74,7 +98,7 @@ namespace Crunch.Controllers
                 client.Send(message);
                 client.Disconnect(true);
             }
-             
+
         }
     }
 }

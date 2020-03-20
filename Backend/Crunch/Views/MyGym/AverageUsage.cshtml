@@ -1,0 +1,73 @@
+﻿
+@{
+    ViewData["Title"] = "AverageUsage";
+
+    Layout = "~/Views/Shared/Layout2.cshtml";
+}
+
+@model User
+<div class="content ">
+    <div class="container80">
+        <div class="header">
+            <h2>Average Usage</h2>
+        </div>
+        <div class="body">
+            <h3 class="sub-heading busy-message">Your home gym is busiest between <span>5-6pm</span></h3>
+            <canvas id="myChart" width="400" height="400"></canvas>
+            <script>
+                Chart.defaults.global.legend.display = false;
+                var ctx = document.getElementById('myChart').getContext('2d');
+                var myChart = new Chart(ctx, {
+                    type: 'line',
+                    data: {
+                        labels: ['2am', '4am', '6am', '8am', '10am', '12am', '2pm', '4pm', '6pm', '8pm', '10pm', '12pm'],
+                        datasets: [{
+
+                            data: [25, 13, 7, 5, 8, 15, 20, 26, 31, 25, 12, 8],
+                            fill: false,
+                            backgroundColor: [
+                                'rgba(0, 159, 223, 1)'
+                            ],
+                            borderColor: [
+                                'rgba(0, 159, 223, 1)'
+                            ],
+                            borderWidth: 1
+                        }]
+                    },
+                    options: {
+                        scales: {
+                            yAxes: [{
+                                ticks: {
+                                    beginAtZero: true
+                                }
+                            }]
+                        }
+                    },
+                    options: {
+                        elements: {
+                            line: {
+                                tension: 0
+                            }
+                        }
+                    },
+                    options: {
+                        scales: {
+                            yAxes: [{
+                                ticks: {
+                                    max: 50,
+                                    min: 0,
+                                    stepSize: 10
+                                }
+                            }]
+                        }
+                    }
+                });
+            </script>
+            <div class="my-gym">
+                <span class="tick-c"></span>
+                <span class="gym-name">@Model.gymLocation</span>
+            </div>
+        </div>
+    </div>
+</div>
+

@@ -1,7 +1,4 @@
 ﻿
-@{
-    ViewData["Title"] = "Layout2";
-}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -95,8 +92,8 @@
                     </li>
                 </ul>
             </div>
-            <a id="free-trial" href="">FREE TRIAL</a>
-            <a id="join" href="">JOIN</a>
+            <a id="free-trial" href="@Url.ActionLink("Home","MyGym")">@Model.firstName</a>
+            <a id="join" href="@Url.ActionLink("Logout","Account")">Log out</a>
         </div>
     </nav>
 
@@ -114,30 +111,27 @@
                             </a>
                             <ul class="nav-sub-menu">
                                 <li>
-                                    <a href="/member-area/my-gym/my-gym-usage/">
+                                    <a href=@Url.ActionLink("Home","MyGym")>
+                                        <span>Home</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href=@Url.ActionLink("MyGymUsage","MyGym")>
                                         <span>My gym usage</span>
                                     </a>
                                 </li>
+
                                 <li>
-                                    <a href="/member-area/my-gym/refer-a-friend/">
-                                        <span>Refer a friend</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="/member-area/my-gym/average-usage-chart/">
+                                    <a href=@Url.ActionLink("AverageUsage","MyGym")>
                                         <span>Average usage chart</span>
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="/member-area/my-gym/member-contact-us/">
+                                    <a href=@Url.ActionLink("Contact","MyGym")>
                                         <span>Member contact us</span>
                                     </a>
                                 </li>
-                                <li>
-                                    <a href="/member-area/my-gym/fitquest-area/">
-                                        <span>FitQuest Area</span>
-                                    </a>
-                                </li>
+
                             </ul>
                         </li>
                         <li class="expandable ">
@@ -173,35 +167,27 @@
                             </a>
                             <ul class="nav-sub-menu">
                                 <li>
-                                    <a href="/member-area/my-membership/change-home-gym/">
+                                    <a href=@Url.ActionLink("ChangeHomeGym","MyMembership")>
                                         <span>Change home gym</span>
                                     </a>
                                 </li>
+                               
                                 <li>
-                                    <a href="/member-area/my-membership/change-add-ons/">
-                                        <span>Change add-ons</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="/member-area/my-membership/freeze-membership/">
+                                    <a href=@Url.ActionLink("FreezeMemberShip","MyMembership")>
                                         <span>Freeze membership</span>
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="/member-area/my-membership/cancel-membership/">
+                                    <a href=@Url.ActionLink("CancelMemberShip","MyMembership")>
                                         <span>Cancel membership</span>
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="/member-area/my-membership/manage-parking/">
+                                    <a href=@Url.ActionLink("Parking","MyMembership")>
                                         <span>Manage parking</span>
                                     </a>
                                 </li>
-                                <li>
-                                    <a href="/member-area/my-membership/membership-documents/">
-                                        <span>Membership documents</span>
-                                    </a>
-                                </li>
+                              
                             </ul>
                         </li>
                         <li class="expandable ">
@@ -256,6 +242,7 @@
 
     <script src="~/js/navbar.js"></script>
     <script src="~/js/login.js"></script>
+    <script src="~/js/member-area.js"></script>
 </body>
 
 

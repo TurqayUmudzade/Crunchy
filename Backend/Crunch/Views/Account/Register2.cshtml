@@ -1,30 +1,32 @@
 ﻿
 @{
-    ViewData["Title"] = "Register2";
+
 }
 @using Crunch.ViewModels;
 @model RegisterViewModel
 
+
 <section id="login">
-    <form class="login-container" id="register" asp-controller="Account" asp-action="Register2" method="post" >
+    <form class="login-container" id="register" method="post" asp-controller="Account" asp-action="Register2">
         <section class="progress-indicator">
             <ul>
-                <li class="current">
+                <li class="">
                     <div class="step">
 
                         <span class="no">1</span>
 
                     </div>
-                    <span class="label">Gym membership</span>
+                    <span class="label">Personal details</span>
                 </li>
-                <li class="">
+                <li class="current">
                     <div class="step">
 
                         <span class="no">2</span>
 
                     </div>
-                    <span class="label">Personal details</span>
+                    <span class="label">Gym membership</span>
                 </li>
+
                 <li class="">
                     <div class="step">
 
@@ -45,7 +47,7 @@
             <div class="header">
                 <div class="header-text">
                     <div class="step">
-                        <span class="no">1</span>
+                        <span class="no">2</span>
                     </div>
                     <div class="header-p">
                         <p>Gym membership details</p>
@@ -55,14 +57,20 @@
             <div class="foot">
                 <div class="selector">
                     <p>Choose your home gym</p>
-                    <input type="text" value="@Model.User.UserID"asp-for="User.UserID" style="display:none" />
+                    <input type="text" value="@Model.User.UserID" asp-for="User.UserID" style="display:none" />
+                    <span asp-validation-for="User.UserID"></span>
 
-                    <select asp-for="User.gymLocation" id="location-selector">
-                        <option value="none">Select Location</option>
-                        <option value="28 May">28 May</option>
-                        <option value="Nerimanov">Nerimanov</option>
-                        <option value="Ganjlik">Ganjlik</option>
+                    <select asp-for="gym.gymID" id="location-selector">
+
+                        <option value="0">Select Location</option>
+                        @foreach (Gym gym in Model.gyms)
+                        {
+                            <option value="@gym.gymID">@gym.gymLocation</option>
+
+                        }
+
                     </select>
+                    <span asp-validation-for="gym.gymID" ></span>
                     <div class="icons hidden">
                         <div class="hidden-text">
                             <i class="fas fa-exclamation-circle"></i>
@@ -102,8 +110,9 @@
                             <p><span>$20.</span>99</p>
                             <p id="permonth">PER MONTH</p>
                             <div class="select-icon">
-                                <label  style="display:none" asp-for="User.premiumMemberShip"></label>
+                                <label style="display:none" asp-for="User.premiumMemberShip"></label>
                                 <input type="radio" asp-for="User.premiumMemberShip" value="false" id="basicInput">
+                                <span asp-validation-for="User.premiumMemberShip"></span>
                                 <i class="fas fa-check"></i>
                             </div>
                         </div>
@@ -127,7 +136,8 @@
                             <div class="select-icon">
                                 <label asp-for="User.premiumMemberShip" style="display:none"></label>
                                 <i class="fas fa-check"></i>
-                                <input type="radio" asp-for="User.premiumMemberShip" value="true"  checked id="premInput">
+                                <input type="radio" asp-for="User.premiumMemberShip" value="true" checked id="premInput">
+                                <span asp-validation-for="User.premiumMemberShip"></span>
                             </div>
                         </div>
                     </div>
@@ -142,7 +152,7 @@
                         <div class="try-it">
                             <h1>TRY IT.</h1>
                             <select name="" id="">
-                                <option value="">Sunday 21 February</option>
+                                <option>Sunday 21 February</option>
                             </select>
                         </div>
                     </div>
@@ -150,7 +160,7 @@
                 <div class="bonuses">
                     <div class="wrapper">
                         <div class="header">
-                            <i class="fas fa-minus"></i>
+                            <i class="fas fa-minus" id="minus-plus"></i>
                             <h2>What's included?</h2>
                         </div>
                         <div id="bonuslist" class="bonunes-list ">
@@ -252,7 +262,7 @@
         </section>
 
         <div class="next">
-            <button type="submit">NEXT</button>
+            <button type="submit" class="button">NEXT</button>
         </div>
     </form>
 </section>

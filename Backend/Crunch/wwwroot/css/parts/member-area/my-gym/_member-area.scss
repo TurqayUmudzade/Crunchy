@@ -45,7 +45,7 @@
                             font-size: 25px;
                         }
                         .nav-sub-menue-open {
-                            height: 300px !important;
+                            height: auto !important;
                             transition: ease-in 0.3s;
                         }
                         .nav-sub-menu {
@@ -80,7 +80,7 @@
                 justify-content: space-between;
                 padding: 0 60px 30 0px;
                 margin-top: 0;
-                //margin-left: 30px;
+                padding-bottom: 20px;
                 margin-bottom: 30px;
                 color: #009fdf;
                 border-bottom: 1px solid #d6d6d6;
@@ -103,6 +103,7 @@
                         font-size: 30px;
                         color: #364e72;
                         line-height: 1.2;
+                        margin-bottom: 0px !important;
                     }
                     .status {
                         margin-right: 30px;

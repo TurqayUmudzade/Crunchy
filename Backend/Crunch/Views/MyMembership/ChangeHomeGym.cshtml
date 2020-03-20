@@ -1,0 +1,46 @@
+﻿
+@{
+    ViewData["Title"] = "ChangeHomeGym";
+    Layout = "~/Views/Shared/Layout2.cshtml";
+    
+    
+}
+@using Crunch.ViewModels;
+@model ChangeGymViewModel
+
+    <div class="content ">
+        <div class="container80">
+            <div class="body">
+                <h2 class="header">Change Home</h2>
+                <div class="page-description">
+                    <div class="grid-wrapper">
+                        <p>If you wish to change your home gym you may do so below. Please note that it&nbsp;<strong>may take up to 10 minutes before your PIN will work in your new home gym</strong>. An admin fee may apply.</p>
+                        <p>We have recently changed our membership packages which has caused some complications for our Solo members.</p>
+                        <p>If you would like to change your home gym, please first change your membership to DO IT. and then change your home gym. You will have the same benefits and T's and C's on DO IT.</p>
+                    </div>
+                </div>
+                <div class="pin">
+                    <div class="text">
+                        <p class="status"><span>DO IT.</span></p>
+                        <p class="pin">Your PIN is <span>01030180</span> active from 23 Mar 20</p>
+                    </div>
+                </div>
+                <form id="change-gym" method="post" asp-action="Change" asp-controller="MyMembership">
+                    <label for="location">I would like my Home Gym to be</label>
+                    <select name="location" id="">
+                        <option value="">Select Gym</option>
+
+                        @foreach (Gym gym in Model.gyms)
+                        {
+                            if (gym.gymLocation != Model.user.gymLocation)
+                            {
+                                <option value="@gym.gymLocation">@gym.gymLocation (@gym.price$)</option>
+                            }
+                        }
+
+                    </select>
+                </form>
+                <button type="submit" form="change-gym" class="button">CHANGE GYM</button>
+            </div>
+        </div>
+    </div>

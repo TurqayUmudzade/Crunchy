@@ -21,7 +21,7 @@ namespace Crunch.Filters
         {
             if (_auth.User == null)
             {
-                context.Result = new RedirectResult("~/Home/index");
+                context.Result = new RedirectResult("~/Account/Login");
             }
         }
     }

@@ -16,6 +16,8 @@ namespace Crunch.ViewModels
     public class RegisterViewModel
     {
         public User User { get; set; }
+        public List<Gym> gyms { get; set; }
+        public Gym gym { get; set; }
 
     }
 

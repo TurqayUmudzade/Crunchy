@@ -39,7 +39,7 @@ namespace Crunch.Data
         public DbSet<User> users { get; set; }
         public DbSet<Class> classes { get; set; }
         public DbSet<Trainer> trainers { get; set; }
-       // public DbSet<UserClass> userClasses { get; set; }
+        public DbSet<Gym>  gyms{ get; set; }
 
     }
 }

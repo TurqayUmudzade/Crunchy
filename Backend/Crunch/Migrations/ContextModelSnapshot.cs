@@ -65,6 +65,27 @@ namespace Crunch.Migrations
                     b.ToTable("classes");
                 });
 
+            modelBuilder.Entity("Crunch.Models.Gym", b =>
+                {
+                    b.Property<int>("gymID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("gymAdress")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("gymLocation")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<float>("price")
+                        .HasColumnType("real");
+
+                    b.HasKey("gymID");
+
+                    b.ToTable("gyms");
+                });
+
             modelBuilder.Entity("Crunch.Models.Trainer", b =>
                 {
                     b.Property<int>("ID")
@@ -109,43 +130,68 @@ namespace Crunch.Migrations
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("Adress")
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(100)")
+                        .HasMaxLength(100);
+
+                    b.Property<string>("Disscount")
+                        .HasColumnType("nvarchar(10)")
+                        .HasMaxLength(10);
 
                     b.Property<string>("Email")
-                        .HasColumnType("nvarchar(max)");
+                        .IsRequired()
+                        .HasColumnType("nvarchar(100)")
+                        .HasMaxLength(100);
 
                     b.Property<string>("Gender")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Postcode")
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(100)")
+                        .HasMaxLength(100);
 
                     b.Property<string>("Token")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Town")
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(100)")
+                        .HasMaxLength(100);
 
                     b.Property<string>("dateOfBirth")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<bool>("disability")
                         .HasColumnType("bit");
 
                     b.Property<string>("firstName")
-                        .HasColumnType("nvarchar(max)");
+                        .IsRequired()
+                        .HasColumnType("nvarchar(100)")
+                        .HasMaxLength(100);
+
+                    b.Property<int?>("gymID")
+                        .HasColumnType("int");
 
                     b.Property<string>("gymLocation")
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(100)")
+                        .HasMaxLength(100);
 
                     b.Property<string>("lastName")
-                        .HasColumnType("nvarchar(max)");
+                        .IsRequired()
+                        .HasColumnType("nvarchar(100)")
+                        .HasMaxLength(100);
 
                     b.Property<string>("number")
-                        .HasColumnType("nvarchar(max)");
+                        .IsRequired()
+                        .HasColumnType("nvarchar(100)")
+                        .HasMaxLength(100);
+
+                    b.Property<int>("paymentOption")
+                        .HasColumnType("int");
 
                     b.Property<string>("pin")
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(100)")
+                        .HasMaxLength(100);
 
                     b.Property<bool>("premiumMemberShip")
                         .HasColumnType("bit");
@@ -157,6 +203,8 @@ namespace Crunch.Migrations
                         .HasColumnType("bit");
 
                     b.HasKey("UserID");
+
+                    b.HasIndex("gymID");
 
                     b.ToTable("users");
                 });
@@ -174,6 +222,13 @@ namespace Crunch.Migrations
                     b.HasIndex("ClassID");
 
                     b.ToTable("UserClass");
+                });
+
+            modelBuilder.Entity("Crunch.Models.User", b =>
+                {
+                    b.HasOne("Crunch.Models.Gym", "gym")
+                        .WithMany()
+                        .HasForeignKey("gymID");
                 });
 
             modelBuilder.Entity("Crunch.Models.UserClass", b =>

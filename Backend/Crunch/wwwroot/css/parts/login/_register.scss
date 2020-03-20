@@ -379,18 +379,21 @@ $blue:#0090d9;
                 font-size: 18px;
                 color: white;
                 padding: 7px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
             }
              ::after {
                 content: '';
                 position: absolute;
-                top: 50%;
-                transform: translateY(-50%);
-                left: 14px;
-                width: 4px;
                 height: 16px;
+                width: 4px;
                 background-color: #f3f3f4;
-                border-radius: 1rem;
+                border-radius: 10px;
                 transition: transform .5s;
+                &:checked {
+                    transform: rotateZ(90deg);
+                }
             }
             h2 {
                 font-size: 22px;
@@ -514,29 +517,9 @@ $blue:#0090d9;
     }
 }
 
-.next {
-    padding: 30px;
-    margin-top: 10px;
-    border-radius: 6px;
-    ;
-    display: flex;
-    justify-content: center;
-    background: white;
-    a {
-        padding: 20px 30px;
-        font-size: 25px;
-        border-radius: 5px;
-        cursor: default;
-        user-select: none;
-        background-color: rgba(214, 214, 214, .5);
-        color: #7b7b7b;
-        text-decoration: none;
-    }
-    .active {
-        background-color: #f06880;
-        color: white;
-        &:hover {
-            background-color: #e94960;
-        }
+//for minus plus animations
+.open {
+    &::after {
+        transform: rotateZ(90deg);
     }
 }
