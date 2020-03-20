@@ -13,7 +13,6 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed&display=swap" rel="stylesheet">
     <!-- JQUERY -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-
     <title>Document</title>
 </head>
 
@@ -88,7 +87,7 @@
     </nav>
 
     <section id="login">
-        <div class="login-container2 ">
+        <div class="login-container">
             <section class="progress-indicator">
                 <ul>
                     <li class="current">
@@ -123,92 +122,205 @@
                     </li>
                 </ul>
             </section>
-
             <div class="join">
                 <div class="header">
                     <div class="header-text">
                         <div class="step">
-                            <span class="no">2</span>
+                            <span class="no">1</span>
                         </div>
                         <div class="header-p">
-                            <p>Personal Data</p>
+                            <p>Gym membership details</p>
                         </div>
                     </div>
                 </div>
-                <div class="foot">
-                    <form action="">
+                <form id="register" class="foot">
+                    <div class="selector">
+                        <p>Choose your home gym</p>
+                        <select name="location" id="location-selector">
+                            <option value="1">Baku</option>
+                            <option value="1">Baku</option>
+                            <option value="1">Baku</option>
+                        </select>
+                        <div class="icons hidden">
+                            <div class="hidden-text">
+                                <i class="fas fa-exclamation-circle"></i>
+                                <p>The Gym Ashford is open for immediate membership</p>
+                            </div>
+                            <div class="hidden-text">
+                                <i class="fas fa-clock"></i>
+                                <p>Open 24 hours a day, 7 days a week</p>
+                            </div>
+                            <div class="hidden-text">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <p>Adress smth</p>
+                                </i>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="membership hidden">
+                <div class="container70">
+                    <p>Choose your membership</p>
+                    <div class="membership-type-selector">
+                        <div class="tab active" id="month-toggle">Monthly</div>
+                        <div class="tab" id="day-toggle">Day Pass</div>
+                    </div>
+                    <section class="montly-membership">
+                        <div class="flex">
+                            <div class="basic option">
+                                <h1>DO IT.</h1>
+                                <h3>Brilliant basics</h3>
+                                <div class="flex icons">
+                                    <i id="span-icon">24h</i>
+                                    <i class="fas fa-dumbbell"></i>
+                                    <i class="fas fa-wifi"></i>
+                                    <i class="fas fa-car"></i>
+                                </div>
+                                <p><span>$20.</span>99</p>
+                                <p id="permonth">PER MONTH</p>
+                                <div class="select-icon">
+                                    <label for="basic"></label>
+                                    <input type="radio" name="basic" id="basicInput">
+                                    <i class="fas fa-check"></i>
+                                </div>
+                            </div>
+                            <div class="premium option active-prem ">
+                                <h1>LIVE IT.</h1>
+                                <h3>Added extras to keep you in track</h3>
+                                <div class="flex icons">
+                                    <i id="span-icon">24h</i>
+                                    <i class="fas fa-dumbbell"></i>
+                                    <i class="fas fa-wifi"></i>
+                                    <i class="fas fa-car"></i>
+                                    <i class="fas fa-gift"></i>
+                                    <i class="fas fa-basketball-ball"></i>
+                                    <i class="fas fa-heartbeat"></i>
+                                    <i class="fas fa-swimmer"></i>
+                                </div>
+                                <p><span>$25.</span>99</p>
+                                <p id="permonth">PER MONTH</pid="permonth">
+                                    <div class="select-icon">
+                                        <label for="prem"></label>
+                                        <i class="fas fa-check"></i>
+                                        <input type="radio" name="prem" id="premInput">
+                                    </div>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="daily-membership hidden">
+                        <div class="wrapper">
+                            <div class="price">
+                                <p>ONLY <span id="price"> <span id="bigprice">$8</span>.99</span>
+                                </p>
+                            </div>
+                            <div class="try-it">
+                                <h1>TRY IT.</h1>
+                                <select name="" id="">
+                                    <option value="">Sunday 21 February</option>
+                                </select>
+                            </div>
+                        </div>
+                    </section>
+                    <div class="bonuses">
+                        <div class="wrapper">
+                            <div class="header">
+                                <i class="fas fa-minus " id="minus-plus"></i>
+                                <h2>What's included?</h2>
+                            </div>
+                            <div id="bonuslist" class="bonunes-list ">
+                                <div class="basic-list">
+                                    <h2>DO IT.</h2>
+                                    <ul>
+                                        <li> <i>24h</i>
+                                            <p>Unlimited 24/7 access & training</p>
+                                        </li>
+                                        <li> <i class="fas fa-dumbbell"></i>
+                                            <p>Gym Equipment</p>
+                                        </li>
+                                        <li> <i class="fas fa-wifi"></i>
+                                            <p>Free Wifi</p>
+                                        </li>
+                                        <li> <i class="fas fa-car"></i>
+                                            <p>Free parking</p>
+                                        </li>
+                                        <li> <i class="fas fa-gift  disabled"></i>
+                                            <p class="disabled">Discounts and perks</p>
+                                        </li>
+                                        <li> <i class="fas fa-basketball-ball  disabled"></i>
+                                            <p class="disabled">Basketball Court</p>
+                                        </li>
+                                        <li> <i class="fas fa-heartbeat  disabled"></i>
+                                            <p class="disabled">Unlimited Fitness & Body Composition measurements</p>
+                                        </li>
+                                        <li> <i class="fas fa-swimmer disabled"></i>
+                                            <p class="disabled">Swiming Pool</p>
+                                        </li>
 
-                        <div class="form-row">
-                            <label for="">First Name <span>*</span></label>
-                            <input type="text" name="firstname" id="">
-                        </div>
-                        <div class="form-row">
-                            <label for="">Last Name<span>*</span></label>
-                            <input type="text" name="lastname" id="">
-                        </div>
-                        <div class="form-row">
-                            <label for="">Email<span>*</span></label>
-                            <input type="email" name="email" id="">
-                        </div>
-                        <div class="form-row">
-                            <label for="">Mobile Number<span>*</span></label>
-                            <input type="text" name="phonenumber" id="">
-                        </div>
-                        <div class="form-row">
-                            <label for="">Gender<span>*</span></label>
-                            <div class="radios">
-                                <div class="block">
-                                    <label for="gender" id="gender-label">Male</label>
-                                    <input type="radio" name="gender" id="male">
-                                    <span class="tick"></span></div>
-                                <div class="block">
-                                    <label for="gender" id="gender-label">Female</label>
-                                    <input type="radio" name="gender" id="female">
-                                    <span class="tick"></span>
+                                    </ul>
+                                </div>
+                                <div class="premium-list">
+                                    <h2>LIVE IT.</h2>
+                                    <ul>
+                                        <li> <i>24h</i>
+                                            <p>Unlimited 24/7 access & training</p>
+                                        </li>
+                                        <li> <i class="fas fa-dumbbell"></i>
+                                            <p>Gym Equipment</p>
+                                        </li>
+                                        <li> <i class="fas fa-wifi"></i>
+                                            <p>Free Wifi</p>
+                                        </li>
+                                        <li> <i class="fas fa-car"></i>
+                                            <p>Free parking</p>
+                                        </li>
+                                        <li> <i class="fas fa-gift"></i>
+                                            <p>Discounts and perks</p>
+                                        </li>
+                                        <li> <i class="fas fa-basketball-ball"></i>
+                                            <p>Basketball Court</p>
+                                        </li>
+                                        <li> <i class="fas fa-heartbeat"></i>
+                                            <p>Unlimited Fitness & Body Composition measurements</p>
+                                        </li>
+                                        <li> <i class="fas fa-swimmer"></i>
+                                            <p>Swiming Pool</p>
+                                        </li>
+
+                                    </ul>
                                 </div>
                             </div>
                         </div>
-                        <div class="form-row">
-                            <label for="">Birth Date<span>*</span></label>
-                            <input type="date">
-                        </div>
-                        <div class="form-row">
-                            <label for="">Town/City<span>*</span></label>
-                            <input type="text" name="town" id="">
-                        </div>
-                        <div class="form-row">
-                            <label for="">Postcode<span>*</span></label>
-                            <input type="text" name="postcode" id="">
-                        </div>
-                        <div class="form-row">
-                            <label for="">There are times that our gyms may be remotely supervised with no staff present. To ensure your safety and well-being, please answer the following question:</label>
-
-                        </div>
-                        <div class="form-row disability">
-                            <label id="left" for="">Do you have a disability that we may need to make reasonable adjustments for or any health conditions that could affect you while you’re in the gym?<span>*</span></label>
-                            <div id="padding" class="radios">
-                                <div class="block">
-                                    <label for="disability" id="gender-label">Yes</label>
-                                    <input type="radio" name="disability" id="dis=yes">
-                                    <span class="tick"></span></div>
-                                <div class="block">
-                                    <label for="disability" id="gender-label">No</label>
-                                    <input type="radio" name="disability" id="dis-no">
-                                    <span class="tick"></span>
-                                </div>
-                            </div>
-                        </div>
-                    </form>
+                    </div>
                 </div>
 
             </div>
-            <div class="next">
-                <a>NEXT</a>
-            </div>
 
+            <section id="promocode" class="hidden">
+                <div class="wrapper ">
+                    <div class="block">
+                        <input type="radio" id="promo" name="promoBool" value="true">
+                        <span class="tick"></span>
+                        <label for="promo">Do you have a promotional code?</label>
+                    </div>
+                    <div class="block hidden" id="bottom">
+                        <input type="text" placeholder="Enter your code" name="promo">
+                        <button>Apply</button>
+                    </div>
+                </div>
+            </section>
+
+            <div class="next">
+                <button type="submit" class="button btn-off" form="register">NEXT</button>
+            </div>
+        </div>
     </section>
 
-
+    <section id="login-personal">
+        <div class="wrapper">
+            <!-- <img class="promo--hero__loader" alt="Crunch logo loader" src="https://dj7w0h47bhjwk.cloudfront.net/assets/logo--loader-7da27c2fc5ddebd0adcc65c1b553e2664ed64c73976e7c2f492cf55905df844c.gif"> -->
+        </div>
+    </section>
 
     <footer>
         <div class="footer-wrapper flex">
@@ -232,7 +344,7 @@
     </footer>
 
     <script src="assets/js/navbar.js"></script>
-
+    <script src="assets/js/login.js"></script>
 </body>
 
 

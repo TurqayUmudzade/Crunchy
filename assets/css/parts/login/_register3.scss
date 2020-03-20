@@ -29,3 +29,29 @@
         }
     }
 }
+
+#payment-option {
+    width: 80%;
+    margin: 0 auto;
+    .radios {
+        display: flex;
+        justify-content: space-evenly;
+        .block {
+            width: 50%;
+            position: relative;
+            input {
+                opacity: 0;
+                position: absolute;
+                top: 12px;
+                left: 0;
+            }
+            label {
+                font-size: 14px;
+                padding-left: 30px;
+                position: relative;
+                top: 7px;
+            }
+            .tick {}
+        }
+    }
+}

@@ -3,8 +3,8 @@ $("#location-selector").change(function() {
     $(".membership").removeClass("hidden");
     $("#promocode").removeClass("hidden");
     $(".next a").addClass("active");
+    $('.button').removeClass('btn-off')
 });
-
 
 //when pressed on Day Pass
 $('#day-toggle').on("click", function() {
@@ -42,21 +42,37 @@ $(".premium").on("click", function() {
     $(".basic").removeClass("active-basic");
 });
 
+//bonuses list icon and list showings
 $(".bonuses").on("click", function() {
     if ($("#bonuslist").hasClass("bonuses-list-open")) {
         $("#bonuslist").removeClass("bonuses-list-open");
+        $('#minus-plus').removeClass("open");
     } else {
         $("#bonuslist").addClass("bonuses-list-open");
-        $(".bonuses .wrapper .header ::after").css('transform', 'translateY(-50%) rotate(88deg)');
-        //transform: translateY(-50%) rotate(88deg);
+        $('#minus-plus').addClass("open");
     }
 });
 
-
-
+//promo code
 $("#promo").on("click", function() {
-    console.log("da");
     $("#bottom").removeClass("hidden");
-
-
 });
+
+//button when input is done
+$("input").on("input", function() {
+    canChangeColor();
+});
+
+//for validiton
+
+$(".myclass:empty").each(function() {
+    $(this).remove(); // this references the current element in the iteration
+});
+
+
+var value = $(".field-validation-error").text().length;
+
+if (value != 0) {
+    $(".field-validation-error").siblings(":input").addClass("error-asp");
+    $(".field-validation-error").siblings("label").addClass("error-asp");
+}
