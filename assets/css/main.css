@@ -271,6 +271,24 @@ nav .flex #join {
   padding: 12px 30px 18px;
 }
 
+.fa-bars {
+  opacity: 0;
+  color: white;
+  cursor: pointer;
+  font-size: 26px;
+  position: relative;
+  top: 12px;
+}
+
+@media screen and (max-width: 1140px) {
+  nav .nav-anchor {
+    display: none;
+  }
+  nav .fa-bars {
+    opacity: 100%;
+  }
+}
+
 footer {
   margin-top: 200px;
   width: 100%;
