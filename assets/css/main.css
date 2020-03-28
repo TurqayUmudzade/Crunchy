@@ -201,6 +201,9 @@ select {
 nav {
   background-color: #212121;
   height: 50px;
+  width: 100%;
+  z-index: 1;
+  position: fixed;
 }
 
 nav .flex #logo img {
@@ -264,11 +267,20 @@ nav .flex #free-trial {
   padding: 12px 30px 18px;
 }
 
+nav .flex #free-trial::after {
+  bottom: 15px;
+  bottom: 13px;
+}
+
 nav .flex #join {
   background-color: white;
   height: 100%;
   color: #f99919;
   padding: 12px 30px 18px;
+}
+
+nav .flex #join:hover {
+  color: #de1245;
 }
 
 .fa-bars {
@@ -301,6 +313,12 @@ nav .flex #join {
 .nav-anchor:hover::after {
   -webkit-transform: translateX(-50%) scaleX(1);
           transform: translateX(-50%) scaleX(1);
+}
+
+.scrolled {
+  width: 100%;
+  z-index: 1;
+  position: fixed;
 }
 
 @media screen and (max-width: 1140px) {

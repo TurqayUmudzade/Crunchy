@@ -1,6 +1,9 @@
 nav {
     background-color: $navbar-color;
     height: 50px;
+    width: 100%;
+    z-index: 1;
+    position: fixed;
     .flex {
         #logo {
             img {
@@ -52,12 +55,19 @@ nav {
             overflow: hidden;
             height: 100%;
             padding: 12px 30px 18px;
+            &::after {
+                bottom: 15px;
+                bottom: 13px;
+            }
         }
         #join {
             background-color: white;
             height: 100%;
             color: $navbar-orange;
             padding: 12px 30px 18px;
+            &:hover {
+                color: #de1245;
+            }
         }
     }
 }
@@ -89,6 +99,12 @@ nav {
             transform: translateX(-50%) scaleX(1);
         }
     }
+}
+
+.scrolled {
+    width: 100%;
+    z-index: 1;
+    position: fixed;
 }
 
 //Responsiveness
