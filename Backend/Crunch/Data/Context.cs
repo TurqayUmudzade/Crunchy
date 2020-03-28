@@ -40,6 +40,7 @@ namespace Crunch.Data
         public DbSet<Class> classes { get; set; }
         public DbSet<Trainer> trainers { get; set; }
         public DbSet<Gym>  gyms{ get; set; }
+        public DbSet<Promocode> promocodes{ get; set; }
 
     }
 }

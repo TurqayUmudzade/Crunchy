@@ -1,7 +1,7 @@
 ﻿
 @{
     ViewData["Title"] = "BookClass";
-    Layout = "~/Views/Shared/Layout2.cshtml";
+    Layout = "~/Views/Shared/ViewModelLayout.cshtml";
 }
 @using Crunch.ViewModels;
 @model BookClassViewModel
@@ -15,9 +15,12 @@
                 <form action="">
                     <div class="form-group">
                         <label for="">Please Select:</label>
-                        <select name="" id="">
+                        <a class="open-payment-modal" href="@Url.Action("testfunction","MemberArea",new { gymID=2 })">TEst</a>
+
+                        <div class="test-container"></div>
+                        <select href="sex" name="" id="">
                             <option value="1">Baku</option>
-                            <option value="1">Baku</option>
+                            <option value="2">Nerimanov</option>
                         </select>
                     </div>
                 </form>
@@ -123,4 +126,4 @@
     </div>
 </div>
 <script src="~/js/book-class.js "></script>
-<script src="_framework/blazor.server.js"></script>
+

@@ -1,0 +1,37 @@
+﻿
+
+
+@model ClassesViewModel
+<div class="content ">
+    <div class="container80">
+        <div class="header">
+            <h2>Book a class</h2>
+        </div>
+        <div class="body">
+            <div class="form">
+                <form action="">
+                    <div class="form-group">
+                        <label for="">Please Select:</label>
+                        <select name="" id="">
+                            @foreach (Gym gym in Model.gyms)
+                            {
+                                <option value="@gym.gymID">@gym.gymLocation</option>
+                            }
+                        </select>
+                        <a class="open-payment-modal" href="@Url.Action("testfunction","Classes",new { gymID=2 })">search</a>
+                    </div>
+                </form>
+            </div>
+            <div class="classes">
+                <div class="classes-header">
+                    <h4>Month</h4>
+                </div>
+                <div class="test-container"></div>
+            </div>
+
+
+        </div>
+    </div>
+</div>
+<script src="~/js/book-class.js "></script>
+

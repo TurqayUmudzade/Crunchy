@@ -192,5 +192,27 @@ namespace Crunch.Controllers
             return pin;
         }
 
+        static public float Discount(string promocode, Context _context)
+        {
+            Promocode p = new Promocode();
+
+            p = _context.promocodes.Where(p => p.promocode == promocode).FirstOrDefault();
+
+            if (p.OneTime)
+            {
+                _context.promocodes.Remove(p);
+            }
+
+            if (p.Expire != null)
+            {
+                if (DateTime.Compare(p.Expire, DateTime.Now) != 1)//if it expired
+                {
+                    return 0;
+                }
+            }
+
+            return p.discountPercent;
+        }
+
     }
 }

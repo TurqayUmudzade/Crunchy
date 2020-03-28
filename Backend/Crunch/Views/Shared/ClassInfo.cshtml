@@ -1,0 +1,92 @@
+﻿@using Crunch.ViewModels;
+@model BookClassViewModel
+    <div class="calendar">
+        <div class="tab-nav">
+            <ul>
+                @for (int i = 0; i < 7; i++)
+                {
+                    String d = String.Concat("d", i + 1);
+                    <li>
+                        <a href="#!" id="@d" class="js-toggle-day ">
+                            <span class="day">@DateTime.Today.AddDays(i).ToString("ddd")</span>
+                            <span class="date">@DateTime.Today.AddDays(i).Day</span>
+                        </a>
+                    </li>
+                }
+            </ul>
+        </div>
+        <section>
+
+            @for (int i = 0; i < 7; i++)
+            {
+                String a = String.Concat("a", i + 1);
+
+                List<Class> classes = Model.classes.ElementAt(i);
+
+
+
+                <article id="@a" class="active hidden">
+                    <div class="class-container">
+                        @foreach (Class Aclass in classes)
+                        {
+                            <div class="class @Aclass.type ">
+                                <div class="details">
+                                    <div class="time-duration">
+                                        <div class="time">@Aclass.dateTime.ToString("hh:mm tt")</div>
+                                        <div class="duration">@Aclass.duration mins</div>
+                                    </div>
+                                    <h5 class="class-name ">@Aclass.name</h5>
+
+                                    @if (Aclass.space > Aclass.spaceUsed)
+                                    {
+                                        Aclass.Status = "Available";
+                                    }
+                                    else
+                                    {
+                                        Aclass.Status = "Full";
+                                    }
+                                    <p class="class-status">@Aclass.Status</p>
+                                    <div class="icon-container">
+                                        <i class="@Aclass.icon"></i>
+                                    </div>
+                                </div>
+
+                                <a href="#!" class="js-change-trigger icon-plus">
+
+                                    <i class="fas fa-plus"></i>
+                                </a>
+                                <div class="actions js-actions hidden">
+                                    <p class="class-description">
+                                        @Aclass.description
+                                    </p>
+                                    <button class="button js-book-class" onclick="@Url.Action("BookTheClass", "MemberArea", new { ClassID = Aclass.ClassID })">Book Now</button>
+
+                                    <div class="spaces">
+                                        Available spaces:
+                                        <span class="available">
+                                            @Aclass.spaceUsed/
+                                        </span>
+                                        <span class="total">
+                                            @Aclass.space
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="message hidden">
+                                    <span>Great, you are booked into this class.</span>
+                                    <div class="confirm-action arrow">
+                                        <input class="check" id="booked-2" type="checkbox">
+                                        <label class="action" for="booked-2">Cancel booking</label>
+                                        <span class="confirm" href="#!">Cancel booking</span>
+                                        <a class="yes js-cancel" href="#!">YES</a>
+                                        <label class="no" for="booked-2">NO</label>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+
+                    </div>
+                </article>
+            }
+
+        </section>
+    </div>

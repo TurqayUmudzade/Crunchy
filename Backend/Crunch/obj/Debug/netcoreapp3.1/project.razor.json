@@ -1,5 +1,5 @@
 {
-  "FilePath": "c:\\Users\\Turqay\\Desktop\\Crunch\\Backend\\Crunch\\Crunch.csproj",
+  "FilePath": "c:\\Users\\Turqay\\Desktop\\Crunch\\Crunch\\Crunch\\Crunch.csproj",
   "Configuration": {
     "ConfigurationName": "MVC-3.0",
     "LanguageVersion": "3.0",
@@ -20521,128 +20521,53 @@
   "RootNamespace": "Crunch",
   "Documents": [
     {
-      "FilePath": "c:\\Users\\Turqay\\Desktop\\Crunch\\Backend\\Crunch\\Views\\Account\\Register3.cshtml",
-      "TargetPath": "Views\\Account\\Register3.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\Turqay\\Desktop\\Crunch\\Backend\\Crunch\\Views\\Shared\\UserLayout.cshtml",
-      "TargetPath": "Views\\Shared\\UserLayout.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\Turqay\\Desktop\\Crunch\\Backend\\Crunch\\Views\\Home\\Privacy.cshtml",
-      "TargetPath": "Views\\Home\\Privacy.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\Turqay\\Desktop\\Crunch\\Backend\\Crunch\\Views\\MyGym\\Home.cshtml",
-      "TargetPath": "Views\\MyGym\\Home.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\Turqay\\Desktop\\Crunch\\Backend\\Crunch\\Views\\MyMembership\\ChangeHomeGym.cshtml",
-      "TargetPath": "Views\\MyMembership\\ChangeHomeGym.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\Turqay\\Desktop\\Crunch\\Backend\\Crunch\\Views\\MemberArea\\BookClass.cshtml",
-      "TargetPath": "Views\\MemberArea\\BookClass.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\Turqay\\Desktop\\Crunch\\Backend\\Crunch\\Views\\MemberArea\\Edit.cshtml",
-      "TargetPath": "Views\\MemberArea\\Edit.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\Turqay\\Desktop\\Crunch\\Backend\\Crunch\\Views\\MemberArea\\AboutTrainer.cshtml",
-      "TargetPath": "Views\\MemberArea\\AboutTrainer.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\Turqay\\Desktop\\Crunch\\Backend\\Crunch\\Views\\MemberArea\\Trainers.cshtml",
-      "TargetPath": "Views\\MemberArea\\Trainers.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\Turqay\\Desktop\\Crunch\\Backend\\Crunch\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
+      "FilePath": "c:\\Users\\Turqay\\Desktop\\Crunch\\Crunch\\Crunch\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
       "TargetPath": "Views\\Shared\\_ValidationScriptsPartial.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\Users\\Turqay\\Desktop\\Crunch\\Backend\\Crunch\\Views\\Account\\RegisterForm2.cshtml",
-      "TargetPath": "Views\\Account\\RegisterForm2.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\Turqay\\Desktop\\Crunch\\Backend\\Crunch\\Views\\Account\\Login.cshtml",
-      "TargetPath": "Views\\Account\\Login.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\Turqay\\Desktop\\Crunch\\Backend\\Crunch\\Views\\MyGym\\Contact.cshtml",
-      "TargetPath": "Views\\MyGym\\Contact.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\Turqay\\Desktop\\Crunch\\Backend\\Crunch\\Views\\Home\\Index.cshtml",
-      "TargetPath": "Views\\Home\\Index.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\Turqay\\Desktop\\Crunch\\Backend\\Crunch\\Views\\Shared\\Layout2.cshtml",
-      "TargetPath": "Views\\Shared\\Layout2.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\Turqay\\Desktop\\Crunch\\Backend\\Crunch\\Views\\Shared\\ViewModelLayout.cshtml",
-      "TargetPath": "Views\\Shared\\ViewModelLayout.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\Turqay\\Desktop\\Crunch\\Backend\\Crunch\\Views\\_ViewStart.cshtml",
+      "FilePath": "c:\\Users\\Turqay\\Desktop\\Crunch\\Crunch\\Crunch\\Views\\_ViewStart.cshtml",
       "TargetPath": "Views\\_ViewStart.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\Users\\Turqay\\Desktop\\Crunch\\Backend\\Crunch\\Views\\Shared\\Error.cshtml",
+      "FilePath": "c:\\Users\\Turqay\\Desktop\\Crunch\\Crunch\\Crunch\\Views\\Shared\\Error.cshtml",
       "TargetPath": "Views\\Shared\\Error.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\Users\\Turqay\\Desktop\\Crunch\\Backend\\Crunch\\Views\\MyGym\\MyGymUsage.cshtml",
-      "TargetPath": "Views\\MyGym\\MyGymUsage.cshtml",
+      "FilePath": "c:\\Users\\Turqay\\Desktop\\Crunch\\Crunch\\Crunch\\Views\\Login\\Index.cshtml",
+      "TargetPath": "Views\\Login\\Index.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\Users\\Turqay\\Desktop\\Crunch\\Backend\\Crunch\\Views\\MyGym\\AverageUsage.cshtml",
-      "TargetPath": "Views\\MyGym\\AverageUsage.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\Turqay\\Desktop\\Crunch\\Backend\\Crunch\\Views\\MemberArea\\ChangeDetails.cshtml",
-      "TargetPath": "Views\\MemberArea\\ChangeDetails.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\Turqay\\Desktop\\Crunch\\Backend\\Crunch\\Views\\Account\\Register2.cshtml",
-      "TargetPath": "Views\\Account\\Register2.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\Turqay\\Desktop\\Crunch\\Backend\\Crunch\\Views\\Account\\Register.cshtml",
+      "FilePath": "c:\\Users\\Turqay\\Desktop\\Crunch\\Crunch\\Crunch\\Views\\Account\\Register.cshtml",
       "TargetPath": "Views\\Account\\Register.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\Users\\Turqay\\Desktop\\Crunch\\Backend\\Crunch\\Views\\Shared\\_Layout.cshtml",
+      "FilePath": "c:\\Users\\Turqay\\Desktop\\Crunch\\Crunch\\Crunch\\Views\\_ViewImports.cshtml",
+      "TargetPath": "Views\\_ViewImports.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Turqay\\Desktop\\Crunch\\Crunch\\Crunch\\Views\\Home\\Privacy.cshtml",
+      "TargetPath": "Views\\Home\\Privacy.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Turqay\\Desktop\\Crunch\\Crunch\\Crunch\\Views\\Home\\Index.cshtml",
+      "TargetPath": "Views\\Home\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Turqay\\Desktop\\Crunch\\Crunch\\Crunch\\Views\\Shared\\_Layout.cshtml",
       "TargetPath": "Views\\Shared\\_Layout.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\Users\\Turqay\\Desktop\\Crunch\\Backend\\Crunch\\Views\\_ViewImports.cshtml",
-      "TargetPath": "Views\\_ViewImports.cshtml",
+      "FilePath": "c:\\Users\\Turqay\\Desktop\\Crunch\\Crunch\\Crunch\\Views\\Account\\Register2.cshtml",
+      "TargetPath": "Views\\Account\\Register2.cshtml",
       "FileKind": "mvc"
     }
   ],

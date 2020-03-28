@@ -4,14 +4,16 @@ using Crunch.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Crunch.Migrations
 {
     [DbContext(typeof(Context))]
-    partial class ContextModelSnapshot : ModelSnapshot
+    [Migration("20200321021156_promo")]
+    partial class promo
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -39,9 +41,6 @@ namespace Crunch.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("gymID")
-                        .HasColumnType("int");
-
                     b.Property<string>("gymLocation")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -64,8 +63,6 @@ namespace Crunch.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("ClassID");
-
-                    b.HasIndex("gymID");
 
                     b.ToTable("classes");
                 });
@@ -251,13 +248,6 @@ namespace Crunch.Migrations
                     b.HasIndex("ClassID");
 
                     b.ToTable("UserClass");
-                });
-
-            modelBuilder.Entity("Crunch.Models.Class", b =>
-                {
-                    b.HasOne("Crunch.Models.Gym", "gym")
-                        .WithMany("Classes")
-                        .HasForeignKey("gymID");
                 });
 
             modelBuilder.Entity("Crunch.Models.User", b =>

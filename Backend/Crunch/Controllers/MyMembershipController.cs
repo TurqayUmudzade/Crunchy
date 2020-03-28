@@ -33,6 +33,7 @@ namespace Crunch.Controllers
                 user = user,
                 gyms = gyms
             };
+            
             return View(model);
         }
 

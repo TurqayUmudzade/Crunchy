@@ -340,3 +340,5 @@ C:\Users\Turqay\source\repos\Crunch\obj\Debug\netcoreapp3.1\Razor\Views\Account\
 C:\Users\Turqay\source\repos\Crunch\obj\Debug\netcoreapp3.1\Razor\Views\Account\RegisterForm2.cshtml.g.cs
 C:\Users\Turqay\source\repos\Crunch\obj\Debug\netcoreapp3.1\Razor\Views\Shared\UserLayout.cshtml.g.cs
 C:\Users\Turqay\source\repos\Crunch\obj\Debug\netcoreapp3.1\Razor\Views\Shared\ViewModelLayout.cshtml.g.cs
+C:\Users\Turqay\source\repos\Crunch\obj\Debug\netcoreapp3.1\Razor\Views\Shared\ClassInfo.cshtml.g.cs
+C:\Users\Turqay\source\repos\Crunch\obj\Debug\netcoreapp3.1\Razor\Views\Classes\Index.cshtml.g.cs

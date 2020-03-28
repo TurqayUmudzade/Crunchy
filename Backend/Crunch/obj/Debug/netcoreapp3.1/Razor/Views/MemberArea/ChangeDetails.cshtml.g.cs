@@ -26,8 +26,15 @@ using Crunch.Models;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 3 "C:\Users\Turqay\source\repos\Crunch\Views\_ViewImports.cshtml"
+using Crunch.ViewModels;
+
+#line default
+#line hidden
+#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"07d4a5f573992a51947a45ed3fe4081473a0f41c", @"/Views/MemberArea/ChangeDetails.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"65b420a4532370448e633cf30dee0c22889d4e17", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"a13b96ed4794bec2fae1a69c0ba5e842643c7752", @"/Views/_ViewImports.cshtml")]
     public class Views_MemberArea_ChangeDetails : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<User>
     {
         #pragma warning disable 1998

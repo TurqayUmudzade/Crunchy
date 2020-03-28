@@ -52,3 +52,30 @@ $("#d7").on("click", function() {
     $("#a7").removeClass("hidden");
 
 });
+
+$(".open-payment-modal").click(function (e) {
+    e.preventDefault();
+    let paymentUrl = $(this).attr("href");
+
+    $.ajax({
+        url: paymentUrl,
+        type: "get",
+        dataType: "html",
+        beforeSend: function () {
+            $(".preloader").show();
+        },
+        success: function (response) {
+            $(".test-container").html(response);
+            //$('#paymentsModal').modal('show');
+
+           // $('[data-toggle="tooltip"]').tooltip();*/
+            console.log(response);
+        },
+        error: function (error) {
+            console.log("error not found", "error");
+        },
+        complete: function () {
+            $(".preloader").hide();
+        }
+    });
+});

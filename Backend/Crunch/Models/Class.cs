@@ -19,9 +19,12 @@ namespace Crunch.Models
         public String duration { get; set; }
         [Required]
         public DateTime dateTime { get; set; }
+
         [Required]
         public String gymLocation { get; set; }
-        
+
+        public Gym gym { get; set; }
+
         public String Status { get; set; }
         [Required]
         public int space { get; set; }
