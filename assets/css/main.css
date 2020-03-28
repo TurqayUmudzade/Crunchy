@@ -280,6 +280,29 @@ nav .flex #join {
   top: 12px;
 }
 
+.nav-anchor {
+  position: relative;
+}
+
+.nav-anchor::after {
+  position: absolute;
+  content: "";
+  background: white;
+  height: 2px;
+  width: 30px;
+  bottom: 0;
+  left: 50%;
+  -webkit-transform: translateX(-50%) scaleX(0);
+          transform: translateX(-50%) scaleX(0);
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.nav-anchor:hover::after {
+  -webkit-transform: translateX(-50%) scaleX(1);
+          transform: translateX(-50%) scaleX(1);
+}
+
 @media screen and (max-width: 1140px) {
   nav .nav-anchor {
     display: none;

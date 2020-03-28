@@ -5,11 +5,8 @@ $(function() {
             if (i != MyID) {
                 document.getElementById(i).style.color = "grey";
                 document.getElementById(i).style.borderBottom = "none";
-                console.log("badimcan");
             } else {
-                document.getElementById(i).style.color = "white";
-                document.getElementById(i).style.borderBottom = "thick solid white";
-
+                //done with hover and after
             }
         }
     }, function() {
