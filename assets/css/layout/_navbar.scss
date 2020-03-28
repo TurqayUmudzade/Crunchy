@@ -4,6 +4,7 @@ nav {
     width: 100%;
     z-index: 1;
     position: fixed;
+    top: 0;
     .flex {
         #logo {
             img {
@@ -101,12 +102,12 @@ nav {
     }
 }
 
-.scrolled {
-    width: 100%;
-    z-index: 1;
-    position: fixed;
-}
-
+//?Maybe if you want it to change on scroll
+// .scrolled {
+//     width: 100%;
+//     z-index: 1;
+//     position: fixed;
+// }
 //Responsiveness
 @media screen and (max-width: 1140px) {
     nav {

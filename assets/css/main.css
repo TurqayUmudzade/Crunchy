@@ -204,6 +204,7 @@ nav {
   width: 100%;
   z-index: 1;
   position: fixed;
+  top: 0;
 }
 
 nav .flex #logo img {
@@ -313,12 +314,6 @@ nav .flex #join:hover {
 .nav-anchor:hover::after {
   -webkit-transform: translateX(-50%) scaleX(1);
           transform: translateX(-50%) scaleX(1);
-}
-
-.scrolled {
-  width: 100%;
-  z-index: 1;
-  position: fixed;
 }
 
 @media screen and (max-width: 1140px) {
@@ -2192,5 +2187,12 @@ article .class .message .no {
   border-left: 5px solid #009fdf;
   font-family: 'Roboto Condensed', sans-serif !important;
   font-size: 20px;
+}
+
+#locations {
+  margin-top: 220px;
+  background: -webkit-gradient(linear, left bottom, right top, from(#de1245), to(#ffbc15));
+  background: linear-gradient(to right top, #de1245 0%, #ffbc15 100%);
+  width: 100%;
 }
 /*# sourceMappingURL=main.css.map */
