@@ -1,7 +1,112 @@
 #locations {
-    margin-top: 220px;
+    padding-top: 50px;
     background: linear-gradient(to right top, #de1245 0%, #ffbc15 100%);
     width: 100%;
-    .header {}
-    .locations {}
+    .header {
+        padding: 40px 0px;
+        h1 {
+            margin-bottom: 40px;
+            font-size: 40px;
+            color: white;
+            text-align: center;
+        }
+        .search {
+            width: 500px;
+            margin: 20px auto;
+            position: relative;
+            .custom-selector {
+                font-family: 'Roboto Condensed', sans-serif !important;
+                background: none;
+                border: 1px solid white;
+                color: white;
+                height: 60px;
+                transition: all 0.3s;
+                padding: 0 18px;
+                width: 100%;
+                font-size: 26px;
+                &:focus {
+                    background: white;
+                    color: black;
+                    &::placeholder {
+                        color: #dedede;
+                    }
+                }
+                &::placeholder {
+                    color: white;
+                }
+            }
+            ul {
+                position: absolute;
+                width: 536px;
+                background: white;
+                max-height: 180px;
+                overflow: auto;
+                color: black;
+                font-size: 19px;
+                z-index: 2;
+                top: 43px;
+                padding-left: 0;
+                li {
+                    position: relative;
+                    background: white;
+                    padding: 8px;
+                    cursor: pointer;
+                    font-size: 19px;
+                    transition: color 0.1s linear 0.1s;
+                    &:hover {
+                        background: linear-gradient(to right, #ffffff 50%, #f20d36 0%, #f89a37 100%);
+                        color: white;
+                        background-size: 200% 100%;
+                        animation: fill .3s ease-in forwards;
+                    }
+                }
+            }
+            i {
+                position: absolute;
+                right: 0px;
+                top: 16px;
+                /* bottom: 0; */
+                font-size: 26px;
+                color: white;
+            }
+        }
+    }
+    .locations {
+        display: flex;
+        flex-wrap: wrap;
+        .location {
+            border-bottom: 1px solid white;
+            padding: 35px 15px 45px 15px;
+            text-align: center;
+            max-width: calc(100%/3);
+            width: calc(100%/3);
+            box-sizing: border-box;
+            h2 {
+                line-height: 33px;
+                font-size: 33px;
+                color: white;
+            }
+            p {
+                color: white;
+                line-height: 16px;
+                font-size: 12px;
+                letter-spacing: 0.5px;
+            }
+            .xmiles-away {
+                margin-top: 15px;
+            }
+            &:nth-child(3n+1) {
+                border-right: 1px solid white;
+            }
+            &:nth-child(3n+3) {
+                border-left: 1px solid white;
+            }
+        }
+    }
+}
+
+@keyframes fill {
+    to {
+        background-position: -100% 0;
+    }
 }

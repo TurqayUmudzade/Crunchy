@@ -2190,9 +2190,172 @@ article .class .message .no {
 }
 
 #locations {
-  margin-top: 220px;
+  padding-top: 50px;
   background: -webkit-gradient(linear, left bottom, right top, from(#de1245), to(#ffbc15));
   background: linear-gradient(to right top, #de1245 0%, #ffbc15 100%);
   width: 100%;
+}
+
+#locations .header {
+  padding: 40px 0px;
+}
+
+#locations .header h1 {
+  margin-bottom: 40px;
+  font-size: 40px;
+  color: white;
+  text-align: center;
+}
+
+#locations .header .search {
+  width: 500px;
+  margin: 20px auto;
+  position: relative;
+}
+
+#locations .header .search .custom-selector {
+  font-family: 'Roboto Condensed', sans-serif !important;
+  background: none;
+  border: 1px solid white;
+  color: white;
+  height: 60px;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  padding: 0 18px;
+  width: 100%;
+  font-size: 26px;
+}
+
+#locations .header .search .custom-selector:focus {
+  background: white;
+  color: black;
+}
+
+#locations .header .search .custom-selector:focus::-webkit-input-placeholder {
+  color: #dedede;
+}
+
+#locations .header .search .custom-selector:focus:-ms-input-placeholder {
+  color: #dedede;
+}
+
+#locations .header .search .custom-selector:focus::-ms-input-placeholder {
+  color: #dedede;
+}
+
+#locations .header .search .custom-selector:focus::placeholder {
+  color: #dedede;
+}
+
+#locations .header .search .custom-selector::-webkit-input-placeholder {
+  color: white;
+}
+
+#locations .header .search .custom-selector:-ms-input-placeholder {
+  color: white;
+}
+
+#locations .header .search .custom-selector::-ms-input-placeholder {
+  color: white;
+}
+
+#locations .header .search .custom-selector::placeholder {
+  color: white;
+}
+
+#locations .header .search ul {
+  position: absolute;
+  width: 536px;
+  background: white;
+  max-height: 180px;
+  overflow: auto;
+  color: black;
+  font-size: 19px;
+  z-index: 2;
+  top: 43px;
+  padding-left: 0;
+}
+
+#locations .header .search ul li {
+  position: relative;
+  background: white;
+  padding: 8px;
+  cursor: pointer;
+  font-size: 19px;
+  -webkit-transition: color 0.1s linear 0.1s;
+  transition: color 0.1s linear 0.1s;
+}
+
+#locations .header .search ul li:hover {
+  background: -webkit-gradient(linear, left top, right top, color-stop(50%, #ffffff), color-stop(0%, #f20d36), to(#f89a37));
+  background: linear-gradient(to right, #ffffff 50%, #f20d36 0%, #f89a37 100%);
+  color: white;
+  background-size: 200% 100%;
+  -webkit-animation: fill .3s ease-in forwards;
+          animation: fill .3s ease-in forwards;
+}
+
+#locations .header .search i {
+  position: absolute;
+  right: 0px;
+  top: 16px;
+  /* bottom: 0; */
+  font-size: 26px;
+  color: white;
+}
+
+#locations .locations {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+#locations .locations .location {
+  border-bottom: 1px solid white;
+  padding: 35px 15px 45px 15px;
+  text-align: center;
+  max-width: calc(100%/3);
+  width: calc(100%/3);
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+#locations .locations .location h2 {
+  line-height: 33px;
+  font-size: 33px;
+  color: white;
+}
+
+#locations .locations .location p {
+  color: white;
+  line-height: 16px;
+  font-size: 12px;
+  letter-spacing: 0.5px;
+}
+
+#locations .locations .location .xmiles-away {
+  margin-top: 15px;
+}
+
+#locations .locations .location:nth-child(3n+1) {
+  border-right: 1px solid white;
+}
+
+#locations .locations .location:nth-child(3n+3) {
+  border-left: 1px solid white;
+}
+
+@-webkit-keyframes fill {
+  to {
+    background-position: -100% 0;
+  }
+}
+
+@keyframes fill {
+  to {
+    background-position: -100% 0;
+  }
 }
 /*# sourceMappingURL=main.css.map */
