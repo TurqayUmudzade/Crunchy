@@ -320,13 +320,24 @@ nav .flex #join:hover {
   nav .nav-anchor {
     display: none;
   }
+  nav #free-trial {
+    display: block;
+  }
   nav .fa-bars {
     opacity: 100%;
   }
 }
 
+@media screen and (max-width: 650px) {
+  nav #free-trial {
+    display: none;
+  }
+  nav #join {
+    display: none;
+  }
+}
+
 footer {
-  margin-top: 200px;
   width: 100%;
   padding: 55px 0 45px 0;
   background-color: black;
@@ -2196,6 +2207,10 @@ article .class .message .no {
   width: 100%;
 }
 
+#locations hr {
+  margin: 0;
+}
+
 #locations .header {
   padding: 40px 0px;
 }
@@ -2299,7 +2314,6 @@ article .class .message .no {
   position: absolute;
   right: 0px;
   top: 16px;
-  /* bottom: 0; */
   font-size: 26px;
   color: white;
 }
@@ -2313,13 +2327,16 @@ article .class .message .no {
 }
 
 #locations .locations .location {
+  position: relative;
   border-bottom: 1px solid white;
   padding: 35px 15px 45px 15px;
   text-align: center;
-  max-width: calc(100%/3);
-  width: calc(100%/3);
+  min-width: calc(100%/3);
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
 }
 
 #locations .locations .location h2 {
@@ -2347,6 +2364,23 @@ article .class .message .no {
   border-left: 1px solid white;
 }
 
+#locations .locations .location img {
+  visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+}
+
+#locations .locations .location:hover img {
+  opacity: 0.4;
+  visibility: visible;
+  -webkit-transition: opacity 1s ease-in-out;
+  transition: opacity 1s ease-in-out;
+}
+
 @-webkit-keyframes fill {
   to {
     background-position: -100% 0;
@@ -2356,6 +2390,39 @@ article .class .message .no {
 @keyframes fill {
   to {
     background-position: -100% 0;
+  }
+}
+
+@media screen and (max-width: 1140px) {
+  #locations .locations .location {
+    min-width: 50%;
+  }
+  #locations .locations .location:nth-child(2n+1) {
+    border-right: 1px solid white;
+  }
+}
+
+@media screen and (max-width: 1140px) {
+  #locations .locations .location {
+    min-width: 50%;
+  }
+  #locations .locations .location:nth-child(2n+1) {
+    border-right: 1px solid white;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  #locations .header h1 {
+    font-size: 5vw;
+  }
+  #locations .header .search {
+    width: 60%;
+  }
+  #locations .header .search .custom-selector {
+    font-size: 5vw;
+  }
+  #locations .header .search i {
+    right: -10%;
   }
 }
 /*# sourceMappingURL=main.css.map */

@@ -114,8 +114,22 @@ nav {
         .nav-anchor {
             display: none;
         }
+        #free-trial {
+            display: block;
+        }
         .fa-bars {
             opacity: 100%;
+        }
+    }
+}
+
+@media screen and (max-width:650px) {
+    nav {
+        #free-trial {
+            display: none;
+        }
+        #join {
+            display: none;
         }
     }
 }
