@@ -1,0 +1,36 @@
+﻿@model List<Gym>
+<section id="locations">
+    <div class="header">
+        <h1>Find a Crunch Gym Near You</h1>
+        <div class="search">
+            <input class="custom-selector" type="text" autocomplete="off" name="" placeholder="Filter by State/Province">
+            <ul class="custom-options hidden">
+                @foreach (Gym gym in Model)
+                {
+                    <li>@gym.gymLocation</li>
+                }
+            </ul>
+
+            <i class="fas fa-chevron-down "></i>
+        </div>
+    </div>
+    <hr>
+
+    <div class="locations ">
+        @foreach (Gym gym in Model)
+        {
+        <div class="location ">
+            <img src="~/image/Location/@gym.image" alt="">
+            <h2>@gym.gymLocation</h2>
+            <p>@gym.gymAdress</p>
+            <p>@gym.gymNumber</p>
+            <p class="xmiles-away">12 miles away</p>
+        </div>
+        }
+
+    </div>
+
+</section>
+
+
+<script src="~/js/locations.js"></script>

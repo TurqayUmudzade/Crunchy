@@ -16,7 +16,11 @@ namespace Crunch.Models
 
         public String gymAdress { get; set; }
 
+        public String gymNumber { get; set; }
+
         public float price { get; set; }
+
+        public String image { get; set; }
 
         public virtual ICollection<Class> Classes { get; set; }
     }

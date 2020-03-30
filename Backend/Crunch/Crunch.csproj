@@ -30,6 +30,7 @@
     <Folder Include="Areas\Admin\Models\" />
     <Folder Include="Areas\Admin\Views\" />
     <Folder Include="NewFolder\" />
+    <Folder Include="wwwroot\css\parts\member-area\my-membership\" />
   </ItemGroup>
 
 

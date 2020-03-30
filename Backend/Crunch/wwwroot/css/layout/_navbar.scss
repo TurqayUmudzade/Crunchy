@@ -1,6 +1,10 @@
 nav {
     background-color: $navbar-color;
     height: 50px;
+    width: 100%;
+    z-index: 1;
+    position: fixed;
+    top: 0;
     .flex {
         #logo {
             img {
@@ -48,16 +52,84 @@ nav {
             }
         }
         #free-trial {
-            background-color: $navbar-orange;
+            background-color: #009fdf;
             overflow: hidden;
             height: 100%;
             padding: 12px 30px 18px;
+            &::after {
+                bottom: 15px;
+                bottom: 13px;
+            }
         }
         #join {
             background-color: white;
             height: 100%;
             color: $navbar-orange;
             padding: 12px 30px 18px;
+            &:hover {
+                color: #de1245;
+            }
+        }
+    }
+}
+
+.fa-bars {
+    opacity: 0;
+    color: white;
+    cursor: pointer;
+    font-size: 26px;
+    position: relative;
+    top: 12px;
+}
+
+.nav-anchor {
+    position: relative;
+    &::after {
+        position: absolute;
+        content: "";
+        background: white;
+        height: 2px;
+        width: 30px;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%) scaleX(0);
+        transition: all 0.3s;
+    }
+    &:hover {
+        &::after {
+            transform: translateX(-50%) scaleX(1);
+        }
+    }
+}
+
+//?Maybe if you want it to change on scroll
+// .scrolled {
+//     width: 100%;
+//     z-index: 1;
+//     position: fixed;
+// }
+//Responsiveness
+@media screen and (max-width: 1140px) {
+    nav {
+        .nav-anchor {
+            display: none;
+        }
+        #free-trial {
+            display: block;
+        }
+        .fa-bars {
+            opacity: 100%;
+        }
+    }
+}
+
+@media screen and (max-width:650px) {
+    nav {
+        #free-trial {
+            display: none;
+        }
+        #join {
+            display: none;
         }
     }
 }
