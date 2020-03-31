@@ -85,7 +85,7 @@ namespace Crunch.Controllers
 
                     return View("~/Views/Account/Register2.cshtml", registerViewModel);
                 }
-                ModelState.AddModelError("Email", "this email is taken");
+                ModelState.AddModelError("Email", "This Email is taken");
             }
             return View(registerViewModel);
         }
@@ -93,7 +93,7 @@ namespace Crunch.Controllers
         [HttpPost]
         public IActionResult Register2(RegisterViewModel registerViewModel)
         {
-            if (true)
+            if (registerViewModel.gym!= null && registerViewModel.User != null)
             {
                 User user = _context.users.Find(registerViewModel.User.UserID);
                 user.gym = _context.gyms.Find(registerViewModel.gym.gymID);
@@ -108,6 +108,7 @@ namespace Crunch.Controllers
             }
             else
             {
+
                 registerViewModel.gyms = _context.gyms.ToList();
                 return View(registerViewModel);
             }

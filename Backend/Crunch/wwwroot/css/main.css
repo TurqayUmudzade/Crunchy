@@ -1032,6 +1032,54 @@ footer .footer-wrapper .right p {
           transform: rotateZ(90deg);
 }
 
+@media screen and (max-width: 850px) {
+  .join .form-row {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  .join .form-row #left {
+    min-width: 100%;
+  }
+  .join .form-row input {
+    min-width: 200px;
+  }
+  .join .form-row label {
+    min-width: 100px;
+  }
+  .join .form-row .radios label {
+    min-width: 0px;
+  }
+  .join .form-row .radios .block input {
+    min-width: 0;
+  }
+  .progress-indicator ul {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  .progress-indicator ul li {
+    min-width: 100px;
+  }
+  .login-container2 {
+    max-width: 90% !important;
+  }
+}
+
+@media screen and (max-width: 540px) {
+  .progress-indicator ul {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    padding-left: 0;
+  }
+  .progress-indicator ul li {
+    min-width: 100px;
+    text-align: center;
+  }
+}
+
 .login-container2 {
   background: #f3f3f4;
   max-width: 66%;

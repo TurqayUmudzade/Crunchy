@@ -337,7 +337,6 @@ C:\Users\Turqay\source\repos\Crunch\obj\Debug\netcoreapp3.1\Razor\Views\MyGym\Av
 C:\Users\Turqay\source\repos\Crunch\obj\Debug\netcoreapp3.1\Razor\Views\MyGym\Home.cshtml.g.cs
 C:\Users\Turqay\source\repos\Crunch\obj\Debug\netcoreapp3.1\Razor\Views\MyMembership\ChangeHomeGym.cshtml.g.cs
 C:\Users\Turqay\source\repos\Crunch\obj\Debug\netcoreapp3.1\Razor\Views\Account\Register3.cshtml.g.cs
-C:\Users\Turqay\source\repos\Crunch\obj\Debug\netcoreapp3.1\Razor\Views\Account\RegisterForm2.cshtml.g.cs
 C:\Users\Turqay\source\repos\Crunch\obj\Debug\netcoreapp3.1\Razor\Views\Shared\UserLayout.cshtml.g.cs
 C:\Users\Turqay\source\repos\Crunch\obj\Debug\netcoreapp3.1\Razor\Views\Shared\ViewModelLayout.cshtml.g.cs
 C:\Users\Turqay\source\repos\Crunch\obj\Debug\netcoreapp3.1\Razor\Views\Shared\ClassInfo.cshtml.g.cs

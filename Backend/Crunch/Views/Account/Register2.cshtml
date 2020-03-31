@@ -1,8 +1,4 @@
 ﻿
-@{
-
-}
-@using Crunch.ViewModels;
 @model RegisterViewModel
 
 
@@ -57,8 +53,8 @@
             <div class="foot">
                 <div class="selector">
                     <p>Choose your home gym</p>
-                    <input type="text" value="@Model.User.UserID" asp-for="User.UserID" style="display:none" />
-                    <span asp-validation-for="User.UserID"></span>
+
+                    <input type="hidden" value="@Model.User.UserID" asp-for="User.UserID"  />
 
                     <select asp-for="gym.gymID" id="location-selector">
 
@@ -70,7 +66,7 @@
                         }
 
                     </select>
-                    <span asp-validation-for="gym.gymID" ></span>
+                    <span asp-validation-for="gym.gymID"></span>
                     <div class="icons hidden">
                         <div class="hidden-text">
                             <i class="fas fa-exclamation-circle"></i>
@@ -267,3 +263,4 @@
     </form>
 </section>
 
+<script src="~/js/login.js"></script>

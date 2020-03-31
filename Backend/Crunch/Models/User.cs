@@ -62,8 +62,9 @@ namespace Crunch.Models
         public bool disability { get; set; }
 
         public string Token { get; set; }
+
         [MaxLength(10)]
-        public string Disscount { get; set; }
+        public Promocode Promocode { get; set; }
 
         public int paymentOption { get; set; }//1 2 3
 
