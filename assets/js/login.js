@@ -58,10 +58,7 @@ $("#promo").on("click", function() {
     $("#bottom").removeClass("hidden");
 });
 
-//button when input is done
-$("input").on("input", function() {
-    canChangeColor();
-});
+
 
 //for validiton
 
