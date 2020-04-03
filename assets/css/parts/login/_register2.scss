@@ -78,3 +78,70 @@
 #padding {
     padding: 0 15px;
 }
+
+//Responsiveness
+@media screen and (max-width: 1200px) {
+    #login {
+        .login-container {
+            max-width: 80%;
+        }
+        .selector {
+            width: 80%;
+        }
+        .bonuses .wrapper .bonuses-list-open {
+            height: fit-content !important;
+        }
+    }
+}
+
+//Responsiveness
+@media screen and (max-width: 600px) {
+    #login {
+        .header-p {
+            p {
+                font-size: 24px;
+            }
+        }
+        .login-container {
+            max-width: 90%;
+            #promocode {
+                padding: 50px 30px;
+                input {
+                    max-width: 100%;
+                    margin-bottom: 20px;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 800px) {
+    #login {
+        .login-container {
+            .bonunes-list {
+                flex-wrap: wrap;
+            }
+            .montly-membership {
+                .flex {
+                    flex-direction: column;
+                    .basic {
+                        width: 100%;
+                        p {
+                            margin: 0;
+                        }
+                    }
+                    .premium {
+                        width: 100%;
+                        position: unset;
+                        p {
+                            margin: 0;
+                        }
+                    }
+                }
+                .icons {
+                    flex-direction: row !important;
+                }
+            }
+        }
+    }
+}
