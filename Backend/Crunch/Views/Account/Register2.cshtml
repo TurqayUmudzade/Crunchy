@@ -251,10 +251,11 @@
                     <label for="promo">Do you have a promotional code?</label>
                 </div>
                 <div class="block hidden" id="bottom">
-                    <input type="text" placeholder="Enter your code" name="promo">
-                    <button>Apply</button>
+                    <input type="text" id="promo-input" placeholder="Enter your code" asp-for="User.promocode.promocode">
+                    <button id="promo-apply" type="button">Apply</button>
+                    <div class="promo-status">
+                    </div>
                 </div>
-            </div>
         </section>
 
         <div class="next">

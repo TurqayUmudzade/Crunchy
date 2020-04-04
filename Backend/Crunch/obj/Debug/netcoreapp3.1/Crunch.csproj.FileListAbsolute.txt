@@ -331,7 +331,6 @@ C:\Users\Turqay\source\repos\Crunch\obj\Debug\netcoreapp3.1\Razor\Views\MyGym\Co
 C:\Users\Turqay\source\repos\Crunch\bin\Debug\netcoreapp3.1\MailKit.dll
 C:\Users\Turqay\source\repos\Crunch\bin\Debug\netcoreapp3.1\MimeKit.dll
 C:\Users\Turqay\source\repos\Crunch\bin\Debug\netcoreapp3.1\BouncyCastle.Crypto.dll
-C:\Users\Turqay\source\repos\Crunch\obj\Debug\netcoreapp3.1\Crunch.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\Turqay\source\repos\Crunch\obj\Debug\netcoreapp3.1\Razor\Views\MyGym\MyGymUsage.cshtml.g.cs
 C:\Users\Turqay\source\repos\Crunch\obj\Debug\netcoreapp3.1\Razor\Views\MyGym\AverageUsage.cshtml.g.cs
 C:\Users\Turqay\source\repos\Crunch\obj\Debug\netcoreapp3.1\Razor\Views\MyGym\Home.cshtml.g.cs
@@ -344,3 +343,9 @@ C:\Users\Turqay\source\repos\Crunch\obj\Debug\netcoreapp3.1\Razor\Views\Classes\
 C:\Users\Turqay\source\repos\Crunch\obj\Debug\netcoreapp3.1\Razor\Views\Locations\Index.cshtml.g.cs
 C:\Users\Turqay\source\repos\Crunch\obj\Debug\netcoreapp3.1\Razor\Views\PartialViews\GymList.cshtml.g.cs
 C:\Users\Turqay\source\repos\Crunch\obj\Debug\netcoreapp3.1\Razor\Views\PartialViews\GymLocationList.cshtml.g.cs
+C:\Users\Turqay\source\repos\Crunch\bin\Debug\netcoreapp3.1\System.Security.Cryptography.Pkcs.dll
+C:\Users\Turqay\source\repos\Crunch\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\System.Security.Cryptography.Pkcs.dll
+C:\Users\Turqay\source\repos\Crunch\obj\Debug\netcoreapp3.1\Crunch.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Turqay\source\repos\Crunch\obj\Debug\netcoreapp3.1\Razor\Views\PartialViews\PromoStatus.cshtml.g.cs
+C:\Users\Turqay\source\repos\Crunch\obj\Debug\netcoreapp3.1\Razor\Views\Session\Index.cshtml.g.cs
+C:\Users\Turqay\source\repos\Crunch\obj\Debug\netcoreapp3.1\Razor\Views\Session\Test.cshtml.g.cs

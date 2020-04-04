@@ -79,68 +79,60 @@
     padding: 0 15px;
 }
 
+//here
 //Responsiveness
-@media screen and (max-width: 1200px) {
-    #login {
-        .login-container {
-            max-width: 80%;
-        }
-        .selector {
-            width: 80%;
-        }
-        .bonuses .wrapper .bonuses-list-open {
-            height: fit-content !important;
-        }
-    }
-}
-
-//Responsiveness
-@media screen and (max-width: 600px) {
-    #login {
-        .header-p {
-            p {
-                font-size: 24px;
+@media screen and (max-width: 850px) {
+    .join {
+        .form-row {
+            flex-wrap: wrap;
+            #left {
+                min-width: 100%;
             }
-        }
-        .login-container {
-            max-width: 90%;
-            #promocode {
-                padding: 50px 30px;
-                input {
-                    max-width: 100%;
-                    margin-bottom: 20px;
+            input {
+                min-width: 200px;
+            }
+            label {
+                min-width: 100px
+            }
+            .radios {
+                label {
+                    min-width: 0px;
+                }
+                .block {
+                    input {
+                        min-width: 0;
+                    }
                 }
             }
         }
     }
+    .progress-indicator {
+        ul {
+            flex-wrap: wrap;
+            li {
+                min-width: 100px;
+            }
+        }
+    }
+    .login-container2 {
+        max-width: 90% !important;
+    }
 }
 
-@media screen and (max-width: 800px) {
-    #login {
-        .login-container {
-            .bonunes-list {
-                flex-wrap: wrap;
-            }
-            .montly-membership {
-                .flex {
-                    flex-direction: column;
-                    .basic {
-                        width: 100%;
-                        p {
-                            margin: 0;
-                        }
-                    }
-                    .premium {
-                        width: 100%;
-                        position: unset;
-                        p {
-                            margin: 0;
-                        }
-                    }
-                }
-                .icons {
-                    flex-direction: row !important;
-                }
+@media screen and (max-width: 540px) {
+    .join {
+        .form-row {
+            input {}
+        }
+    }
+    .progress-indicator {
+        ul {
+            flex-wrap: wrap;
+            flex-direction: column;
+            padding-left: 0;
+            li {
+                min-width: 100px;
+                text-align: center;
             }
         }
     }

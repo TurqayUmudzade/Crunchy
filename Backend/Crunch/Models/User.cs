@@ -63,8 +63,8 @@ namespace Crunch.Models
 
         public string Token { get; set; }
 
-        [MaxLength(10)]
-        public Promocode Promocode { get; set; }
+
+        public Promocode promocode { get; set; }
 
         public int paymentOption { get; set; }//1 2 3
 

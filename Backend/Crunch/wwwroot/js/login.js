@@ -53,17 +53,9 @@ $(".bonuses").on("click", function() {
     }
 });
 
-//promo code
-$("#promo").on("click", function() {
-    $("#bottom").removeClass("hidden");
-});
-
-//button when input is done
-$("input").on("input", function() {
-    canChangeColor();
-});
 
 //for validiton
+//idk
 
 $(".myclass:empty").each(function() {
     $(this).remove(); // this references the current element in the iteration
@@ -76,3 +68,34 @@ if (value != 0) {
     $(".field-validation-error").siblings(":input").addClass("error-asp");
     $(".field-validation-error").siblings("label").addClass("error-asp");
 }
+
+
+//Register 2
+
+//promo code
+
+$("#promo").on("click", function () {
+    $("#bottom").removeClass("hidden");
+});
+
+$("#promo-apply").on("click", function () {
+    var s = $('#promo-input').val();
+    paymentUrl = "/Account/Promo?promo=" + s;
+    console.log(s);
+    $.ajax({
+        url: paymentUrl,
+        type: "get",
+        dataType: "html",
+        success: function (response) {
+            $(".promo-status").html(response);
+        },
+        error: function (error) {
+            console.log("Error not found", "error");
+        },
+        complete: function () {
+        }
+    });
+});
+
+
+

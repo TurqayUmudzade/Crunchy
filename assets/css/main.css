@@ -986,6 +986,19 @@ footer .footer-wrapper .right p {
   padding: 50px 100px;
 }
 
+#promocode .promo-status {
+  font-size: 18px;
+  padding: 6px;
+}
+
+#promocode .promo-status .error {
+  color: red;
+}
+
+#promocode .promo-status .accepted {
+  color: #00adee;
+}
+
 #promocode .wrapper .block {
   position: relative;
 }
@@ -1032,51 +1045,65 @@ footer .footer-wrapper .right p {
           transform: rotateZ(90deg);
 }
 
-@media screen and (max-width: 850px) {
-  .join .form-row {
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
+@media screen and (max-width: 1200px) {
+  #login .login-container {
+    max-width: 80%;
   }
-  .join .form-row #left {
-    min-width: 100%;
+  #login .selector {
+    width: 80%;
   }
-  .join .form-row input {
-    min-width: 200px;
-  }
-  .join .form-row label {
-    min-width: 100px;
-  }
-  .join .form-row .radios label {
-    min-width: 0px;
-  }
-  .join .form-row .radios .block input {
-    min-width: 0;
-  }
-  .progress-indicator ul {
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
-  }
-  .progress-indicator ul li {
-    min-width: 100px;
-  }
-  .login-container2 {
-    max-width: 90% !important;
+  #login .bonuses .wrapper .bonuses-list-open {
+    height: -webkit-fit-content !important;
+    height: -moz-fit-content !important;
+    height: fit-content !important;
   }
 }
 
-@media screen and (max-width: 540px) {
-  .progress-indicator ul {
+@media screen and (max-width: 600px) {
+  #login .header-p p {
+    font-size: 24px;
+  }
+  #login .login-container {
+    max-width: 90%;
+  }
+  #login .login-container #promocode {
+    padding: 50px 30px;
+  }
+  #login .login-container #promocode input {
+    max-width: 100%;
+    margin-bottom: 20px;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  #login .login-container .bonunes-list {
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
+  }
+  #login .login-container .montly-membership .flex {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    padding-left: 0;
   }
-  .progress-indicator ul li {
-    min-width: 100px;
-    text-align: center;
+  #login .login-container .montly-membership .flex .basic {
+    width: 100%;
+  }
+  #login .login-container .montly-membership .flex .basic p {
+    margin: 0;
+  }
+  #login .login-container .montly-membership .flex .premium {
+    width: 100%;
+    position: unset;
+  }
+  #login .login-container .montly-membership .flex .premium p {
+    margin: 0;
+  }
+  #login .login-container .montly-membership .icons {
+    -webkit-box-orient: horizontal !important;
+    -webkit-box-direction: normal !important;
+        -ms-flex-direction: row !important;
+            flex-direction: row !important;
   }
 }
 
@@ -1190,65 +1217,51 @@ footer .footer-wrapper .right p {
   padding: 0 15px;
 }
 
-@media screen and (max-width: 1200px) {
-  #login .login-container {
-    max-width: 80%;
-  }
-  #login .selector {
-    width: 80%;
-  }
-  #login .bonuses .wrapper .bonuses-list-open {
-    height: -webkit-fit-content !important;
-    height: -moz-fit-content !important;
-    height: fit-content !important;
-  }
-}
-
-@media screen and (max-width: 600px) {
-  #login .header-p p {
-    font-size: 24px;
-  }
-  #login .login-container {
-    max-width: 90%;
-  }
-  #login .login-container #promocode {
-    padding: 50px 30px;
-  }
-  #login .login-container #promocode input {
-    max-width: 100%;
-    margin-bottom: 20px;
-  }
-}
-
-@media screen and (max-width: 800px) {
-  #login .login-container .bonunes-list {
+@media screen and (max-width: 850px) {
+  .join .form-row {
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
   }
-  #login .login-container .montly-membership .flex {
+  .join .form-row #left {
+    min-width: 100%;
+  }
+  .join .form-row input {
+    min-width: 200px;
+  }
+  .join .form-row label {
+    min-width: 100px;
+  }
+  .join .form-row .radios label {
+    min-width: 0px;
+  }
+  .join .form-row .radios .block input {
+    min-width: 0;
+  }
+  .progress-indicator ul {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  .progress-indicator ul li {
+    min-width: 100px;
+  }
+  .login-container2 {
+    max-width: 90% !important;
+  }
+}
+
+@media screen and (max-width: 540px) {
+  .progress-indicator ul {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
+    padding-left: 0;
   }
-  #login .login-container .montly-membership .flex .basic {
-    width: 100%;
-  }
-  #login .login-container .montly-membership .flex .basic p {
-    margin: 0;
-  }
-  #login .login-container .montly-membership .flex .premium {
-    width: 100%;
-    position: unset;
-  }
-  #login .login-container .montly-membership .flex .premium p {
-    margin: 0;
-  }
-  #login .login-container .montly-membership .icons {
-    -webkit-box-orient: horizontal !important;
-    -webkit-box-direction: normal !important;
-        -ms-flex-direction: row !important;
-            flex-direction: row !important;
+  .progress-indicator ul li {
+    min-width: 100px;
+    text-align: center;
   }
 }
 

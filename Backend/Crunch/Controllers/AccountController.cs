@@ -51,6 +51,7 @@ namespace Crunch.Controllers
         [HttpGet]
         public ViewResult Login()
         {
+
             return View();
         }
 
@@ -76,6 +77,7 @@ namespace Crunch.Controllers
                         disability = registerViewModel.User.disability
                     };
 
+
                     _context.users.Add(user);
                     _context.SaveChanges();
 
@@ -93,11 +95,22 @@ namespace Crunch.Controllers
         [HttpPost]
         public IActionResult Register2(RegisterViewModel registerViewModel)
         {
-            if (registerViewModel.gym!= null && registerViewModel.User != null)
+            if (registerViewModel.gym != null && registerViewModel.User != null)
             {
                 User user = _context.users.Find(registerViewModel.User.UserID);
                 user.gym = _context.gyms.Find(registerViewModel.gym.gymID);
                 user.premiumMemberShip = registerViewModel.User.premiumMemberShip;
+
+
+                string promocode = registerViewModel.User.promocode.promocode;
+                if (!string.IsNullOrEmpty(promocode))
+                {
+                    if (_context.promocodes.Any(p => p.promocode == promocode))
+                    {
+                        user.promocode = Discount(promocode, _context);
+                    }
+                }
+
 
                 registerViewModel.User = user;
                 registerViewModel.gym = _context.users.Include("gym").Where(u => u.UserID == user.UserID).FirstOrDefault().gym;
@@ -118,12 +131,12 @@ namespace Crunch.Controllers
         [HttpPost]
         public IActionResult Register3(RegisterViewModel registerViewModel)
         {
-            if (true)
+            if (registerViewModel.User != null)
             {
 
                 User user = _context.users.Find(registerViewModel.User.UserID);
                 user.paymentOption = registerViewModel.User.paymentOption;
-                user.pin = PinGenerator();
+                user.pin = newPin(_context);
 
                 user.Token = Guid.NewGuid().ToString();
                 _context.SaveChanges();
@@ -135,7 +148,9 @@ namespace Crunch.Controllers
                 });
                 return RedirectToAction("Login", "Account");
             }
-            return RedirectToAction("Login", "Account");
+            else
+
+                return View(); ;
         }
 
         [HttpPost]
@@ -187,33 +202,72 @@ namespace Crunch.Controllers
         //generate a number pin with a size of 8
         static public String PinGenerator()
         {
+
             Random rand = new Random();
             String pin = Math.Round((rand.NextDouble() * Math.Pow(10, 8 + 1))).ToString();
 
             return pin;
         }
 
-        static public float Discount(string promocode, Context _context)
+        static public String newPin(Context context)
+        {
+            string pin;
+            bool isNew = false;
+            while (true)
+            {
+                pin = PinGenerator();
+                //check if the pin doesnt belong to another user
+                if (!context.users.All(u => u.pin == pin))
+                {
+                    isNew = true;
+                }
+
+                if (isNew)
+                {
+                    break;
+                }
+            }
+
+            return pin;
+        }
+
+
+        //PROMOCODE
+        static public Promocode Discount(string promocode, Context _context)
         {
             Promocode p = new Promocode();
 
             p = _context.promocodes.Where(p => p.promocode == promocode).FirstOrDefault();
 
-            if (p.OneTime)
-            {
-                _context.promocodes.Remove(p);
+            if (p==null) {
+                return null;
             }
 
+            if (p.OneTime)
+            {
+                p.IsUsed = true;
+            }
+
+            //Check if it has an expiration date
             if (p.Expire != null)
             {
                 if (DateTime.Compare(p.Expire, DateTime.Now) != 1)//if it expired
                 {
-                    return 0;
+                    return null;
                 }
             }
-
-            return p.discountPercent;
+            return p;
         }
+
+        //Returns view of promocodes information either an error or the x% will be applied   
+        public IActionResult Promo(string promo)
+        {
+            Promocode p = Discount(promo, _context);
+
+            return PartialView("~/Views/PartialViews/PromoStatus.cshtml", p);
+        }
+
+
 
     }
 }
