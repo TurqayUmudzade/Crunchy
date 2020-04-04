@@ -9361,11 +9361,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Turqay\\source\\repos\\Crunch\\Crunch.csproj",
+      "projectUniqueName": "C:\\Users\\Turqay\\Desktop\\Crunch\\Backend\\Crunch\\Crunch.csproj",
       "projectName": "Crunch",
-      "projectPath": "C:\\Users\\Turqay\\source\\repos\\Crunch\\Crunch.csproj",
+      "projectPath": "C:\\Users\\Turqay\\Desktop\\Crunch\\Backend\\Crunch\\Crunch.csproj",
       "packagesPath": "C:\\Users\\Turqay\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Turqay\\source\\repos\\Crunch\\obj\\",
+      "outputPath": "C:\\Users\\Turqay\\Desktop\\Crunch\\Backend\\Crunch\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\",

@@ -9,6 +9,8 @@ using Crunch.Models;
 using Crunch.Injection;
 using Crunch.Filters;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Http;
+using Newtonsoft.Json;
 
 namespace Crunch.Controllers
 {
@@ -78,11 +80,8 @@ namespace Crunch.Controllers
                     };
 
 
-                    _context.users.Add(user);
-                    _context.SaveChanges();
+                    HttpContext.Session.SetString("SessionUser", Newtonsoft.Json.JsonConvert.SerializeObject(user));
 
-                    //because we the id is 0 in our object whethers its not like that in the database
-                    registerViewModel.User = _context.users.Where(u => u.Email == user.Email).FirstOrDefault();
                     registerViewModel.gyms = _context.gyms.ToList();
 
                     return View("~/Views/Account/Register2.cshtml", registerViewModel);
@@ -95,12 +94,11 @@ namespace Crunch.Controllers
         [HttpPost]
         public IActionResult Register2(RegisterViewModel registerViewModel)
         {
-            if (registerViewModel.gym != null && registerViewModel.User != null)
+            if (registerViewModel.gym != null)
             {
-                User user = _context.users.Find(registerViewModel.User.UserID);
+                User user = JsonConvert.DeserializeObject<User>(HttpContext.Session.GetString("SessionUser"));
                 user.gym = _context.gyms.Find(registerViewModel.gym.gymID);
                 user.premiumMemberShip = registerViewModel.User.premiumMemberShip;
-
 
                 string promocode = registerViewModel.User.promocode.promocode;
                 if (!string.IsNullOrEmpty(promocode))
@@ -111,17 +109,20 @@ namespace Crunch.Controllers
                     }
                 }
 
+                HttpContext.Session.SetString("SessionUser", JsonConvert.SerializeObject(user));
 
-                registerViewModel.User = user;
-                registerViewModel.gym = _context.users.Include("gym").Where(u => u.UserID == user.UserID).FirstOrDefault().gym;
-
+                RegisterViewModel model = new RegisterViewModel()
+                {
+                    User = user,
+                    gym = user.gym
+                };
+                _context.Add(user);
                 _context.SaveChanges();
 
-                return View("~/Views/Account/Register3.cshtml", registerViewModel);
+                return View("~/Views/Account/Register3.cshtml", model);
             }
             else
             {
-
                 registerViewModel.gyms = _context.gyms.ToList();
                 return View(registerViewModel);
             }
@@ -134,14 +135,17 @@ namespace Crunch.Controllers
             if (registerViewModel.User != null)
             {
 
-                User user = _context.users.Find(registerViewModel.User.UserID);
+                User user = JsonConvert.DeserializeObject<User>(HttpContext.Session.GetString("SessionUser"));
+                user = _context.users.Where(u => u.Email == user.Email).FirstOrDefault();
                 user.paymentOption = registerViewModel.User.paymentOption;
                 user.pin = newPin(_context);
 
                 user.Token = Guid.NewGuid().ToString();
+
+
                 _context.SaveChanges();
 
-                Response.Cookies.Append("token", user.Token, new Microsoft.AspNetCore.Http.CookieOptions
+                Response.Cookies.Append("token", user.Token, new CookieOptions
                 {
                     Expires = DateTime.Now.AddYears(1),
                     HttpOnly = true
@@ -150,7 +154,7 @@ namespace Crunch.Controllers
             }
             else
 
-                return View(); ;
+                return View();
         }
 
         [HttpPost]
@@ -239,7 +243,8 @@ namespace Crunch.Controllers
 
             p = _context.promocodes.Where(p => p.promocode == promocode).FirstOrDefault();
 
-            if (p==null) {
+            if (p == null)
+            {
                 return null;
             }
 
