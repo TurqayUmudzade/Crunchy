@@ -116,8 +116,7 @@ namespace Crunch.Controllers
                     User = user,
                     gym = user.gym
                 };
-                _context.Add(user);
-                _context.SaveChanges();
+               
 
                 return View("~/Views/Account/Register3.cshtml", model);
             }
@@ -136,13 +135,14 @@ namespace Crunch.Controllers
             {
 
                 User user = JsonConvert.DeserializeObject<User>(HttpContext.Session.GetString("SessionUser"));
-                user = _context.users.Where(u => u.Email == user.Email).FirstOrDefault();
                 user.paymentOption = registerViewModel.User.paymentOption;
                 user.pin = newPin(_context);
-
                 user.Token = Guid.NewGuid().ToString();
-
-
+                //to avoid entity relation errors
+                int gymId = user.gym.gymID;
+                user.gym = _context.gyms.Find(gymId);
+                
+                _context.Add(user);
                 _context.SaveChanges();
 
                 Response.Cookies.Append("token", user.Token, new CookieOptions
