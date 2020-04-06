@@ -116,7 +116,6 @@ namespace Crunch.Controllers
                     User = user,
                     gym = user.gym
                 };
-               
 
                 return View("~/Views/Account/Register3.cshtml", model);
             }
@@ -133,15 +132,15 @@ namespace Crunch.Controllers
         {
             if (registerViewModel.User != null)
             {
-
                 User user = JsonConvert.DeserializeObject<User>(HttpContext.Session.GetString("SessionUser"));
                 user.paymentOption = registerViewModel.User.paymentOption;
                 user.pin = newPin(_context);
                 user.Token = Guid.NewGuid().ToString();
+
                 //to avoid entity relation errors
                 int gymId = user.gym.gymID;
                 user.gym = _context.gyms.Find(gymId);
-                
+
                 _context.Add(user);
                 _context.SaveChanges();
 
@@ -153,8 +152,7 @@ namespace Crunch.Controllers
                 return RedirectToAction("Login", "Account");
             }
             else
-
-                return View();
+                return View(registerViewModel);
         }
 
         [HttpPost]
@@ -172,8 +170,7 @@ namespace Crunch.Controllers
 
                         user.Token = Guid.NewGuid().ToString();
                         _context.SaveChanges();
-
-                        logingInViewModel.RememberMe = true;
+                        
                         Response.Cookies.Append("token", user.Token, new Microsoft.AspNetCore.Http.CookieOptions
                         {
                             Expires = logingInViewModel.RememberMe ? DateTime.Now.AddYears(1) : DateTime.Now.AddDays(1),
@@ -197,7 +194,6 @@ namespace Crunch.Controllers
             User user = _context.users.Find(_auth.User.UserID);
             user.Token = null;
             _context.SaveChanges();
-
             Response.Cookies.Delete("token");
 
             return RedirectToAction("index");

@@ -25,6 +25,11 @@
                         <label asp-for="Pin">Pin<span>*</span></label>
                         <input type="text" asp-for="Pin">
                     </div>
+                    <div class="form-row remember-me">
+                        <input type="checkbox"asp-for="RememberMe" name="" id="rememberMe">
+                        <label asp-for="RememberMe">Remember Me</label>
+                        <i class="fas fa-check hidden"></i>
+                    </div>
                     <button id="login-page-button" class="button" type="submit">Login</button>
                 </form>
             </div>

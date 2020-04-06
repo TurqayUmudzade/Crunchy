@@ -101,7 +101,7 @@ h5 {
 }
 
 .hidden {
-  display: none;
+  display: none !important;
 }
 
 li {
@@ -387,6 +387,46 @@ footer .footer-wrapper .right p {
 
 .login-page .form-row {
   display: block !important;
+}
+
+.login-page .remember-me {
+  margin: 0 38px !important;
+  top: -25px;
+}
+
+.login-page .remember-me #rememberMe {
+  width: 16px !important;
+  position: relative;
+  height: 18px !important;
+  -webkit-appearance: none;
+  border: 1px solid #7e8993 !important;
+  border-radius: 4px;
+  background: #fff;
+  cursor: pointer;
+  outline: 0;
+  padding: 0 !important;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.login-page .remember-me #rememberMe:checked {
+  border: 1px solid #0090d9 !important;
+}
+
+.login-page .remember-me #rememberMe:checked .fa-check {
+  display: block;
+}
+
+.login-page .remember-me i {
+  pointer-events: none;
+  font-size: 15px;
+  position: absolute;
+  left: 5px;
+  top: 7px;
+}
+
+.login-page .remember-me label {
+  font-size: 20px !important;
 }
 
 #login-page-join-now {
@@ -1333,6 +1373,18 @@ footer .footer-wrapper .right p {
   padding-left: 30px;
   position: relative;
   top: 7px;
+}
+
+@media screen and (max-width: 800px) {
+  #mobile-radios {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  #mobile-radios .block {
+    margin: 10px 0;
+  }
 }
 
 #register-section {

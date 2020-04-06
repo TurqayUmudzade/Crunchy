@@ -98,4 +98,11 @@ $("#promo-apply").on("click", function () {
 });
 
 
-
+//Login
+$('#rememberMe').on("click", function () {
+    if ($('.fa-check').hasClass('hidden')) {
+        $('.fa-check').removeClass("hidden");
+    } else {
+        $('.fa-check').addClass('hidden');
+    }
+})

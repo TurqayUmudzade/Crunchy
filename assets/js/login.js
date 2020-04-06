@@ -73,3 +73,36 @@ if (value != 0) {
     $(".field-validation-error").siblings(":input").addClass("error-asp");
     $(".field-validation-error").siblings("label").addClass("error-asp");
 }
+//Register 2
+
+//promo code
+
+$("#promo").on("click", function() {
+    $("#bottom").removeClass("hidden");
+});
+
+$("#promo-apply").on("click", function() {
+    var s = $('#promo-input').val();
+    paymentUrl = "/Account/Promo?promo=" + s;
+    console.log(s);
+    $.ajax({
+        url: paymentUrl,
+        type: "get",
+        dataType: "html",
+        success: function(response) {
+            $(".promo-status").html(response);
+        },
+        error: function(error) {
+            console.log("Error not found", "error");
+        },
+        complete: function() {}
+    });
+});
+
+$('#rememberMe').on("click", function() {
+    if ($('.fa-check').hasClass('hidden')) {
+        $('.fa-check').removeClass("hidden");
+    } else {
+        $('.fa-check').addClass('hidden');
+    }
+})
