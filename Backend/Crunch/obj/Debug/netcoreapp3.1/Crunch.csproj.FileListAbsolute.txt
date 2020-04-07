@@ -521,8 +521,6 @@ C:\Users\Turqay\Desktop\Crunch\Backend\Crunch\obj\Debug\netcoreapp3.1\Razor\View
 C:\Users\Turqay\Desktop\Crunch\Backend\Crunch\obj\Debug\netcoreapp3.1\Razor\Views\PartialViews\GymList.cshtml.g.cs
 C:\Users\Turqay\Desktop\Crunch\Backend\Crunch\obj\Debug\netcoreapp3.1\Razor\Views\PartialViews\GymLocationList.cshtml.g.cs
 C:\Users\Turqay\Desktop\Crunch\Backend\Crunch\obj\Debug\netcoreapp3.1\Razor\Views\PartialViews\PromoStatus.cshtml.g.cs
-C:\Users\Turqay\Desktop\Crunch\Backend\Crunch\obj\Debug\netcoreapp3.1\Razor\Views\Session\Index.cshtml.g.cs
-C:\Users\Turqay\Desktop\Crunch\Backend\Crunch\obj\Debug\netcoreapp3.1\Razor\Views\Session\Test.cshtml.g.cs
 C:\Users\Turqay\Desktop\Crunch\Backend\Crunch\obj\Debug\netcoreapp3.1\Razor\Views\Shared\ClassInfo.cshtml.g.cs
 C:\Users\Turqay\Desktop\Crunch\Backend\Crunch\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Error.cshtml.g.cs
 C:\Users\Turqay\Desktop\Crunch\Backend\Crunch\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Layout2.cshtml.g.cs

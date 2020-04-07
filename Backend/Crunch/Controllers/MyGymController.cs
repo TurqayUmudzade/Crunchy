@@ -98,7 +98,6 @@ namespace Crunch.Controllers
                 client.Send(message);
                 client.Disconnect(true);
             }
-
         }
     }
 }

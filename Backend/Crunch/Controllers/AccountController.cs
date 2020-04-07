@@ -11,6 +11,9 @@ using Crunch.Filters;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Http;
 using Newtonsoft.Json;
+using MailKit;
+using MailKit.Net.Smtp;
+using MimeKit;
 
 namespace Crunch.Controllers
 {
@@ -144,11 +147,13 @@ namespace Crunch.Controllers
                 _context.Add(user);
                 _context.SaveChanges();
 
-                Response.Cookies.Append("token", user.Token, new CookieOptions
-                {
-                    Expires = DateTime.Now.AddYears(1),
-                    HttpOnly = true
-                });
+                
+                HttpContext.Session.Remove("SessionUser");
+
+                String text = "Your pin is "+user.pin;
+
+                SendEmail(user,text);
+
                 return RedirectToAction("Login", "Account");
             }
             else
@@ -170,7 +175,7 @@ namespace Crunch.Controllers
 
                         user.Token = Guid.NewGuid().ToString();
                         _context.SaveChanges();
-                        
+
                         Response.Cookies.Append("token", user.Token, new Microsoft.AspNetCore.Http.CookieOptions
                         {
                             Expires = logingInViewModel.RememberMe ? DateTime.Now.AddYears(1) : DateTime.Now.AddDays(1),
@@ -268,7 +273,30 @@ namespace Crunch.Controllers
             return PartialView("~/Views/PartialViews/PromoStatus.cshtml", p);
         }
 
+        public void SendEmail( User user, String text)
+        {
+            MimeMessage message = new MimeMessage();
 
+            MailboxAddress from = new MailboxAddress("User", "testing@gmail.com");
 
+            if (user != null)
+            {
+                from = new MailboxAddress(user.firstName, "testing@gmail.com");
+            }
+            message.From.Add(from);
+
+            MailboxAddress to = new MailboxAddress("user", user.Email);
+            message.To.Add(to);
+
+            message.Body = new TextPart("plain") { Text = text };
+
+            using (SmtpClient client = new SmtpClient())
+            {
+                client.Connect("smtp.gmail.com", 587, false);
+                client.Authenticate("crunchgymemailbot@gmail.com", "3008812t");
+                client.Send(message);
+                client.Disconnect(true);
+            }
+        }
     }
 }
