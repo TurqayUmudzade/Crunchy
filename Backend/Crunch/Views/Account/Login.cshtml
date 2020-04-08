@@ -24,6 +24,7 @@
                     <div class="form-row">
                         <label asp-for="Pin">Pin<span>*</span></label>
                         <input type="text" asp-for="Pin">
+                        @Html.ValidationMessage("Pin")
                     </div>
                     <div class="form-row remember-me">
                         <input type="checkbox"asp-for="RememberMe" name="" id="rememberMe">
@@ -35,10 +36,12 @@
             </div>
         </div>
         <div class="next">
-            <a id="login-page-join-now">Join Now</a>
+            <a id="login-page-join-now" href="@Url.ActionLink("Register","Account")">Join Now</a>
         </div>
         </div>
 
 </section>
+
+<script  src="~/js/login.js" ></script>
 
 

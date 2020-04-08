@@ -2168,7 +2168,7 @@ article .class .message .no {
 #member-area .container .content .body .goals .goal-wrapper .goal {
   background-color: #f9f9f9;
   border-radius: 10px;
-  padding: 37px;
+  padding: 0px 37px;
   margin-bottom: 20px;
   height: 160px;
   display: inline-block;
@@ -2355,6 +2355,20 @@ article .class .message .no {
 
 .container80 {
   width: 80%;
+}
+
+@media screen and (max-width: 840px) {
+  #member-area .container {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  #member-area .container .nav-pane {
+    width: 100%;
+    margin: 0 auto;
+  }
+  #member-area .container .content {
+    width: 100%;
+  }
 }
 
 .contact-form select {

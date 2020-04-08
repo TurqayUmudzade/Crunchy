@@ -68,6 +68,8 @@ namespace Crunch.Models
 
         public int paymentOption { get; set; }//1 2 3
 
+        public DateTime membershipActiveTill { get; set; }
+
 
         public List<UserClass> userClasses { get; set; }
 

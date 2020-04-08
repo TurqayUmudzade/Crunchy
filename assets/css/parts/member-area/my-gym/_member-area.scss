@@ -119,7 +119,7 @@
                         .goal {
                             background-color: #f9f9f9;
                             border-radius: 10px;
-                            padding: 37px;
+                            padding: 0px 37px;
                             margin-bottom: 20px;
                             height: 160px;
                             display: inline-block;
@@ -279,4 +279,30 @@
 
 .container80 {
     width: 80%;
+}
+
+//responsive
+@media screen and (max-width: 840px) {
+    #member-area {
+        .container {
+            flex-wrap: wrap;
+            .nav-pane {
+                width: 100%;
+                margin: 0 auto;
+            }
+            .content {
+                width: 100%;
+            }
+        }
+    }
+}
+
+//responsive
+@media screen and (max-width: 840px) {
+    #member-area {}
+}
+
+//responsive
+@media screen and (max-width: 840px) {
+    #member-area {}
 }

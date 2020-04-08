@@ -138,25 +138,31 @@ namespace Crunch.Controllers
                 User user = JsonConvert.DeserializeObject<User>(HttpContext.Session.GetString("SessionUser"));
                 user.paymentOption = registerViewModel.User.paymentOption;
                 user.pin = newPin(_context);
+
+                //IF its the first time adding ,add a user or it will timeout so uncomment this
+                //user.pin = "123";
                 user.Token = Guid.NewGuid().ToString();
+
 
                 //to avoid entity relation errors
                 int gymId = user.gym.gymID;
                 user.gym = _context.gyms.Find(gymId);
+                user.promocode = _context.promocodes.Where(p => p.promocode == user.promocode.promocode).FirstOrDefault();
+                user.membershipActiveTill = DateTime.Now.AddMonths(1);
 
                 _context.Add(user);
                 _context.SaveChanges();
 
-                
                 HttpContext.Session.Remove("SessionUser");
 
-                String text = "Your pin is "+user.pin;
+                String text = "Your pin is " + user.pin;
 
-                SendEmail(user,text);
+                SendEmail(user, text);
 
                 return RedirectToAction("Login", "Account");
             }
             else
+
                 return View(registerViewModel);
         }
 
@@ -182,11 +188,11 @@ namespace Crunch.Controllers
                             HttpOnly = true
                         });
 
-                        return RedirectToAction("index", "home");
+                        return RedirectToAction("Home", "MyGym");
                     }
-                    ModelState.AddModelError("Pin", "Wrong email or password");
-                }
 
+                }
+                ModelState.AddModelError("Pin", "Wrong email or password");
             }
 
             return View(logingInViewModel);
@@ -209,7 +215,7 @@ namespace Crunch.Controllers
         {
 
             Random rand = new Random();
-            String pin = Math.Round((rand.NextDouble() * Math.Pow(10, 8 + 1))).ToString();
+            String pin = Math.Round((rand.NextDouble() * Math.Pow(10, 8))).ToString();
 
             return pin;
         }
@@ -217,17 +223,12 @@ namespace Crunch.Controllers
         static public String newPin(Context context)
         {
             string pin;
-            bool isNew = false;
+
             while (true)
             {
                 pin = PinGenerator();
                 //check if the pin doesnt belong to another user
                 if (!context.users.All(u => u.pin == pin))
-                {
-                    isNew = true;
-                }
-
-                if (isNew)
                 {
                     break;
                 }
@@ -273,11 +274,11 @@ namespace Crunch.Controllers
             return PartialView("~/Views/PartialViews/PromoStatus.cshtml", p);
         }
 
-        public void SendEmail( User user, String text)
+        public void SendEmail(User user, String text)
         {
             MimeMessage message = new MimeMessage();
 
-            MailboxAddress from = new MailboxAddress("User", "testing@gmail.com");
+            MailboxAddress from = new MailboxAddress("Crunch", "crunchgymemailbot@gmail.com");
 
             if (user != null)
             {

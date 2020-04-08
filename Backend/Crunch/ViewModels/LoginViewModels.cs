@@ -23,13 +23,13 @@ namespace Crunch.ViewModels
 
     public class LogingInViewModel
     {
-        [Required(ErrorMessage = "Entered Email ")]
+        [Required(ErrorMessage = "Enter Email ")]
         [EmailAddress]
         [MaxLength(50)]
         public string Email { get; set; }
 
 
-        [Required(ErrorMessage = "Entered Password ")]
+        [Required(ErrorMessage = "Enter Password ")]
         [MaxLength(50)]
         [DataType(DataType.Password)]
         public string Pin { get; set; }
