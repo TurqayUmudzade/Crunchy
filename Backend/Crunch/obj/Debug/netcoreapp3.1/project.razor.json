@@ -20536,6 +20536,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\Turqay\\Desktop\\Crunch\\Backend\\Crunch\\Views\\Shared\\_LayoutUser.cshtml",
+      "TargetPath": "Views\\Shared\\_LayoutUser.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\Turqay\\Desktop\\Crunch\\Backend\\Crunch\\Views\\Home\\Privacy.cshtml",
       "TargetPath": "Views\\Home\\Privacy.cshtml",
       "FileKind": "mvc"
@@ -20553,6 +20558,11 @@
     {
       "FilePath": "c:\\Users\\Turqay\\Desktop\\Crunch\\Backend\\Crunch\\Views\\MemberArea\\BookClass.cshtml",
       "TargetPath": "Views\\MemberArea\\BookClass.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Turqay\\Desktop\\Crunch\\Backend\\Crunch\\Views\\PartialViews\\_MailSent.cshtml",
+      "TargetPath": "Views\\PartialViews\\_MailSent.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -20608,11 +20618,6 @@
     {
       "FilePath": "c:\\Users\\Turqay\\Desktop\\Crunch\\Backend\\Crunch\\Views\\PartialViews\\GymLocationList.cshtml",
       "TargetPath": "Views\\PartialViews\\GymLocationList.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\Turqay\\Desktop\\Crunch\\Backend\\Crunch\\Views\\Shared\\Layout2.cshtml",
-      "TargetPath": "Views\\Shared\\Layout2.cshtml",
       "FileKind": "mvc"
     },
     {

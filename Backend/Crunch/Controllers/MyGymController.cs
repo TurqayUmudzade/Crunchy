@@ -12,6 +12,9 @@ using Crunch.ViewModels;
 using MailKit;
 using MailKit.Net.Smtp;
 using MimeKit;
+using Newtonsoft.Json;
+using System.Net.Http;
+using System.Text;
 
 namespace Crunch.Controllers
 {
@@ -44,9 +47,7 @@ namespace Crunch.Controllers
         [TypeFilter(typeof(CheckAuth))]
         public IActionResult AverageUsage()
         {
-            User loggedInUser = _context.users.Find(_auth.User.UserID);
-            loggedInUser.gymLocation = _context.users.Include("gym").Where(u => u.UserID == loggedInUser.UserID).FirstOrDefault().gym.gymLocation;
-
+            User loggedInUser = _context.users.Include(u => u.gym).Where(u => u.UserID == _auth.User.UserID).FirstOrDefault();
             return View(loggedInUser);
         }
 
@@ -54,24 +55,16 @@ namespace Crunch.Controllers
         [TypeFilter(typeof(CheckAuth))]
         public IActionResult Contact()
         {
-            User loggedInUser = _context.users.Find(_auth.User.UserID);
-            loggedInUser.gymLocation = _context.users.Include("gym").Where(u => u.UserID == loggedInUser.UserID).FirstOrDefault().gym.gymLocation;
-            ContactMemberViewModel model = new ContactMemberViewModel
-            {
-                user = loggedInUser
-            };
-
+            User loggedInUser = _context.users.Include(u => u.gym).Where(u => u.UserID == _auth.User.UserID).FirstOrDefault();
+            ContactMemberViewModel model = new ContactMemberViewModel { user = loggedInUser };
             return View(model);
         }
 
-        [HttpPost]
-        [TypeFilter(typeof(CheckAuth))]
-        public void SendEmail(Email email)
+
+
+        public void SendEmail(Email email, User loggedInUser)
         {
-            User loggedInUser = _context.users.Find(_auth.User.UserID);
-
             MimeMessage message = new MimeMessage();
-
             MailboxAddress from = new MailboxAddress("User", "testing@gmail.com");
 
             if (loggedInUser != null)
@@ -86,7 +79,7 @@ namespace Crunch.Controllers
 
             message.Subject = email.Subject;
 
-            String text = "Nature of contact:" + email.Nature + "\r\nGym this enquiry relates to" + email.Gym + "\r\nThe Message:" + email.Body;
+            String text = "Nature of contact: " + email.Nature + "\r\nGym this enquiry relates to: " + email.Gym + "\r\nThe Message: " + email.Body;
 
             message.Body = new TextPart("plain") { Text = text };
 
@@ -98,6 +91,60 @@ namespace Crunch.Controllers
                 client.Send(message);
                 client.Disconnect(true);
             }
+        }
+
+        [HttpPost]
+        [TypeFilter(typeof(CheckAuth))]
+        public async Task<IActionResult> Contact([FromForm]ContactMemberViewModel model)
+        {
+            User loggedInUser = _context.users.Find(_auth.User.UserID);
+            model.user = _context.users.Include(u => u.gym).Where(u => u.UserID == _auth.User.UserID).FirstOrDefault();
+            if (!ModelState.IsValid)
+            {
+                //fix this
+                ModelState.AddModelError("Captcha", "Please click on the \"I'm not a robot\" checkbox");
+                return View(model);
+            }
+
+
+            var result = await VerifyCaptcha(model.ReCaptcha);
+
+            if (!result.Success)
+            {
+                ModelState.AddModelError("Captcha", "Please click on the \"I'm not a robot\" checkbox");
+
+                return View(model);
+            }
+            SendEmail(model.email, loggedInUser);
+            ViewBag.msg = "Email Was Sent";
+
+            ContactMemberViewModel newModel = new ContactMemberViewModel()
+            {
+                user = _context.users.Include(u => u.gym).Where(u => u.UserID == _auth.User.UserID).FirstOrDefault()
+            };
+            return View(newModel);
+
+        }
+
+
+        /// verify the captcha's response with Google
+        private async Task<CaptchaVerification> VerifyCaptcha(string captchaResponse)
+        {
+            string userIP = string.Empty;
+            var ipAddress = Request.HttpContext.Connection.RemoteIpAddress;
+            if (ipAddress != null) userIP = ipAddress.MapToIPv4().ToString();
+
+            var payload = string.Format("&secret={0}&remoteip={1}&response={2}", "6LeOf-EUAAAAAG6Lt40JwkIIv71LP8z7YUdxsdcf", userIP, captchaResponse);
+
+            var client = new HttpClient();
+            client.BaseAddress = new Uri("https://www.google.com");
+            var request = new HttpRequestMessage(HttpMethod.Post, "/recaptcha/api/siteverify")
+            {
+                Content = new StringContent(payload, Encoding.UTF8, "application/x-www-form-urlencoded")
+            };
+
+            var response = await client.SendAsync(request);
+            return JsonConvert.DeserializeObject<CaptchaVerification>(response.Content.ReadAsStringAsync().Result);
         }
     }
 }

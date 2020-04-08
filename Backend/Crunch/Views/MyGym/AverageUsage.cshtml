@@ -2,7 +2,7 @@
 @{
     ViewData["Title"] = "AverageUsage";
 
-    Layout = "~/Views/Shared/Layout2.cshtml";
+    Layout = "~/Views/Shared/_LayoutUser.cshtml";
 }
 
 @model User
@@ -65,7 +65,7 @@
             </script>
             <div class="my-gym">
                 <span class="tick-c"></span>
-                <span class="gym-name">@Model.gymLocation</span>
+                <span class="gym-name">@Model.gym.gymLocation</span>
             </div>
         </div>
     </div>

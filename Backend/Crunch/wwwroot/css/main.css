@@ -34,29 +34,6 @@ form input[readonly=readonly] {
   opacity: .5;
 }
 
-.my-gym {
-  margin: 16px 0 0px 16px;
-}
-
-.my-gym .tick-c {
-  color: #009fdf;
-  width: 21px;
-  height: 21px;
-  margin-right: 10px;
-  border: 3px solid;
-  border-radius: 100%;
-  display: inline-block;
-  vertical-align: middle;
-}
-
-.my-gym .gym-name {
-  font-size: 14px;
-  color: #666;
-  font-weight: 700;
-  display: inline-block;
-  vertical-align: middle;
-}
-
 body {
   margin: 0;
   padding: 0;
@@ -2022,6 +1999,29 @@ article .class .message .no {
   color: #364e72;
 }
 
+.my-gym {
+  margin: 16px 0 15px 16px;
+}
+
+.my-gym .tick-c {
+  color: #009fdf;
+  width: 21px;
+  height: 21px;
+  margin-right: 10px;
+  border: 3px solid;
+  border-radius: 100%;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.my-gym .gym-name {
+  font-size: 14px;
+  color: #666;
+  font-weight: 700;
+  display: inline-block;
+  vertical-align: middle;
+}
+
 #member-area .container {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -2081,15 +2081,16 @@ article .class .message .no {
 }
 
 #member-area .container .nav-pane .left-navigation .nav-menu .expandable .nav-sub-menue-open {
+  max-height: 400px !important;
   height: auto !important;
   -webkit-transition: ease-in 0.3s;
   transition: ease-in 0.3s;
 }
 
 #member-area .container .nav-pane .left-navigation .nav-menu .expandable .nav-sub-menu {
-  -webkit-transition: ease-out 0.3s;
-  transition: ease-out 0.3s;
-  height: 0;
+  max-height: 0;
+  -webkit-transition: max-height 0.5s ease-out;
+  transition: max-height 0.5s ease-out;
   overflow: hidden;
   padding: 0 0 0 20px;
 }
@@ -2371,6 +2372,16 @@ article .class .message .no {
   }
 }
 
+@media screen and (max-width: 640px) {
+  #member-area .container {
+    padding: 0px;
+  }
+}
+
+.contact-form {
+  margin-bottom: 15px;
+}
+
 .contact-form select {
   -webkit-box-flex: 6;
       -ms-flex: 6;
@@ -2387,6 +2398,36 @@ article .class .message .no {
   border-left: 5px solid #009fdf;
   font-family: 'Roboto Condensed', sans-serif !important;
   font-size: 20px;
+}
+
+.email-sent-confirmation {
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  padding: 30px 40px;
+  width: 25%;
+  margin: 0 auto;
+  margin-bottom: 25px;
+}
+
+.email-sent-confirmation h3 {
+  text-align: center;
+  color: #009fdf;
+}
+
+@media screen and (max-width: 1040px) {
+  #member-area .container80 {
+    width: 95%;
+  }
+  #member-area .contact-form .form-row {
+    margin: 30px 10px;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  #member-area .contact-form .form-row input[type=text] {
+    width: unset;
+  }
 }
 
 #locations {

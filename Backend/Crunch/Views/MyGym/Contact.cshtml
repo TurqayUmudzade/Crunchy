@@ -5,52 +5,62 @@
 }
 @using Crunch.ViewModels
 @model ContactMemberViewModel
-    <div class="content ">
-        <div class="container80">
+<div class="content ">
+    <div class="container80">
 
-            <div class="body">
-                <h2 class="header">Contact us</h2>
-                <p>Do you have a question that is not answered on our website? Or would you like to make a general enquiry? Whatever it may be, please call us on 0300 303 4800 so that we can help assist you.</p>
-                <div class=" foot">
-                    <form class="contact-form" method="post" asp-action="SendEmail" asp-controller="MyGym">
-                        <div class="form-row">
-                            <label asp-for="email.Nature">Nature of contact<span>*</span></label>
-                            <select class="js-department open" id="Nature" asp-for="email.Nature">
-                                <option value="">Please select</option>
-                                <option value="General">General enquiry</option>
-                                <option value="Feedback">Feedback </option>
-                                <option value="Fitness">Fitness</option>
-                            </select>
-                        </div>
-                        <div class="form-row">
-                            <label asp-for="email.Gym"> Gym this enquiry relates to<span>*</span></label>
-                            <select class="js-department open" asp-for="email.Gym">
-                                <option value="">Please select</option>
-                                <option value="@Model.user.gymLocation">@Model.user.gymLocation</option>
-                               
-                            </select>
-                        </div>
-
-                        <div class="form-row">
-                            <label asp-for="email.Subject">Subject<span>*</span></label>
-                            <input asp-for="email.Subject">
-                        </div>
-                        <div class="form-row">
-                            <label asp-for="email.Body">Details<span>*</span></label>
-                            <textarea asp-for="email.Body" id="" cols="30" rows="10"></textarea>
-                        </div>
-
-                        <div class="form-row">
-                            <label for="">Security<span>*</span></label>
-                            <div class="g-recaptcha" data-sitekey="6LeOf-EUAAAAANYIRJKug1xSgtS4eMsnfswEz-6w"></div>
-                        </div>
-
-                        <button id="" type="submit" class="button">Send Enquiry</button>
-
-                    </form>
-                </div>
-
+        <div class="body">
+            <h2 class="header">Contact us</h2>
+            <div class="email-sent-confirmation">
+                <h3>@ViewBag.msg</h3>
             </div>
+            <p>Do you have a question that is not answered on our website? Or would you like to make a general enquiry? Whatever it may be, please call us on 0300 303 4800 so that we can help assist you.</p>
+            <div class=" foot">
+                <form class="contact-form" method="post" asp-action="Contact" asp-controller="MyGym">
+                    <div class="form-row">
+                        <label asp-for="email.Nature">Nature of contact<span>*</span></label>
+                        <select class="js-department open" id="Nature" asp-for="email.Nature">
+                            <option value="">Please select</option>
+                            <option value="General">General enquiry</option>
+                            <option value="Feedback">Feedback </option>
+                            <option value="Fitness">Fitness</option>
+                        </select>
+                        <span asp-validation-for="email.Nature"></span>
+                    </div>
+                    <div class="form-row">
+                        <label asp-for="email.Gym"> Gym this enquiry relates to<span>*</span></label>
+                        <select class="js-department open" asp-for="email.Gym">
+                            <option value="">Please select</option>
+                            <option value="@Model.user.gym.gymLocation">@Model.user.gym.gymLocation</option>
+                        </select>
+                        <span asp-validation-for="email.Gym"></span>
+                    </div>
+
+                    <div class="form-row">
+                        <label asp-for="email.Subject">Subject<span>*</span></label>
+                        <input asp-for="email.Subject">
+                        <span asp-validation-for="email.Subject"></span>
+                    </div>
+                    
+                    <div class="form-row">
+                        <label asp-for="email.Body">Details<span>*</span></label>
+                        <textarea asp-for="email.Body" id="" cols="30" rows="10"></textarea>
+                        <span asp-validation-for="email.Body"></span>
+                    </div>
+                    
+
+                    <div class="form-row">
+                        <label for="">Security<span>*</span></label>
+                        <div class="g-recaptcha" data-sitekey="6LeOf-EUAAAAANYIRJKug1xSgtS4eMsnfswEz-6w"></div>
+                        <span asp-validation-for="ReCaptcha"></span>
+                        @Html.ValidationMessage("Captcha")
+                    </div>
+
+                    <button id="" type="submit" class="button">Send Enquiry</button>
+
+                </form>
+            </div>
+
         </div>
     </div>
+</div>
 

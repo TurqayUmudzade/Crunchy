@@ -45,12 +45,13 @@
                             font-size: 25px;
                         }
                         .nav-sub-menue-open {
+                            max-height: 400px!important;
                             height: auto !important;
                             transition: ease-in 0.3s;
                         }
                         .nav-sub-menu {
-                            transition: ease-out 0.3s;
-                            height: 0;
+                            max-height: 0;
+                            transition: max-height 0.5s ease-out;
                             overflow: hidden;
                             padding: 0 0 0 20px;
                             li {
@@ -157,7 +158,6 @@
                     color: white;
                     text-align: center;
                     .goal-body-wrapper {
-                        h2 {}
                         .headline-support {
                             margin-bottom: 20px;
                             line-height: 1.5;
@@ -298,11 +298,10 @@
 }
 
 //responsive
-@media screen and (max-width: 840px) {
-    #member-area {}
-}
-
-//responsive
-@media screen and (max-width: 840px) {
-    #member-area {}
+@media screen and (max-width: 640px) {
+    #member-area {
+        .container {
+            padding: 0px;
+        }
+    }
 }
