@@ -298,8 +298,12 @@
 }
 
 //responsive
-@media screen and (max-width: 840px) {
-    #member-area {}
+@media screen and (max-width: 640px) {
+    #member-area {
+        .container {
+            padding: 0px;
+        }
+    }
 }
 
 //responsive
