@@ -20,25 +20,20 @@ namespace Crunch.Controllers
 
         public MemberAreaController(Context context, IAuth auth)
         {
-
             _context = context;
             _auth = auth;
         }
 
-        public IActionResult Index()
-        {
-            return View();
-        }
 
         [HttpGet]
         [TypeFilter(typeof(CheckAuth))]
-        public ContentResult BookTheClass(int ClassID)
+        public IActionResult BookTheClass(int ClassID)
         {
             Class selectedClass = _context.classes.Find(ClassID);
             selectedClass.spaceUsed++;
             _context.SaveChanges();
 
-            return Content(ClassID.ToString());
+            return PartialView();
 
         }
 
@@ -47,14 +42,14 @@ namespace Crunch.Controllers
         public IActionResult BookClass()
         {
             //Get the user
-            User loggedInUser = _context.users.Find(_auth.User.UserID);
+            User loggedInUser = _context.users.Include(u => u.gym).Where(u => u.UserID == _auth.User.UserID).FirstOrDefault();
 
             //Get the classes from Users Locations
             List<List<Class>> classesList = new List<List<Class>>();
 
             for (int i = 0; i < 7; i++)
             {
-                classesList.Add(_context.classes.Where(c => c.gymLocation == loggedInUser.gymLocation && c.dateTime.Date == DateTime.Today.AddDays(i).Date).ToList());
+                classesList.Add(_context.classes.Where(c => c.gym == loggedInUser.gym && c.dateTime.Date == DateTime.Today.AddDays(i).Date).ToList());
             }
 
 
@@ -79,7 +74,6 @@ namespace Crunch.Controllers
         [HttpPost]
         public IActionResult EditUser(User editedUser)
         {
-
             User user = _context.users.Find(_auth.User.UserID);
 
             user.Gender = editedUser.Gender;
@@ -103,20 +97,27 @@ namespace Crunch.Controllers
             return View(user);
         }
 
-
+        [TypeFilter(typeof(CheckAuth))]
         public IActionResult Trainers()
         {
-            List<Trainer> trainers = _context.trainers.ToList();
-
-            return View(trainers);
+            TrainerViewModel model = new TrainerViewModel()
+            {
+                trainers= _context.trainers.ToList(),
+                user= _context.users.Find(_auth.User.UserID)
+            };
+            return View(model);
         }
 
         [HttpGet]
+        [TypeFilter(typeof(CheckAuth))]
         public IActionResult AboutTrainer(int trainerID)
         {
-            Trainer trainer = _context.trainers.Find(trainerID);
-
-            return View(trainer);
+            TrainerViewModel model = new TrainerViewModel()
+            {
+                trainer = _context.trainers.Find(trainerID),
+                user= _context.users.Find(_auth.User.UserID)
+            };
+            return View(model);
         }
 
     }

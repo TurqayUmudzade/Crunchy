@@ -11,23 +11,13 @@
             <h2>Book a class</h2>
         </div>
         <div class="body">
-            <div class="form">
-                <form action="">
-                    <div class="form-group">
-                        <label for="">Please Select:</label>
-                        <a class="open-payment-modal" href="@Url.Action("testfunction","MemberArea",new { gymID=2 })">TEst</a>
-
-                        <div class="test-container"></div>
-                        <select href="sex" name="" id="">
-                            <option value="1">Baku</option>
-                            <option value="2">Nerimanov</option>
-                        </select>
-                    </div>
-                </form>
+            <div class="my-gym">
+                <span class="tick-c"></span>
+                <span class="gym-name">@Model.user.gym.gymLocation</span>
             </div>
             <div class="classes">
                 <div class="classes-header">
-                    <h4>Month</h4>
+                    <h4>@DateTime.Now.ToString("MMMM")</h4>
                 </div>
                 <div class="calendar">
                     <div class="tab-nav">

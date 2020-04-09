@@ -1,10 +1,10 @@
 ﻿
 @{
-    ViewData["Title"] = "AboutTrainer";
-    Layout = "~/Views/Shared/Layout2.cshtml";
+    ViewData["Title"] = Model.trainer;
+    Layout = "~/Views/Shared/ViewModelLayout.cshtml";
 }
 
-@model Trainer
+@model TrainerViewModel
 
        
     <div class="content ">
@@ -13,21 +13,21 @@
                 <div class="about">
                     <h3 class="heading">Experience & philosophy</h3>
                     <p>
-                        @Model.aboutMe
+                        @Model.trainer.aboutMe
                     </p>
                 </div>
                 <div class="image">
 
-                    <img src="~/image/@Model.image" alt="trainer-image">
+                    <img src="~/image/@Model.trainer.image" alt="trainer-image">
 
                 </div>
             </div>
             <div class="contact-box">
                 <div class="contact-info">
-                    <h3 class="name">@Model.title @Model.fullName</h3>
+                    <h3 class="name">@Model.trainer.title @Model.trainer.fullName</h3>
                     <div class="email">
                         <i class="fas fa-envelope-square"></i>
-                        <span class="email">@Model.email</span>
+                        <span class="email">@Model.trainer.email</span>
                     </div>
                 </div>
             </div>
@@ -35,8 +35,8 @@
                 <h3 class="heading">Qualifications</h3>
 
                 @{
-                    String[] Qualifications  =Model.Qualifications.Split('|');
-                    String[] Specialities  =Model.Speciality.Split('|');
+                    String[] Qualifications  =Model.trainer.Qualifications.Split('|');
+                    String[] Specialities  =Model.trainer.Speciality.Split('|');
 
                 }
                 <ul class="list">

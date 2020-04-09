@@ -1821,6 +1821,19 @@ article .class .message .no {
   font-size: 40px;
 }
 
+@media screen and (max-width: 780px) {
+  #member-area .content {
+    margin-left: 15px;
+  }
+  #member-area .content .tab-nav ul {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  #member-area article .icon-container {
+    display: none;
+  }
+}
+
 .content .heading {
   font-size: 30px;
   /* font-size: 3rem; */
@@ -1923,6 +1936,8 @@ article .class .message .no {
 }
 
 .trainer-body .trainers .trainer {
+  position: relative;
+  min-width: 250px;
   width: 32%;
   margin: 0 auto 34px;
   overflow: hidden;
@@ -1963,10 +1978,9 @@ article .class .message .no {
 }
 
 .trainer-body .trainers .trainer .bottom .about {
-  border-bottom: 1px solid #d6d6d6;
   width: 80%;
   margin: 0 auto;
-  margin-bottom: 20px;
+  margin-bottom: 100px;
 }
 
 .trainer-body .trainers .trainer .bottom .about .name {
@@ -1981,10 +1995,18 @@ article .class .message .no {
 }
 
 .trainer-body .trainers .trainer .bottom .foot {
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  bottom: 0;
   padding: 20px 0;
 }
 
 .trainer-body .trainers .trainer .bottom .foot .trainer-info-a {
+  border-top: 1px solid #d6d6d6;
+  padding: 16px 35px;
   text-decoration: none;
   color: #009fdf;
   font-size: 22px;

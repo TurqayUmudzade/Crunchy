@@ -20,9 +20,6 @@ namespace Crunch.Models
         [Required]
         public DateTime dateTime { get; set; }
 
-        [Required]
-        public String gymLocation { get; set; }
-
         public Gym gym { get; set; }
 
         public String Status { get; set; }

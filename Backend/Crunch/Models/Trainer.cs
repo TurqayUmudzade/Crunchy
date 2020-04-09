@@ -29,7 +29,9 @@ namespace Crunch.Models
         //mr or mrs
         public String title { get; set; }
 
-       public String Qualifications { get; set; }
+        public String Qualifications { get; set; }
+
+        public Gym gym { get; set; }
 
         /*[NotMapped]
         public HttpPostedFileBase Upload { get; set; }*/

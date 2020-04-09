@@ -274,3 +274,22 @@ article {
         font-size: 40px;
     }
 }
+
+//Responsive
+@media screen and (max-width: 780px) {
+    #member-area {
+        .content {
+            margin-left: 15px;
+            .tab-nav {
+                ul {
+                    flex-wrap: wrap;
+                }
+            }
+        }
+        article {
+            .icon-container {
+                display: none;
+            }
+        }
+    }
+}
