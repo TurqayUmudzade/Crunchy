@@ -53,29 +53,29 @@ $("#d7").on("click", function () {
 
 });
 
-$(".open-payment-modal").click(function (e) {
+//to load todays <article>
+var removeHiddenOnce = true;
+if (removeHiddenOnce) {
+    $("#a1").removeClass("hidden");
+    removeHiddenOnce = false
+}
+
+$('.js-book-class').on("click", function (e) {
     e.preventDefault();
     let paymentUrl = $(this).attr("href");
-
+   
     $.ajax({
         url: paymentUrl,
         type: "get",
         dataType: "html",
-        beforeSend: function () {
-            $(".preloader").show();
-        },
+        beforeSend: function () { },
         success: function (response) {
-            $(".test-container").html(response);
-            //$('#paymentsModal').modal('show');
-
-            // $('[data-toggle="tooltip"]').tooltip();*/
-            console.log(response);
+            $(".message").html(response);
+            
         },
         error: function (error) {
-            console.log("error not found", "error");
+            $.notify("Error not found", "error");
         },
-        complete: function () {
-            $(".preloader").hide();
-        }
+        complete: function () { }
     });
 });

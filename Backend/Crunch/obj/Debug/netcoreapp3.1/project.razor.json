@@ -20546,6 +20546,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\Turqay\\Desktop\\Crunch\\Backend\\Crunch\\Views\\PartialViews\\ClassAlreadyBooked.cshtml",
+      "TargetPath": "Views\\PartialViews\\ClassAlreadyBooked.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\Turqay\\Desktop\\Crunch\\Backend\\Crunch\\Views\\MyGym\\Home.cshtml",
       "TargetPath": "Views\\MyGym\\Home.cshtml",
       "FileKind": "mvc"
@@ -20603,6 +20608,11 @@
     {
       "FilePath": "c:\\Users\\Turqay\\Desktop\\Crunch\\Backend\\Crunch\\Views\\Locations\\Index.cshtml",
       "TargetPath": "Views\\Locations\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Turqay\\Desktop\\Crunch\\Backend\\Crunch\\Views\\Shared\\ClassSpaceFull.cshtml",
+      "TargetPath": "Views\\Shared\\ClassSpaceFull.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -20673,6 +20683,11 @@
     {
       "FilePath": "c:\\Users\\Turqay\\Desktop\\Crunch\\Backend\\Crunch\\Views\\_ViewImports.cshtml",
       "TargetPath": "Views\\_ViewImports.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Turqay\\Desktop\\Crunch\\Backend\\Crunch\\Views\\PartialViews\\ClassBooked.cshtml",
+      "TargetPath": "Views\\PartialViews\\ClassBooked.cshtml",
       "FileKind": "mvc"
     }
   ],

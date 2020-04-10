@@ -23,21 +23,7 @@ namespace Crunch.Controllers
             _context = context;
             _auth = auth;
         }
-
-
-        [HttpGet]
-        [TypeFilter(typeof(CheckAuth))]
-        public IActionResult BookTheClass(int ClassID)
-        {
-            Class selectedClass = _context.classes.Find(ClassID);
-            selectedClass.spaceUsed++;
-            _context.SaveChanges();
-
-            return PartialView();
-
-        }
-
-
+        //Book Class
         [TypeFilter(typeof(CheckAuth))]
         public IActionResult BookClass()
         {
@@ -62,7 +48,41 @@ namespace Crunch.Controllers
             return View(model);
         }
 
-       
+
+        [HttpGet]
+        [TypeFilter(typeof(CheckAuth))]
+        public IActionResult BookTheClass(int ClassID)
+        {
+            try
+            {
+                User user = _context.users.Find(_auth.User.UserID);
+                Class selectedClass = _context.classes.Find(ClassID);
+                if (selectedClass.spaceUsed < selectedClass.space)
+                {
+
+                    selectedClass.spaceUsed++;
+
+                    selectedClass.userClasses = new List<UserClass>() {
+                    new UserClass
+                    {
+                    user=user,
+                    @class=selectedClass
+                    }
+                 };
+
+                    _context.SaveChanges();
+
+                    return PartialView("~/Views/PartialViews/ClassBooked.cshtml");
+                }
+                else {
+                    return PartialView("~/Views/PartialViews/ClassSpaceFull.cshtml");
+                }
+            }
+            catch (DbUpdateException
+            )
+            { return PartialView("~/Views/PartialViews/ClassAlreadyBooked.cshtml"); }
+        }
+
         //Edit View
         [TypeFilter(typeof(CheckAuth))]
         public IActionResult Edit()
@@ -102,8 +122,8 @@ namespace Crunch.Controllers
         {
             TrainerViewModel model = new TrainerViewModel()
             {
-                trainers= _context.trainers.ToList(),
-                user= _context.users.Find(_auth.User.UserID)
+                trainers = _context.trainers.ToList(),
+                user = _context.users.Find(_auth.User.UserID)
             };
             return View(model);
         }
@@ -115,7 +135,7 @@ namespace Crunch.Controllers
             TrainerViewModel model = new TrainerViewModel()
             {
                 trainer = _context.trainers.Find(trainerID),
-                user= _context.users.Find(_auth.User.UserID)
+                user = _context.users.Find(_auth.User.UserID)
             };
             return View(model);
         }

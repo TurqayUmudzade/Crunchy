@@ -10,7 +10,10 @@ namespace Crunch.Models
 {
     public class UserClass
     {
-        
+        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        public long UserClassID { get; set; }
+
         public int UserID { get; set; }
         public int ClassID { get; set; }
 

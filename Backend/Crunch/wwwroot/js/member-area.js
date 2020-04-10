@@ -10,3 +10,5 @@ var validation = $(".email-sent-confirmation").children("h3").text().length;
 if (validation == 0) {
     $(".email-sent-confirmation").addClass("hidden");
 }
+
+
