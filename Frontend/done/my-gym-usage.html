@@ -220,39 +220,70 @@
             </div>
             <div class="content ">
                 <div class="container80">
-                    <h2 class="heading">My Bookings</h2>
-                    <div class="table">
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th>Date &amp; Time</th>
-                                    <th>Gym Name</th>
-                                    <th>Class Name</th>
-                                    <th>Duration</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <!-- <tr>
-                                    <td colspan="4">
-                                        No bookings made
-                                    </td>
-                                </tr> -->
+                    <div class="header">
+                        <h2>My Gym Usage</h2>
+                    </div>
+                    <div class="body">
+                        <canvas id="myChart" width="400" height="400"></canvas>
+                        <script>
+                            Chart.defaults.global.legend.display = false; //removes top label
+                            var ctx = document.getElementById('myChart').getContext('2d');
+                            var myChart = new Chart(ctx, {
+                                type: 'bar',
+                                data: {
+                                    labels: ['Jan', 'Feb', 'March', 'April', 'May', 'June', 'July', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec'],
+                                    datasets: [{
+                                        label: '# of gym visits',
+                                        data: [12, 19, 3, 5, 2, 3, 3, 12, 4, 5, 2, 3],
+                                        backgroundColor: [
+                                            '#009fdf',
+                                            '#009fdf',
+                                            '#009fdf',
+                                            '#009fdf',
+                                            '#009fdf',
+                                            '#009fdf',
+                                            '#009fdf',
+                                            '#009fdf',
+                                            '#009fdf',
+                                            '#009fdf',
+                                            '#009fdf',
+                                            '#009fdf'
 
-                                <tr>
-                                    <td>10 April 2020</td>
-                                    <td>Ganjlik</td>
-                                    <td>Yoga</td>
-                                    <td>30</td>
-                                </tr>
-                                <tr>
-                                    <td>10 April 2020</td>
-                                    <td>Ganjlik</td>
-                                    <td>HIIT</td>
-                                    <td>60</td>
-                                </tr>
 
-                            </tbody>
-                        </table>
+                                        ],
+                                        borderColor: [
+                                            'rgba(0,0,0,0.5)',
+                                            '#ffffff',
+                                            '#ffffff',
+                                            '#ffffff',
+                                            '#ffffff',
+                                            '#ffffff',
+                                            '#ffffff',
+                                            '#ffffff',
+                                            '#ffffff',
+                                            '#ffffff',
+                                            '#ffffff',
+                                            '#ffffff',
+                                            '#ffffff',
+                                            '#ffffff',
+                                            '#ffffff',
+                                            '#ffffff'
+
+                                        ],
+                                        borderWidth: 1
+                                    }]
+                                },
+                                options: {
+                                    scales: {
+                                        yAxes: [{
+                                            ticks: {
+                                                beginAtZero: true
+                                            }
+                                        }]
+                                    }
+                                }
+                            });
+                        </script>
                     </div>
                 </div>
             </div>

@@ -74,13 +74,39 @@ namespace Crunch.Controllers
 
                     return PartialView("~/Views/PartialViews/ClassBooked.cshtml");
                 }
-                else {
+                else
+                {
                     return PartialView("~/Views/PartialViews/ClassSpaceFull.cshtml");
                 }
             }
-            catch (DbUpdateException
-            )
-            { return PartialView("~/Views/PartialViews/ClassAlreadyBooked.cshtml"); }
+            catch (DbUpdateException)
+            {
+                return PartialView("~/Views/PartialViews/ClassAlreadyBooked.cshtml");
+            }
+        }
+
+        //MyBookings
+        [TypeFilter(typeof(CheckAuth))]
+        public IActionResult MyBookings()
+        {
+            User user = _context.users.Include(u => u.userClasses).Where(u => u.UserID == _auth.User.UserID).FirstOrDefault();
+
+            List<Class> classes = new List<Class>();
+            List<UserClass> userClasses = user.userClasses;
+
+            foreach (UserClass userClass in userClasses)
+            {
+                Class @class = _context.classes.Include(c => c.gym).Where(c => c.ClassID == userClass.ClassID).FirstOrDefault();
+                classes.Add(@class);
+            }
+
+            BookClassViewModel model = new BookClassViewModel
+            {
+                user = user,
+                classesTable = classes
+            };
+
+            return View(model);
         }
 
         //Edit View

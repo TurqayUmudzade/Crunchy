@@ -12,5 +12,7 @@ namespace Crunch.ViewModels
 
        public List<List<Class>> classes{ get; set; }
 
+        public List<Class> classesTable { get; set; }
+
     }
 }

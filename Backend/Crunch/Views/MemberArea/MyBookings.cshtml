@@ -1,0 +1,44 @@
+﻿
+@{
+    ViewData["Title"] = "My Bookings";
+    Layout = "~/Views/Shared/ViewModelLayout.cshtml";
+}
+
+@model BookClassViewModel
+<div class="content ">
+    <div class="container80">
+        <h2 class="heading">My Bookings</h2>
+        <div class="table">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Date &amp; Time</th>
+                        <th>Gym Name</th>
+                        <th>Class Name</th>
+                        <th>Duration</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @if (Model.classesTable.Count == 0)
+                    {
+                        <tr>
+                            <td colspan="4">
+                                No bookings made
+                            </td>
+                        </tr>
+                    }
+                    @foreach (Class aClass in Model.classesTable)
+                    {
+                        <tr>
+                            <th>@aClass.dateTime.ToString("dd MMMM yyy")</th>
+                            <th>@aClass.gym.gymLocation</th>
+                            <th>@aClass.name</th>
+                            <th>@aClass.duration m</th>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+

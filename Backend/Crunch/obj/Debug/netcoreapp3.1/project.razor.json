@@ -20616,6 +20616,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\Turqay\\Desktop\\Crunch\\Backend\\Crunch\\Views\\MemberArea\\MyBookings.cshtml",
+      "TargetPath": "Views\\MemberArea\\MyBookings.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\Turqay\\Desktop\\Crunch\\Backend\\Crunch\\Views\\MyGym\\Contact.cshtml",
       "TargetPath": "Views\\MyGym\\Contact.cshtml",
       "FileKind": "mvc"
