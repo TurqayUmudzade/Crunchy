@@ -510,8 +510,6 @@ C:\Users\Turqay\Desktop\Crunch\Backend\Crunch\obj\Debug\netcoreapp3.1\Razor\View
 C:\Users\Turqay\Desktop\Crunch\Backend\Crunch\obj\Debug\netcoreapp3.1\Razor\Views\Locations\Index.cshtml.g.cs
 C:\Users\Turqay\Desktop\Crunch\Backend\Crunch\obj\Debug\netcoreapp3.1\Razor\Views\MemberArea\AboutTrainer.cshtml.g.cs
 C:\Users\Turqay\Desktop\Crunch\Backend\Crunch\obj\Debug\netcoreapp3.1\Razor\Views\MemberArea\BookClass.cshtml.g.cs
-C:\Users\Turqay\Desktop\Crunch\Backend\Crunch\obj\Debug\netcoreapp3.1\Razor\Views\MemberArea\ChangeDetails.cshtml.g.cs
-C:\Users\Turqay\Desktop\Crunch\Backend\Crunch\obj\Debug\netcoreapp3.1\Razor\Views\MemberArea\Edit.cshtml.g.cs
 C:\Users\Turqay\Desktop\Crunch\Backend\Crunch\obj\Debug\netcoreapp3.1\Razor\Views\MemberArea\Trainers.cshtml.g.cs
 C:\Users\Turqay\Desktop\Crunch\Backend\Crunch\obj\Debug\netcoreapp3.1\Razor\Views\MyGym\AverageUsage.cshtml.g.cs
 C:\Users\Turqay\Desktop\Crunch\Backend\Crunch\obj\Debug\netcoreapp3.1\Razor\Views\MyGym\Contact.cshtml.g.cs
@@ -541,3 +539,5 @@ C:\Users\Turqay\Desktop\Crunch\Backend\Crunch\obj\Debug\netcoreapp3.1\Razor\View
 C:\Users\Turqay\Desktop\Crunch\Backend\Crunch\obj\Debug\netcoreapp3.1\Razor\Views\PartialViews\ClassAlreadyBooked.cshtml.g.cs
 C:\Users\Turqay\Desktop\Crunch\Backend\Crunch\obj\Debug\netcoreapp3.1\Razor\Views\Shared\ClassSpaceFull.cshtml.g.cs
 C:\Users\Turqay\Desktop\Crunch\Backend\Crunch\obj\Debug\netcoreapp3.1\Razor\Views\MemberArea\MyBookings.cshtml.g.cs
+C:\Users\Turqay\Desktop\Crunch\Backend\Crunch\obj\Debug\netcoreapp3.1\Razor\Views\MyAccount\ChangeDetails.cshtml.g.cs
+C:\Users\Turqay\Desktop\Crunch\Backend\Crunch\obj\Debug\netcoreapp3.1\Razor\Views\MyAccount\Edit.cshtml.g.cs

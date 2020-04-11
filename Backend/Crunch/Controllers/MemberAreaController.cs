@@ -109,39 +109,7 @@ namespace Crunch.Controllers
             return View(model);
         }
 
-        //Edit View
-        [TypeFilter(typeof(CheckAuth))]
-        public IActionResult Edit()
-        {
-            User user = _context.users.Find(_auth.User.UserID);
-            return View(user);
-        }
-        //Form method
-        [HttpPost]
-        public IActionResult EditUser(User editedUser)
-        {
-            User user = _context.users.Find(_auth.User.UserID);
-
-            user.Gender = editedUser.Gender;
-            user.Email = editedUser.Email;
-            user.number = editedUser.number;
-            user.Town = editedUser.Town;
-            user.Postcode = editedUser.Postcode;
-            user.recieveEmail = editedUser.recieveEmail;
-            user.recieveSMS = editedUser.recieveSMS;
-
-            _context.SaveChanges();
-
-            return View("~/Views/MemberArea/ChangeDetails", user);
-        }
-
-        //The page which redirects to Edit
-        [TypeFilter(typeof(CheckAuth))]
-        public IActionResult ChangeDetails()
-        {
-            User user = _context.users.Find(_auth.User.UserID);
-            return View(user);
-        }
+        //Trainers
 
         [TypeFilter(typeof(CheckAuth))]
         public IActionResult Trainers()

@@ -8,6 +8,7 @@ using Crunch.Injection;
 using Crunch.Filters;
 using Crunch.Models;
 using Crunch.ViewModels;
+using Microsoft.EntityFrameworkCore;
 
 namespace Crunch.Controllers
 {
@@ -26,7 +27,7 @@ namespace Crunch.Controllers
         [TypeFilter(typeof(CheckAuth))]
         public IActionResult ChangeHomeGym()
         {
-            User user = _context.users.Find(_auth.User.UserID);
+            User user = _context.users.Include(u =>u.gym).Where(u => u.UserID == _auth.User.UserID).FirstOrDefault();
             List<Gym> gyms = _context.gyms.ToList();
             ChangeGymViewModel model = new ChangeGymViewModel
             {
@@ -42,8 +43,8 @@ namespace Crunch.Controllers
         [TypeFilter(typeof(CheckAuth))]
         public IActionResult Change(string location)
         {
-            User user = _context.users.Find(_auth.User.UserID);
-            user.gymLocation = location;
+            User user = _context.users.Include(u => u.gym).Where(u => u.UserID == _auth.User.UserID).FirstOrDefault();
+            user.gym = _context.gyms.Where(g=>g.gymLocation==location).FirstOrDefault();
             _context.SaveChanges();
             return View("~/Views/MyGym/Home");
         }

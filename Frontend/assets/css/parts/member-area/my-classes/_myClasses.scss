@@ -6,3 +6,13 @@
         margin-bottom: 3rem;
     }
 }
+
+@media screen and (max-width: 800px) {
+    #member-area {
+        .table {
+            width: 92vw;
+            left: -15px;
+            position: relative;
+        }
+    }
+}

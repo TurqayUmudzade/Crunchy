@@ -1,0 +1,68 @@
+﻿
+@{
+    ViewData["Title"] = "ChangeDetails";
+    Layout="~/Views/Shared/_LayoutUser.cshtml";
+}
+@model User
+
+    <div class="content ">
+        <div class="container80">
+
+            <div class="body">
+                <h2 class="heading">My Details</h2>
+                <div class="details">
+                    <div class="form-group">
+                        <label for="">First name</label>
+                        <span class="my-info">@Model.firstName</span>
+                    </div>
+                    <div class="form-group">
+                        <label for="">Last name</label>
+                        <span class="my-info">@Model.lastName</span>
+                    </div>
+                    <div class="form-group">
+                        <label for="">Gender</label>
+                        <span class="my-info">@Model.Gender</span>
+                    </div>
+                    <div class="form-group">
+                        <label for="">Date of birth</label>
+                        <span class="my-info">@Model.dateOfBirth</span>
+                    </div>
+                    <div class="form-group">
+                        <label for="">Address line 1</label>
+                        <span class="my-info">@Model.Adress</span>
+                    </div>
+                    <div class="form-group">
+                        <label for="">Town/city</label>
+                        <span class="my-info">@Model.Town</span>
+                    </div>
+                    <div class="form-group">
+                        <label for="">Postcode</label>
+                        <span class="my-info">@Model.Postcode</span>
+                    </div>
+                    <div class="form-group">
+                        <label for="">Mobile number</label>
+                        <span class="my-info">@Model.number</span>
+                    </div>
+                    <div class="form-group">
+                        <label for="">Email</label>
+                        <span class="my-info">@Model.Email</span>
+                    </div>
+                    <div class="form-group">
+                        <label for="">
+                            Receive gym SMS
+                        </label>
+                        <span class="my-info">@Model.recieveSMS</span>
+                    </div>
+                    <div class="form-group">
+                        <label for="">Receive gym emails</label>
+                        <span class="my-info">@Model.recieveEmail</span>
+                    </div>
+
+
+                </div>
+
+                <a href="@Url.ActionLink("Edit","MyAccount")" id="edit" class="button">Edit Details</a>
+
+            </div>
+        </div>
+    </div>

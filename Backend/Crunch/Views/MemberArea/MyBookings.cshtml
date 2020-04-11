@@ -30,10 +30,10 @@
                     @foreach (Class aClass in Model.classesTable)
                     {
                         <tr>
-                            <th>@aClass.dateTime.ToString("dd MMMM yyy")</th>
-                            <th>@aClass.gym.gymLocation</th>
-                            <th>@aClass.name</th>
-                            <th>@aClass.duration m</th>
+                            <td>@aClass.dateTime.ToString("dd MMMM yyy")</td>
+                            <td>@aClass.gym.gymLocation</td>
+                            <td>@aClass.name</td>
+                            <td>@aClass.duration m</td>
                         </tr>
                     }
                 </tbody>

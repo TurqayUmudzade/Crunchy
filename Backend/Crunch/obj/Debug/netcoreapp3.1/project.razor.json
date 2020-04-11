@@ -20576,11 +20576,6 @@
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\Users\\Turqay\\Desktop\\Crunch\\Backend\\Crunch\\Views\\MemberArea\\Edit.cshtml",
-      "TargetPath": "Views\\MemberArea\\Edit.cshtml",
-      "FileKind": "mvc"
-    },
-    {
       "FilePath": "c:\\Users\\Turqay\\Desktop\\Crunch\\Backend\\Crunch\\Views\\Classes\\Index.cshtml",
       "TargetPath": "Views\\Classes\\Index.cshtml",
       "FileKind": "mvc"
@@ -20621,8 +20616,18 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\Turqay\\Desktop\\Crunch\\Backend\\Crunch\\Views\\MyAccount\\Edit.cshtml",
+      "TargetPath": "Views\\MyAccount\\Edit.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\Turqay\\Desktop\\Crunch\\Backend\\Crunch\\Views\\MyGym\\Contact.cshtml",
       "TargetPath": "Views\\MyGym\\Contact.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Turqay\\Desktop\\Crunch\\Backend\\Crunch\\Views\\MyAccount\\ChangeDetails.cshtml",
+      "TargetPath": "Views\\MyAccount\\ChangeDetails.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -20663,11 +20668,6 @@
     {
       "FilePath": "c:\\Users\\Turqay\\Desktop\\Crunch\\Backend\\Crunch\\Views\\MyGym\\AverageUsage.cshtml",
       "TargetPath": "Views\\MyGym\\AverageUsage.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\Turqay\\Desktop\\Crunch\\Backend\\Crunch\\Views\\MemberArea\\ChangeDetails.cshtml",
-      "TargetPath": "Views\\MemberArea\\ChangeDetails.cshtml",
       "FileKind": "mvc"
     },
     {

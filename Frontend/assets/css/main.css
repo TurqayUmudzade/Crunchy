@@ -315,6 +315,9 @@ nav .flex #join:hover {
 }
 
 footer {
+  position: absolute;
+  bottom: 0px;
+  margin-top: 100px;
   width: 100%;
   padding: 55px 0 45px 0;
   background-color: black;
@@ -1839,6 +1842,14 @@ article .class .message .no {
   /* font-size: 3rem; */
   color: #364e72;
   margin-bottom: 3rem;
+}
+
+@media screen and (max-width: 800px) {
+  #member-area .table {
+    width: 92vw;
+    left: -15px;
+    position: relative;
+  }
 }
 
 .info {

@@ -48,8 +48,7 @@ namespace Crunch.Models
         [MaxLength(100)]
         public String pin { get; set; }
 
-        [MaxLength(100)]
-        public String gymLocation { get; set; }
+        public bool active { get; set; }
 
         public Gym gym { get; set; }
 
