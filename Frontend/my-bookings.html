@@ -229,6 +229,7 @@
                                     <th>Gym Name</th>
                                     <th>Class Name</th>
                                     <th>Duration</th>
+
                                 </tr>
                             </thead>
                             <tbody>
@@ -243,6 +244,23 @@
                                     <td>Ganjlik</td>
                                     <td>Yoga</td>
                                     <td>30</td>
+                                    <button id="myBtn">Open Modal</button>
+
+                                    <!-- The Modal -->
+                                    <div id="myModal" class="modal">
+
+                                        <!-- Modal content -->
+                                        <div class="modal-content">
+                                            <span class="close">&times;</span>
+                                            <h2 class="header">Confirm</h2>
+                                            <p>Are you sure you wanna cancel this class?</p>
+                                            <div class="modal-buttons">
+                                                <a class="button">Yes,Cancel</a>
+                                                <a id="blue" class="button">No</a>
+                                            </div>
+                                        </div>
+
+                                    </div>
                                 </tr>
                                 <tr>
                                     <td>10 April 2020</td>
@@ -282,6 +300,7 @@
     <script src=" assets/js/navbar.js "></script>
     <script src=" assets/js/book-class.js "></script>
     <script src=" assets/js/member-area.js "></script>
+    <script src="assets/js/confirmation.js"></script>
 </body>
 
 
