@@ -45,8 +45,7 @@ namespace Crunch.Controllers
             user.recieveSMS = editedUser.recieveSMS;
 
             _context.SaveChanges();
-
-            return View("~/Views/MemberArea/ChangeDetails", user);
+            return View("ChangeDetails", user);
         }
 
         //The page which redirects to Edit

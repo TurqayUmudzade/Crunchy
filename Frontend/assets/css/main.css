@@ -43,6 +43,11 @@ body {
   color: #666;
 }
 
+html {
+  position: relative;
+  min-height: 100%;
+}
+
 p {
   margin: 0;
   line-height: 1.5;
@@ -315,12 +320,14 @@ nav .flex #join:hover {
 }
 
 footer {
-  position: absolute;
-  bottom: 0px;
-  margin-top: 100px;
   width: 100%;
   padding: 55px 0 45px 0;
   background-color: black;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100px;
 }
 
 footer #grey {
@@ -1422,8 +1429,6 @@ footer .footer-wrapper .right p {
 }
 
 .details {
-  padding: 33px 0;
-  border-top: 1px solid #f3f3f4;
   border-bottom: 1px solid #f3f3f4;
 }
 
@@ -1450,13 +1455,34 @@ footer .footer-wrapper .right p {
 }
 
 #edit {
-  margin-top: 40px;
+  margin: 40px 0px;
 }
 
 #flex1 {
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
+}
+
+@media screen and (max-width: 425px) {
+  .details .form-group {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .details .form-row {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .details .checkbox {
+    -webkit-box-orient: horizontal !important;
+    -webkit-box-direction: normal !important;
+        -ms-flex-direction: row !important;
+            flex-direction: row !important;
+  }
 }
 
 #member-area .page-description {
@@ -2055,6 +2081,10 @@ article .class .message .no {
   vertical-align: middle;
 }
 
+#member-area {
+  margin-bottom: 200px;
+}
+
 #member-area .container {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -2464,6 +2494,7 @@ article .class .message .no {
 }
 
 #locations {
+  margin-bottom: 200px;
   padding-top: 50px;
   background: -webkit-gradient(linear, left bottom, right top, from(#de1245), to(#ffbc15));
   background: linear-gradient(to right top, #de1245 0%, #ffbc15 100%);

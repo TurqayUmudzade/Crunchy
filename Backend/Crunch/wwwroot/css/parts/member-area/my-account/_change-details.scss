@@ -1,6 +1,4 @@
 .details {
-    padding: 33px 0;
-    border-top: 1px solid #f3f3f4;
     border-bottom: 1px solid #f3f3f4;
     .form-group {
         width: 100%;
@@ -20,9 +18,23 @@
 }
 
 #edit {
-    margin-top: 40px
+    margin: 40px 0px;
 }
 
 #flex1 {
     flex: 1;
+}
+
+@media screen and (max-width: 425px) {
+    .details {
+        .form-group {
+            flex-direction: column;
+        }
+        .form-row {
+            flex-direction: column;
+        }
+        .checkbox {
+            flex-direction: row !important;
+        }
+    }
 }

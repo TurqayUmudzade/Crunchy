@@ -43,6 +43,11 @@ body {
   color: #666;
 }
 
+html {
+  position: relative;
+  min-height: 100%;
+}
+
 p {
   margin: 0;
   line-height: 1.5;
@@ -105,7 +110,7 @@ li {
 .table table thead th {
   font-weight: 400;
   border-width: 0;
-  padding: 13px 10px;
+  padding: 13px 20px;
   white-space: nowrap;
   text-align: left;
 }
@@ -317,10 +322,12 @@ nav .flex #join:hover {
 footer {
   width: 100%;
   padding: 55px 0 45px 0;
-  position: absolute;
-  bottom: 0px;
-  margin-top: 100px;
   background-color: black;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100px;
 }
 
 footer #grey {
@@ -1422,8 +1429,6 @@ footer .footer-wrapper .right p {
 }
 
 .details {
-  padding: 33px 0;
-  border-top: 1px solid #f3f3f4;
   border-bottom: 1px solid #f3f3f4;
 }
 
@@ -1450,13 +1455,34 @@ footer .footer-wrapper .right p {
 }
 
 #edit {
-  margin-top: 40px;
+  margin: 40px 0px;
 }
 
 #flex1 {
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
+}
+
+@media screen and (max-width: 425px) {
+  .details .form-group {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .details .form-row {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .details .checkbox {
+    -webkit-box-orient: horizontal !important;
+    -webkit-box-direction: normal !important;
+        -ms-flex-direction: row !important;
+            flex-direction: row !important;
+  }
 }
 
 #member-area .page-description {
@@ -1844,6 +1870,14 @@ article .class .message .no {
   margin-bottom: 3rem;
 }
 
+@media screen and (max-width: 800px) {
+  #member-area .table {
+    width: 92vw;
+    left: -15px;
+    position: relative;
+  }
+}
+
 .info {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -2045,6 +2079,10 @@ article .class .message .no {
   font-weight: 700;
   display: inline-block;
   vertical-align: middle;
+}
+
+#member-area {
+  margin-bottom: 200px;
 }
 
 #member-area .container {
@@ -2456,6 +2494,7 @@ article .class .message .no {
 }
 
 #locations {
+  margin-bottom: 200px;
   padding-top: 50px;
   background: -webkit-gradient(linear, left bottom, right top, from(#de1245), to(#ffbc15));
   background: linear-gradient(to right top, #de1245 0%, #ffbc15 100%);

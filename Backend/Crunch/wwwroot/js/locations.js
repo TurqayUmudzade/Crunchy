@@ -9,6 +9,23 @@ $('.custom-selector').focus(function () {
 
 $('.custom-options > li').click(function (e) {
     $('.custom-selector').val($(this).text());
+    var s = $('.custom-selector').val();
+    paymentUrl = "/Locations/search?searchStr=" + s;
+    $.ajax({
+        url: paymentUrl,
+        type: "get",
+        dataType: "html",
+        beforeSend: function () {
+        },
+        success: function (response) {
+            $(".locations").html(response);
+        },
+        error: function (error) {
+            $.notify("Error not found", "error");
+        },
+        complete: function () {
+        }
+    });
 });
 
 $('.custom-selector').on("change", function () {
