@@ -71,6 +71,7 @@ form input[readonly=readonly] {
 
 .modal-content p {
   font-size: 20px;
+  color: #666;
 }
 
 .modal-content .modal-buttons {
@@ -79,6 +80,15 @@ form input[readonly=readonly] {
 
 .modal-content .modal-buttons #blue {
   background-color: #009fdf;
+}
+
+.modal-content .button {
+  padding: 6px 18px 5px !important;
+  float: none !important;
+}
+
+.modal-content .class-yes {
+  background-color: #f06880 !important;
 }
 
 /* The Close Button */
@@ -1927,9 +1937,19 @@ article .class .message .no {
 
 .content .heading {
   font-size: 30px;
-  /* font-size: 3rem; */
   color: #364e72;
   margin-bottom: 3rem;
+}
+
+.content .cancel-anchor {
+  cursor: pointer;
+  text-decoration: underline;
+  color: #009fdf;
+  font-size: 24px;
+}
+
+.content #button-row {
+  padding: 0;
 }
 
 @media screen and (max-width: 800px) {

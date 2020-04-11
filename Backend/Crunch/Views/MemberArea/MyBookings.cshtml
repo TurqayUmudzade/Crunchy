@@ -15,7 +15,7 @@
                         <th>Date &amp; Time</th>
                         <th>Gym Name</th>
                         <th>Class Name</th>
-                        <th>Duration</th>
+                        <th id="button-row">Can't Attend?</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -29,12 +29,26 @@
                     }
                     @foreach (Class aClass in Model.classesTable)
                     {
-                        <tr>
-                            <td>@aClass.dateTime.ToString("dd MMMM yyy")</td>
-                            <td>@aClass.gym.gymLocation</td>
-                            <td>@aClass.name</td>
-                            <td>@aClass.duration m</td>
-                        </tr>
+                <tr>
+                    <td>@aClass.dateTime.ToString("dd MMMM yyy")</td>
+                    <td>@aClass.gym.gymLocation</td>
+                    <td>@aClass.name</td>
+                    <td><a id="modalButton" class="cancel-anchor">Cancel</a></td>
+
+                    <!-- The Modal -->
+                    <div id="myModal" class="modal">
+                        <!-- Modal content -->
+                        <div class="modal-content">
+                            <span class="close">&times;</span>
+                            <h2 class="header">Confirm</h2>
+                            <p>Are you sure you wanna cancel this class?</p>
+                            <div class="modal-buttons">
+                                <a class="button">Yes,Cancel</a>
+                                <a id="blue" class="button">No</a>
+                            </div>
+                        </div>
+                    </div>
+                </tr>
                     }
                 </tbody>
             </table>

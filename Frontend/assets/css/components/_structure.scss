@@ -71,12 +71,20 @@ form input[readonly=readonly] {
     min-width: 300px;
     p {
         font-size: 20px;
+        color: #666;
     }
     .modal-buttons {
         float: right;
         #blue {
             background-color: #009fdf;
         }
+    }
+    .button {
+        padding: 6px 18px 5px !important;
+        float: none !important;
+    }
+    .class-yes {
+        background-color: #f06880 !important;
     }
 }
 

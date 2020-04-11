@@ -6,10 +6,11 @@ $(".js-change-trigger").on("click", function() {
 });
 
 
-$(".js-book-class").on("click", function() {
-
-    $(this).parent().next().removeClass("hidden");
+//Class confirmed message
+$(".class-yes").on("click", function() {
+    $(this).parent().parent().parent().parent().next(".message").removeClass("hidden");
 });
+
 
 $("#d1").on("click", function() {
     $('article').addClass("hidden");

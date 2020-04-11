@@ -302,7 +302,21 @@
                                                 <div class="actions js-actions hidden">
                                                     <p class="class-description">If you love running or if you are someone who want's to start running. ... This club makes running fun and motivates you to push through their goals and set new ones.
                                                     </p>
-                                                    <a href="#!" class="button js-book-class">Book Now</a>
+                                                    <a id="modalButton" class="button js-book-class">Book Now</a>
+                                                    <div id="myModal" class="modal">
+
+                                                        <!-- Modal content -->
+                                                        <div class="modal-content">
+                                                            <span class="close">&times;</span>
+                                                            <h2 class="header">Confirm</h2>
+                                                            <p>Confirm joining this class?</p>
+                                                            <div class="modal-buttons">
+                                                                <a class="button class-yes">Yes</a>
+                                                                <a id="blue" class="button">No</a>
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
                                                     <div class="spaces">Available spaces:
                                                         <span class="available">
                                                             14</span>/<span class="total">15
@@ -893,6 +907,8 @@
     <script src=" assets/js/navbar.js "></script>
     <script src=" assets/js/book-class.js "></script>
     <script src=" assets/js/member-area.js "></script>
+    <script src="assets/js/confirmation.js"></script>
+
 </body>
 
 
