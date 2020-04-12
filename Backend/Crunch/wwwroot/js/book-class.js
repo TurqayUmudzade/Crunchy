@@ -6,11 +6,6 @@ $(".js-change-trigger").on("click", function() {
 });
 
 
-//Class confirmed message
-$(".class-yes").on("click", function() {
-    $(this).parent().parent().parent().parent().next(".message").removeClass("hidden");
-});
-
 $("#d1").on("click", function() {
     $('article').addClass("hidden");
     $("#a1").removeClass("hidden");
@@ -68,12 +63,6 @@ $(".button ").on("click", function() {
     $(this).parent().parent().parent(".modal").hide();
 });
 
-//to load todays <article>
-/*var removeHiddenOnce = true;
-if (removeHiddenOnce) {
-    $("#a1").removeClass("hidden");
-    removeHiddenOnce = false
-}*/
 
 //book the class
 $('.class-yes').on("click", function(e) {
@@ -99,27 +88,3 @@ $('.class-yes').on("click", function(e) {
     });
 });
 
-//cancel the class
-$('.js-cancel').on("click", function (e) {
-    e.preventDefault();
-    let paymentUrl = $(this).attr("href");
-    $.ajax({
-        url: paymentUrl,
-        type: "get",
-        dataType: "html",
-        beforeSend: function () {
-            console.log("sending");
-        },
-        success: function (response) {
-            console.log(response);
-            $(".modal").html(response);
-            $(".modal").show();
-
-        },
-        error: function (error) {
-            console.log("error");
-            console.log(error);
-        },
-        complete: function () { }
-    });
-});
