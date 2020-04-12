@@ -78,7 +78,7 @@
                                                 <p class="class-description">
                                                     @Aclass.description
                                                 </p>
-                                                <a  id="modalButton" class="button js-book-class" href="@Url.Action("BookTheClass","MemberArea",new { ClassID=Aclass.ClassID })">Book Now</a>
+                                                <a  id="modalButton" class="button js-book-class">Book Now</a>
                                                 
                                                 <div id="myModal" class="modal">
 
@@ -88,7 +88,7 @@
                                                         <h2 class="header">Confirm</h2>
                                                         <p>Confirm joining this class?</p>
                                                         <div class="modal-buttons">
-                                                            <a class="button class-yes">Yes</a>
+                                                            <a class="button class-yes"  href="@Url.Action("BookTheClass","MemberArea",new { ClassID=Aclass.ClassID })">Yes</a>
                                                             <a id="blue" class="button">No</a>
                                                         </div>
                                                     </div>

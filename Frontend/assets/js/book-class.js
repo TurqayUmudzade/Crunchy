@@ -6,10 +6,6 @@ $(".js-change-trigger").on("click", function() {
 });
 
 
-//Class confirmed message
-$(".class-yes").on("click", function() {
-    $(this).parent().parent().parent().parent().next(".message").removeClass("hidden");
-});
 
 
 $("#d1").on("click", function() {
@@ -52,4 +48,50 @@ $("#d7").on("click", function() {
     $('article').addClass("hidden");
     $("#a7").removeClass("hidden");
 
+});
+
+
+$(".js-book-class").on("click", function() {
+    var modal = $(this).siblings(".modal");
+    modal.show();
+
+});
+
+$(".close").on("click", function() {
+    $(this).parent().parent().hide();
+});
+
+$(".button ").on("click", function() {
+    $(this).parent().parent().parent(".modal").hide();
+});
+
+//to load todays <article>
+var removeHiddenOnce = true;
+if (removeHiddenOnce) {
+    $("#a1").removeClass("hidden");
+    removeHiddenOnce = false
+}
+
+$('.class-yes').on("click", function(e) {
+    e.preventDefault();
+    var thisMSg = $(this).parent().parent().parent().parent().next(".message");
+    thisMSg.removeClass("hidden");
+    let paymentUrl = $(this).attr("href");
+    thisMSg.html(response);
+    console.log(paymentUrl);
+    // $.ajax({
+    //     url: paymentUrl,
+    //     type: "get",
+    //     dataType: "html",
+    //     beforeSend: function() {
+
+    //     },
+    //     success: function(response) {
+    //         $(".message").html(response);
+    //     },
+    //     error: function(error) {
+    //         console.log(error);
+    //     },
+    //     complete: function() {}
+    // });
 });

@@ -536,7 +536,6 @@ C:\Users\Turqay\Desktop\Crunch\Backend\Crunch\obj\Debug\netcoreapp3.1\Crunch.pdb
 C:\Users\Turqay\Desktop\Crunch\Backend\Crunch\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_LayoutUser.cshtml.g.cs
 C:\Users\Turqay\Desktop\Crunch\Backend\Crunch\obj\Debug\netcoreapp3.1\Razor\Views\PartialViews\_MailSent.cshtml.g.cs
 C:\Users\Turqay\Desktop\Crunch\Backend\Crunch\obj\Debug\netcoreapp3.1\Razor\Views\PartialViews\ClassBooked.cshtml.g.cs
-C:\Users\Turqay\Desktop\Crunch\Backend\Crunch\obj\Debug\netcoreapp3.1\Razor\Views\PartialViews\ClassAlreadyBooked.cshtml.g.cs
 C:\Users\Turqay\Desktop\Crunch\Backend\Crunch\obj\Debug\netcoreapp3.1\Razor\Views\Shared\ClassSpaceFull.cshtml.g.cs
 C:\Users\Turqay\Desktop\Crunch\Backend\Crunch\obj\Debug\netcoreapp3.1\Razor\Views\MemberArea\MyBookings.cshtml.g.cs
 C:\Users\Turqay\Desktop\Crunch\Backend\Crunch\obj\Debug\netcoreapp3.1\Razor\Views\MyAccount\ChangeDetails.cshtml.g.cs

@@ -63,25 +63,24 @@ namespace Crunch.Controllers
                     selectedClass.spaceUsed++;
 
                     selectedClass.userClasses = new List<UserClass>() {
-                    new UserClass
-                    {
-                    user=user,
-                    @class=selectedClass
-                    }
-                 };
+                    new UserClass{ user=user,@class=selectedClass }
+                    };
 
                     _context.SaveChanges();
-
+                    ViewBag.Msg= "Great, you are booked into this class";
+                    ViewBag.Type = 1;//Give cancel option
                     return PartialView("~/Views/PartialViews/ClassBooked.cshtml");
                 }
                 else
                 {
-                    return PartialView("~/Views/PartialViews/ClassSpaceFull.cshtml");
+                    ViewBag.Msg = "No space avaliable";
+                    return PartialView("~/Views/PartialViews/ClassBooked.cshtml");
                 }
             }
             catch (DbUpdateException)
             {
-                return PartialView("~/Views/PartialViews/ClassAlreadyBooked.cshtml");
+                ViewBag.Msg="You already booked this class";
+                return PartialView("~/Views/PartialViews/ClassBooked.cshtml");
             }
         }
 

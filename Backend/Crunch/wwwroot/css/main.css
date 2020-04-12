@@ -34,6 +34,78 @@ form input[readonly=readonly] {
   opacity: .5;
 }
 
+/* The Modal (background) */
+.modal {
+  display: none;
+  /* Hidden by default */
+  position: fixed;
+  /* Stay in place */
+  z-index: 1;
+  /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%;
+  /* Full width */
+  height: 100%;
+  /* Full height */
+  overflow: auto;
+  /* Enable scroll if needed */
+  background-color: black;
+  /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4);
+  /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: white;
+  margin: 15% auto;
+  /* 15% from the top and centered */
+  padding: 20px;
+  border-radius: 5px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  height: 190px;
+  width: 40%;
+  min-width: 300px;
+}
+
+.modal-content p {
+  font-size: 20px;
+  color: #666;
+}
+
+.modal-content .modal-buttons {
+  float: right;
+}
+
+.modal-content .modal-buttons #blue {
+  background-color: #009fdf;
+}
+
+.modal-content .button {
+  padding: 6px 18px 5px !important;
+  float: none !important;
+}
+
+.modal-content .class-yes {
+  background-color: #f06880 !important;
+}
+
+/* The Close Button */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -1865,9 +1937,19 @@ article .class .message .no {
 
 .content .heading {
   font-size: 30px;
-  /* font-size: 3rem; */
   color: #364e72;
   margin-bottom: 3rem;
+}
+
+.content .cancel-anchor {
+  cursor: pointer;
+  text-decoration: underline;
+  color: #009fdf;
+  font-size: 24px;
+}
+
+.content #button-row {
+  padding: 0;
 }
 
 @media screen and (max-width: 800px) {

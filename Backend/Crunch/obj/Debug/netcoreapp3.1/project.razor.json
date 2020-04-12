@@ -20546,11 +20546,6 @@
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\Users\\Turqay\\Desktop\\Crunch\\Backend\\Crunch\\Views\\PartialViews\\ClassAlreadyBooked.cshtml",
-      "TargetPath": "Views\\PartialViews\\ClassAlreadyBooked.cshtml",
-      "FileKind": "mvc"
-    },
-    {
       "FilePath": "c:\\Users\\Turqay\\Desktop\\Crunch\\Backend\\Crunch\\Views\\MyGym\\Home.cshtml",
       "TargetPath": "Views\\MyGym\\Home.cshtml",
       "FileKind": "mvc"
