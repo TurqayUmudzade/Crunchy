@@ -69,12 +69,13 @@ $(".button ").on("click", function() {
 });
 
 //to load todays <article>
-var removeHiddenOnce = true;
+/*var removeHiddenOnce = true;
 if (removeHiddenOnce) {
     $("#a1").removeClass("hidden");
     removeHiddenOnce = false
-}
+}*/
 
+//book the class
 $('.class-yes').on("click", function(e) {
     e.preventDefault();
     let paymentUrl = $(this).attr("href");
@@ -95,5 +96,30 @@ $('.class-yes').on("click", function(e) {
             console.log(error);
         },
         complete: function() {}
+    });
+});
+
+//cancel the class
+$('.js-cancel').on("click", function (e) {
+    e.preventDefault();
+    let paymentUrl = $(this).attr("href");
+    $.ajax({
+        url: paymentUrl,
+        type: "get",
+        dataType: "html",
+        beforeSend: function () {
+            console.log("sending");
+        },
+        success: function (response) {
+            console.log(response);
+            $(".modal").html(response);
+            $(".modal").show();
+
+        },
+        error: function (error) {
+            console.log("error");
+            console.log(error);
+        },
+        complete: function () { }
     });
 });

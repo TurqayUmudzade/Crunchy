@@ -87,6 +87,10 @@ form input[readonly=readonly] {
   float: none !important;
 }
 
+.modal-content .class-ok {
+  background-color: #f06880 !important;
+}
+
 .modal-content .class-yes {
   background-color: #f06880 !important;
 }

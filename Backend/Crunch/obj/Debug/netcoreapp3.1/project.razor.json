@@ -20651,6 +20651,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\Turqay\\Desktop\\Crunch\\Backend\\Crunch\\Views\\PartialViews\\CancelClass.cshtml",
+      "TargetPath": "Views\\PartialViews\\CancelClass.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\Turqay\\Desktop\\Crunch\\Backend\\Crunch\\Views\\PartialViews\\PromoStatus.cshtml",
       "TargetPath": "Views\\PartialViews\\PromoStatus.cshtml",
       "FileKind": "mvc"

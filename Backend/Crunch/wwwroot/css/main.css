@@ -91,6 +91,10 @@ form input[readonly=readonly] {
   background-color: #f06880 !important;
 }
 
+.modal-content .class-ok {
+  background-color: #f06880 !important;
+}
+
 /* The Close Button */
 .close {
   color: #aaa;

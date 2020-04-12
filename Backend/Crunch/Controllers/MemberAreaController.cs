@@ -67,8 +67,11 @@ namespace Crunch.Controllers
                     };
 
                     _context.SaveChanges();
-                    ViewBag.Msg= "Great, you are booked into this class";
-                    ViewBag.Type = 1;//Give cancel option
+
+
+                    ViewBag.Msg = "Great, you are booked into this class";
+                    ViewBag.Type = "1";//Give cancel option
+                    ViewBag.ClassID = ClassID;
                     return PartialView("~/Views/PartialViews/ClassBooked.cshtml");
                 }
                 else
@@ -79,9 +82,37 @@ namespace Crunch.Controllers
             }
             catch (DbUpdateException)
             {
-                ViewBag.Msg="You already booked this class";
+                ViewBag.Msg = "You already booked this class";
+                ViewBag.Type = "1";//Give cancel option
+                ViewBag.ClassID = ClassID;
+
                 return PartialView("~/Views/PartialViews/ClassBooked.cshtml");
             }
+        }
+
+        //Canceling class and removing it from DB
+        [HttpGet]
+        [TypeFilter(typeof(CheckAuth))]
+        public IActionResult Cancel(int ClassID)
+        {
+            User user = _context.users.Include(u => u.userClasses).Where(u => u.UserID == _auth.User.UserID).FirstOrDefault();
+            Class selectedClass = _context.classes.Find(ClassID);
+            selectedClass.spaceUsed--;
+
+            List<UserClass> userClasses = user.userClasses;
+            UserClass userClass = new UserClass();
+
+            foreach (UserClass uc in userClasses.ToList())//Tolist because the value is modified during the loop
+            {
+                if (uc.ClassID == ClassID && uc.UserID == user.UserID) {
+                    //Find entity and delete it
+                    _context.users.Include(u => u.userClasses).FirstOrDefault(u => u.UserID == _auth.User.UserID).userClasses.Remove(uc);
+                }
+            }
+            
+            _context.SaveChanges();
+
+            return PartialView("~/Views/PartialViews/CancelClass.cshtml");
         }
 
         //MyBookings
@@ -107,6 +138,8 @@ namespace Crunch.Controllers
 
             return View(model);
         }
+
+
 
         //Trainers
 

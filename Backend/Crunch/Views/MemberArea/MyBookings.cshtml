@@ -9,6 +9,18 @@
     <div class="container80">
         <h2 class="heading">My Bookings</h2>
         <div class="table">
+            <div id="myModal" class="modal">
+                <!-- Modal content -->
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <h2 class="header">Confirm</h2>
+                    <p>Are you sure you wanna cancel this class?</p>
+                    <div class="modal-buttons">
+                        <a class="button cancel-yes">Yes,Cancel</a>
+                        <a id="blue" class="button ">No</a>
+                    </div>
+                </div>
+            </div>
             <table>
                 <thead>
                     <tr>
@@ -29,30 +41,33 @@
                     }
                     @foreach (Class aClass in Model.classesTable)
                     {
-                <tr>
-                    <td>@aClass.dateTime.ToString("dd MMMM yyy")</td>
-                    <td>@aClass.gym.gymLocation</td>
-                    <td>@aClass.name</td>
-                    <td><a id="modalButton" class="cancel-anchor">Cancel</a></td>
+                        if (DateTime.Compare(DateTime.Now, aClass.dateTime) == 1)
+                        {
+                            <tr>
+                                <td>@aClass.dateTime.ToString("dd MMMM yyy")</td>
+                                <td>@aClass.gym.gymLocation</td>
+                                <td>@aClass.name</td>
+                                <td>Thanks for Joining!</td>
+                            </tr>
 
-                    <!-- The Modal -->
-                    <div id="myModal" class="modal">
-                        <!-- Modal content -->
-                        <div class="modal-content">
-                            <span class="close">&times;</span>
-                            <h2 class="header">Confirm</h2>
-                            <p>Are you sure you wanna cancel this class?</p>
-                            <div class="modal-buttons">
-                                <a class="button">Yes,Cancel</a>
-                                <a id="blue" class="button">No</a>
-                            </div>
-                        </div>
-                    </div>
-                </tr>
+                        }
+                        else
+                        {
+
+                            <tr>
+                                <td>@aClass.dateTime.ToString("dd MMMM yyy")</td>
+                                <td>@aClass.gym.gymLocation</td>
+                                <td>@aClass.name</td>
+                                <td><a href="@Url.Action("Cancel","MemberArea",new { ClassID=aClass.ClassID })" class="cancel-anchor modalButton">Cancel</a></td>
+
+                            </tr>
+                        }
                     }
                 </tbody>
             </table>
         </div>
     </div>
 </div>
+
+<script src="~/js/myBookings.js" ></script>
 
