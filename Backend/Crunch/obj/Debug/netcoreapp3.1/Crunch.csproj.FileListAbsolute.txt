@@ -515,7 +515,6 @@ C:\Users\Turqay\Desktop\Crunch\Backend\Crunch\obj\Debug\netcoreapp3.1\Razor\View
 C:\Users\Turqay\Desktop\Crunch\Backend\Crunch\obj\Debug\netcoreapp3.1\Razor\Views\MyGym\Contact.cshtml.g.cs
 C:\Users\Turqay\Desktop\Crunch\Backend\Crunch\obj\Debug\netcoreapp3.1\Razor\Views\MyGym\Home.cshtml.g.cs
 C:\Users\Turqay\Desktop\Crunch\Backend\Crunch\obj\Debug\netcoreapp3.1\Razor\Views\MyGym\MyGymUsage.cshtml.g.cs
-C:\Users\Turqay\Desktop\Crunch\Backend\Crunch\obj\Debug\netcoreapp3.1\Razor\Views\MyMembership\ChangeHomeGym.cshtml.g.cs
 C:\Users\Turqay\Desktop\Crunch\Backend\Crunch\obj\Debug\netcoreapp3.1\Razor\Views\PartialViews\GymList.cshtml.g.cs
 C:\Users\Turqay\Desktop\Crunch\Backend\Crunch\obj\Debug\netcoreapp3.1\Razor\Views\PartialViews\GymLocationList.cshtml.g.cs
 C:\Users\Turqay\Desktop\Crunch\Backend\Crunch\obj\Debug\netcoreapp3.1\Razor\Views\PartialViews\PromoStatus.cshtml.g.cs
@@ -542,3 +541,6 @@ C:\Users\Turqay\Desktop\Crunch\Backend\Crunch\obj\Debug\netcoreapp3.1\Razor\View
 C:\Users\Turqay\Desktop\Crunch\Backend\Crunch\obj\Debug\netcoreapp3.1\Razor\Views\MyAccount\Edit.cshtml.g.cs
 C:\Users\Turqay\Desktop\Crunch\Backend\Crunch\obj\Debug\netcoreapp3.1\Razor\Views\PartialViews\CancelClass.cshtml.g.cs
 C:\Users\Turqay\Desktop\Crunch\Backend\Crunch\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Home\Index.cshtml.g.cs
+C:\Users\Turqay\Desktop\Crunch\Backend\Crunch\obj\Debug\netcoreapp3.1\Razor\Views\MyAccount\ChangeHomeGym.cshtml.g.cs
+C:\Users\Turqay\Desktop\Crunch\Backend\Crunch\obj\Debug\netcoreapp3.1\Razor\Views\MyAccount\Cancel.cshtml.g.cs
+C:\Users\Turqay\Desktop\Crunch\Backend\Crunch\obj\Debug\netcoreapp3.1\Razor\Views\MyAccount\Freeze.cshtml.g.cs

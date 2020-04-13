@@ -158,35 +158,6 @@
                         </li>
                         <li class="expandable ">
                             <a href="#" class="nav-sub-menu-trigger not-a-link">
-                                <span>My membership</span>
-                            </a>
-                            <ul class="nav-sub-menu">
-                                <li>
-                                    <a href=@Url.ActionLink("ChangeHomeGym","MyMembership")>
-                                        <span>Change home gym</span>
-                                    </a>
-                                </li>
-
-                                <li>
-                                    <a href=@Url.ActionLink("FreezeMemberShip","MyMembership")>
-                                        <span>Freeze membership</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href=@Url.ActionLink("CancelMemberShip","MyMembership")>
-                                        <span>Cancel membership</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href=@Url.ActionLink("Parking","MyMembership")>
-                                        <span>Manage parking</span>
-                                    </a>
-                                </li>
-
-                            </ul>
-                        </li>
-                        <li class="expandable ">
-                            <a href="#" class="nav-sub-menu-trigger not-a-link">
                                 <span>My account</span>
                             </a>
                             <ul class="nav-sub-menu">
@@ -195,6 +166,7 @@
                                         <span>Change details</span>
                                     </a>
                                 </li>
+                               
                                 <li>
                                     <a href="/member-area/my-account/change-direct-debit/">
                                         <span>Change direct debit</span>
@@ -205,6 +177,35 @@
                                         <span>View payment history</span>
                                     </a>
                                 </li>
+                            </ul>
+                        </li>
+                        <li class="expandable ">
+                            <a href="#" class="nav-sub-menu-trigger not-a-link">
+                                <span>My Membership</span>
+                            </a>
+                            <ul class="nav-sub-menu">
+
+                                <li>
+                                    <a href=@Url.ActionLink("Freeze","MyAccount")>
+                                        <span>Freeze Membership</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href=@Url.ActionLink("Cancel","MyAccount")>
+                                        <span>Cancel Membership</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href=@Url.ActionLink("ChangeHomeGym","MyAccount")>
+                                        <span>Change Home Gym</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href=@Url.ActionLink("ChangePlan","MyAccount")>
+                                        <span>Change Plan</span>
+                                    </a>
+                                </li>
+
                             </ul>
                         </li>
                     </ul>

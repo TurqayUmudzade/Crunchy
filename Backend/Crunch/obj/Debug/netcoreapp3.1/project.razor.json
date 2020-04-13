@@ -20631,6 +20631,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\Turqay\\Desktop\\Crunch\\Backend\\Crunch\\Views\\MyAccount\\Freeze.cshtml",
+      "TargetPath": "Views\\MyAccount\\Freeze.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\Turqay\\Desktop\\Crunch\\Backend\\Crunch\\Views\\PartialViews\\GymLocationList.cshtml",
       "TargetPath": "Views\\PartialViews\\GymLocationList.cshtml",
       "FileKind": "mvc"
@@ -20668,6 +20673,11 @@
     {
       "FilePath": "c:\\Users\\Turqay\\Desktop\\Crunch\\Backend\\Crunch\\Views\\MyGym\\MyGymUsage.cshtml",
       "TargetPath": "Views\\MyGym\\MyGymUsage.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Turqay\\Desktop\\Crunch\\Backend\\Crunch\\Views\\MyAccount\\Cancel.cshtml",
+      "TargetPath": "Views\\MyAccount\\Cancel.cshtml",
       "FileKind": "mvc"
     },
     {

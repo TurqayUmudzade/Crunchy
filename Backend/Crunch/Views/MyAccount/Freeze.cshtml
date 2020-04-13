@@ -1,0 +1,38 @@
+﻿
+@{
+    ViewData["Title"] = "Freeze Membership";
+    Layout = "~/Views/Shared/_LayoutUser.cshtml";
+}
+@model User
+
+    <div class="content ">
+        <div class="container80">
+            <div class="body">
+                <h2 class="header">Freeze Membership</h2>
+                <div class="page-description">
+                    <div class="font-20">
+                        <p>If you wish to freeze your membership due some reason you cannot come to the gym you may do so below.</p>
+                        <p> After freezing your membership,your pin will stop being active and no payments will be withdrawn starting from next payment.</p>
+                        <strong>Your account will not be deleted</strong>
+                    </div>
+                </div>
+                <div class="modal">
+                    <!-- Modal content -->
+                    <div class="modal-content">
+                        <span class="close">&times;</span>
+                        <h2 class="header">Confirm</h2>
+                        <p>Are you sure you want to freeze your membership?</p>
+
+                        <div class="modal-buttons">
+                            <a class="button  class-yes">Yes</a>
+                            <a id="blue" class="button x">No</a>
+                        </div>
+                    </div>
+                </div>
+
+                <button type="submit" form="changegym" class="button">Freeze Membership</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="~/js/freeze-cancel-modal.js"></script>

@@ -71,7 +71,6 @@ namespace Crunch.Controllers
             return View(model);
         }
 
-
         [HttpPost]
         [TypeFilter(typeof(CheckAuth))]
         public IActionResult Change(string location)
@@ -79,6 +78,47 @@ namespace Crunch.Controllers
             User user = _context.users.Include(u => u.gym).Where(u => u.UserID == _auth.User.UserID).FirstOrDefault();
             user.gym = _context.gyms.Where(g => g.gymLocation == location).FirstOrDefault();
             _context.SaveChanges();
+            return View("~/Views/MyGym/Home");
+        }
+
+        //Freeze Membership
+
+        [TypeFilter(typeof(CheckAuth))]
+        public IActionResult Freeze()
+        {
+            User user = _context.users.Find(_auth.User.UserID);
+            return View(user);
+        }
+
+        [TypeFilter(typeof(CheckAuth))]
+        [HttpPost]
+        public IActionResult Freeze(string location)
+        {
+            User user = _context.users.Find(_auth.User.UserID);
+            user.active = false;
+            _context.SaveChanges();
+
+            return View("~/Views/MyGym/Home");
+        }
+
+        //Delete user
+
+        [TypeFilter(typeof(CheckAuth))]
+        public IActionResult Cancel()
+        {
+            User user = _context.users.Find(_auth.User.UserID);
+            return View(user);
+        }
+
+        [HttpPost]
+        [TypeFilter(typeof(CheckAuth))]
+        public IActionResult Cancel(string location)
+        {
+            User user = _context.users.Find(_auth.User.UserID);
+            _context.users.Remove(user);
+
+            _context.SaveChanges();
+
             return View("~/Views/MyGym/Home");
         }
     }

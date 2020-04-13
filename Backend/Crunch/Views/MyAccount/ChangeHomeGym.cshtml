@@ -22,12 +22,12 @@
                 <div class="pin">
                     <div class="text">
                         <p class="status"><span>DO IT.</span></p>
-                        <p class="pin">Your PIN is <span>01030180</span> active from 23 Mar 20</p>
+                        <p class="pin">Your PIN is <span>@Model.user.pin</span> active from </p>
                     </div>
                 </div>
-                <form id="change-gym" method="post" asp-action="Change" asp-controller="MyMembership">
-                    <label for="location">I would like my Home Gym to be</label>
-                    <select name="location" id="">
+                <form id="changegym" method="post" asp-action="Change" asp-controller="MyMembership">
+                    <label for="">I would like my Home Gym to be</label>
+                    <select name="" id="">
                         <option value="">Select Gym</option>
 
                         @foreach (Gym gym in Model.gyms)
@@ -40,7 +40,8 @@
 
                     </select>
                 </form>
-                <button type="submit" form="change-gym" class="button">CHANGE GYM</button>
+                <button type="submit" form="changegym" class="button">CHANGE GYM</button>
             </div>
         </div>
     </div>
+   
