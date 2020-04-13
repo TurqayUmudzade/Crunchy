@@ -220,33 +220,33 @@
             <div class="content ">
                 <div class="container80">
                     <div class="body">
-                        <h2 class="header">Change Home</h2>
+                        <h2 class="header">Cancel Membership</h2>
                         <div class="page-description">
-                            <div class="grid-wrapper">
-                                <p>If you wish to change your home gym you may do so below. Please note that it&nbsp;<strong>may take up to 10 minutes before your PIN will work in your new home gym</strong>. An admin fee may apply.</p>
-                                <p>We have recently changed our membership packages which has caused some complications for our Solo members.</p>
-                                <p>If you would like to change your home gym, please first change your membership to DO IT. and then change your home gym. You will have the same benefits and T's and C's on DO IT.</p>
+                            <div class="font-16">
+                                <p>If you wish to cancel your membership you may do so below.</p>
+                                <p> All your subscription plans will be canceled and deleted</p>
+                                <strong class="warning">Warning! Your account will be deleted!</strong>
+                                <p> If you cannot attend the gym due some reason we just to <a href="">freeze</a> your membership instead of canceling it</p>
                             </div>
                         </div>
-                        <div class="pin">
-                            <div class="text">
-                                <p class="status"><span>DO IT.</span></p>
-                                <p class="pin">Your PIN is <span>01030180</span> active from 23 Mar 20</p>
+                        <div class="modal">
+                            <!-- Modal content -->
+                            <div class="modal-content">
+                                <span class="close">&times;</span>
+                                <h2 class="header">Confirm</h2>
+                                <p>Are you sure you want to cancel your membership?</p>
+                                <strong class="warning">This action cannot be undone.</strong>
+                                <div class="modal-buttons">
+                                    <a class="button  class-yes">Yes</a>
+                                    <a id="blue" class="button x">No</a>
+                                </div>
                             </div>
                         </div>
-                        <form id="changegym" action="">
-                            <label for="">I would like my Home Gym to be</label>
-                            <select name="" id="">
-                            <option value="">Select Gym</option>
-                            <option value="">Baku</option>
-                            <option value=""></option>
-                            
-                        </select>
-                        </form>
-                        <button type="submit" form="changegym" class="button">CHANGE GYM</button>
                     </div>
+                    <button type="submit" form="changegym" class="button">Cancel Membership</button>
                 </div>
             </div>
+        </div>
         </div>
     </section>
     <footer>
@@ -271,8 +271,8 @@
     </footer>
 
     <script src=" assets/js/navbar.js "></script>
-    <script src=" assets/js/book-class.js "></script>
     <script src=" assets/js/member-area.js "></script>
+    <script src="assets/js/freeze-cancel-modal.js"></script>
 </body>
 
 

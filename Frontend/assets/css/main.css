@@ -256,6 +256,19 @@ select {
   width: 100%;
 }
 
+.font-20 {
+  font-size: 20px;
+}
+
+.font-16 {
+  font-size: 16px;
+}
+
+.warning {
+  color: #fc002e;
+  font-size: 25px;
+}
+
 nav {
   background-color: #212121;
   height: 50px;
@@ -1593,6 +1606,32 @@ footer .footer-wrapper .right p {
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
+}
+
+@media screen and (max-width: 800px) {
+  .pin {
+    font-size: 20px !important;
+  }
+  .pin .status {
+    font-size: 20px !important;
+  }
+  #changegym {
+    width: 100% !important;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  #changegym label {
+    margin-bottom: 10px;
+    font-size: 22px !important;
+  }
+  button[form="changegym"] {
+    margin-bottom: 15px;
+  }
+  #member-area .page-description .grid-wrapper {
+    padding: 20px 0;
+  }
 }
 
 .calendar .tab-nav {

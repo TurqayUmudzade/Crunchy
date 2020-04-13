@@ -20551,11 +20551,6 @@
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\Users\\Turqay\\Desktop\\Crunch\\Backend\\Crunch\\Views\\MyMembership\\ChangeHomeGym.cshtml",
-      "TargetPath": "Views\\MyMembership\\ChangeHomeGym.cshtml",
-      "FileKind": "mvc"
-    },
-    {
       "FilePath": "c:\\Users\\Turqay\\Desktop\\Crunch\\Backend\\Crunch\\Views\\MemberArea\\BookClass.cshtml",
       "TargetPath": "Views\\MemberArea\\BookClass.cshtml",
       "FileKind": "mvc"
@@ -20603,6 +20598,11 @@
     {
       "FilePath": "c:\\Users\\Turqay\\Desktop\\Crunch\\Backend\\Crunch\\Views\\Shared\\ClassSpaceFull.cshtml",
       "TargetPath": "Views\\Shared\\ClassSpaceFull.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Turqay\\Desktop\\Crunch\\Backend\\Crunch\\Views\\MyAccount\\ChangeHomeGym.cshtml",
+      "TargetPath": "Views\\MyAccount\\ChangeHomeGym.cshtml",
       "FileKind": "mvc"
     },
     {

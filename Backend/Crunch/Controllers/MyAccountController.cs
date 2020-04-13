@@ -55,5 +55,31 @@ namespace Crunch.Controllers
             User user = _context.users.Find(_auth.User.UserID);
             return View(user);
         }
+
+        //
+        [TypeFilter(typeof(CheckAuth))]
+        public IActionResult ChangeHomeGym()
+        {
+            User user = _context.users.Include(u => u.gym).Where(u => u.UserID == _auth.User.UserID).FirstOrDefault();
+            List<Gym> gyms = _context.gyms.ToList();
+            ChangeGymViewModel model = new ChangeGymViewModel
+            {
+                user = user,
+                gyms = gyms
+            };
+
+            return View(model);
+        }
+
+
+        [HttpPost]
+        [TypeFilter(typeof(CheckAuth))]
+        public IActionResult Change(string location)
+        {
+            User user = _context.users.Include(u => u.gym).Where(u => u.UserID == _auth.User.UserID).FirstOrDefault();
+            user.gym = _context.gyms.Where(g => g.gymLocation == location).FirstOrDefault();
+            _context.SaveChanges();
+            return View("~/Views/MyGym/Home");
+        }
     }
 }

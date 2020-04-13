@@ -6,7 +6,6 @@
             font-size: 16px;
         }
     }
-    .pin {}
     #changegym {
         margin: 30px 0;
         width: 70%;
@@ -20,5 +19,29 @@
         select {
             flex: 1;
         }
+    }
+}
+
+//Responsiveness
+@media screen and (max-width:800px) {
+    .pin {
+        font-size: 20px !important;
+        .status {
+            font-size: 20px !important;
+        }
+    }
+    #changegym {
+        width: 100% !important;
+        flex-direction: column;
+        label {
+            margin-bottom: 10px;
+            font-size: 22px !important;
+        }
+    }
+    button[form="changegym"] {
+        margin-bottom: 15px;
+    }
+    #member-area .page-description .grid-wrapper {
+        padding: 20px 0;
     }
 }
