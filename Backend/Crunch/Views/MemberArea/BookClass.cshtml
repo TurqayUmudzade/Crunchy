@@ -56,6 +56,7 @@
                                 <div class="class-container">
                                     @foreach (Class Aclass in classes)
                                     {
+                                        string Status;
                                         <div class="class @Aclass.type ">
                                             <div class="details">
                                                 <div class="time-duration">
@@ -66,13 +67,14 @@
 
                                                 @if (Aclass.space > Aclass.spaceUsed)
                                                 {
-                                                    Aclass.Status = "Available";
+                                                    Status = "Available";
                                                 }
                                                 else
                                                 {
-                                                    Aclass.Status = "Full";
+                                                    Status = "Full";
                                                 }
-                                                <p class="class-status">@Aclass.Status</p>
+                                                <p class="class-status">@Status</p>
+
                                                 <div class="icon-container">
                                                     <i class="@Aclass.icon"></i>
                                                 </div>

@@ -13,21 +13,20 @@ namespace Crunch.Models
 
         [Required]
         public String name { get; set; }
-
+        [Required]
         public String description { get; set; }
         [Required]
         public String duration { get; set; }
         [Required]
         public DateTime dateTime { get; set; }
-
+        [Required]
         public Gym gym { get; set; }
 
-        public String Status { get; set; }
         [Required]
         public int space { get; set; }
         
         public int spaceUsed { get; set; }
-        [Required]
+        
         public String type { get; set; }
         
         public String icon { get; set; }

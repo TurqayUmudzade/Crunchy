@@ -34,23 +34,19 @@ namespace Crunch
             services.AddSession(options =>
             {
                 options.IdleTimeout = TimeSpan.FromSeconds(3600);
-               
+
             });
-            //
-
-
 
             services.AddControllersWithViews();
 
             services.AddDbContext<Context>(options =>
-
                options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"))
             );
 
             services.TryAddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 
-           services.AddTransient<IAuth, Auth>();
-         
+            services.AddTransient<IAuth, Auth>();
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -70,20 +66,26 @@ namespace Crunch
             app.UseStaticFiles();
 
             //sesssion
-           /* app.UseHttpContextItemsMiddleware();*/
+            /* app.UseHttpContextItemsMiddleware();*/
 
             app.UseRouting();
             app.UseSession();
-            
+
 
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
             {
+                endpoints.MapAreaControllerRoute(
+                    name: "Admin",
+                    areaName: "Admin",
+                    pattern: "Admin/{controller=Home}/{action=Index}/{id?}");
+
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
             });
+
         }
     }
 }

@@ -26,20 +26,18 @@ namespace Crunch.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("Status")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<DateTime>("dateTime")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("description")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("duration")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("gymID")
+                    b.Property<int>("gymID")
                         .HasColumnType("int");
 
                     b.Property<string>("icon")
@@ -56,7 +54,6 @@ namespace Crunch.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("type")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("ClassID");
@@ -276,7 +273,9 @@ namespace Crunch.Migrations
                 {
                     b.HasOne("Crunch.Models.Gym", "gym")
                         .WithMany("Classes")
-                        .HasForeignKey("gymID");
+                        .HasForeignKey("gymID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("Crunch.Models.Trainer", b =>
