@@ -38,25 +38,36 @@ namespace Crunch.Controllers
         [HttpGet]
         public ViewResult Register()
         {
+            
             return View();
         }
 
         [HttpGet]
-        public ViewResult Register2()
+        public IActionResult Register2()
         {
+            if (HttpContext.Session.GetString("SessionUser") ==null) {
+                return RedirectToAction("Register","Account");
+            }
             return View();
         }
 
         [HttpGet]
-        public ViewResult Register3()
+        public IActionResult Register3()
         {
+            if (HttpContext.Session.GetString("SessionUser") ==null) {
+                return RedirectToAction("Register", "Account");
+            }
             return View();
         }
 
         [HttpGet]
         public ViewResult Login()
         {
-
+            if (TempData["PinNotification"] !=null) {
+                ViewBag.Text = TempData["PinNotification"].ToString();
+                ViewBag.Email = TempData["PinNotificationSpan"].ToString();
+            }
+            
             return View();
         }
 
@@ -83,14 +94,16 @@ namespace Crunch.Controllers
                     };
 
 
-                    HttpContext.Session.SetString("SessionUser", Newtonsoft.Json.JsonConvert.SerializeObject(user));
+                    HttpContext.Session.SetString("SessionUser", JsonConvert.SerializeObject(user));
 
                     registerViewModel.gyms = _context.gyms.ToList();
+
 
                     return View("~/Views/Account/Register2.cshtml", registerViewModel);
                 }
                 ModelState.AddModelError("Email", "This Email is taken");
             }
+
             return View(registerViewModel);
         }
 
@@ -147,9 +160,10 @@ namespace Crunch.Controllers
                 //to avoid entity relation errors
                 int gymId = user.gym.gymID;
                 user.gym = _context.gyms.Find(gymId);
-                user.promocode = _context.promocodes.Where(p => p.promocode == user.promocode.promocode).FirstOrDefault();
-                user.membershipActiveTill = DateTime.Now.AddMonths(1);
+                if (user.promocode != null) { user.promocode = _context.promocodes.Where(p => p.promocode == user.promocode.promocode).FirstOrDefault(); }
 
+                user.membershipActiveTill = DateTime.Now.AddMonths(1);
+                user.active = true;
                 _context.Add(user);
                 _context.SaveChanges();
 
@@ -159,11 +173,16 @@ namespace Crunch.Controllers
 
                 SendEmail(user, text);
 
+                TempData["PinNotification"] = "Your Pin has been send to your email adress ";
+                TempData["PinNotificationSpan"] = user.Email.ToString();
+                
                 return RedirectToAction("Login", "Account");
             }
             else
+            {
+                return View(registerViewModel); 
+            }
 
-                return View(registerViewModel);
         }
 
         [HttpPost]

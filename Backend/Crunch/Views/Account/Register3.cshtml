@@ -1,6 +1,6 @@
 ﻿
 @{
-    ViewData["Title"] = "Register3";
+    ViewData["Title"] = "Join Us";
 }
 
 @using Crunch.ViewModels
@@ -79,14 +79,17 @@
                             }
                             <div class="flex blue ">
                                 <p>Total first payment taken by debit / credit card  </p>
+
                                 @{
                                     if (Model.User.promocode != null)
                                     {
                                         int discount = Model.User.promocode.discountPercent;
-                                        price =price* ((100f - discount) / 100);
+                                        price = price * ((100f - discount) / 100);
+
                                     }
                                 }
-                                <span>	£@price</span>
+
+                                <span> 	£@price</span>
 
                             </div>
                         </div>

@@ -9,13 +9,15 @@
         <div class="join login-page">
             <div class="header">
                 <div class="header-text">
-
                     <div class="header-p">
                         <p>Login</p>
                     </div>
                 </div>
             </div>
             <div class="foot">
+                <div class="pin-sent-confirmation">
+                    <h3>@ViewBag.Text <span>@ViewBag.Email</span></h3>
+                </div>
                 <form method="post" asp-controller="Account" asp-action="Login">
                     <div class="form-row">
                         <label asp-for="Email">Email adress<span>*</span></label>
@@ -27,7 +29,7 @@
                         @Html.ValidationMessage("Pin")
                     </div>
                     <div class="form-row remember-me">
-                        <input type="checkbox" asp-for="RememberMe" value="true"  id="rememberMe">
+                        <input type="checkbox" asp-for="RememberMe" value="true" id="rememberMe">
                         <label asp-for="RememberMe">Remember Me</label>
                         <i class="fas fa-check hidden"></i>
                     </div>

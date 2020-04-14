@@ -1,4 +1,6 @@
-﻿
+﻿@{
+    ViewData["Title"] = "Join Us";
+}
 @model RegisterViewModel
 
 
@@ -30,7 +32,7 @@
                     </div>
                     <span class="label">Bank payment</span>
                 </li>
-                
+
             </ul>
         </section>
 
@@ -82,7 +84,7 @@
                                 <input type="radio" asp-for="User.Gender" value="Female" id="female">
                                 <span class="tick"></span>
                             </div>
-                            
+
                         </div>
                         <span asp-validation-for="User.Gender"></span>
                     </div>
@@ -125,7 +127,7 @@
         <div class="next">
             <button type="submit" class="button" form="login2">NEXT</button>
         </div>
-        </div>
+    </div>
 </section>
 
 <script src="~/js/login.js"></script>

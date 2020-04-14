@@ -24,13 +24,15 @@
                         <p>Are you sure you want to freeze your membership?</p>
 
                         <div class="modal-buttons">
-                            <a class="button  class-yes">Yes</a>
+                            <form method="post" id="freeze" asp-action="Freeze" asp-controller="MyAccount">
+                            </form>
+                            <button form="freeze" type="submit" class="button  class-yes">Yes</button>
                             <a id="blue" class="button x">No</a>
                         </div>
                     </div>
                 </div>
 
-                <button type="submit" form="changegym" class="button">Freeze Membership</button>
+                <button type="button" form="changegym" class="button">Freeze Membership</button>
             </div>
         </div>
     </div>

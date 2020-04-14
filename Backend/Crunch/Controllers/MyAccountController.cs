@@ -75,10 +75,15 @@ namespace Crunch.Controllers
         [TypeFilter(typeof(CheckAuth))]
         public IActionResult Change(string location)
         {
+            
             User user = _context.users.Include(u => u.gym).Where(u => u.UserID == _auth.User.UserID).FirstOrDefault();
             user.gym = _context.gyms.Where(g => g.gymLocation == location).FirstOrDefault();
+            if (user.gym==null) {
+                return View("../MyGym/Shared/Error.cshtml");
+            }
             _context.SaveChanges();
-            return View("~/Views/MyGym/Home");
+
+            return View("../MyGym/Home",user);
         }
 
         //Freeze Membership
@@ -98,7 +103,7 @@ namespace Crunch.Controllers
             user.active = false;
             _context.SaveChanges();
 
-            return View("~/Views/MyGym/Home");
+            return View("../MyGym/Home", user);
         }
 
         //Delete user

@@ -9,3 +9,4 @@ $(".button").on("click", function() {
 $(".x").on("click", function() {
     $(".modal").hide();
 });
+

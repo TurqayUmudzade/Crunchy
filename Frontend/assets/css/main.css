@@ -514,6 +514,25 @@ footer .footer-wrapper .right p {
   margin-left: 40px;
 }
 
+.pin-sent-confirmation {
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  padding: 15px 20px;
+  width: 70%;
+  margin: 0 auto;
+  margin-bottom: 25px;
+  color: #009fdf;
+  text-align: center;
+}
+
+.pin-sent-confirmation h3 {
+  font-size: 22px;
+}
+
+.pin-sent-confirmation h3 span {
+  color: #f06880;
+}
+
 .progress-indicator {
   position: relative;
 }
@@ -561,6 +580,7 @@ footer .footer-wrapper .right p {
 }
 
 #login {
+  margin-bottom: 115px;
   background: #f3f3f4;
 }
 
@@ -1442,6 +1462,7 @@ footer .footer-wrapper .right p {
   position: absolute;
   top: 12px;
   left: 0;
+  width: 117px;
 }
 
 #payment-option .radios .block label {
@@ -1466,6 +1487,7 @@ footer .footer-wrapper .right p {
 #register-section {
   max-width: 1312px;
   margin: 0 auto;
+  margin-bottom: 115px;
 }
 
 .next {
