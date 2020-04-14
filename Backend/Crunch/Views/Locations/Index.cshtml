@@ -1,4 +1,8 @@
-﻿@model List<Gym>
+﻿@{
+    ViewData["Title"] = "Locations";
+
+}
+@model List<Gym>
 <section id="locations">
     <div class="header">
         <h1>Find a Crunch Gym Near You</h1>
@@ -19,13 +23,13 @@
     <div class="locations ">
         @foreach (Gym gym in Model)
         {
-        <div class="location ">
-            <img src="~/image/Location/@gym.image" alt="">
-            <h2>@gym.gymLocation</h2>
-            <p>@gym.gymAdress</p>
-            <p>@gym.gymNumber</p>
-            <p class="xmiles-away">12 miles away</p>
-        </div>
+            <div class="location ">
+                <img src="~/image/Location/@gym.image" alt="">
+                <h2>@gym.gymLocation</h2>
+                <p>@gym.gymAdress</p>
+                <p>@gym.gymNumber</p>
+                <p class="xmiles-away">12 miles away</p>
+            </div>
         }
 
     </div>

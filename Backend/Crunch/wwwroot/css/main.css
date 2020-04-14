@@ -1364,6 +1364,9 @@ footer .footer-wrapper .right p {
   .join .form-row input {
     min-width: 200px;
   }
+  .join .form-row #rememberMe {
+    min-width: 0px;
+  }
   .join .form-row label {
     min-width: 100px;
   }

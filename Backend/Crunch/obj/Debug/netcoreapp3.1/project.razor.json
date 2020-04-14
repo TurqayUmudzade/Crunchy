@@ -20586,6 +20586,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\Turqay\\Desktop\\Crunch\\Backend\\Crunch\\Views\\MyAccount\\Payments.cshtml",
+      "TargetPath": "Views\\MyAccount\\Payments.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\Turqay\\Desktop\\Crunch\\Backend\\Crunch\\Views\\Account\\Login.cshtml",
       "TargetPath": "Views\\Account\\Login.cshtml",
       "FileKind": "mvc"

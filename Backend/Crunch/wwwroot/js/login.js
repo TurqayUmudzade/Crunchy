@@ -107,6 +107,9 @@ $('#rememberMe').on("click", function () {
     }
 })
 var validation = $(".pin-sent-confirmation").children("h3").text().length;
-if (validation == 0) {
+console.log("hi");
+console.log(validation);
+if (validation <3) {
+    
     $(".pin-sent-confirmation").addClass("hidden");
 }

@@ -91,6 +91,9 @@
             input {
                 min-width: 200px;
             }
+            #rememberMe {
+                min-width: 0px;
+            }
             label {
                 min-width: 100px
             }
@@ -120,11 +123,7 @@
 }
 
 @media screen and (max-width: 540px) {
-    .join {
-        .form-row {
-            input {}
-        }
-    }
+    .join {}
     .progress-indicator {
         ul {
             flex-wrap: wrap;

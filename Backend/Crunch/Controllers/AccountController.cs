@@ -61,13 +61,17 @@ namespace Crunch.Controllers
         }
 
         [HttpGet]
-        public ViewResult Login()
+        public IActionResult Login()
         {
             if (TempData["PinNotification"] !=null) {
                 ViewBag.Text = TempData["PinNotification"].ToString();
                 ViewBag.Email = TempData["PinNotificationSpan"].ToString();
             }
-            
+            if (_auth.User != null)
+            {
+                return RedirectToAction("Home", "MyGym");
+            }
+
             return View();
         }
 

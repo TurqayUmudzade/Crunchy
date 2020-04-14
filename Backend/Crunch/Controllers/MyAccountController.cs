@@ -126,5 +126,16 @@ namespace Crunch.Controllers
 
             return View("~/Views/MyGym/Home");
         }
+
+        //Payment lists
+        [HttpPost]
+        [TypeFilter(typeof(CheckAuth))]
+        public IActionResult Payments(string location)
+        {
+            User user = _context.users.Find(_auth.User.UserID);
+            
+
+            return View();
+        }
     }
 }
