@@ -1,0 +1,111 @@
+#top-pic-section {
+    background-image: url(../image/training.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    .background-img {
+        position: relative;
+        background-image: url(../image/training.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background: linear-gradient(to bottom, rgba(83, 4, 23, 0.75) 0%, rgba(83, 4, 23, 0) 100%);
+        width: 100%;
+        margin-top: 50px;
+        min-height: 650px;
+        .header {
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            h1 {
+                font-size: 175px;
+                color: white;
+                text-align: center;
+                margin: 0;
+                position: relative;
+                left: -50%;
+                bottom: 53px;
+            }
+        }
+    }
+}
+
+#plain-text {
+    text-align: center;
+    .text {
+        width: 50%;
+        margin: 25px auto;
+        p {
+            line-height: 35px;
+            font-size: 25px;
+            color: black;
+        }
+    }
+}
+
+.border--taller {
+    border: 0;
+    display: block;
+    height: 6px;
+    margin: 0;
+    width: 100%;
+}
+
+.theme-gradient {
+    background: linear-gradient(to right, #f99919 0%, #de1245 100%);
+}
+
+.flex-end {
+    flex-direction: row-reverse;
+}
+
+#training {
+    background: #f4f4f4;
+    .flex {
+        padding: 50px 0;
+        width: 80%;
+        margin: 0 auto;
+        .left {
+            flex: 1;
+            z-index: 1;
+            .article {
+                width: 70%;
+                h2 {
+                    padding-bottom: 8px;
+                    color: #282828;
+                    line-height: 33px;
+                    font-size: 33px;
+                }
+                p {
+                    color: #686868;
+                    margin-bottom: 20px;
+                    line-height: 26px;
+                    font-size: 17px;
+                }
+                ul {
+                    padding: 0;
+                    li {
+                        margin: 15px 0;
+                        a {
+                            transition: all 0.3s;
+                            line-height: 14px;
+                            font-size: 20px;
+                            color: #f99919;
+                            &:hover {
+                                color: #de1245
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .right {
+            flex: 1;
+            .img-container {
+                position: relative;
+                left: 10%;
+                img {
+                    width: 80%;
+                }
+            }
+        }
+    }
+}

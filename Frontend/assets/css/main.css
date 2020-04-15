@@ -2869,4 +2869,143 @@ article .class .message .no {
     right: -10%;
   }
 }
+
+#top-pic-section {
+  background-image: url(../image/training.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#top-pic-section .background-img {
+  position: relative;
+  background-image: url(../image/training.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(83, 4, 23, 0.75)), to(rgba(83, 4, 23, 0)));
+  background: linear-gradient(to bottom, rgba(83, 4, 23, 0.75) 0%, rgba(83, 4, 23, 0) 100%);
+  width: 100%;
+  margin-top: 50px;
+  min-height: 650px;
+}
+
+#top-pic-section .background-img .header {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+}
+
+#top-pic-section .background-img .header h1 {
+  font-size: 175px;
+  color: white;
+  text-align: center;
+  margin: 0;
+  position: relative;
+  left: -50%;
+  bottom: 53px;
+}
+
+#plain-text {
+  text-align: center;
+}
+
+#plain-text .text {
+  width: 50%;
+  margin: 25px auto;
+}
+
+#plain-text .text p {
+  line-height: 35px;
+  font-size: 25px;
+  color: black;
+}
+
+.border--taller {
+  border: 0;
+  display: block;
+  height: 6px;
+  margin: 0;
+  width: 100%;
+}
+
+.theme-gradient {
+  background: -webkit-gradient(linear, left top, right top, from(#f99919), to(#de1245));
+  background: linear-gradient(to right, #f99919 0%, #de1245 100%);
+}
+
+.flex-end {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
+}
+
+#training {
+  background: #f4f4f4;
+}
+
+#training .flex {
+  padding: 50px 0;
+  width: 80%;
+  margin: 0 auto;
+}
+
+#training .flex .left {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  z-index: 1;
+}
+
+#training .flex .left .article {
+  width: 70%;
+}
+
+#training .flex .left .article h2 {
+  padding-bottom: 8px;
+  color: #282828;
+  line-height: 33px;
+  font-size: 33px;
+}
+
+#training .flex .left .article p {
+  color: #686868;
+  margin-bottom: 20px;
+  line-height: 26px;
+  font-size: 17px;
+}
+
+#training .flex .left .article ul {
+  padding: 0;
+}
+
+#training .flex .left .article ul li {
+  margin: 15px 0;
+}
+
+#training .flex .left .article ul li a {
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  line-height: 14px;
+  font-size: 20px;
+  color: #f99919;
+}
+
+#training .flex .left .article ul li a:hover {
+  color: #de1245;
+}
+
+#training .flex .right {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+#training .flex .right .img-container {
+  position: relative;
+  left: 10%;
+}
+
+#training .flex .right .img-container img {
+  width: 80%;
+}
 /*# sourceMappingURL=main.css.map */
