@@ -13,5 +13,11 @@ namespace Crunch.Areas.Admin.Controllers
         {
             return View();
         }
+
+        [Area("Admin")]
+        public IActionResult Index()
+        {
+            return View();
+        }
     }
 }

@@ -20,3 +20,13 @@ table i {
 .custom-file-label {
     top: 32px !important;
 }
+
+.small-container {
+    width: 50%;
+    margin: 0 auto;
+}
+
+.login {
+    position: relative;
+    top: 200px;
+}

@@ -14,6 +14,7 @@ using Microsoft.Extensions.DependencyInjection.Extensions;
 using Microsoft.AspNetCore.Http;
 using Crunch.Injection;
 
+
 namespace Crunch
 {
     public class Startup
@@ -34,7 +35,6 @@ namespace Crunch
             services.AddSession(options =>
             {
                 options.IdleTimeout = TimeSpan.FromSeconds(3600);
-
             });
 
             services.AddControllersWithViews();
@@ -42,6 +42,7 @@ namespace Crunch
             services.AddDbContext<Context>(options =>
                options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"))
             );
+
 
             services.TryAddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 
@@ -65,8 +66,6 @@ namespace Crunch
             app.UseHttpsRedirection();
             app.UseStaticFiles();
 
-            //sesssion
-            /* app.UseHttpContextItemsMiddleware();*/
 
             app.UseRouting();
             app.UseSession();

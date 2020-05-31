@@ -16,8 +16,6 @@ namespace Crunch.Data
 
         }
 
-       
-
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<UserClass>()
@@ -41,6 +39,8 @@ namespace Crunch.Data
         public DbSet<Trainer> trainers { get; set; }
         public DbSet<Gym>  gyms{ get; set; }
         public DbSet<Promocode> promocodes{ get; set; }
+
+        public DbSet<Admin> Admins { get; set; }
 
     }
 }
