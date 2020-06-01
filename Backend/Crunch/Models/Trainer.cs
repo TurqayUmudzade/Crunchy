@@ -12,7 +12,7 @@ namespace Crunch.Models
 
         [Key]
         public int ID { get; set; }
-        [Required]
+        [Required(AllowEmptyStrings = false)]
         public String fullName { get; set; }
 
         [Required]

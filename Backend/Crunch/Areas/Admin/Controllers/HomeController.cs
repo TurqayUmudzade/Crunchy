@@ -26,6 +26,9 @@ namespace Crunch.Areas.Admin.Controllers
             return View();
         }
 
+        //TRAINERS
+
+        //VIEW 
         [Area("Admin")]
         public IActionResult Trainers()
         {
@@ -38,6 +41,7 @@ namespace Crunch.Areas.Admin.Controllers
             return View(model);
         }
 
+        //ADD TRAINER
         [Area("Admin")]
         [HttpPost]
         public IActionResult AddTrainer(AdminTrainersViewModel model)
@@ -75,7 +79,38 @@ namespace Crunch.Areas.Admin.Controllers
                 return View("Trainers", returnModel);
             }
 
-           
+            
         }
+        //UPDATE TRAINER
+        [Area("Admin")]
+        public IActionResult EditTrainer(int trainerID)
+        {
+            Trainer trainer = _context.trainers.Include(t => t.gym).SingleOrDefault(t=>t.ID==trainerID);
+            return View(new AdminTrainersViewModel { trainer=trainer,gyms=_context.gyms.ToList()});
+        }
+
+        [Area("Admin")]
+        [HttpPost]
+        public IActionResult EditTrainer(AdminTrainersViewModel model)
+        {
+            
+
+            if (ModelState.IsValid && model.trainer!=null)
+            {
+                Trainer trainer1 = _context.trainers.Find(model.trainer.ID);
+                trainer1.fullName = model.trainer.fullName;
+                _context.SaveChanges();
+                return Content("done aq");
+            }
+            else {
+                var message = string.Join(" | ", ModelState.Values.SelectMany(v => v.Errors).Select(e => e.ErrorMessage));
+                return Content(message);
+            }
+
+
+
+           //return View(new AdminTrainersViewModel { trainer = null, gyms = _context.gyms.ToList() });
+        }
+
     }
 }

@@ -135,7 +135,7 @@
                     <td>@trainer.fullName</td>
                     <td>@trainer.gym.gymLocation</td>
                     <td>@trainer.email</td>
-                    <td><a href="edit-trainer.html"><i class="fas fa-edit "></i></a></td>
+                    <td><a href="@Url.Action("EditTrainer","Home",new { area="Admin",trainerID=trainer.ID})"><i class="fas fa-edit "></i></a></td>
                     <td class="delete" data-toggle="modal" data-target=".modal"><i class="fas fa-trash-alt "></i></td>
                 </tr>
             }
