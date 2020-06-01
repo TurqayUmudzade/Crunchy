@@ -20606,6 +20606,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\Turqay\\Desktop\\Crunch\\Backend\\Crunch\\Areas\\Admin\\Views\\Home\\Trainers.cshtml",
+      "TargetPath": "Areas\\Admin\\Views\\Home\\Trainers.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\Turqay\\Desktop\\Crunch\\Backend\\Crunch\\Views\\Shared\\ClassSpaceFull.cshtml",
       "TargetPath": "Views\\Shared\\ClassSpaceFull.cshtml",
       "FileKind": "mvc"

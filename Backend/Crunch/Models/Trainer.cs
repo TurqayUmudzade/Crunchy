@@ -24,13 +24,14 @@ namespace Crunch.Models
 
         public String aboutMe { get; set; }
 
+        [Required]
         public String email { get; set; }
 
         //mr or mrs
         public String title { get; set; }
 
         public String Qualifications { get; set; }
-
+        [Required]
         public Gym gym { get; set; }
 
         /*[NotMapped]

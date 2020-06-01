@@ -33,8 +33,15 @@ using Crunch.ViewModels;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 4 "C:\Users\Turqay\Desktop\Crunch\Backend\Crunch\Areas\Admin\Views\_ViewImports.cshtml"
+using Crunch.Areas.Admin.ViewModels;
+
+#line default
+#line hidden
+#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"8277c58784580fa47c66906a3bba050fbd480d28", @"/Areas/Admin/Views/Login/Index.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"a13b96ed4794bec2fae1a69c0ba5e842643c7752", @"/Areas/Admin/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"a660d7628aab49cc3746baf413d77fcfb0ae2e47", @"/Areas/Admin/Views/_ViewImports.cshtml")]
     public class Areas_Admin_Views_Login_Index : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<dynamic>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("class", new global::Microsoft.AspNetCore.Html.HtmlString("small-container"), global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -73,7 +80,7 @@ using Crunch.ViewModels;
 #line hidden
 #nullable disable
             WriteLiteral("\r\n    <div class=\"container login\">\r\n\r\n        ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "8277c58784580fa47c66906a3bba050fbd480d284112", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "8277c58784580fa47c66906a3bba050fbd480d284314", async() => {
                 WriteLiteral(@"
             <h3>Login for Admins</h3>
             <div class=""form-group"">
