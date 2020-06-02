@@ -93,30 +93,32 @@ namespace Crunch.Areas.Admin.Controllers
         [HttpPost]
         public IActionResult EditTrainer(AdminTrainersViewModel model)
         {
+
             if (ModelState.IsValid)
             {
                 Trainer trainer = _context.trainers.Find(model.trainer.ID);
                 trainer.fullName = model.trainer.fullName;
                 trainer.title = model.trainer.title;
-                trainer.gym = model.trainer.gym;
+                trainer.gym = _context.gyms.Find(model.trainer.gym.gymID);
                 trainer.aboutMe = model.trainer.aboutMe;
                 trainer.email = model.trainer.email;
                 trainer.Qualifications = model.trainer.Qualifications;
                 trainer.Speciality = model.trainer.Speciality;
+
                 if (!String.IsNullOrEmpty(model.trainer.image))
                 {
                     trainer.image = model.trainer.image;
                 }
                 _context.SaveChanges();
                 TempData["Alert"] = "Trainer Updated!";
+                return RedirectToAction("Trainers", "Home", new { area = "Admin" });
             }
             else
             {
                 var message = string.Join(" | ", ModelState.Values.SelectMany(v => v.Errors).Select(e => e.ErrorMessage));
                 TempData["Alert"] = message;
+                return Content(message);
             }
-
-            return View(new AdminTrainersViewModel { trainer = null, gyms = _context.gyms.ToList() });
         }
 
     }
