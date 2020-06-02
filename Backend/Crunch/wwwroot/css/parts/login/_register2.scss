@@ -12,6 +12,7 @@
             display: flex;
             justify-content: space-between;
             margin: 30px 40px;
+
             label {
                 flex: 4;
                 padding: 12px 0px;
@@ -21,11 +22,13 @@
                 letter-spacing: 0;
                 line-height: 1.4;
                 color: #666;
+
                 span {
                     color: red;
                     padding: 0 3px;
                 }
             }
+
             input {
                 flex: 6;
                 transition: all .15s ease-in-out;
@@ -41,33 +44,42 @@
                 height: 23px;
                 box-shadow: none;
             }
+
             #gender-label {
                 flex: 0;
             }
+
             .radios {
                 flex: 6;
                 display: flex;
                 justify-content: space-evenly;
+
                 .block {
                     width: 50%;
                     position: relative;
+
                     input {
                         opacity: 0;
                         position: absolute;
                         right: 42%;
                     }
+
                     label {
                         padding-left: 30px;
                         position: relative;
                         top: 7px;
                     }
-                    .tick {}
+
+                    .tick {
+                    }
                 }
             }
         }
+
         .disability {
             display: flex;
             justify-content: space-evenly;
+
             #left {
                 flex: 10;
             }
@@ -85,22 +97,28 @@
     .join {
         .form-row {
             flex-wrap: wrap;
+
             #left {
                 min-width: 100%;
             }
+
             input {
                 min-width: 200px;
             }
+
             #rememberMe {
                 min-width: 0px;
             }
+
             label {
                 min-width: 100px
             }
+
             .radios {
                 label {
                     min-width: 0px;
                 }
+
                 .block {
                     input {
                         min-width: 0;
@@ -109,26 +127,32 @@
             }
         }
     }
+
     .progress-indicator {
         ul {
             flex-wrap: wrap;
+
             li {
                 min-width: 100px;
             }
         }
     }
+
     .login-container2 {
         max-width: 90% !important;
     }
 }
 
 @media screen and (max-width: 540px) {
-    .join {}
+    .join {
+    }
+
     .progress-indicator {
         ul {
             flex-wrap: wrap;
             flex-direction: column;
             padding-left: 0;
+
             li {
                 min-width: 100px;
                 text-align: center;

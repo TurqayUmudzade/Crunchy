@@ -58,14 +58,17 @@ li {
 .table {
     width: 100%;
     overflow: auto;
+
     table {
         width: 100%;
         border-collapse: collapse;
         border-width: 0;
+
         thead {
             background-color: #364e72;
             color: #fff;
             font-size: 22px;
+
             th {
                 font-weight: 400;
                 border-width: 0;
@@ -74,6 +77,7 @@ li {
                 text-align: left;
             }
         }
+
         tbody {
             tr {
                 td {
@@ -107,11 +111,12 @@ li {
 }
 
 input[type=radio] {
-    &:checked+.tick {
+    &:checked + .tick {
         border: 1px solid #31476b;
         background-color: white;
     }
-    &:checked+.tick:after {
+
+    &:checked + .tick:after {
         content: "";
         border-radius: 50%;
         width: 14px;
@@ -127,7 +132,7 @@ input[type=radio] {
 }
 
 input[type=radio] {
-    &:hover+.tick {
+    &:hover + .tick {
         border: 1px solid #009fdf;
     }
 }

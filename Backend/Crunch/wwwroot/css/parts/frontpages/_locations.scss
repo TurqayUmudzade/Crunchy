@@ -1,23 +1,29 @@
 #locations {
     margin-bottom: 200px;
+
     hr {
         margin: 0;
     }
+
     padding-top: 50px;
     background: linear-gradient(to right top, #de1245 0%, #ffbc15 100%);
     width: 100%;
+
     .header {
         padding: 40px 0px;
+
         h1 {
             margin-bottom: 40px;
             font-size: 40px;
             color: white;
             text-align: center;
         }
+
         .search {
             width: 500px;
             margin: 20px auto;
             position: relative;
+
             .custom-selector {
                 font-family: 'Roboto Condensed', sans-serif !important;
                 background: none;
@@ -28,17 +34,21 @@
                 padding: 0 18px;
                 width: 100%;
                 font-size: 26px;
+
                 &:focus {
                     background: white;
                     color: black;
+
                     &::placeholder {
                         color: #dedede;
                     }
                 }
+
                 &::placeholder {
                     color: white;
                 }
             }
+
             ul {
                 position: absolute;
                 width: 536px;
@@ -50,6 +60,7 @@
                 z-index: 2;
                 top: 43px;
                 padding-left: 0;
+
                 li {
                     position: relative;
                     background: white;
@@ -57,6 +68,7 @@
                     cursor: pointer;
                     font-size: 19px;
                     transition: color 0.1s linear 0.1s;
+
                     &:hover {
                         background: linear-gradient(to right, #ffffff 50%, #f20d36 0%, #f89a37 100%);
                         color: white;
@@ -65,6 +77,7 @@
                     }
                 }
             }
+
             i {
                 position: absolute;
                 right: 0px;
@@ -74,9 +87,11 @@
             }
         }
     }
+
     .locations {
         display: flex;
         flex-wrap: wrap;
+
         .location {
             position: relative;
             border-bottom: 1px solid white;
@@ -85,26 +100,32 @@
             min-width: calc(100%/3);
             box-sizing: border-box;
             flex: 1;
+
             h2 {
                 line-height: 33px;
                 font-size: 33px;
                 color: white;
             }
+
             p {
                 color: white;
                 line-height: 16px;
                 font-size: 12px;
                 letter-spacing: 0.5px;
             }
+
             .xmiles-away {
                 margin-top: 15px;
             }
+
             &:nth-child(3n+1) {
                 border-right: 1px solid white;
             }
+
             &:nth-child(3n+3) {
                 border-left: 1px solid white;
             }
+
             img {
                 visibility: hidden;
                 position: absolute;
@@ -114,6 +135,7 @@
                 height: 100%;
                 opacity: 0;
             }
+
             &:hover {
                 img {
                     opacity: 0.4;
@@ -138,6 +160,7 @@
         .locations {
             .location {
                 min-width: 50%;
+
                 &:nth-child(2n+1) {
                     border-right: 1px solid white;
                 }
@@ -151,6 +174,7 @@
         .locations {
             .location {
                 min-width: 50%;
+
                 &:nth-child(2n+1) {
                     border-right: 1px solid white;
                 }
@@ -165,18 +189,23 @@
             h1 {
                 font-size: 5vw;
             }
+
             .search {
                 width: 60%;
+
                 .custom-selector {
                     font-size: 5vw;
                 }
+
                 i {
                     right: -10%;
                 }
             }
         }
+
         .locations {
-            .location {}
+            .location {
+            }
         }
     }
 }

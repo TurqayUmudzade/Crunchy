@@ -46,7 +46,7 @@ namespace Crunch.Areas.Admin.Controllers
         [HttpPost]
         public IActionResult AddTrainer(AdminTrainersViewModel model)
         {
-           
+
             if (ModelState.IsValid)
             {
                 Trainer trainer = new Trainer
@@ -68,8 +68,8 @@ namespace Crunch.Areas.Admin.Controllers
             }
             else
             {
-                
-                var message = string.Join(" | ", ModelState.Values .SelectMany(v => v.Errors).Select(e => e.ErrorMessage));
+
+                var message = string.Join(" | ", ModelState.Values.SelectMany(v => v.Errors).Select(e => e.ErrorMessage));
                 TempData["Alert"] = message;
                 AdminTrainersViewModel returnModel = new AdminTrainersViewModel()
                 {
@@ -79,37 +79,44 @@ namespace Crunch.Areas.Admin.Controllers
                 return View("Trainers", returnModel);
             }
 
-            
+
         }
         //UPDATE TRAINER
         [Area("Admin")]
         public IActionResult EditTrainer(int trainerID)
         {
-            Trainer trainer = _context.trainers.Include(t => t.gym).SingleOrDefault(t=>t.ID==trainerID);
-            return View(new AdminTrainersViewModel { trainer=trainer,gyms=_context.gyms.ToList()});
+            Trainer trainer = _context.trainers.Include(t => t.gym).SingleOrDefault(t => t.ID == trainerID);
+            return View(new AdminTrainersViewModel { trainer = trainer, gyms = _context.gyms.ToList() });
         }
 
         [Area("Admin")]
         [HttpPost]
         public IActionResult EditTrainer(AdminTrainersViewModel model)
         {
-            
-
-            if (ModelState.IsValid && model.trainer!=null)
+            if (ModelState.IsValid)
             {
-                Trainer trainer1 = _context.trainers.Find(model.trainer.ID);
-                trainer1.fullName = model.trainer.fullName;
+                Trainer trainer = _context.trainers.Find(model.trainer.ID);
+                trainer.fullName = model.trainer.fullName;
+                trainer.title = model.trainer.title;
+                trainer.gym = model.trainer.gym;
+                trainer.aboutMe = model.trainer.aboutMe;
+                trainer.email = model.trainer.email;
+                trainer.Qualifications = model.trainer.Qualifications;
+                trainer.Speciality = model.trainer.Speciality;
+                if (!String.IsNullOrEmpty(model.trainer.image))
+                {
+                    trainer.image = model.trainer.image;
+                }
                 _context.SaveChanges();
-                return Content("done aq");
+                TempData["Alert"] = "Trainer Updated!";
             }
-            else {
+            else
+            {
                 var message = string.Join(" | ", ModelState.Values.SelectMany(v => v.Errors).Select(e => e.ErrorMessage));
-                return Content(message);
+                TempData["Alert"] = message;
             }
 
-
-
-           //return View(new AdminTrainersViewModel { trainer = null, gyms = _context.gyms.ToList() });
+            return View(new AdminTrainersViewModel { trainer = null, gyms = _context.gyms.ToList() });
         }
 
     }

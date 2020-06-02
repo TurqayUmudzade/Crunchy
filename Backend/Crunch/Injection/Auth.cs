@@ -17,7 +17,7 @@ namespace Crunch.Injection
         User User { get; }
     }
 
-    public class Auth:IAuth
+    public class Auth : IAuth
     {
         private readonly Context _context;
         private readonly IHttpContextAccessor _accessor;

@@ -22,6 +22,6 @@ namespace Crunch.Models
 
         public DateTime Expire { get; set; }
 
-       
+
     }
 }

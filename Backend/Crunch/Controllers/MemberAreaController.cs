@@ -104,12 +104,13 @@ namespace Crunch.Controllers
 
             foreach (UserClass uc in userClasses.ToList())//Tolist because the value is modified during the loop
             {
-                if (uc.ClassID == ClassID && uc.UserID == user.UserID) {
+                if (uc.ClassID == ClassID && uc.UserID == user.UserID)
+                {
                     //Find entity and delete it
                     _context.users.Include(u => u.userClasses).FirstOrDefault(u => u.UserID == _auth.User.UserID).userClasses.Remove(uc);
                 }
             }
-            
+
             _context.SaveChanges();
 
             return PartialView("~/Views/PartialViews/CancelClass.cshtml");

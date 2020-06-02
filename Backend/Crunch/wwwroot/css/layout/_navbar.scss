@@ -5,16 +5,19 @@ nav {
     z-index: 10;
     position: fixed;
     top: 0;
+
     .flex {
         #logo {
             img {
                 height: 55px;
             }
+
             &:hover {
                 transform: rotateZ(-10deg);
                 transition: all 0.3s;
             }
         }
+
         a {
             padding: 13px 25px 5px 25px;
             text-decoration: none;
@@ -24,14 +27,17 @@ nav {
             letter-spacing: 0.1em;
             transition: all 0.3s;
         }
+
         .lang_picker {
             margin-left: auto;
             padding-top: 6px;
+
             .flag {
                 width: 25px;
                 height: 25px;
                 margin-top: 7px;
             }
+
             h2 {
                 font-weight: bold;
                 margin: 8px 0px;
@@ -42,30 +48,36 @@ nav {
                 font-size: 15px;
                 letter-spacing: 0.1em;
             }
+
             i {
                 color: white;
                 padding-top: 6px;
                 margin-right: 10px;
             }
+
             ul {
                 display: none;
             }
         }
+
         #free-trial {
             background-color: #009fdf;
             overflow: hidden;
             height: 100%;
             padding: 12px 30px 18px;
+
             &::after {
                 bottom: 15px;
                 bottom: 13px;
             }
         }
+
         #join {
             background-color: white;
             height: 100%;
             color: $navbar-orange;
             padding: 12px 30px 18px;
+
             &:hover {
                 color: #de1245;
             }
@@ -84,6 +96,7 @@ nav {
 
 .nav-anchor {
     position: relative;
+
     &::after {
         position: absolute;
         content: "";
@@ -95,6 +108,7 @@ nav {
         transform: translateX(-50%) scaleX(0);
         transition: all 0.3s;
     }
+
     &:hover {
         &::after {
             transform: translateX(-50%) scaleX(1);
@@ -114,9 +128,11 @@ nav {
         .nav-anchor {
             display: none;
         }
+
         #free-trial {
             display: block;
         }
+
         .fa-bars {
             opacity: 100%;
         }
@@ -128,6 +144,7 @@ nav {
         #free-trial {
             display: none;
         }
+
         #join {
             display: none;
         }

@@ -24,11 +24,11 @@ namespace Crunch.Models
 
         [Required]
         public int space { get; set; }
-        
+
         public int spaceUsed { get; set; }
-        
+
         public String type { get; set; }
-        
+
         public String icon { get; set; }
 
         public List<UserClass> userClasses { get; set; }

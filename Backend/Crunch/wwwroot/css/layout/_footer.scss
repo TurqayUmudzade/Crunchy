@@ -7,31 +7,38 @@ footer {
     left: 0;
     right: 0;
     height: 100px;
+
     #grey {
         color: $grey;
         font-size: 13px;
     }
+
     .footer-wrapper {
         justify-content: space-between;
         margin: 0 auto;
         width: 80%;
+
         .left {
             .icons {
                 word-spacing: 25px;
+
                 i {
                     color: white;
                 }
             }
+
             p {
                 color: white;
             }
         }
+
         .right {
             max-width: 430px;
             margin: 0 0 0 auto;
             padding: 0;
             text-align: right;
             width: 64%;
+
             p {
                 color: white;
             }

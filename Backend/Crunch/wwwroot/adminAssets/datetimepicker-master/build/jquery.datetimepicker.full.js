@@ -7,7 +7,7 @@
  *
  * For more JQuery plugins visit http://plugins.krajee.com
  * For more Yii related demos visit http://demos.krajee.com
- */var DateFormatter;!function(){"use strict";var t,e,r,n,a,u,i;u=864e5,i=3600,t=function(t,e){return"string"==typeof t&&"string"==typeof e&&t.toLowerCase()===e.toLowerCase()},e=function(t,r,n){var a=n||"0",u=t.toString();return u.length<r?e(a+u,r):u},r=function(t){var e,n;for(t=t||{},e=1;e<arguments.length;e++)if(n=arguments[e])for(var a in n)n.hasOwnProperty(a)&&("object"==typeof n[a]?r(t[a],n[a]):t[a]=n[a]);return t},n=function(t,e){for(var r=0;r<e.length;r++)if(e[r].toLowerCase()===t.toLowerCase())return r;return-1},a={dateSettings:{days:["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],daysShort:["Sun","Mon","Tue","Wed","Thu","Fri","Sat"],months:["January","February","March","April","May","June","July","August","September","October","November","December"],monthsShort:["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],meridiem:["AM","PM"],ordinal:function(t){var e=t%10,r={1:"st",2:"nd",3:"rd"};return 1!==Math.floor(t%100/10)&&r[e]?r[e]:"th"}},separators:/[ \-+\/\.T:@]/g,validParts:/[dDjlNSwzWFmMntLoYyaABgGhHisueTIOPZcrU]/g,intParts:/[djwNzmnyYhHgGis]/g,tzParts:/\b(?:[PMCEA][SDP]T|(?:Pacific|Mountain|Central|Eastern|Atlantic) (?:Standard|Daylight|Prevailing) Time|(?:GMT|UTC)(?:[-+]\d{4})?)\b/g,tzClip:/[^-+\dA-Z]/g},DateFormatter=function(t){var e=this,n=r(a,t);e.dateSettings=n.dateSettings,e.separators=n.separators,e.validParts=n.validParts,e.intParts=n.intParts,e.tzParts=n.tzParts,e.tzClip=n.tzClip},DateFormatter.prototype={constructor:DateFormatter,getMonth:function(t){var e,r=this;return e=n(t,r.dateSettings.monthsShort)+1,0===e&&(e=n(t,r.dateSettings.months)+1),e},parseDate:function(e,r){var n,a,u,i,s,o,c,f,l,h,d=this,g=!1,m=!1,p=d.dateSettings,y={date:null,year:null,month:null,day:null,hour:0,min:0,sec:0};if(!e)return null;if(e instanceof Date)return e;if("U"===r)return u=parseInt(e),u?new Date(1e3*u):e;switch(typeof e){case"number":return new Date(e);case"string":break;default:return null}if(n=r.match(d.validParts),!n||0===n.length)throw new Error("Invalid date format definition.");for(a=e.replace(d.separators,"\x00").split("\x00"),u=0;u<a.length;u++)switch(i=a[u],s=parseInt(i),n[u]){case"y":case"Y":if(!s)return null;l=i.length,y.year=2===l?parseInt((70>s?"20":"19")+i):s,g=!0;break;case"m":case"n":case"M":case"F":if(isNaN(s)){if(o=d.getMonth(i),!(o>0))return null;y.month=o}else{if(!(s>=1&&12>=s))return null;y.month=s}g=!0;break;case"d":case"j":if(!(s>=1&&31>=s))return null;y.day=s,g=!0;break;case"g":case"h":if(c=n.indexOf("a")>-1?n.indexOf("a"):n.indexOf("A")>-1?n.indexOf("A"):-1,h=a[c],c>-1)f=t(h,p.meridiem[0])?0:t(h,p.meridiem[1])?12:-1,s>=1&&12>=s&&f>-1?y.hour=s+f-1:s>=0&&23>=s&&(y.hour=s);else{if(!(s>=0&&23>=s))return null;y.hour=s}m=!0;break;case"G":case"H":if(!(s>=0&&23>=s))return null;y.hour=s,m=!0;break;case"i":if(!(s>=0&&59>=s))return null;y.min=s,m=!0;break;case"s":if(!(s>=0&&59>=s))return null;y.sec=s,m=!0}if(g===!0&&y.year&&y.month&&y.day)y.date=new Date(y.year,y.month-1,y.day,y.hour,y.min,y.sec,0);else{if(m!==!0)return null;y.date=new Date(0,0,0,y.hour,y.min,y.sec,0)}return y.date},guessDate:function(t,e){if("string"!=typeof t)return t;var r,n,a,u,i,s,o=this,c=t.replace(o.separators,"\x00").split("\x00"),f=/^[djmn]/g,l=e.match(o.validParts),h=new Date,d=0;if(!f.test(l[0]))return t;for(a=0;a<c.length;a++){if(d=2,i=c[a],s=parseInt(i.substr(0,2)),isNaN(s))return null;switch(a){case 0:"m"===l[0]||"n"===l[0]?h.setMonth(s-1):h.setDate(s);break;case 1:"m"===l[0]||"n"===l[0]?h.setDate(s):h.setMonth(s-1);break;case 2:if(n=h.getFullYear(),r=i.length,d=4>r?r:4,n=parseInt(4>r?n.toString().substr(0,4-r)+i:i.substr(0,4)),!n)return null;h.setFullYear(n);break;case 3:h.setHours(s);break;case 4:h.setMinutes(s);break;case 5:h.setSeconds(s)}u=i.substr(d),u.length>0&&c.splice(a+1,0,u)}return h},parseFormat:function(t,r){var n,a=this,s=a.dateSettings,o=/\\?(.?)/gi,c=function(t,e){return n[t]?n[t]():e};return n={d:function(){return e(n.j(),2)},D:function(){return s.daysShort[n.w()]},j:function(){return r.getDate()},l:function(){return s.days[n.w()]},N:function(){return n.w()||7},w:function(){return r.getDay()},z:function(){var t=new Date(n.Y(),n.n()-1,n.j()),e=new Date(n.Y(),0,1);return Math.round((t-e)/u)},W:function(){var t=new Date(n.Y(),n.n()-1,n.j()-n.N()+3),r=new Date(t.getFullYear(),0,4);return e(1+Math.round((t-r)/u/7),2)},F:function(){return s.months[r.getMonth()]},m:function(){return e(n.n(),2)},M:function(){return s.monthsShort[r.getMonth()]},n:function(){return r.getMonth()+1},t:function(){return new Date(n.Y(),n.n(),0).getDate()},L:function(){var t=n.Y();return t%4===0&&t%100!==0||t%400===0?1:0},o:function(){var t=n.n(),e=n.W(),r=n.Y();return r+(12===t&&9>e?1:1===t&&e>9?-1:0)},Y:function(){return r.getFullYear()},y:function(){return n.Y().toString().slice(-2)},a:function(){return n.A().toLowerCase()},A:function(){var t=n.G()<12?0:1;return s.meridiem[t]},B:function(){var t=r.getUTCHours()*i,n=60*r.getUTCMinutes(),a=r.getUTCSeconds();return e(Math.floor((t+n+a+i)/86.4)%1e3,3)},g:function(){return n.G()%12||12},G:function(){return r.getHours()},h:function(){return e(n.g(),2)},H:function(){return e(n.G(),2)},i:function(){return e(r.getMinutes(),2)},s:function(){return e(r.getSeconds(),2)},u:function(){return e(1e3*r.getMilliseconds(),6)},e:function(){var t=/\((.*)\)/.exec(String(r))[1];return t||"Coordinated Universal Time"},I:function(){var t=new Date(n.Y(),0),e=Date.UTC(n.Y(),0),r=new Date(n.Y(),6),a=Date.UTC(n.Y(),6);return t-e!==r-a?1:0},O:function(){var t=r.getTimezoneOffset(),n=Math.abs(t);return(t>0?"-":"+")+e(100*Math.floor(n/60)+n%60,4)},P:function(){var t=n.O();return t.substr(0,3)+":"+t.substr(3,2)},T:function(){var t=(String(r).match(a.tzParts)||[""]).pop().replace(a.tzClip,"");return t||"UTC"},Z:function(){return 60*-r.getTimezoneOffset()},c:function(){return"Y-m-d\\TH:i:sP".replace(o,c)},r:function(){return"D, d M Y H:i:s O".replace(o,c)},U:function(){return r.getTime()/1e3||0}},c(t,t)},formatDate:function(t,e){var r,n,a,u,i,s=this,o="",c="\\";if("string"==typeof t&&(t=s.parseDate(t,e),!t))return null;if(t instanceof Date){for(a=e.length,r=0;a>r;r++)i=e.charAt(r),"S"!==i&&i!==c&&(r>0&&e.charAt(r-1)===c?o+=i:(u=s.parseFormat(i,t),r!==a-1&&s.intParts.test(i)&&"S"===e.charAt(r+1)&&(n=parseInt(u)||0,u+=s.dateSettings.ordinal(n)),o+=u));return o}return""}}}();/**
+ */var DateFormatter; !function () { "use strict"; var t, e, r, n, a, u, i; u = 864e5, i = 3600, t = function (t, e) { return "string" == typeof t && "string" == typeof e && t.toLowerCase() === e.toLowerCase() }, e = function (t, r, n) { var a = n || "0", u = t.toString(); return u.length < r ? e(a + u, r) : u }, r = function (t) { var e, n; for (t = t || {}, e = 1; e < arguments.length; e++)if (n = arguments[e]) for (var a in n) n.hasOwnProperty(a) && ("object" == typeof n[a] ? r(t[a], n[a]) : t[a] = n[a]); return t }, n = function (t, e) { for (var r = 0; r < e.length; r++)if (e[r].toLowerCase() === t.toLowerCase()) return r; return -1 }, a = { dateSettings: { days: ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"], daysShort: ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"], months: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"], monthsShort: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"], meridiem: ["AM", "PM"], ordinal: function (t) { var e = t % 10, r = { 1: "st", 2: "nd", 3: "rd" }; return 1 !== Math.floor(t % 100 / 10) && r[e] ? r[e] : "th" } }, separators: /[ \-+\/\.T:@]/g, validParts: /[dDjlNSwzWFmMntLoYyaABgGhHisueTIOPZcrU]/g, intParts: /[djwNzmnyYhHgGis]/g, tzParts: /\b(?:[PMCEA][SDP]T|(?:Pacific|Mountain|Central|Eastern|Atlantic) (?:Standard|Daylight|Prevailing) Time|(?:GMT|UTC)(?:[-+]\d{4})?)\b/g, tzClip: /[^-+\dA-Z]/g }, DateFormatter = function (t) { var e = this, n = r(a, t); e.dateSettings = n.dateSettings, e.separators = n.separators, e.validParts = n.validParts, e.intParts = n.intParts, e.tzParts = n.tzParts, e.tzClip = n.tzClip }, DateFormatter.prototype = { constructor: DateFormatter, getMonth: function (t) { var e, r = this; return e = n(t, r.dateSettings.monthsShort) + 1, 0 === e && (e = n(t, r.dateSettings.months) + 1), e }, parseDate: function (e, r) { var n, a, u, i, s, o, c, f, l, h, d = this, g = !1, m = !1, p = d.dateSettings, y = { date: null, year: null, month: null, day: null, hour: 0, min: 0, sec: 0 }; if (!e) return null; if (e instanceof Date) return e; if ("U" === r) return u = parseInt(e), u ? new Date(1e3 * u) : e; switch (typeof e) { case "number": return new Date(e); case "string": break; default: return null }if (n = r.match(d.validParts), !n || 0 === n.length) throw new Error("Invalid date format definition."); for (a = e.replace(d.separators, "\x00").split("\x00"), u = 0; u < a.length; u++)switch (i = a[u], s = parseInt(i), n[u]) { case "y": case "Y": if (!s) return null; l = i.length, y.year = 2 === l ? parseInt((70 > s ? "20" : "19") + i) : s, g = !0; break; case "m": case "n": case "M": case "F": if (isNaN(s)) { if (o = d.getMonth(i), !(o > 0)) return null; y.month = o } else { if (!(s >= 1 && 12 >= s)) return null; y.month = s } g = !0; break; case "d": case "j": if (!(s >= 1 && 31 >= s)) return null; y.day = s, g = !0; break; case "g": case "h": if (c = n.indexOf("a") > -1 ? n.indexOf("a") : n.indexOf("A") > -1 ? n.indexOf("A") : -1, h = a[c], c > -1) f = t(h, p.meridiem[0]) ? 0 : t(h, p.meridiem[1]) ? 12 : -1, s >= 1 && 12 >= s && f > -1 ? y.hour = s + f - 1 : s >= 0 && 23 >= s && (y.hour = s); else { if (!(s >= 0 && 23 >= s)) return null; y.hour = s } m = !0; break; case "G": case "H": if (!(s >= 0 && 23 >= s)) return null; y.hour = s, m = !0; break; case "i": if (!(s >= 0 && 59 >= s)) return null; y.min = s, m = !0; break; case "s": if (!(s >= 0 && 59 >= s)) return null; y.sec = s, m = !0 }if (g === !0 && y.year && y.month && y.day) y.date = new Date(y.year, y.month - 1, y.day, y.hour, y.min, y.sec, 0); else { if (m !== !0) return null; y.date = new Date(0, 0, 0, y.hour, y.min, y.sec, 0) } return y.date }, guessDate: function (t, e) { if ("string" != typeof t) return t; var r, n, a, u, i, s, o = this, c = t.replace(o.separators, "\x00").split("\x00"), f = /^[djmn]/g, l = e.match(o.validParts), h = new Date, d = 0; if (!f.test(l[0])) return t; for (a = 0; a < c.length; a++) { if (d = 2, i = c[a], s = parseInt(i.substr(0, 2)), isNaN(s)) return null; switch (a) { case 0: "m" === l[0] || "n" === l[0] ? h.setMonth(s - 1) : h.setDate(s); break; case 1: "m" === l[0] || "n" === l[0] ? h.setDate(s) : h.setMonth(s - 1); break; case 2: if (n = h.getFullYear(), r = i.length, d = 4 > r ? r : 4, n = parseInt(4 > r ? n.toString().substr(0, 4 - r) + i : i.substr(0, 4)), !n) return null; h.setFullYear(n); break; case 3: h.setHours(s); break; case 4: h.setMinutes(s); break; case 5: h.setSeconds(s) }u = i.substr(d), u.length > 0 && c.splice(a + 1, 0, u) } return h }, parseFormat: function (t, r) { var n, a = this, s = a.dateSettings, o = /\\?(.?)/gi, c = function (t, e) { return n[t] ? n[t]() : e }; return n = { d: function () { return e(n.j(), 2) }, D: function () { return s.daysShort[n.w()] }, j: function () { return r.getDate() }, l: function () { return s.days[n.w()] }, N: function () { return n.w() || 7 }, w: function () { return r.getDay() }, z: function () { var t = new Date(n.Y(), n.n() - 1, n.j()), e = new Date(n.Y(), 0, 1); return Math.round((t - e) / u) }, W: function () { var t = new Date(n.Y(), n.n() - 1, n.j() - n.N() + 3), r = new Date(t.getFullYear(), 0, 4); return e(1 + Math.round((t - r) / u / 7), 2) }, F: function () { return s.months[r.getMonth()] }, m: function () { return e(n.n(), 2) }, M: function () { return s.monthsShort[r.getMonth()] }, n: function () { return r.getMonth() + 1 }, t: function () { return new Date(n.Y(), n.n(), 0).getDate() }, L: function () { var t = n.Y(); return t % 4 === 0 && t % 100 !== 0 || t % 400 === 0 ? 1 : 0 }, o: function () { var t = n.n(), e = n.W(), r = n.Y(); return r + (12 === t && 9 > e ? 1 : 1 === t && e > 9 ? -1 : 0) }, Y: function () { return r.getFullYear() }, y: function () { return n.Y().toString().slice(-2) }, a: function () { return n.A().toLowerCase() }, A: function () { var t = n.G() < 12 ? 0 : 1; return s.meridiem[t] }, B: function () { var t = r.getUTCHours() * i, n = 60 * r.getUTCMinutes(), a = r.getUTCSeconds(); return e(Math.floor((t + n + a + i) / 86.4) % 1e3, 3) }, g: function () { return n.G() % 12 || 12 }, G: function () { return r.getHours() }, h: function () { return e(n.g(), 2) }, H: function () { return e(n.G(), 2) }, i: function () { return e(r.getMinutes(), 2) }, s: function () { return e(r.getSeconds(), 2) }, u: function () { return e(1e3 * r.getMilliseconds(), 6) }, e: function () { var t = /\((.*)\)/.exec(String(r))[1]; return t || "Coordinated Universal Time" }, I: function () { var t = new Date(n.Y(), 0), e = Date.UTC(n.Y(), 0), r = new Date(n.Y(), 6), a = Date.UTC(n.Y(), 6); return t - e !== r - a ? 1 : 0 }, O: function () { var t = r.getTimezoneOffset(), n = Math.abs(t); return (t > 0 ? "-" : "+") + e(100 * Math.floor(n / 60) + n % 60, 4) }, P: function () { var t = n.O(); return t.substr(0, 3) + ":" + t.substr(3, 2) }, T: function () { var t = (String(r).match(a.tzParts) || [""]).pop().replace(a.tzClip, ""); return t || "UTC" }, Z: function () { return 60 * -r.getTimezoneOffset() }, c: function () { return "Y-m-d\\TH:i:sP".replace(o, c) }, r: function () { return "D, d M Y H:i:s O".replace(o, c) }, U: function () { return r.getTime() / 1e3 || 0 } }, c(t, t) }, formatDate: function (t, e) { var r, n, a, u, i, s = this, o = "", c = "\\"; if ("string" == typeof t && (t = s.parseDate(t, e), !t)) return null; if (t instanceof Date) { for (a = e.length, r = 0; a > r; r++)i = e.charAt(r), "S" !== i && i !== c && (r > 0 && e.charAt(r - 1) === c ? o += i : (u = s.parseFormat(i, t), r !== a - 1 && s.intParts.test(i) && "S" === e.charAt(r + 1) && (n = parseInt(u) || 0, u += s.dateSettings.ordinal(n)), o += u)); return o } return "" } } }();/**
  * @preserve jQuery DateTimePicker
  * @homepage http://xdsoft.net/jqplugins/datetimepicker/
  * @author Chupurnov Valeriy (<chupurnov@gmail.com>)
@@ -19,7 +19,7 @@
 var datetimepickerFactory = function ($) {
 	'use strict';
 
-	var default_options  = {
+	var default_options = {
 		i18n: {
 			ar: { // Arabic
 				months: [
@@ -193,7 +193,7 @@ var datetimepickerFactory = function ($) {
 			},
 			se: { // Swedish
 				months: [
-					"Januari", "Februari", "Mars", "April", "Maj", "Juni", "Juli", "Augusti", "September",  "Oktober", "November", "December"
+					"Januari", "Februari", "Mars", "April", "Maj", "Juni", "Juli", "Augusti", "September", "Oktober", "November", "December"
 				],
 				dayOfWeekShort: [
 					"Sön", "Mån", "Tis", "Ons", "Tor", "Fre", "Lör"
@@ -302,7 +302,7 @@ var datetimepickerFactory = function ($) {
 				dayOfWeekShort: [
 					"Ned", "Pon", "Uto", "Sri", "Čet", "Pet", "Sub"
 				],
-				dayOfWeek: ["Nedjelja","Ponedjeljak", "Utorak", "Srijeda", "Četvrtak", "Petak", "Subota"]
+				dayOfWeek: ["Nedjelja", "Ponedjeljak", "Utorak", "Srijeda", "Četvrtak", "Petak", "Subota"]
 			},
 			ca: { //Català
 				months: [
@@ -446,7 +446,7 @@ var datetimepickerFactory = function ($) {
 				dayOfWeekShort: [
 					"Ned", "Pon", "Uto", "Sre", "čet", "Pet", "Sub"
 				],
-				dayOfWeek: ["Nedelja","Ponedeljak", "Utorak", "Sreda", "Četvrtak", "Petak", "Subota"]
+				dayOfWeek: ["Nedelja", "Ponedeljak", "Utorak", "Sreda", "Četvrtak", "Petak", "Subota"]
 			},
 			sr: { //Serbian Cyrillic (Српски)
 				months: [
@@ -455,7 +455,7 @@ var datetimepickerFactory = function ($) {
 				dayOfWeekShort: [
 					"нед", "пон", "уто", "сре", "чет", "пет", "суб"
 				],
-				dayOfWeek: ["Недеља","Понедељак", "Уторак", "Среда", "Четвртак", "Петак", "Субота"]
+				dayOfWeek: ["Недеља", "Понедељак", "Уторак", "Среда", "Четвртак", "Петак", "Субота"]
 			},
 			sv: { //Svenska
 				months: [
@@ -484,12 +484,12 @@ var datetimepickerFactory = function ($) {
 				],
 				dayOfWeek: ["星期日", "星期一", "星期二", "星期三", "星期四", "星期五", "星期六"]
 			},
-			ug:{ // Uyghur(ئۇيغۇرچە)
+			ug: { // Uyghur(ئۇيغۇرچە)
 				months: [
-					"1-ئاي","2-ئاي","3-ئاي","4-ئاي","5-ئاي","6-ئاي","7-ئاي","8-ئاي","9-ئاي","10-ئاي","11-ئاي","12-ئاي"
+					"1-ئاي", "2-ئاي", "3-ئاي", "4-ئاي", "5-ئاي", "6-ئاي", "7-ئاي", "8-ئاي", "9-ئاي", "10-ئاي", "11-ئاي", "12-ئاي"
 				],
 				dayOfWeek: [
-					"يەكشەنبە", "دۈشەنبە","سەيشەنبە","چارشەنبە","پەيشەنبە","جۈمە","شەنبە"
+					"يەكشەنبە", "دۈشەنبە", "سەيشەنبە", "چارشەنبە", "پەيشەنبە", "جۈمە", "شەنبە"
 				]
 			},
 			he: { //Hebrew (עברית)
@@ -549,11 +549,11 @@ var datetimepickerFactory = function ($) {
 		value: '',
 		rtl: false,
 
-		format:	'Y/m/d H:i',
-		formatTime:	'H:i',
-		formatDate:	'Y/m/d',
+		format: 'Y/m/d H:i',
+		formatTime: 'H:i',
+		formatDate: 'Y/m/d',
 
-		startDate:	false, // new Date(), '1986/12/08', '-1970/01/05','-1970/01/05',
+		startDate: false, // new Date(), '1986/12/08', '-1970/01/05','-1970/01/05',
 		step: 60,
 		monthChangeSpinner: true,
 
@@ -584,21 +584,21 @@ var datetimepickerFactory = function ($) {
 		theme: '',
 		touchMovedThreshold: 5,
 
-		onSelectDate: function () {},
-		onSelectTime: function () {},
-		onChangeMonth: function () {},
-		onGetWeekOfYear: function () {},
-		onChangeYear: function () {},
-		onChangeDateTime: function () {},
-		onShow: function () {},
-		onClose: function () {},
-		onGenerate: function () {},
+		onSelectDate: function () { },
+		onSelectTime: function () { },
+		onChangeMonth: function () { },
+		onGetWeekOfYear: function () { },
+		onChangeYear: function () { },
+		onChangeDateTime: function () { },
+		onShow: function () { },
+		onClose: function () { },
+		onGenerate: function () { },
 
 		withoutCopyright: true,
 		inverseButton: false,
 		hours12: false,
 		next: 'xdsoft_next',
-		prev : 'xdsoft_prev',
+		prev: 'xdsoft_prev',
 		dayOfWeekStart: 0,
 		parentID: 'body',
 		timeHeightInTimePicker: 25,
@@ -628,16 +628,16 @@ var datetimepickerFactory = function ($) {
 		weekends: [],
 		highlightedDates: [],
 		highlightedPeriods: [],
-		allowDates : [],
-		allowDateRe : null,
-		disabledDates : [],
+		allowDates: [],
+		allowDateRe: null,
+		disabledDates: [],
 		disabledWeekDays: [],
 		yearOffset: 0,
 		beforeShowDay: null,
 
 		enterLikeTab: true,
-        showApplyButton: false,
-        insideParent: false,
+		showApplyButton: false,
+		insideParent: false,
 	};
 
 	var dateHelper = null,
@@ -649,13 +649,13 @@ var datetimepickerFactory = function ($) {
 		meridiem: ['AM', 'PM']
 	};
 
-	var initDateFormatter = function(){
+	var initDateFormatter = function () {
 		var locale = default_options.i18n[globalLocale],
 			opts = {
 				days: locale.dayOfWeek,
 				daysShort: locale.dayOfWeekShort,
 				months: locale.months,
-				monthsShort: $.map(locale.months, function(n){ return n.substring(0, 3) })
+				monthsShort: $.map(locale.months, function (n) { return n.substring(0, 3) })
 			};
 
 		if (typeof DateFormatter === 'function') {
@@ -667,28 +667,28 @@ var datetimepickerFactory = function ($) {
 
 	var dateFormatters = {
 		moment: {
-			default_options:{
+			default_options: {
 				format: 'YYYY/MM/DD HH:mm',
 				formatDate: 'YYYY/MM/DD',
 				formatTime: 'HH:mm',
 			},
 			formatter: {
 				parseDate: function (date, format) {
-					if(isFormatStandard(format)){
+					if (isFormatStandard(format)) {
 						return defaultDateHelper.parseDate(date, format);
-					} 
+					}
 					var d = moment(date, format);
 					return d.isValid() ? d.toDate() : false;
 				},
 
 				formatDate: function (date, format) {
-					if(isFormatStandard(format)){
+					if (isFormatStandard(format)) {
 						return defaultDateHelper.formatDate(date, format);
-					} 
+					}
 					return moment(date).format(format);
 				},
 
-				formatMask: function(format){
+				formatMask: function (format) {
 					return format
 						.replace(/Y{4}/g, '9999')
 						.replace(/Y{2}/g, '99')
@@ -704,7 +704,7 @@ var datetimepickerFactory = function ($) {
 
 	// for locale settings
 	$.datetimepicker = {
-		setLocale: function(locale){
+		setLocale: function (locale) {
 			var newLocale = default_options.i18n[locale] ? locale : globalLocaleDefault;
 			if (globalLocale !== newLocale) {
 				globalLocale = newLocale;
@@ -713,11 +713,11 @@ var datetimepickerFactory = function ($) {
 			}
 		},
 
-		setDateFormatter: function(dateFormatter) {
-			if(typeof dateFormatter === 'string' && dateFormatters.hasOwnProperty(dateFormatter)){
+		setDateFormatter: function (dateFormatter) {
+			if (typeof dateFormatter === 'string' && dateFormatters.hasOwnProperty(dateFormatter)) {
 				var df = dateFormatters[dateFormatter];
 				$.extend(default_options, df.default_options);
-				dateHelper = df.formatter; 
+				dateHelper = df.formatter;
 			}
 			else {
 				dateHelper = dateFormatter;
@@ -737,7 +737,7 @@ var datetimepickerFactory = function ($) {
 		W3C: 'Y-m-d\TH:i:sP'
 	}
 
-	var isFormatStandard = function(format){
+	var isFormatStandard = function (format) {
 		return Object.values(standardFormats).indexOf(format) === -1 ? false : true;
 	}
 
@@ -783,10 +783,10 @@ var datetimepickerFactory = function ($) {
 		return this.each(function () {
 			var timeboxparent = $(this),
 				pointerEventToXY = function (e) {
-					var out = {x: 0, y: 0},
+					var out = { x: 0, y: 0 },
 						touch;
 					if (e.type === 'touchstart' || e.type === 'touchmove' || e.type === 'touchend' || e.type === 'touchcancel') {
-						touch  = e.originalEvent.touches[0] || e.originalEvent.changedTouches[0];
+						touch = e.originalEvent.touches[0] || e.originalEvent.changedTouches[0];
 						out.x = touch.clientX;
 						out.y = touch.clientY;
 					} else if (e.type === 'mousedown' || e.type === 'mouseup' || e.type === 'mousemove' || e.type === 'mouseover' || e.type === 'mouseout' || e.type === 'mouseenter' || e.type === 'mouseleave') {
@@ -807,7 +807,7 @@ var datetimepickerFactory = function ($) {
 				h1 = 0,
 				touchStart = false,
 				startTopScroll = 0,
-				calcOffset = function () {};
+				calcOffset = function () { };
 
 			if (percent === 'hide') {
 				timeboxparent.find('.xdsoft_scrollbar').hide();
@@ -867,7 +867,7 @@ var datetimepickerFactory = function ($) {
 						}
 					})
 					.on('touchend touchcancel', function () {
-						touchStart =  false;
+						touchStart = false;
 						startTopScroll = 0;
 					});
 
@@ -943,8 +943,8 @@ var datetimepickerFactory = function ($) {
 			KEY9 = 57,
 			_KEY0 = 96,
 			_KEY9 = 105,
-            CTRLKEY = 17,
-            CMDKEY = 91,
+			CTRLKEY = 17,
+			CMDKEY = 91,
 			DEL = 46,
 			ENTER = 13,
 			ESC = 27,
@@ -960,8 +960,8 @@ var datetimepickerFactory = function ($) {
 			VKEY = 86,
 			ZKEY = 90,
 			YKEY = 89,
-            ctrlDown	=	false,
-            cmdDown = false,
+			ctrlDown = false,
+			cmdDown = false,
 			options = ($.isPlainObject(opt) || !opt) ? $.extend(true, {}, default_options, opt) : $.extend(true, {}, default_options),
 
 			lazyInitTimer = 0,
@@ -1075,7 +1075,7 @@ var datetimepickerFactory = function ($) {
 				var xMovement = Math.abs(this.touchStartPosition.clientX - touchPosition.clientX);
 				var yMovement = Math.abs(this.touchStartPosition.clientY - touchPosition.clientY);
 				var distance = Math.sqrt(xMovement * xMovement + yMovement * yMovement);
-				if(distance > options.touchMovedThreshold) {
+				if (distance > options.touchMovedThreshold) {
 					this.touchMoved = true;
 				}
 			}
@@ -1136,7 +1136,7 @@ var datetimepickerFactory = function ($) {
 					options.allowDates = $.extend(true, [], _options.allowDates);
 				}
 
-				if (_options.allowDateRe && Object.prototype.toString.call(_options.allowDateRe)==="[object String]") {
+				if (_options.allowDateRe && Object.prototype.toString.call(_options.allowDateRe) === "[object String]") {
 					options.allowDateRe = new RegExp(_options.allowDateRe);
 				}
 
@@ -1257,17 +1257,17 @@ var datetimepickerFactory = function ($) {
 					options.minDate = dateHelper.formatDate(_xdsoft_datetime.strToDateTime(options.minDate), options.formatDate);
 				}
 
-				if (options.maxDate &&  /^[\+\-](.*)$/.test(options.maxDate)) {
+				if (options.maxDate && /^[\+\-](.*)$/.test(options.maxDate)) {
 					options.maxDate = dateHelper.formatDate(_xdsoft_datetime.strToDateTime(options.maxDate), options.formatDate);
 				}
 
-                if (options.minDateTime &&  /^\+(.*)$/.test(options.minDateTime)) {
-                	options.minDateTime = _xdsoft_datetime.strToDateTime(options.minDateTime).dateFormat(options.formatDate);
-                }
+				if (options.minDateTime && /^\+(.*)$/.test(options.minDateTime)) {
+					options.minDateTime = _xdsoft_datetime.strToDateTime(options.minDateTime).dateFormat(options.formatDate);
+				}
 
-                if (options.maxDateTime &&  /^\+(.*)$/.test(options.maxDateTime)) {
-                	options.maxDateTime = _xdsoft_datetime.strToDateTime(options.maxDateTime).dateFormat(options.formatDate);
-                }
+				if (options.maxDateTime && /^\+(.*)$/.test(options.maxDateTime)) {
+					options.maxDateTime = _xdsoft_datetime.strToDateTime(options.maxDateTime).dateFormat(options.formatDate);
+				}
 
 				applyButton.toggle(options.showApplyButton);
 
@@ -1290,7 +1290,7 @@ var datetimepickerFactory = function ($) {
 						.off('blur.xdsoft')
 						.on('blur.xdsoft', function () {
 							if (options.allowBlank && (!$.trim($(this).val()).length ||
-									(typeof options.mask === "string" && $.trim($(this).val()) === options.mask.replace(/[0-9]/g, '_')))) {
+								(typeof options.mask === "string" && $.trim($(this).val()) === options.mask.replace(/[0-9]/g, '_')))) {
 								$(this).val(null);
 								datetimepicker.data('xdsoft_datetime').empty();
 							} else {
@@ -1298,7 +1298,7 @@ var datetimepickerFactory = function ($) {
 								if (d) { // parseDate() may skip some invalid parts like date or time, so make it clear for user: show parsed date/time
 									$(this).val(dateHelper.formatDate(d, options.format));
 								} else {
-									var splittedHours   = +([$(this).val()[0], $(this).val()[1]].join('')),
+									var splittedHours = +([$(this).val()[0], $(this).val()[1]].join('')),
 										splittedMinutes = +([$(this).val()[2], $(this).val()[3]].join(''));
 
 									// parse the numbers as 0312 => 03:12
@@ -1356,11 +1356,11 @@ var datetimepickerFactory = function ($) {
 				.append(calendar)
 				.append(applyButton);
 
-            if (options.insideParent) {
-                $(input).parent().append(datetimepicker);
-            } else {
-                $(options.parentID).append(datetimepicker);
-            }
+			if (options.insideParent) {
+				$(input).parent().append(datetimepicker);
+			} else {
+				$(options.parentID).append(datetimepicker);
+			}
 
 			XDSoft_datetime = function () {
 				var _this = this;
@@ -1491,7 +1491,7 @@ var datetimepickerFactory = function ($) {
 
 					//First week of the year is th one with the first Thursday according to ISO8601
 					if (onejan.getDay() !== 4) {
-						onejan.setMonth(0, 1 + ((4 - onejan.getDay()+ 7) % 7));
+						onejan.setMonth(0, 1 + ((4 - onejan.getDay() + 7) % 7));
 					}
 
 					return Math.ceil((((datetime - onejan) / 86400000) + onejan.getDay() + 1) / 7);
@@ -1510,7 +1510,7 @@ var datetimepickerFactory = function ($) {
 						tmpDate[2] = dateHelper.parseDate(tmpDate[2], options.formatDate);
 					}
 
-					if (tmpDate  && tmpDate[2]) {
+					if (tmpDate && tmpDate[2]) {
 						timeOffset = tmpDate[2].getTime() - (tmpDate[2].getTimezoneOffset()) * 60000;
 						currentTime = new Date((_this.now(true)).getTime() + parseInt(tmpDate[1] + '1', 10) * timeOffset);
 					} else {
@@ -1574,22 +1574,22 @@ var datetimepickerFactory = function ($) {
 					_xdsoft_datetime.setCurrentTime(0, true);
 					datetimepicker.trigger('afterOpen.xdsoft');
 				}).on('dblclick.xdsoft', function () {
-				var currentDate = _xdsoft_datetime.getCurrentTime(), minDate, maxDate;
-				currentDate = new Date(currentDate.getFullYear(), currentDate.getMonth(), currentDate.getDate());
-				minDate = _xdsoft_datetime.strToDate(options.minDate);
-				minDate = new Date(minDate.getFullYear(), minDate.getMonth(), minDate.getDate());
-				if (currentDate < minDate) {
-					return;
-				}
-				maxDate = _xdsoft_datetime.strToDate(options.maxDate);
-				maxDate = new Date(maxDate.getFullYear(), maxDate.getMonth(), maxDate.getDate());
-				if (currentDate > maxDate) {
-					return;
-				}
-				input.val(_xdsoft_datetime.str());
-				input.trigger('change');
-				datetimepicker.trigger('close.xdsoft');
-			});
+					var currentDate = _xdsoft_datetime.getCurrentTime(), minDate, maxDate;
+					currentDate = new Date(currentDate.getFullYear(), currentDate.getMonth(), currentDate.getDate());
+					minDate = _xdsoft_datetime.strToDate(options.minDate);
+					minDate = new Date(minDate.getFullYear(), minDate.getMonth(), minDate.getDate());
+					if (currentDate < minDate) {
+						return;
+					}
+					maxDate = _xdsoft_datetime.strToDate(options.maxDate);
+					maxDate = new Date(maxDate.getFullYear(), maxDate.getMonth(), maxDate.getDate());
+					if (currentDate > maxDate) {
+						return;
+					}
+					input.val(_xdsoft_datetime.str());
+					input.trigger('change');
+					datetimepicker.trigger('close.xdsoft');
+				});
 			month_picker
 				.find('.xdsoft_prev,.xdsoft_next')
 				.on('touchend mousedown.xdsoft', function () {
@@ -1671,7 +1671,7 @@ var datetimepickerFactory = function ($) {
 							_xdsoft_datetime.currentTime = _xdsoft_datetime.now();
 						}
 
-						var table =	'',
+						var table = '',
 							start = new Date(_xdsoft_datetime.currentTime.getFullYear(), _xdsoft_datetime.currentTime.getMonth(), 1, 12, 0, 0),
 							i = 0,
 							j,
@@ -1721,12 +1721,12 @@ var datetimepickerFactory = function ($) {
 							minDate = new Date(minDate.getFullYear(), minDate.getMonth(), minDate.getDate());
 						}
 
-                        if (options.minDateTime !== false) {
+						if (options.minDateTime !== false) {
 							minDateTime = _xdsoft_datetime.strToDate(options.minDateTime);
 							minDateTime = new Date(minDateTime.getFullYear(), minDateTime.getMonth(), minDateTime.getDate(), minDateTime.getHours(), minDateTime.getMinutes(), minDateTime.getSeconds());
 						}
 
-                        if (options.maxDateTime !== false) {
+						if (options.maxDateTime !== false) {
 							maxDateTime = _xdsoft_datetime.strToDate(options.maxDateTime);
 							maxDateTime = new Date(maxDateTime.getFullYear(), maxDateTime.getMonth(), maxDateTime.getDate(), maxDateTime.getHours(), maxDateTime.getMinutes(), maxDateTime.getSeconds());
 						}
@@ -1755,31 +1755,31 @@ var datetimepickerFactory = function ($) {
 								customDateSettings = null;
 							}
 
-							if(options.allowDateRe && Object.prototype.toString.call(options.allowDateRe) === "[object RegExp]"){
-								if(!options.allowDateRe.test(dateHelper.formatDate(start, options.formatDate))){
+							if (options.allowDateRe && Object.prototype.toString.call(options.allowDateRe) === "[object RegExp]") {
+								if (!options.allowDateRe.test(dateHelper.formatDate(start, options.formatDate))) {
 									classes.push('xdsoft_disabled');
 								}
 							}
-							
-							if(options.allowDates && options.allowDates.length>0){
-								if(options.allowDates.indexOf(dateHelper.formatDate(start, options.formatDate)) === -1){
+
+							if (options.allowDates && options.allowDates.length > 0) {
+								if (options.allowDates.indexOf(dateHelper.formatDate(start, options.formatDate)) === -1) {
 									classes.push('xdsoft_disabled');
 								}
 							}
-							
+
 							var currentDay = ((start.getFullYear() * 12) + start.getMonth()) * 31 + start.getDate();
-							if ((maxDate !== false && start > maxDate) || (minDateTime !== false && start < minDateTime)  || (minDate !== false && start < minDate) || (maxDateTime !== false && currentDay > maxDateTimeDay) || (customDateSettings && customDateSettings[0] === false)) {
+							if ((maxDate !== false && start > maxDate) || (minDateTime !== false && start < minDateTime) || (minDate !== false && start < minDate) || (maxDateTime !== false && currentDay > maxDateTimeDay) || (customDateSettings && customDateSettings[0] === false)) {
 								classes.push('xdsoft_disabled');
 							}
-							
+
 							if (options.disabledDates.indexOf(dateHelper.formatDate(start, options.formatDate)) !== -1) {
 								classes.push('xdsoft_disabled');
 							}
-							
+
 							if (options.disabledWeekDays.indexOf(day) !== -1) {
 								classes.push('xdsoft_disabled');
 							}
-							
+
 							if (input.is('[disabled]')) {
 								classes.push('xdsoft_disabled');
 							}
@@ -1847,18 +1847,18 @@ var datetimepickerFactory = function ($) {
 
 						var minTimeMinutesOfDay = 0;
 						if (options.minTime !== false) {
-						    var t = _xdsoft_datetime.strtotime(options.minTime);
-						    minTimeMinutesOfDay = 60 * t.getHours() + t.getMinutes();
+							var t = _xdsoft_datetime.strtotime(options.minTime);
+							minTimeMinutesOfDay = 60 * t.getHours() + t.getMinutes();
 						}
 						var maxTimeMinutesOfDay = 24 * 60;
 						if (options.maxTime !== false) {
-						    var t = _xdsoft_datetime.strtotime(options.maxTime);
-						    maxTimeMinutesOfDay = 60 * t.getHours() + t.getMinutes();
+							var t = _xdsoft_datetime.strtotime(options.maxTime);
+							maxTimeMinutesOfDay = 60 * t.getHours() + t.getMinutes();
 						}
 
 						if (options.minDateTime !== false) {
 							var t = _xdsoft_datetime.strToDateTime(options.minDateTime);
-						        var currentDayIsMinDateTimeDay = dateHelper.formatDate(_xdsoft_datetime.currentTime, options.formatDate) === dateHelper.formatDate(t, options.formatDate);
+							var currentDayIsMinDateTimeDay = dateHelper.formatDate(_xdsoft_datetime.currentTime, options.formatDate) === dateHelper.formatDate(t, options.formatDate);
 							if (currentDayIsMinDateTimeDay) {
 								var m = 60 * t.getHours() + t.getMinutes();
 								if (m > minTimeMinutesOfDay) minTimeMinutesOfDay = m;
@@ -1867,7 +1867,7 @@ var datetimepickerFactory = function ($) {
 
 						if (options.maxDateTime !== false) {
 							var t = _xdsoft_datetime.strToDateTime(options.maxDateTime);
-						        var currentDayIsMaxDateTimeDay = dateHelper.formatDate(_xdsoft_datetime.currentTime, options.formatDate) === dateHelper.formatDate(t, options.formatDate);
+							var currentDayIsMaxDateTimeDay = dateHelper.formatDate(_xdsoft_datetime.currentTime, options.formatDate) === dateHelper.formatDate(t, options.formatDate);
 							if (currentDayIsMaxDateTimeDay) {
 								var m = 60 * t.getHours() + t.getMinutes();
 								if (m < maxTimeMinutesOfDay) maxTimeMinutesOfDay = m;
@@ -1910,9 +1910,9 @@ var datetimepickerFactory = function ($) {
 						if (!options.allowTimes || !$.isArray(options.allowTimes) || !options.allowTimes.length) {
 							for (i = 0, j = 0; i < (options.hours12 ? 12 : 24); i += 1) {
 								for (j = 0; j < 60; j += options.step) {
-								        var currentMinutesOfDay = i * 60 + j;
-								        if (currentMinutesOfDay < minTimeMinutesOfDay) continue;
-								        if (currentMinutesOfDay >= maxTimeMinutesOfDay) continue;
+									var currentMinutesOfDay = i * 60 + j;
+									if (currentMinutesOfDay < minTimeMinutesOfDay) continue;
+									if (currentMinutesOfDay >= maxTimeMinutesOfDay) continue;
 									h = (i < 10 ? '0' : '') + i;
 									m = (j < 10 ? '0' : '') + j;
 									line_time(h, m);
@@ -1993,7 +1993,7 @@ var datetimepickerFactory = function ($) {
 
 					input.val(_xdsoft_datetime.str());
 
-					if (options.onSelectDate &&	$.isFunction(options.onSelectDate)) {
+					if (options.onSelectDate && $.isFunction(options.onSelectDate)) {
 						options.onSelectDate.call(datetimepicker, _xdsoft_datetime.currentTime, datetimepicker.data('input'), xdevent);
 					}
 
@@ -2232,10 +2232,10 @@ var datetimepickerFactory = function ($) {
 				};
 
 				if (options.insideParent) {
-                    datetimepickerCss[verticalAnchorEdge] = dateInputElem.offsetTop + dateInputElem.offsetHeight;
-                } else {
-                    datetimepickerCss[verticalAnchorEdge] = verticalPosition;
-                }
+					datetimepickerCss[verticalAnchorEdge] = dateInputElem.offsetTop + dateInputElem.offsetHeight;
+				} else {
+					datetimepickerCss[verticalAnchorEdge] = verticalPosition;
+				}
 
 				datetimepicker.css(datetimepickerCss);
 			};
@@ -2323,14 +2323,14 @@ var datetimepickerFactory = function ($) {
 			function setMask(options) {
 
 				var isValidValue = function (mask, value) {
-						var reg = mask
-							.replace(/([\[\]\/\{\}\(\)\-\.\+]{1})/g, '\\$1')
-							.replace(/_/g, '{digit+}')
-							.replace(/([0-9]{1})/g, '{digit$1}')
-							.replace(/\{digit([0-9]{1})\}/g, '[0-$1_]{1}')
-							.replace(/\{digit[\+]\}/g, '[0-9_]{1}');
-						return (new RegExp(reg)).test(value);
-					},
+					var reg = mask
+						.replace(/([\[\]\/\{\}\(\)\-\.\+]{1})/g, '\\$1')
+						.replace(/_/g, '{digit+}')
+						.replace(/([0-9]{1})/g, '{digit$1}')
+						.replace(/\{digit([0-9]{1})\}/g, '[0-$1_]{1}')
+						.replace(/\{digit[\+]\}/g, '[0-9_]{1}');
+					return (new RegExp(reg)).test(value);
+				},
 					getCaretPos = function (input) {
 						try {
 							if (options.ownerDocument.selection && options.ownerDocument.selection.createRange) {
@@ -2364,7 +2364,7 @@ var datetimepickerFactory = function ($) {
 						return false;
 					};
 
-				if(options.mask) {
+				if (options.mask) {
 					input.off('keydown.xdsoft');
 				}
 
@@ -2390,144 +2390,144 @@ var datetimepickerFactory = function ($) {
 					}
 
 					input.on('paste.xdsoft', function (event) {
-					    // couple options here
-					    // 1. return false - tell them they can't paste
-					    // 2. insert over current characters - minimal validation
-					    // 3. full fledged parsing and validation
-					    // let's go option 2 for now
+						// couple options here
+						// 1. return false - tell them they can't paste
+						// 2. insert over current characters - minimal validation
+						// 3. full fledged parsing and validation
+						// let's go option 2 for now
 
-					    // fires multiple times for some reason
+						// fires multiple times for some reason
 
-					    // https://stackoverflow.com/a/30496488/1366033
-					    var clipboardData = event.clipboardData || event.originalEvent.clipboardData || window.clipboardData,
-						pastedData = clipboardData.getData('text'),
-						val = this.value,
-						pos = this.selectionStart
+						// https://stackoverflow.com/a/30496488/1366033
+						var clipboardData = event.clipboardData || event.originalEvent.clipboardData || window.clipboardData,
+							pastedData = clipboardData.getData('text'),
+							val = this.value,
+							pos = this.selectionStart
 
-					    var valueBeforeCursor = val.substr(0, pos);
-					    var valueAfterPaste = val.substr(pos + pastedData.length);
+						var valueBeforeCursor = val.substr(0, pos);
+						var valueAfterPaste = val.substr(pos + pastedData.length);
 
-					    val = valueBeforeCursor + pastedData + valueAfterPaste;           
-					    pos += pastedData.length;
-
-					    if (isValidValue(options.mask, val)) {
-						this.value = val;
-						setCaretPos(this, pos);
-					    } else if ($.trim(val) === '') {
-						this.value = options.mask.replace(/[0-9]/g, '_');
-					    } else {
-						input.trigger('error_input.xdsoft');
-					    }
-
-					    event.preventDefault();
-					    return false;
-					  });
-
-					  input.on('keydown.xdsoft', function (event) {
-					    var val = this.value,
-						key = event.which,
-						pos = this.selectionStart,
-						selEnd = this.selectionEnd,
-						hasSel = pos !== selEnd,
-						digit;
-
-					    // only alow these characters
-					    if (((key >=  KEY0 && key <=  KEY9)  ||
-						 (key >= _KEY0 && key <= _KEY9)) || 
-						 (key === BACKSPACE || key === DEL)) {
-
-					      // get char to insert which is new character or placeholder ('_')
-					      digit = (key === BACKSPACE || key === DEL) ? '_' :
-							  String.fromCharCode((_KEY0 <= key && key <= _KEY9) ? key - KEY0 : key);
-
-						// we're deleting something, we're not at the start, and have normal cursor, move back one
-						// if we have a selection length, cursor actually sits behind deletable char, not in front
-						if (key === BACKSPACE && pos && !hasSel) {
-						    pos -= 1;
-						}
-
-						// don't stop on a separator, continue whatever direction you were going
-						//   value char - keep incrementing position while on separator char and we still have room
-						//   del char   - keep decrementing position while on separator char and we still have room
-						while (true) {
-						  var maskValueAtCurPos = options.mask.substr(pos, 1);
-						  var posShorterThanMaskLength = pos < options.mask.length;
-						  var posGreaterThanZero = pos > 0;
-						  var notNumberOrPlaceholder = /[^0-9_]/;
-						  var curPosOnSep = notNumberOrPlaceholder.test(maskValueAtCurPos);
-						  var continueMovingPosition = curPosOnSep && posShorterThanMaskLength && posGreaterThanZero
-
-						  // if we hit a real char, stay where we are
-						  if (!continueMovingPosition) break;
-
-						  // hitting backspace in a selection, you can possibly go back any further - go forward
-						  pos += (key === BACKSPACE && !hasSel) ? -1 : 1;
-
-                        }
-                        
-                        if (event.metaKey) {    // cmd has been pressed
-                            pos = 0;
-                            hasSel = true;
-                        }
-
-						if (hasSel) {
-						  // pos might have moved so re-calc length
-						  var selLength = selEnd - pos
-
-						  // if we have a selection length we will wipe out entire selection and replace with default template for that range
-						  var defaultBlank = options.mask.replace(/[0-9]/g, '_');
-						  var defaultBlankSelectionReplacement = defaultBlank.substr(pos, selLength); 
-						  var selReplacementRemainder = defaultBlankSelectionReplacement.substr(1) // might be empty
-
-						  var valueBeforeSel = val.substr(0, pos);
-						  var insertChars = digit + selReplacementRemainder;
-						  var charsAfterSelection = val.substr(pos + selLength);
-
-						  val = valueBeforeSel + insertChars + charsAfterSelection
-
-						} else {
-						  var valueBeforeCursor = val.substr(0, pos);
-						  var insertChar = digit;
-						  var valueAfterNextChar = val.substr(pos + 1);
-
-						  val = valueBeforeCursor + insertChar + valueAfterNextChar
-						}
-
-						if ($.trim(val) === '') {
-						  // if empty, set to default
-						    val = defaultBlank
-						} else {
-						  // if at the last character don't need to do anything
-						    if (pos === options.mask.length) {
-							event.preventDefault();
-							return false;
-						    }
-						}
-
-						// resume cursor location
-						pos += (key === BACKSPACE) ? 0 : 1;
-						// don't stop on a separator, continue whatever direction you were going
-						while (/[^0-9_]/.test(options.mask.substr(pos, 1)) && pos < options.mask.length && pos > 0) {
-						    pos += (key === BACKSPACE) ? 0 : 1;
-						}
+						val = valueBeforeCursor + pastedData + valueAfterPaste;
+						pos += pastedData.length;
 
 						if (isValidValue(options.mask, val)) {
-						    this.value = val;
-						    setCaretPos(this, pos);
+							this.value = val;
+							setCaretPos(this, pos);
 						} else if ($.trim(val) === '') {
-						    this.value = options.mask.replace(/[0-9]/g, '_');
+							this.value = options.mask.replace(/[0-9]/g, '_');
 						} else {
-						    input.trigger('error_input.xdsoft');
+							input.trigger('error_input.xdsoft');
 						}
-					    } else {
-						if (([AKEY, CKEY, VKEY, ZKEY, YKEY].indexOf(key) !== -1 && ctrlDown) || [ESC, ARROWUP, ARROWDOWN, ARROWLEFT, ARROWRIGHT, F5, CTRLKEY, TAB, ENTER].indexOf(key) !== -1) {
-						    return true;
-						}
-					    }
 
-					    event.preventDefault();
-					    return false;
-					  });
+						event.preventDefault();
+						return false;
+					});
+
+					input.on('keydown.xdsoft', function (event) {
+						var val = this.value,
+							key = event.which,
+							pos = this.selectionStart,
+							selEnd = this.selectionEnd,
+							hasSel = pos !== selEnd,
+							digit;
+
+						// only alow these characters
+						if (((key >= KEY0 && key <= KEY9) ||
+							(key >= _KEY0 && key <= _KEY9)) ||
+							(key === BACKSPACE || key === DEL)) {
+
+							// get char to insert which is new character or placeholder ('_')
+							digit = (key === BACKSPACE || key === DEL) ? '_' :
+								String.fromCharCode((_KEY0 <= key && key <= _KEY9) ? key - KEY0 : key);
+
+							// we're deleting something, we're not at the start, and have normal cursor, move back one
+							// if we have a selection length, cursor actually sits behind deletable char, not in front
+							if (key === BACKSPACE && pos && !hasSel) {
+								pos -= 1;
+							}
+
+							// don't stop on a separator, continue whatever direction you were going
+							//   value char - keep incrementing position while on separator char and we still have room
+							//   del char   - keep decrementing position while on separator char and we still have room
+							while (true) {
+								var maskValueAtCurPos = options.mask.substr(pos, 1);
+								var posShorterThanMaskLength = pos < options.mask.length;
+								var posGreaterThanZero = pos > 0;
+								var notNumberOrPlaceholder = /[^0-9_]/;
+								var curPosOnSep = notNumberOrPlaceholder.test(maskValueAtCurPos);
+								var continueMovingPosition = curPosOnSep && posShorterThanMaskLength && posGreaterThanZero
+
+								// if we hit a real char, stay where we are
+								if (!continueMovingPosition) break;
+
+								// hitting backspace in a selection, you can possibly go back any further - go forward
+								pos += (key === BACKSPACE && !hasSel) ? -1 : 1;
+
+							}
+
+							if (event.metaKey) {    // cmd has been pressed
+								pos = 0;
+								hasSel = true;
+							}
+
+							if (hasSel) {
+								// pos might have moved so re-calc length
+								var selLength = selEnd - pos
+
+								// if we have a selection length we will wipe out entire selection and replace with default template for that range
+								var defaultBlank = options.mask.replace(/[0-9]/g, '_');
+								var defaultBlankSelectionReplacement = defaultBlank.substr(pos, selLength);
+								var selReplacementRemainder = defaultBlankSelectionReplacement.substr(1) // might be empty
+
+								var valueBeforeSel = val.substr(0, pos);
+								var insertChars = digit + selReplacementRemainder;
+								var charsAfterSelection = val.substr(pos + selLength);
+
+								val = valueBeforeSel + insertChars + charsAfterSelection
+
+							} else {
+								var valueBeforeCursor = val.substr(0, pos);
+								var insertChar = digit;
+								var valueAfterNextChar = val.substr(pos + 1);
+
+								val = valueBeforeCursor + insertChar + valueAfterNextChar
+							}
+
+							if ($.trim(val) === '') {
+								// if empty, set to default
+								val = defaultBlank
+							} else {
+								// if at the last character don't need to do anything
+								if (pos === options.mask.length) {
+									event.preventDefault();
+									return false;
+								}
+							}
+
+							// resume cursor location
+							pos += (key === BACKSPACE) ? 0 : 1;
+							// don't stop on a separator, continue whatever direction you were going
+							while (/[^0-9_]/.test(options.mask.substr(pos, 1)) && pos < options.mask.length && pos > 0) {
+								pos += (key === BACKSPACE) ? 0 : 1;
+							}
+
+							if (isValidValue(options.mask, val)) {
+								this.value = val;
+								setCaretPos(this, pos);
+							} else if ($.trim(val) === '') {
+								this.value = options.mask.replace(/[0-9]/g, '_');
+							} else {
+								input.trigger('error_input.xdsoft');
+							}
+						} else {
+							if (([AKEY, CKEY, VKEY, ZKEY, YKEY].indexOf(key) !== -1 && ctrlDown) || [ESC, ARROWUP, ARROWDOWN, ARROWLEFT, ARROWRIGHT, F5, CTRLKEY, TAB, ENTER].indexOf(key) !== -1) {
+								return true;
+							}
+						}
+
+						event.preventDefault();
+						return false;
+					});
 				}
 			}
 
@@ -2550,7 +2550,7 @@ var datetimepickerFactory = function ($) {
 
 						triggerAfterOpen = true;
 						_xdsoft_datetime.setCurrentTime(getCurrentValue(), true);
-						if(options.mask) {
+						if (options.mask) {
 							setMask(options);
 						}
 						datetimepicker.trigger('open.xdsoft');
@@ -2590,27 +2590,27 @@ var datetimepickerFactory = function ($) {
 			}
 		};
 		$(options.ownerDocument)
-            .off('keydown.xdsoftctrl keyup.xdsoftctrl')
-            .off('keydown.xdsoftcmd keyup.xdsoftcmd')
+			.off('keydown.xdsoftctrl keyup.xdsoftctrl')
+			.off('keydown.xdsoftcmd keyup.xdsoftcmd')
 			.on('keydown.xdsoftctrl', function (e) {
 				if (e.keyCode === CTRLKEY) {
 					ctrlDown = true;
-                }
+				}
 			})
 			.on('keyup.xdsoftctrl', function (e) {
 				if (e.keyCode === CTRLKEY) {
 					ctrlDown = false;
-                }
-            })
-            .on('keydown.xdsoftcmd', function (e) {
-                if (e.keyCode === CMDKEY) {
-                    cmdDown = true;
-                }
+				}
+			})
+			.on('keydown.xdsoftcmd', function (e) {
+				if (e.keyCode === CMDKEY) {
+					cmdDown = true;
+				}
 			})
 			.on('keyup.xdsoftcmd', function (e) {
-                if (e.keyCode === CMDKEY) {
-                    cmdDown = false;
-                }
+				if (e.keyCode === CMDKEY) {
+					cmdDown = false;
+				}
 			});
 
 		this.each(function () {
@@ -2674,8 +2674,8 @@ var datetimepickerFactory = function ($) {
 		this.style = style;
 	}
 };
-;(function (factory) {
-	if ( typeof define === 'function' && define.amd ) {
+; (function (factory) {
+	if (typeof define === 'function' && define.amd) {
 		// AMD. Register as an anonymous module.
 		define(['jquery', 'jquery-mousewheel'], factory);
 	} else if (typeof exports === 'object') {
@@ -2697,215 +2697,215 @@ var datetimepickerFactory = function ($) {
  */
 
 (function (factory) {
-    if ( typeof define === 'function' && define.amd ) {
-        // AMD. Register as an anonymous module.
-        define(['jquery'], factory);
-    } else if (typeof exports === 'object') {
-        // Node/CommonJS style for Browserify
-        module.exports = factory;
-    } else {
-        // Browser globals
-        factory(jQuery);
-    }
+	if (typeof define === 'function' && define.amd) {
+		// AMD. Register as an anonymous module.
+		define(['jquery'], factory);
+	} else if (typeof exports === 'object') {
+		// Node/CommonJS style for Browserify
+		module.exports = factory;
+	} else {
+		// Browser globals
+		factory(jQuery);
+	}
 }(function ($) {
 
-    var toFix  = ['wheel', 'mousewheel', 'DOMMouseScroll', 'MozMousePixelScroll'],
-        toBind = ( 'onwheel' in document || document.documentMode >= 9 ) ?
-                    ['wheel'] : ['mousewheel', 'DomMouseScroll', 'MozMousePixelScroll'],
-        slice  = Array.prototype.slice,
-        nullLowestDeltaTimeout, lowestDelta;
+	var toFix = ['wheel', 'mousewheel', 'DOMMouseScroll', 'MozMousePixelScroll'],
+		toBind = ('onwheel' in document || document.documentMode >= 9) ?
+			['wheel'] : ['mousewheel', 'DomMouseScroll', 'MozMousePixelScroll'],
+		slice = Array.prototype.slice,
+		nullLowestDeltaTimeout, lowestDelta;
 
-    if ( $.event.fixHooks ) {
-        for ( var i = toFix.length; i; ) {
-            $.event.fixHooks[ toFix[--i] ] = $.event.mouseHooks;
-        }
-    }
+	if ($.event.fixHooks) {
+		for (var i = toFix.length; i;) {
+			$.event.fixHooks[toFix[--i]] = $.event.mouseHooks;
+		}
+	}
 
-    var special = $.event.special.mousewheel = {
-        version: '3.1.12',
+	var special = $.event.special.mousewheel = {
+		version: '3.1.12',
 
-        setup: function() {
-            if ( this.addEventListener ) {
-                for ( var i = toBind.length; i; ) {
-                    this.addEventListener( toBind[--i], handler, false );
-                }
-            } else {
-                this.onmousewheel = handler;
-            }
-            // Store the line height and page height for this particular element
-            $.data(this, 'mousewheel-line-height', special.getLineHeight(this));
-            $.data(this, 'mousewheel-page-height', special.getPageHeight(this));
-        },
+		setup: function () {
+			if (this.addEventListener) {
+				for (var i = toBind.length; i;) {
+					this.addEventListener(toBind[--i], handler, false);
+				}
+			} else {
+				this.onmousewheel = handler;
+			}
+			// Store the line height and page height for this particular element
+			$.data(this, 'mousewheel-line-height', special.getLineHeight(this));
+			$.data(this, 'mousewheel-page-height', special.getPageHeight(this));
+		},
 
-        teardown: function() {
-            if ( this.removeEventListener ) {
-                for ( var i = toBind.length; i; ) {
-                    this.removeEventListener( toBind[--i], handler, false );
-                }
-            } else {
-                this.onmousewheel = null;
-            }
-            // Clean up the data we added to the element
-            $.removeData(this, 'mousewheel-line-height');
-            $.removeData(this, 'mousewheel-page-height');
-        },
+		teardown: function () {
+			if (this.removeEventListener) {
+				for (var i = toBind.length; i;) {
+					this.removeEventListener(toBind[--i], handler, false);
+				}
+			} else {
+				this.onmousewheel = null;
+			}
+			// Clean up the data we added to the element
+			$.removeData(this, 'mousewheel-line-height');
+			$.removeData(this, 'mousewheel-page-height');
+		},
 
-        getLineHeight: function(elem) {
-            var $elem = $(elem),
-                $parent = $elem['offsetParent' in $.fn ? 'offsetParent' : 'parent']();
-            if (!$parent.length) {
-                $parent = $('body');
-            }
-            return parseInt($parent.css('fontSize'), 10) || parseInt($elem.css('fontSize'), 10) || 16;
-        },
+		getLineHeight: function (elem) {
+			var $elem = $(elem),
+				$parent = $elem['offsetParent' in $.fn ? 'offsetParent' : 'parent']();
+			if (!$parent.length) {
+				$parent = $('body');
+			}
+			return parseInt($parent.css('fontSize'), 10) || parseInt($elem.css('fontSize'), 10) || 16;
+		},
 
-        getPageHeight: function(elem) {
-            return $(elem).height();
-        },
+		getPageHeight: function (elem) {
+			return $(elem).height();
+		},
 
-        settings: {
-            adjustOldDeltas: true, // see shouldAdjustOldDeltas() below
-            normalizeOffset: true  // calls getBoundingClientRect for each event
-        }
-    };
+		settings: {
+			adjustOldDeltas: true, // see shouldAdjustOldDeltas() below
+			normalizeOffset: true  // calls getBoundingClientRect for each event
+		}
+	};
 
-    $.fn.extend({
-        mousewheel: function(fn) {
-            return fn ? this.bind('mousewheel', fn) : this.trigger('mousewheel');
-        },
+	$.fn.extend({
+		mousewheel: function (fn) {
+			return fn ? this.bind('mousewheel', fn) : this.trigger('mousewheel');
+		},
 
-        unmousewheel: function(fn) {
-            return this.unbind('mousewheel', fn);
-        }
-    });
+		unmousewheel: function (fn) {
+			return this.unbind('mousewheel', fn);
+		}
+	});
 
 
-    function handler(event) {
-        var orgEvent   = event || window.event,
-            args       = slice.call(arguments, 1),
-            delta      = 0,
-            deltaX     = 0,
-            deltaY     = 0,
-            absDelta   = 0,
-            offsetX    = 0,
-            offsetY    = 0;
-        event = $.event.fix(orgEvent);
-        event.type = 'mousewheel';
+	function handler(event) {
+		var orgEvent = event || window.event,
+			args = slice.call(arguments, 1),
+			delta = 0,
+			deltaX = 0,
+			deltaY = 0,
+			absDelta = 0,
+			offsetX = 0,
+			offsetY = 0;
+		event = $.event.fix(orgEvent);
+		event.type = 'mousewheel';
 
-        // Old school scrollwheel delta
-        if ( 'detail'      in orgEvent ) { deltaY = orgEvent.detail * -1;      }
-        if ( 'wheelDelta'  in orgEvent ) { deltaY = orgEvent.wheelDelta;       }
-        if ( 'wheelDeltaY' in orgEvent ) { deltaY = orgEvent.wheelDeltaY;      }
-        if ( 'wheelDeltaX' in orgEvent ) { deltaX = orgEvent.wheelDeltaX * -1; }
+		// Old school scrollwheel delta
+		if ('detail' in orgEvent) { deltaY = orgEvent.detail * -1; }
+		if ('wheelDelta' in orgEvent) { deltaY = orgEvent.wheelDelta; }
+		if ('wheelDeltaY' in orgEvent) { deltaY = orgEvent.wheelDeltaY; }
+		if ('wheelDeltaX' in orgEvent) { deltaX = orgEvent.wheelDeltaX * -1; }
 
-        // Firefox < 17 horizontal scrolling related to DOMMouseScroll event
-        if ( 'axis' in orgEvent && orgEvent.axis === orgEvent.HORIZONTAL_AXIS ) {
-            deltaX = deltaY * -1;
-            deltaY = 0;
-        }
+		// Firefox < 17 horizontal scrolling related to DOMMouseScroll event
+		if ('axis' in orgEvent && orgEvent.axis === orgEvent.HORIZONTAL_AXIS) {
+			deltaX = deltaY * -1;
+			deltaY = 0;
+		}
 
-        // Set delta to be deltaY or deltaX if deltaY is 0 for backwards compatabilitiy
-        delta = deltaY === 0 ? deltaX : deltaY;
+		// Set delta to be deltaY or deltaX if deltaY is 0 for backwards compatabilitiy
+		delta = deltaY === 0 ? deltaX : deltaY;
 
-        // New school wheel delta (wheel event)
-        if ( 'deltaY' in orgEvent ) {
-            deltaY = orgEvent.deltaY * -1;
-            delta  = deltaY;
-        }
-        if ( 'deltaX' in orgEvent ) {
-            deltaX = orgEvent.deltaX;
-            if ( deltaY === 0 ) { delta  = deltaX * -1; }
-        }
+		// New school wheel delta (wheel event)
+		if ('deltaY' in orgEvent) {
+			deltaY = orgEvent.deltaY * -1;
+			delta = deltaY;
+		}
+		if ('deltaX' in orgEvent) {
+			deltaX = orgEvent.deltaX;
+			if (deltaY === 0) { delta = deltaX * -1; }
+		}
 
-        // No change actually happened, no reason to go any further
-        if ( deltaY === 0 && deltaX === 0 ) { return; }
+		// No change actually happened, no reason to go any further
+		if (deltaY === 0 && deltaX === 0) { return; }
 
-        // Need to convert lines and pages to pixels if we aren't already in pixels
-        // There are three delta modes:
-        //   * deltaMode 0 is by pixels, nothing to do
-        //   * deltaMode 1 is by lines
-        //   * deltaMode 2 is by pages
-        if ( orgEvent.deltaMode === 1 ) {
-            var lineHeight = $.data(this, 'mousewheel-line-height');
-            delta  *= lineHeight;
-            deltaY *= lineHeight;
-            deltaX *= lineHeight;
-        } else if ( orgEvent.deltaMode === 2 ) {
-            var pageHeight = $.data(this, 'mousewheel-page-height');
-            delta  *= pageHeight;
-            deltaY *= pageHeight;
-            deltaX *= pageHeight;
-        }
+		// Need to convert lines and pages to pixels if we aren't already in pixels
+		// There are three delta modes:
+		//   * deltaMode 0 is by pixels, nothing to do
+		//   * deltaMode 1 is by lines
+		//   * deltaMode 2 is by pages
+		if (orgEvent.deltaMode === 1) {
+			var lineHeight = $.data(this, 'mousewheel-line-height');
+			delta *= lineHeight;
+			deltaY *= lineHeight;
+			deltaX *= lineHeight;
+		} else if (orgEvent.deltaMode === 2) {
+			var pageHeight = $.data(this, 'mousewheel-page-height');
+			delta *= pageHeight;
+			deltaY *= pageHeight;
+			deltaX *= pageHeight;
+		}
 
-        // Store lowest absolute delta to normalize the delta values
-        absDelta = Math.max( Math.abs(deltaY), Math.abs(deltaX) );
+		// Store lowest absolute delta to normalize the delta values
+		absDelta = Math.max(Math.abs(deltaY), Math.abs(deltaX));
 
-        if ( !lowestDelta || absDelta < lowestDelta ) {
-            lowestDelta = absDelta;
+		if (!lowestDelta || absDelta < lowestDelta) {
+			lowestDelta = absDelta;
 
-            // Adjust older deltas if necessary
-            if ( shouldAdjustOldDeltas(orgEvent, absDelta) ) {
-                lowestDelta /= 40;
-            }
-        }
+			// Adjust older deltas if necessary
+			if (shouldAdjustOldDeltas(orgEvent, absDelta)) {
+				lowestDelta /= 40;
+			}
+		}
 
-        // Adjust older deltas if necessary
-        if ( shouldAdjustOldDeltas(orgEvent, absDelta) ) {
-            // Divide all the things by 40!
-            delta  /= 40;
-            deltaX /= 40;
-            deltaY /= 40;
-        }
+		// Adjust older deltas if necessary
+		if (shouldAdjustOldDeltas(orgEvent, absDelta)) {
+			// Divide all the things by 40!
+			delta /= 40;
+			deltaX /= 40;
+			deltaY /= 40;
+		}
 
-        // Get a whole, normalized value for the deltas
-        delta  = Math[ delta  >= 1 ? 'floor' : 'ceil' ](delta  / lowestDelta);
-        deltaX = Math[ deltaX >= 1 ? 'floor' : 'ceil' ](deltaX / lowestDelta);
-        deltaY = Math[ deltaY >= 1 ? 'floor' : 'ceil' ](deltaY / lowestDelta);
+		// Get a whole, normalized value for the deltas
+		delta = Math[delta >= 1 ? 'floor' : 'ceil'](delta / lowestDelta);
+		deltaX = Math[deltaX >= 1 ? 'floor' : 'ceil'](deltaX / lowestDelta);
+		deltaY = Math[deltaY >= 1 ? 'floor' : 'ceil'](deltaY / lowestDelta);
 
-        // Normalise offsetX and offsetY properties
-        if ( special.settings.normalizeOffset && this.getBoundingClientRect ) {
-            var boundingRect = this.getBoundingClientRect();
-            offsetX = event.clientX - boundingRect.left;
-            offsetY = event.clientY - boundingRect.top;
-        }
+		// Normalise offsetX and offsetY properties
+		if (special.settings.normalizeOffset && this.getBoundingClientRect) {
+			var boundingRect = this.getBoundingClientRect();
+			offsetX = event.clientX - boundingRect.left;
+			offsetY = event.clientY - boundingRect.top;
+		}
 
-        // Add information to the event object
-        event.deltaX = deltaX;
-        event.deltaY = deltaY;
-        event.deltaFactor = lowestDelta;
-        event.offsetX = offsetX;
-        event.offsetY = offsetY;
-        // Go ahead and set deltaMode to 0 since we converted to pixels
-        // Although this is a little odd since we overwrite the deltaX/Y
-        // properties with normalized deltas.
-        event.deltaMode = 0;
+		// Add information to the event object
+		event.deltaX = deltaX;
+		event.deltaY = deltaY;
+		event.deltaFactor = lowestDelta;
+		event.offsetX = offsetX;
+		event.offsetY = offsetY;
+		// Go ahead and set deltaMode to 0 since we converted to pixels
+		// Although this is a little odd since we overwrite the deltaX/Y
+		// properties with normalized deltas.
+		event.deltaMode = 0;
 
-        // Add event and delta to the front of the arguments
-        args.unshift(event, delta, deltaX, deltaY);
+		// Add event and delta to the front of the arguments
+		args.unshift(event, delta, deltaX, deltaY);
 
-        // Clearout lowestDelta after sometime to better
-        // handle multiple device types that give different
-        // a different lowestDelta
-        // Ex: trackpad = 3 and mouse wheel = 120
-        if (nullLowestDeltaTimeout) { clearTimeout(nullLowestDeltaTimeout); }
-        nullLowestDeltaTimeout = setTimeout(nullLowestDelta, 200);
+		// Clearout lowestDelta after sometime to better
+		// handle multiple device types that give different
+		// a different lowestDelta
+		// Ex: trackpad = 3 and mouse wheel = 120
+		if (nullLowestDeltaTimeout) { clearTimeout(nullLowestDeltaTimeout); }
+		nullLowestDeltaTimeout = setTimeout(nullLowestDelta, 200);
 
-        return ($.event.dispatch || $.event.handle).apply(this, args);
-    }
+		return ($.event.dispatch || $.event.handle).apply(this, args);
+	}
 
-    function nullLowestDelta() {
-        lowestDelta = null;
-    }
+	function nullLowestDelta() {
+		lowestDelta = null;
+	}
 
-    function shouldAdjustOldDeltas(orgEvent, absDelta) {
-        // If this is an older event and the delta is divisable by 120,
-        // then we are assuming that the browser is treating this as an
-        // older mouse wheel event and that we should divide the deltas
-        // by 40 to try and get a more usable deltaFactor.
-        // Side note, this actually impacts the reported scroll distance
-        // in older browsers and can cause scrolling to be slower than native.
-        // Turn this off by setting $.event.special.mousewheel.settings.adjustOldDeltas to false.
-        return special.settings.adjustOldDeltas && orgEvent.type === 'mousewheel' && absDelta % 120 === 0;
-    }
+	function shouldAdjustOldDeltas(orgEvent, absDelta) {
+		// If this is an older event and the delta is divisable by 120,
+		// then we are assuming that the browser is treating this as an
+		// older mouse wheel event and that we should divide the deltas
+		// by 40 to try and get a more usable deltaFactor.
+		// Side note, this actually impacts the reported scroll distance
+		// in older browsers and can cause scrolling to be slower than native.
+		// Turn this off by setting $.event.special.mousewheel.settings.adjustOldDeltas to false.
+		return special.settings.adjustOldDeltas && orgEvent.type === 'mousewheel' && absDelta % 120 === 0;
+	}
 
 }));

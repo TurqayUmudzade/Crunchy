@@ -18,7 +18,7 @@ namespace Crunch.Models
         [Required]
         public String Speciality { get; set; }
 
-        [Required]
+
         public String image { get; set; }
 
 

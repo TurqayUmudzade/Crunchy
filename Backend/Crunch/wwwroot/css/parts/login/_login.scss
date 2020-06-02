@@ -3,12 +3,15 @@
         width: 90%;
         margin: 0 auto;
     }
+
     .form-row {
         display: block !important;
     }
+
     .remember-me {
         margin: 0 38px !important;
         top: -25px;
+
         #rememberMe {
             width: 16px !important;
             position: relative;
@@ -19,16 +22,19 @@
             background: #fff;
             cursor: pointer;
             outline: 0;
-            padding: 0!important;
+            padding: 0 !important;
             text-align: center;
             vertical-align: middle;
+
             &:checked {
                 border: 1px solid #0090d9 !important;
+
                 .fa-check {
                     display: block
                 }
             }
         }
+
         i {
             pointer-events: none;
             font-size: 15px;
@@ -36,6 +42,7 @@
             left: 5px;
             top: 7px;
         }
+
         label {
             font-size: 20px !important;
         }
@@ -60,8 +67,10 @@
     margin-bottom: 25px;
     color: #009fdf;
     text-align: center;
+
     h3 {
         font-size: 22px;
+
         span {
             color: #f06880;
         }

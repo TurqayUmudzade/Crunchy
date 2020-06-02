@@ -16,6 +16,7 @@
     cursor: pointer;
     border: 1px solid transparent;
     line-height: 1;
+
     &:hover {
         background-color: #e94960;
     }
@@ -69,23 +70,29 @@ form input[readonly=readonly] {
     height: 190px;
     width: 40%;
     min-width: 300px;
+
     p {
         font-size: 20px;
         color: #666;
     }
+
     .modal-buttons {
         float: right;
+
         #blue {
             background-color: #009fdf;
         }
     }
+
     .button {
         padding: 6px 18px 5px !important;
         float: none !important;
     }
+
     .class-ok {
         background-color: #f06880 !important;
     }
+
     .class-yes {
         background-color: #f06880 !important;
     }

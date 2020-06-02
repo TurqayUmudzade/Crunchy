@@ -9,7 +9,7 @@ namespace Crunch.Data
 {
     public class Context : DbContext
     {
-        
+
 
         public Context(DbContextOptions<Context> options) : base(options)
         {
@@ -37,8 +37,8 @@ namespace Crunch.Data
         public DbSet<User> users { get; set; }
         public DbSet<Class> classes { get; set; }
         public DbSet<Trainer> trainers { get; set; }
-        public DbSet<Gym>  gyms{ get; set; }
-        public DbSet<Promocode> promocodes{ get; set; }
+        public DbSet<Gym> gyms { get; set; }
+        public DbSet<Promocode> promocodes { get; set; }
 
         public DbSet<Admin> Admins { get; set; }
 

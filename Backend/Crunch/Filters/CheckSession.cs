@@ -8,15 +8,16 @@ namespace Crunch.Filters
 {
     public class CheckSession : ActionFilterAttribute
     {
-        public CheckSession() {
-        
+        public CheckSession()
+        {
+
         }
 
         public override void OnActionExecuting(ActionExecutingContext context)
         {
-          
-           
+
+
         }
     }
-   
+
 }

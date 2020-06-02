@@ -38,15 +38,16 @@ namespace Crunch.Controllers
         [HttpGet]
         public ViewResult Register()
         {
-            
+
             return View();
         }
 
         [HttpGet]
         public IActionResult Register2()
         {
-            if (HttpContext.Session.GetString("SessionUser") ==null) {
-                return RedirectToAction("Register","Account");
+            if (HttpContext.Session.GetString("SessionUser") == null)
+            {
+                return RedirectToAction("Register", "Account");
             }
             return View();
         }
@@ -54,7 +55,8 @@ namespace Crunch.Controllers
         [HttpGet]
         public IActionResult Register3()
         {
-            if (HttpContext.Session.GetString("SessionUser") ==null) {
+            if (HttpContext.Session.GetString("SessionUser") == null)
+            {
                 return RedirectToAction("Register", "Account");
             }
             return View();
@@ -63,7 +65,8 @@ namespace Crunch.Controllers
         [HttpGet]
         public IActionResult Login()
         {
-            if (TempData["PinNotification"] !=null) {
+            if (TempData["PinNotification"] != null)
+            {
                 ViewBag.Text = TempData["PinNotification"].ToString();
                 ViewBag.Email = TempData["PinNotificationSpan"].ToString();
             }
@@ -179,12 +182,12 @@ namespace Crunch.Controllers
 
                 TempData["PinNotification"] = "Your Pin has been send to your email adress ";
                 TempData["PinNotificationSpan"] = user.Email.ToString();
-                
+
                 return RedirectToAction("Login", "Account");
             }
             else
             {
-                return View(registerViewModel); 
+                return View(registerViewModel);
             }
 
         }

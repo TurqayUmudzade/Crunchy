@@ -38,7 +38,8 @@ namespace Crunch.Controllers
                 List<Gym> model = _context.gyms.Where(g => g.gymLocation.StartsWith(searchStr)).ToList();
                 return PartialView("~/Views/PartialViews/GymList.cshtml", model);
             }
-            else {
+            else
+            {
                 return PartialView("~/Views/PartialViews/GymList.cshtml", _context.gyms.ToList());
             }
         }
