@@ -3,6 +3,30 @@
 }
 
 @model AdminGymViewModel
+    <div class="alert-container"></div>
+
+@if (TempData["Alert"] != null)
+{
+
+    @if (TempData["Alert"].ToString() == "New Gym added!")
+    {
+        <div class="alert alert-success" role="alert">
+            <h3>@TempData["Alert"]</h3>
+        </div>
+    }
+    else if (TempData["Alert"].ToString() == "Gym Updated!")
+    {
+        <div class="alert alert-success" role="alert">
+            <h3>@TempData["Alert"]</h3>
+        </div>
+    }
+    else
+    {
+        <div class="alert alert-danger" role="alert">
+            <h3>@TempData["Alert"]</h3>
+        </div>
+    }
+}
 <div class="modal" tabindex="-1" role="dialog">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -17,7 +41,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-danger btn-delete-gym">Delete</button>
+                <button type="button" class="btn btn-danger btn-delete-gym" data-dismiss="modal">Delete</button>
             </div>
         </div>
     </div>
@@ -64,7 +88,6 @@
 <div class="container mt-2">
     <h1 class="h2 pb-3 border-bottom">Gyms</h1>
 
-
     <table class="table">
         <thead class="thead-dark">
             <tr>
@@ -81,18 +104,15 @@
             @foreach (Gym gym in Model.gyms)
             {
                 <tr>
-                    <th scope="row">@gym.gymID</th>
+                    <th class="id" scope="row">@gym.gymID</th>
                     <td>@gym.gymLocation</td>
                     <td>@gym.gymAdress</td>
                     <td>@gym.gymNumber</td>
                     <td>@gym.price</td>
-                    <td><i class="fas fa-edit"></i></td>
-                    <td><i class="fas fa-trash-alt"></i></td>
+                    <td><a href="@Url.Action("EditGym","Gym",new { area="Admin",gymID=gym.gymID})"><i class="fas fa-edit"></i></a></td>
+                    <td class="delete" data-toggle="modal" data-target=".modal"><i class="fas fa-trash-alt "></i></td>
                 </tr>
             }
         </tbody>
     </table>
-
-
-
 </div>

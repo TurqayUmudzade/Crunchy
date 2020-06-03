@@ -29,7 +29,7 @@ namespace Crunch.Areas.Admin.Controllers
         [Area("Admin")]
         public IActionResult Gyms()
         {
-            return View(new AdminGymViewModel {gyms=_context.gyms.ToList() });
+            return View(new AdminGymViewModel { gyms = _context.gyms.ToList() });
         }
 
         [Area("Admin")]
@@ -62,6 +62,50 @@ namespace Crunch.Areas.Admin.Controllers
                 return RedirectToAction("Gyms", "Gym", new { area = "Admin" });
             }
 
+        }
+
+        [Area("Admin")]
+        public IActionResult EditGym(int gymID)
+        {
+            return View(_context.gyms.Find(gymID));
+        }
+
+        [Area("Admin")]
+        [HttpPost]
+        public IActionResult EditGym(Gym formGym)
+        {
+            if (ModelState.IsValid)
+            {
+                Gym gym = _context.gyms.Find(formGym.gymID);
+
+                gym.gymAdress = formGym.gymAdress;
+                gym.gymLocation = formGym.gymLocation;
+                gym.gymNumber = formGym.gymNumber;
+                gym.price = formGym.price;
+                if (!String.IsNullOrEmpty(formGym.image))
+                    gym.image = formGym.image;
+
+                _context.SaveChanges();
+
+                TempData["Alert"] = "Gym Updated!";
+                return RedirectToAction("Gyms", "Gym", new { area = "Admin" });
+            }
+            else
+            {
+                var message = string.Join(" | ", ModelState.Values.SelectMany(v => v.Errors).Select(e => e.ErrorMessage));
+                TempData["Alert"] = message;
+                return RedirectToAction("Gyms", "Gym", new { area = "Admin" });
+            }
+
+        }
+        [Area("Admin")]
+        [HttpGet]
+        public IActionResult DeleteGym(int gymID)
+        {
+            _context.Remove(_context.gyms.Find(gymID));
+            _context.SaveChanges();
+            string s = "Gym Deleted";
+            return PartialView("~/Views/PartialViews/alert.cshtml", s);
         }
     }
 }

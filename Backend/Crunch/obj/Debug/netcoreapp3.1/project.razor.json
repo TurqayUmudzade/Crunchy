@@ -20661,6 +20661,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\Turqay\\Desktop\\Crunch\\Backend\\Crunch\\Areas\\Admin\\Views\\Gym\\EditGym.cshtml",
+      "TargetPath": "Areas\\Admin\\Views\\Gym\\EditGym.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\Turqay\\Desktop\\Crunch\\Backend\\Crunch\\Views\\PartialViews\\GymLocationList.cshtml",
       "TargetPath": "Views\\PartialViews\\GymLocationList.cshtml",
       "FileKind": "mvc"

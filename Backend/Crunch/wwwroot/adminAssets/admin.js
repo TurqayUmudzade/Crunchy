@@ -44,5 +44,26 @@ $('.btn-delete-class').on("click", function() {
 });
 
 $('.btn-delete-gym').on("click", function() {
-    console.log("gym =" + selectedID);
+    $.ajax({
+        url: "DeleteGym?gymID=" + selectedID,
+        type: "get",
+        dataType: "html",
+        beforeSend: function () {
+
+        },
+        success: function (response) {
+            $('.alert-container').append(response);
+            setTimeout(() => {
+                $(".alert").fadeOut('slow')
+            }, 2000);
+            setTimeout(() => {
+                $(".alert").alert('close')
+            }, 4000);
+            selectedRow.remove();
+        },
+        error: function (error) {
+            console.log(error);
+        },
+        complete: function () { }
+    });
 });
