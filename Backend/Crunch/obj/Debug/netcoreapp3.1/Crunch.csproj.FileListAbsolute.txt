@@ -553,3 +553,4 @@ C:\Users\Turqay\Desktop\Crunch\Backend\Crunch\bin\Debug\netcoreapp3.1\libman.jso
 C:\Users\Turqay\Desktop\Crunch\Backend\Crunch\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Home\Trainers.cshtml.g.cs
 C:\Users\Turqay\Desktop\Crunch\Backend\Crunch\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Home\EditTrainer.cshtml.g.cs
 C:\Users\Turqay\Desktop\Crunch\Backend\Crunch\obj\Debug\netcoreapp3.1\Razor\Views\PartialViews\alert.cshtml.g.cs
+C:\Users\Turqay\Desktop\Crunch\Backend\Crunch\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Gym\Gyms.cshtml.g.cs

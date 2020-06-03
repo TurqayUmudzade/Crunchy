@@ -1,0 +1,98 @@
+﻿@{
+    ViewData["Title"] = "Gyms";
+}
+
+@model AdminGymViewModel
+<div class="modal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Confirm</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>Are you sure you want to delete this class?</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-danger btn-delete-gym">Delete</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container mt-2">
+    <h1 class="h2 pb-3 border-bottom">Add a Gym</h1>
+    <form method="post" asp-action="AddGym" asp-controller="Gym" asp-area="Admin">
+
+        <div class="form-row">
+            <div class=" form-group col-md-12">
+                <label asp-for="gym.gymAdress">Gym Adress:</label>
+                <input type="text" class="form-control" asp-for="gym.gymAdress" placeholder="Los Angles street 13" required>
+            </div>
+
+        </div>
+
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label asp-for="gym.gymLocation">Gym Name</label>
+                <input type="text" class="form-control" asp-for="gym.gymLocation" placeholder="Gym Name" required>
+            </div>
+            <div class=" form-group col-md-6">
+                <label asp-for="gym.gymNumber">Gym Contact Phonenumber:</label>
+                <input type="text" class="form-control" asp-for="gym.gymNumber" placeholder="+9953213">
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-3">
+                <label asp-for="gym.price">Price</label>
+                <input type="text" class="form-control" asp-for="gym.price" placeholder="19.99" required>
+            </div>
+            <div class="form-group col-md-3">
+                <p>Picture</p>
+                <input type="file" class="custom-file-input" id="customFile" asp-for="gym.image">
+                <label class="custom-file-label" asp-for="gym.image">Choose file</label>
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary">Add Gym</button>
+    </form>
+</div>
+
+
+<div class="container mt-2">
+    <h1 class="h2 pb-3 border-bottom">Gyms</h1>
+
+
+    <table class="table">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Name</th>
+                <th scope="col">Adress</th>
+                <th scope="col">Number</th>
+                <th scope="col">Price</th>
+                <th scope="col">Edit</th>
+                <th scope="col">Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (Gym gym in Model.gyms)
+            {
+                <tr>
+                    <th scope="row">@gym.gymID</th>
+                    <td>@gym.gymLocation</td>
+                    <td>@gym.gymAdress</td>
+                    <td>@gym.gymNumber</td>
+                    <td>@gym.price</td>
+                    <td><i class="fas fa-edit"></i></td>
+                    <td><i class="fas fa-trash-alt"></i></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+
+
+</div>

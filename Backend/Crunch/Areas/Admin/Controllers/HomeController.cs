@@ -11,7 +11,6 @@ using Crunch.Areas.Admin.ViewModels;
 namespace Crunch.Areas.Admin.Controllers
 {
 
-
     public class HomeController : Controller
     {
         private readonly Context _context;
