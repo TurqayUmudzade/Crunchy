@@ -120,6 +120,15 @@ namespace Crunch.Areas.Admin.Controllers
                 return Content(message);
             }
         }
+        [Area("Admin")]
+        [HttpGet]
+        public IActionResult DeleteTrainer(int trainerID)
+        {
+            _context.Remove(_context.trainers.Find(trainerID));
+            _context.SaveChanges();
+            string s = "Trainer Deleted";
+            return PartialView("~/Views/PartialViews/alert.cshtml", s);
+        }
 
     }
 }

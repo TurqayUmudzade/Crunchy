@@ -30,3 +30,17 @@ table i {
     position: relative;
     top: 200px;
 }
+
+.alert-container {
+    position: fixed;
+    top: 0;
+    max-width: 500px;
+    width: 80%;
+    right: 0;
+    left: 0;
+    margin-right: auto;
+    margin-left: auto;
+    top: 48px;
+    text-align: center;
+    z-index: 3;
+}

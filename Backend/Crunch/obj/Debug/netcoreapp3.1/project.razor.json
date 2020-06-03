@@ -20676,6 +20676,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\Turqay\\Desktop\\Crunch\\Backend\\Crunch\\Views\\PartialViews\\alert.cshtml",
+      "TargetPath": "Views\\PartialViews\\alert.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\Turqay\\Desktop\\Crunch\\Backend\\Crunch\\Areas\\Admin\\Views\\Home\\EditTrainer.cshtml",
       "TargetPath": "Areas\\Admin\\Views\\Home\\EditTrainer.cshtml",
       "FileKind": "mvc"
