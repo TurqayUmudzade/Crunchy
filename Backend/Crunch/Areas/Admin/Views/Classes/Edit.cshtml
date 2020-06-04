@@ -1,0 +1,70 @@
+﻿@model Crunch.Models.Class
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+    <div class="container mt-2">
+        <h1>Edit</h1>
+
+        <h4>Class</h4>
+        <hr />
+        <div class="row">
+            <div class="col-md-4">
+                <form asp-action="Edit">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <input type="hidden" asp-for="ClassID" />
+                    <div class="form-group">
+                        <label asp-for="name" class="control-label"></label>
+                        <input asp-for="name" class="form-control" />
+                        <span asp-validation-for="name" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="description" class="control-label"></label>
+                        <input asp-for="description" class="form-control" />
+                        <span asp-validation-for="description" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="duration" class="control-label"></label>
+                        <input asp-for="duration" class="form-control" />
+                        <span asp-validation-for="duration" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="dateTime" class="control-label"></label>
+                        <input asp-for="dateTime" class="form-control" />
+                        <span asp-validation-for="dateTime" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="space" class="control-label"></label>
+                        <input asp-for="space" class="form-control" />
+                        <span asp-validation-for="space" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="spaceUsed" class="control-label"></label>
+                        <input asp-for="spaceUsed" class="form-control" />
+                        <span asp-validation-for="spaceUsed" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="type" class="control-label"></label>
+                        <input asp-for="type" class="form-control" />
+                        <span asp-validation-for="type" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="icon" class="control-label"></label>
+                        <input asp-for="icon" class="form-control" />
+                        <span asp-validation-for="icon" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" value="Save" class="btn btn-primary" />
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div>
+            <a asp-action="Index">Back to List</a>
+        </div>
+
+    </div>
+
+

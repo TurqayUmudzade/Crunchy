@@ -1,0 +1,80 @@
+﻿@model IEnumerable<Crunch.Models.Class>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+    <div class="container mt-2">
+        <h1>Index</h1>
+
+        <p>
+            <a class="btn btn-primary" asp-action="Create">Create New</a>
+        </p>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.name)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.description)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.duration)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.dateTime)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.space)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.spaceUsed)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.type)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.icon)
+                    </th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.name)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.description)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.duration)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.dateTime)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.space)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.spaceUsed)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.type)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.icon)
+                        </td>
+                        <td>
+                            <a asp-action="Edit" asp-route-id="@item.ClassID">Edit</a> |
+                            <a asp-action="Details" asp-route-id="@item.ClassID">Details</a> |
+                            <a asp-action="Delete" asp-route-id="@item.ClassID">Delete</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
