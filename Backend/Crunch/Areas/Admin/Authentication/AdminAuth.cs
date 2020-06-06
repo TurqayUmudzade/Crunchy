@@ -1,49 +1,47 @@
 ﻿using System.Linq;
+using Crunch.Areas.Admin.Models;
 using Crunch.Data;
-using Crunch.Models;
 using Microsoft.AspNetCore.Http;
 
-
-namespace Crunch.Injection
+namespace Crunch.Areas.Admin.Authentication
 {
 
-    public interface IAuth
+    public interface IAdminAuth
     {
-        User User { get; }
+       AdminM admin{ get; }
     }
-
-    public class Auth : IAuth
+    public class AdminAuth : IAdminAuth
     {
         private readonly Context _context;
         private readonly IHttpContextAccessor _accessor;
 
-        public Auth(Context context, IHttpContextAccessor accessor)
+        public AdminAuth(Context context, IHttpContextAccessor accessor)
         {
             _context = context;
             _accessor = accessor;
         }
 
-        public User User
+        public AdminM admin
         {
             get
             {
                 string token = string.Empty;
 
-                bool hasHeader = this._accessor.HttpContext.Request.Cookies.TryGetValue("token", out token);
+                bool hasHeader = this._accessor.HttpContext.Request.Cookies.TryGetValue("Admintoken", out token);
 
                 if (!hasHeader)
                 {
                     return null;
                 }
 
-                User user = _context.users.FirstOrDefault(u => u.Token == token);
+                AdminM admin = _context.Admins.FirstOrDefault(a => a.Token == token);
 
-                if (user == null)
+                if (admin == null)
                 {
                     return null;
                 }
 
-                return user;
+                return admin;
 
             }
         }

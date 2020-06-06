@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using Crunch.Models;
+using Crunch.Areas.Admin.Models;
 
 namespace Crunch.Data
 {
@@ -40,7 +41,7 @@ namespace Crunch.Data
         public DbSet<Gym> gyms { get; set; }
         public DbSet<Promocode> promocodes { get; set; }
 
-        public DbSet<Admin> Admins { get; set; }
+        public DbSet<AdminM> Admins { get; set; }
 
     }
 }

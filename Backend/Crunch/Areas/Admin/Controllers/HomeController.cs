@@ -1,16 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Crunch.Data;
-using Crunch.Models;
+﻿using Crunch.Data;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using Crunch.Areas.Admin.ViewModels;
-
+using Crunch.Areas.Admin.Authentication;
 namespace Crunch.Areas.Admin.Controllers
 {
     [Area("Admin")]
+    [TypeFilter(typeof(CheckAdminAuth))]
     public class HomeController : Controller
     {
         private readonly Context _context;
