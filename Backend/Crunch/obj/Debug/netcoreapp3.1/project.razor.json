@@ -20621,11 +20621,6 @@
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\Users\\Turqay\\Desktop\\Crunch\\Backend\\Crunch\\Areas\\Admin\\Views\\Home\\Trainers.cshtml",
-      "TargetPath": "Areas\\Admin\\Views\\Home\\Trainers.cshtml",
-      "FileKind": "mvc"
-    },
-    {
       "FilePath": "c:\\Users\\Turqay\\Desktop\\Crunch\\Backend\\Crunch\\Views\\Shared\\ClassSpaceFull.cshtml",
       "TargetPath": "Views\\Shared\\ClassSpaceFull.cshtml",
       "FileKind": "mvc"
@@ -20706,11 +20701,6 @@
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\Users\\Turqay\\Desktop\\Crunch\\Backend\\Crunch\\Areas\\Admin\\Views\\Home\\EditTrainer.cshtml",
-      "TargetPath": "Areas\\Admin\\Views\\Home\\EditTrainer.cshtml",
-      "FileKind": "mvc"
-    },
-    {
       "FilePath": "c:\\Users\\Turqay\\Desktop\\Crunch\\Backend\\Crunch\\Views\\Shared\\Error.cshtml",
       "TargetPath": "Views\\Shared\\Error.cshtml",
       "FileKind": "mvc"
@@ -20756,6 +20746,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\Turqay\\Desktop\\Crunch\\Backend\\Crunch\\Areas\\Admin\\Views\\Trainer\\EditTrainer.cshtml",
+      "TargetPath": "Areas\\Admin\\Views\\Trainer\\EditTrainer.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\Turqay\\Desktop\\Crunch\\Backend\\Crunch\\Views\\Account\\Register2.cshtml",
       "TargetPath": "Views\\Account\\Register2.cshtml",
       "FileKind": "mvc"
@@ -20763,6 +20758,11 @@
     {
       "FilePath": "c:\\Users\\Turqay\\Desktop\\Crunch\\Backend\\Crunch\\Views\\Account\\Register.cshtml",
       "TargetPath": "Views\\Account\\Register.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Turqay\\Desktop\\Crunch\\Backend\\Crunch\\Areas\\Admin\\Views\\Trainer\\Trainers.cshtml",
+      "TargetPath": "Areas\\Admin\\Views\\Trainer\\Trainers.cshtml",
       "FileKind": "mvc"
     },
     {

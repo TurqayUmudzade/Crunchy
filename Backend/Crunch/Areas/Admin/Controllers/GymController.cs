@@ -9,7 +9,7 @@ using Crunch.Areas.Admin.ViewModels;
 
 namespace Crunch.Areas.Admin.Controllers
 {
-
+    [Area("Admin")]
     public class GymController : Controller
     {
         public readonly Context _context;
@@ -17,22 +17,18 @@ namespace Crunch.Areas.Admin.Controllers
         public GymController(Context context)
         {
             _context = context;
-
         }
 
-        [Area("Admin")]
         public IActionResult Index()
         {
             return RedirectToAction("Gyms");
         }
 
-        [Area("Admin")]
         public IActionResult Gyms()
         {
             return View(new AdminGymViewModel { gyms = _context.gyms.ToList() });
         }
 
-        [Area("Admin")]
         [HttpPost]
         public IActionResult AddGym(AdminGymViewModel model)
         {
@@ -64,13 +60,11 @@ namespace Crunch.Areas.Admin.Controllers
 
         }
 
-        [Area("Admin")]
         public IActionResult EditGym(int gymID)
         {
             return View(_context.gyms.Find(gymID));
         }
 
-        [Area("Admin")]
         [HttpPost]
         public IActionResult EditGym(Gym formGym)
         {
@@ -98,7 +92,7 @@ namespace Crunch.Areas.Admin.Controllers
             }
 
         }
-        [Area("Admin")]
+
         [HttpGet]
         public IActionResult DeleteGym(int gymID)
         {

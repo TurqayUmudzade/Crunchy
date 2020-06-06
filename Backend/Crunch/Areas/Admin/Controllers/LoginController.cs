@@ -11,6 +11,7 @@ using Crunch.Filters;
 
 namespace Crunch.Areas.Admin.Controllers
 {
+    [Area("Admin")]
     public class LoginController : Controller
     {
         private readonly Context _context;
@@ -22,13 +23,11 @@ namespace Crunch.Areas.Admin.Controllers
             _auth = auth;
 
         }
-        [Area("Admin")]
         public IActionResult Index()
         {
             return View();
         }
 
-        [Area("Admin")]
         public IActionResult Login()
         {
 
