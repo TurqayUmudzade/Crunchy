@@ -13,7 +13,7 @@ using Crunch.Data;
 using Microsoft.Extensions.DependencyInjection.Extensions;
 using Microsoft.AspNetCore.Http;
 using Crunch.Injection;
-
+using Crunch.Areas.Admin.Authentication;
 
 namespace Crunch
 {
@@ -47,6 +47,7 @@ namespace Crunch
             services.TryAddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 
             services.AddTransient<IAuth, Auth>();
+            services.AddTransient<IAdminAuth, AdminAuth>();
 
         }
 
