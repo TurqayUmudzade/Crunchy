@@ -1,16 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Crunch.Data;
 using Crunch.Models;
+using Crunch.Areas.Admin.Authentication;
 
 namespace Crunch.Areas.Admin.Controllers
 {
     [Area("Admin")]
+    [TypeFilter(typeof(CheckAdminAuth))]
     public class ClassesController : Controller
     {
         private readonly Context _context;
@@ -53,7 +52,7 @@ namespace Crunch.Areas.Admin.Controllers
         // POST: Admin/Classes/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create( Class @class)
+        public async Task<IActionResult> Create(Class @class)
         {
             if (ModelState.IsValid)
             {
@@ -71,7 +70,7 @@ namespace Crunch.Areas.Admin.Controllers
             }
             else
                 return Content(string.Join(" | ", ModelState.Values.SelectMany(v => v.Errors).Select(e => e.ErrorMessage)));
-                
+
         }
 
         // GET: Admin/Classes/Edit/5

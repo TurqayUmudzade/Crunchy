@@ -1,17 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Crunch.ViewModels;
 using Crunch.Data;
 using Crunch.Models;
 using Crunch.Injection;
 using Crunch.Filters;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Http;
 using Newtonsoft.Json;
-using MailKit;
 using MailKit.Net.Smtp;
 using MimeKit;
 

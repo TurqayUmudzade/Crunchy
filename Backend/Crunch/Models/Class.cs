@@ -1,9 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
-using Crunch.Models;
 namespace Crunch.Models
 {
     public class Class
@@ -12,11 +9,14 @@ namespace Crunch.Models
         public int ClassID { get; set; }
 
         [Required]
-        public String name { get; set; }
+        public string name { get; set; }
+
         [Required]
-        public String description { get; set; }
+        public string description { get; set; }
+
         [Required]
-        public String duration { get; set; }
+        public string duration { get; set; }
+
         [Required]
         public DateTime dateTime { get; set; }
         [Required]
@@ -27,9 +27,9 @@ namespace Crunch.Models
 
         public int spaceUsed { get; set; }
 
-        public String type { get; set; }
+        public string type { get; set; }
 
-        public String icon { get; set; }
+        public string icon { get; set; }
 
         public List<UserClass> userClasses { get; set; }
     }

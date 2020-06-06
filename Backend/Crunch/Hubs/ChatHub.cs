@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Crunch.Hubs
 {
-    public class GameHub : Hub
+    public class ChatHub : Hub
     {
     }
 }

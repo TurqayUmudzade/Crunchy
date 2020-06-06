@@ -16,7 +16,7 @@ namespace Crunch.Areas.Admin.Authentication
         {
             if (_auth.admin == null)
             {
-                context.Result = new RedirectResult("~Admin/Account/Login");
+                context.Result = new RedirectResult("Admin/Login");
             }
         }
     }

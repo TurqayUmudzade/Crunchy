@@ -13,7 +13,7 @@ namespace Crunch.Areas.Admin.Controllers
             _context = context;
         }
 
-        
+
         public IActionResult Index()
         {
             return View();

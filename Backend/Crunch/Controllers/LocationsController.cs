@@ -1,14 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Crunch.Data;
-using Crunch.Injection;
-using Crunch.Filters;
 using Crunch.Models;
-using Crunch.ViewModels;
-using Microsoft.EntityFrameworkCore;
 
 namespace Crunch.Controllers
 {

@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using Crunch.Models;
 using Crunch.Areas.Admin.Models;
 
@@ -11,10 +7,8 @@ namespace Crunch.Data
     public class Context : DbContext
     {
 
-
         public Context(DbContextOptions<Context> options) : base(options)
         {
-
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -33,7 +27,6 @@ namespace Crunch.Data
                 .WithMany(t => t.userClasses)
                 .HasForeignKey(uc => uc.ClassID);
         }
-
 
         public DbSet<User> users { get; set; }
         public DbSet<Class> classes { get; set; }

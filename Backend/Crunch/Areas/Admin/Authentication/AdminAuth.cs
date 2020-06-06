@@ -8,7 +8,7 @@ namespace Crunch.Areas.Admin.Authentication
 
     public interface IAdminAuth
     {
-       AdminM admin{ get; }
+        AdminM admin { get; }
     }
     public class AdminAuth : IAdminAuth
     {

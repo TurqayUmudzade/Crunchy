@@ -1,23 +1,20 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using Crunch.ViewModels;
 using Crunch.Data;
-using Crunch.Models;
-using Crunch.Injection;
-using Crunch.Filters;
+using Crunch.Areas.Admin.Authentication;
+using Crunch.Areas.Admin.Models;
 
 namespace Crunch.Areas.Admin.Controllers
 {
     [Area("Admin")]
+    [TypeFilter(typeof(CheckAdminAuth))]
     public class LoginController : Controller
     {
         private readonly Context _context;
-        private readonly IAuth _auth;
+        private readonly IAdminAuth _auth;
 
-        public LoginController(Context context, IAuth auth)
+        public LoginController(Context context, IAdminAuth auth)
         {
             _context = context;
             _auth = auth;
@@ -25,13 +22,39 @@ namespace Crunch.Areas.Admin.Controllers
         }
         public IActionResult Index()
         {
+
             return View();
         }
 
-        public IActionResult Login()
+        [HttpPost]
+        public IActionResult Login(AdminM model)
         {
+            if (ModelState.IsValid)
+            {
+                AdminM admin = _context.Admins.Where(a => a.Username == model.Username).FirstOrDefault();
 
-            return View();
+                if (admin != null)
+                {
+                    if (admin.Password == model.Password)
+                    {
+
+                        admin.Token = Guid.NewGuid().ToString();
+                        _context.SaveChanges();
+
+                        Response.Cookies.Append("Admintoken", admin.Token, new Microsoft.AspNetCore.Http.CookieOptions
+                        {
+                            Expires = DateTime.Now.AddDays(1),
+                            HttpOnly = true
+                        });
+
+                        return RedirectToAction("Index", "Home", new { area = "Admin" });
+                    }
+
+                }
+                ModelState.AddModelError("Pass", "Wrong username or password");
+            }
+
+            return View(model);
         }
 
 

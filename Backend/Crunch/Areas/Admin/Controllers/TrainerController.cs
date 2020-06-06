@@ -1,16 +1,16 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 using Crunch.Data;
 using Crunch.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Crunch.Areas.Admin.ViewModels;
+using Crunch.Areas.Admin.Authentication;
 
 namespace Crunch.Areas.Admin.Controllers
 {
     [Area("Admin")]
+    [TypeFilter(typeof(CheckAdminAuth))]
     public class TrainerController : Controller
     {
         private readonly Context _context;
