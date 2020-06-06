@@ -51,19 +51,27 @@ namespace Crunch.Areas.Admin.Controllers
         }
 
         // POST: Admin/Classes/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to, for 
-        // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("ClassID,name,description,duration,dateTime,space,spaceUsed,type,icon")] Class @class)
+        public async Task<IActionResult> Create( Class @class)
         {
             if (ModelState.IsValid)
             {
+                if (@class.type == "bg-blue")
+                    @class.icon = "fas fa-dumbbell";
+                if (@class.type == "bg-pickle")
+                    @class.icon = "fas fa-weight";
+                if (@class.type == "bg-pink")
+                    @class.icon = "none";
+
+                @class.gym = _context.gyms.Find(@class.gym.gymID);
                 _context.Add(@class);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            return View(@class);
+            else
+                return Content(string.Join(" | ", ModelState.Values.SelectMany(v => v.Errors).Select(e => e.ErrorMessage)));
+                
         }
 
         // GET: Admin/Classes/Edit/5

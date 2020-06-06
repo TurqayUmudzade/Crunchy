@@ -44,3 +44,8 @@ table i {
     text-align: center;
     z-index: 3;
 }
+
+.custom-delete {
+    padding: 3px 3px !important;
+    border-radius: 6px !important;
+}
