@@ -2871,14 +2871,13 @@ article .class .message .no {
 }
 
 #top-pic-section {
-  background-image: url(../image/training.jpg);
+  background-image: url(../image/training/training.jpg);
   background-repeat: no-repeat;
   background-size: cover;
 }
 
 #top-pic-section .background-img {
   position: relative;
-  background-image: url(../image/training.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background: -webkit-gradient(linear, left top, left bottom, from(rgba(83, 4, 23, 0.75)), to(rgba(83, 4, 23, 0)));
@@ -3007,5 +3006,16 @@ article .class .message .no {
 
 #training .flex .right .img-container img {
   width: 80%;
+}
+
+.white {
+  background: white !important;
+}
+
+.border--hairline {
+  width: 30px;
+  background: #282828;
+  height: 1px;
+  border: none;
 }
 /*# sourceMappingURL=main.css.map */
