@@ -2939,6 +2939,8 @@ article .class .message .no {
 }
 
 #training {
+  margin-bottom: 30px;
+  min-height: 530px;
   background: #f4f4f4;
 }
 
@@ -2949,10 +2951,16 @@ article .class .message .no {
 }
 
 #training .flex .left {
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
+  -webkit-box-ordinal-group: 2;
+      -ms-flex-order: 1;
+          order: 1;
   z-index: 1;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  margin-right: 40px;
+  padding-top: 0;
+  width: calc(50% - 40px);
 }
 
 #training .flex .left .article {
@@ -2994,18 +3002,14 @@ article .class .message .no {
 }
 
 #training .flex .right {
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
-}
-
-#training .flex .right .img-container {
-  position: relative;
-  left: 10%;
+  -webkit-box-ordinal-group: 3;
+      -ms-flex-order: 2;
+          order: 2;
+  width: 50%;
 }
 
 #training .flex .right .img-container img {
-  width: 80%;
+  width: 100%;
 }
 
 .white {
@@ -3017,5 +3021,45 @@ article .class .message .no {
   background: #282828;
   height: 1px;
   border: none;
+}
+
+.article-group__detail h3 {
+  padding-bottom: 30px;
+  color: black;
+  text-align: center;
+  font-size: 40px;
+}
+
+.article-group__detail p {
+  max-width: 530px;
+  margin: 0 auto;
+  line-height: 26px;
+  font-size: 17px;
+  margin-bottom: 20px;
+  color: #686868;
+}
+
+.article-group__detail .btn-wrapper {
+  margin-top: 0;
+  margin-bottom: 50px;
+  margin: 40px auto 0 auto;
+}
+
+.article-group__detail .btn-wrapper .btn--dark {
+  display: block;
+  padding: 14px 0;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 215px;
+  background-color: #212121;
+  text-align: center;
+  padding: 14px 0;
+}
+
+.article-group__detail .btn-wrapper .btn--dark span {
+  color: white;
+  line-height: 18px;
+  font-size: 15px;
+  letter-spacing: 1.5px;
 }
 /*# sourceMappingURL=main.css.map */
