@@ -239,11 +239,18 @@
             flex-direction: column-reverse;
             .left {
                 width: 100%;
+                margin-right: 0 !important;
             }
             .right {
                 width: 100%;
                 margin-bottom: 30px;
             }
+        }
+    }
+    #top-pic-section {
+        h1 {
+            font-size: 45px !important;
+            bottom: 10px !important;
         }
     }
 }
