@@ -456,6 +456,10 @@ footer .footer-wrapper .right p {
   color: white;
 }
 
+.before-footer {
+  margin-bottom: 200px !important;
+}
+
 .login-page form {
   width: 90%;
   margin: 0 auto;
@@ -3016,11 +3020,26 @@ article .class .message .no {
   background: white !important;
 }
 
+.icon-hrs {
+  text-align: center;
+}
+
+.icon-hrs i {
+  color: #f99919;
+  display: inline-block;
+  margin: 0 12px;
+  font-size: 32px;
+  vertical-align: middle;
+}
+
 .border--hairline {
+  display: inline-block;
   width: 30px;
   background: #282828;
   height: 1px;
   border: none;
+  position: relative;
+  top: 6px;
 }
 
 .article-group__detail h3 {
@@ -3033,6 +3052,7 @@ article .class .message .no {
 .article-group__detail p {
   max-width: 530px;
   margin: 0 auto;
+  text-align: center;
   line-height: 26px;
   font-size: 17px;
   margin-bottom: 20px;
@@ -3061,5 +3081,75 @@ article .class .message .no {
   line-height: 18px;
   font-size: 15px;
   letter-spacing: 1.5px;
+}
+
+.training-video .article-group__video {
+  margin: 30px 0 0 0;
+}
+
+.training-video .article-group__video p {
+  text-align: center;
+  margin-top: 30px;
+  font-size: 16px;
+}
+
+.training-video .article-group__video .video-contain {
+  height: 0;
+  padding-bottom: 56.25%;
+  position: relative;
+}
+
+.training-video .article-group__video .video-contain iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.training-video h3 {
+  padding-bottom: 8px;
+  margin-bottom: 0;
+}
+
+.training-video .article-group__detail {
+  margin: 0 auto;
+  padding-top: 10px;
+  width: 50%;
+  text-align: center;
+}
+
+.training-video .video-anchor span {
+  line-height: 14px;
+  font-size: 14px;
+  letter-spacing: 2px;
+  color: #f99919;
+}
+
+.video-container-1 {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1282px;
+  padding: 0 30px;
+}
+
+@media screen and (max-width: 1500px) {
+  #training .article {
+    text-align: center;
+    width: 100% !important;
+  }
+  #training .flex {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+  }
+  #training .flex .left {
+    width: 100%;
+  }
+  #training .flex .right {
+    width: 100%;
+    margin-bottom: 30px;
+  }
 }
 /*# sourceMappingURL=main.css.map */
