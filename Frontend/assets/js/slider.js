@@ -8,5 +8,22 @@ $('.slider-nav li').on("click", function() {
         $('.js-carousel-highlight').css('top', 82 * parseInt(ID - 1) + 15 + 'px');
     } else
         $('.js-carousel-highlight').css('top', 82 * parseInt(ID - 1) + 16 + 'px');
+});
 
+
+$('.owl-carousel').owlCarousel({
+    loop: true,
+    margin: 10,
+    nav: true,
+    responsive: {
+        0: {
+            items: 1
+        },
+        600: {
+            items: 3
+        },
+        1000: {
+            items: 5
+        }
+    }
 })
