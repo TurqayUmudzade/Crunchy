@@ -13,21 +13,25 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed&display=swap" rel="stylesheet">
     <!-- JQUERY -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+
+    </script>
     <title>Document</title>
 </head>
 
 <body>
+
 
     <nav>
         <div class="flex">
             <a href="" id="logo">
                 <img class="menu-bar__logo" alt="Crunch Logo" src="https://d2l0v8ee8pblzo.cloudfront.net/assets/core/logo-f0321dadbee0b6b8ec6d98159305c76e56590ff97a88d28d4eb2400b3baafe49.svg">
             </a>
-            <a href="" id="1">LOCATIONS</a>
-            <a href="" id="2">CLASSES</a>
-            <a href="" id="3">HIITZONE</a>
-            <a href="" id="4">TRANING</a>
-            <a href="" id="5">ABOUT</a>
+            <a class="nav-anchor" href="" id="1">LOCATIONS</a>
+            <a class="nav-anchor" href="" id="2">CLASSES</a>
+            <a class="nav-anchor" href="" id="3">HIITZONE</a>
+            <a class="nav-anchor" href="" id="4">TRANING</a>
+            <a class="nav-anchor" href="" id="5">ABOUT</a>
+            <i class="fas fa-bars"></i>
             <div class="lang_picker flex">
                 <img class="flag" src="https://dj7w0h47bhjwk.cloudfront.net/assets/core/flags/en-07772f1861e8e765c83be31bb1af70a23ecf038fc73041705d6f67f26ae4521a.png" alt="En">
                 <h2>EN</h2>
@@ -81,38 +85,84 @@
                     </li>
                 </ul>
             </div>
-            <a id="free-trial" href="">FREE TRIAL</a>
+            <a id="free-trial" class="nav-anchor" href="">FREE TRIAL</a>
             <a id="join" href="">JOIN</a>
         </div>
     </nav>
 
-    <section id="first">
-        <div class="wrapper">
-            <!-- <img class="promo--hero__loader" alt="Crunch logo loader" src="https://dj7w0h47bhjwk.cloudfront.net/assets/logo--loader-7da27c2fc5ddebd0adcc65c1b553e2664ed64c73976e7c2f492cf55905df844c.gif"> -->
+    <section id="Crunchishm">
+        <div class="container">
+
+            <div class="header">
+                <h3 class="small-header">
+                    <hr>
+                    <span>CRUNCHISM #1</span>
+                    <hr>
+                </h3>
+                <h2 class="crunchism-h2">Our Gym is Your Gym</h2>
+                <p class="header-footer">Kick your feet up! With a gym designed around you, we think you’ll love it here.
+                </p>
+            </div>
+
+        </div>
+        <div class="container">
+            <div class="image-container">
+                <img id="sliderImage" src="./assets/image/sliderHome/group.jpg" alt="">
+                <div class="slider-nav">
+                    <ul>
+                        <div class="js-carousel-highlight"></div>
+                        <li id="js-slider1">
+                            <h1>Group fitness classes</h1>
+                            <p>We design our clubs to give you the most awesome workouts possible. That’s why our dedicated group fitness studios are four walls of innovative, ass-kicking, fun.</p>
+                        </li>
+                        <li id="js-slider2">
+                            <h1>THINGS TO LIFT</h1>
+                            <p class="hidden">Bulk up, trim down, or just rock out to your favorite playlist. Our free weights, shiny machines, and cutting-edge equipment are the gear to get you there.</p>
+                        </li>
+                        <li id="js-slider3">
+                            <h1>Miles of Cardio</h1>
+                            <p class="hidden">We’ve got all the equipment you need to sprint, jog or walk your way to your fitness goals. We’re cheering for you!</p>
+                        </li>
+                        <li id="js-slider4">
+                            <h1>Peope who care</h1>
+                            <p class="hidden">We’re more than just incredible facilities. We’re instructors, trainers, and staff that live for your post-workout high-fives.</p>
+                        </li>
+                        <li id="js-slider5">
+                            <h1>Sparkling clean</h1>
+                            <p class="hidden">Our gyms are not only filled to the brim with awesome equipment, they’re squeaky clean.</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
         </div>
     </section>
 
+
+    <!-- 
     <footer>
-        <div class="footer-wrapper flex">
-            <div class="left">
-                <div class="icons">
-                    <i class="fab fa-facebook-f"></i>
-                    <i class="fab fa-instagram"></i>
-                    <i class="fab fa-twitter"></i>
-                    <i class="fab fa-youtube"></i>
+        <div class="footer-wrapper flex ">
+            <div class="left ">
+                <div class="icons ">
+                    <i class="fab fa-facebook-f "></i>
+                    <i class="fab fa-instagram "></i>
+                    <i class="fab fa-twitter "></i>
+                    <i class="fab fa-youtube "></i>
                 </div>
                 <p>© CRUNCH FITNESS</p>
-                <p id="grey">ALL RIGHTS RESERVED</p>
+                <p id="grey ">ALL RIGHTS RESERVED</p>
             </div>
-            <div class="right">
+            <div class="right ">
                 <p>FREE TRIAL</p>
-                <p id="grey">OWN A CRUNCH • CONTACT • FAQ • CORPORATE MEMBERSHIPS • CAREERS • TERMS OF USE • PRIVACY • POLICY</p>
+                <p id="grey ">OWN A CRUNCH • CONTACT • FAQ • CORPORATE MEMBERSHIPS • CAREERS • TERMS OF USE • PRIVACY • POLICY
+                </p>
             </div>
 
         </div>
-    </footer>
+    </footer> -->
 
-    <script src="assets/js/navbar.js"></script>
+    <script src="assets/js/navbar.js "></script>
+    <script src="assets/js/slider.js "></script>
 </body>
 
 
