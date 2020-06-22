@@ -2681,6 +2681,7 @@ article .class .message .no {
   width: 30px;
   height: 2px;
   color: #282828;
+  background-color: #282828;
   border: none;
 }
 
@@ -2754,13 +2755,65 @@ article .class .message .no {
   font-size: 26px;
 }
 
+#Crunchishm .container .image-container .slider-nav ul li .hidden {
+  opacity: 0 !important;
+}
+
 #Crunchishm .container .image-container .slider-nav ul li p {
+  opacity: 1;
   line-height: 20px;
   font-size: 14px;
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
   margin: 0;
+  -webkit-animation: smooth 0.3s ease-in;
+          animation: smooth 0.3s ease-in;
+}
+
+@-webkit-keyframes smooth {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+#Crunchishm .container2 {
+  max-width: 1024px;
+}
+
+#Crunchishm .cards {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+#Crunchishm .cards .card {
+  text-align: center;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0 auto;
+          flex: 1 0 auto;
+  margin: 0 25px;
+  max-width: calc(33.333% - 50px);
+}
+
+#Crunchishm .cards .card img {
+  margin: 0 auto 20px auto;
+  max-width: 260px;
+}
+
+#Crunchishm .cards .card h3 {
+  margin: 0;
+  line-height: 30px;
+  font-size: 26px;
+}
+
+#Crunchishm .cards .card p {
+  line-height: 20px;
+  font-size: 14px;
+  color: #282828;
 }
 
 #locations {
