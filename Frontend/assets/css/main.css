@@ -2816,6 +2816,110 @@ article .class .message .no {
   color: #282828;
 }
 
+#Crunchishm .container .flex {
+  margin-left: -6px;
+  width: calc(100% + 18px);
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+#Crunchishm .container .flex .flex-item {
+  -webkit-transition: 0.5s all;
+  transition: 0.5s all;
+  overflow: hidden;
+  position: relative;
+  margin: 3px;
+  min-width: 300px;
+  max-width: calc(33.333% - 6px);
+}
+
+#Crunchishm .container .flex .flex-item:hover .design-item {
+  background: rgba(222, 18, 69, 0.9);
+  top: 0px;
+  height: 100%;
+}
+
+#Crunchishm .container .flex .flex-item:hover .design-item .top {
+  position: relative;
+  top: 80px;
+}
+
+#Crunchishm .container .flex .flex-item:hover .design-item .top .icon {
+  background: white;
+  color: #de1245;
+}
+
+#Crunchishm .container .flex .flex-item:hover .design-item .bottom {
+  position: relative;
+  top: 80px;
+}
+
+#Crunchishm .container .flex .flex-item img {
+  width: 100%;
+  display: block;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+#Crunchishm .container .flex .flex-item .design-item-center {
+  bottom: -75px !important;
+}
+
+#Crunchishm .container .flex .flex-item .design-item {
+  -webkit-transition: 0.5s all;
+  transition: 0.5s all;
+  text-align: center;
+  background: #282828;
+  color: white;
+  position: absolute;
+  width: 100%;
+  bottom: -50px;
+}
+
+#Crunchishm .container .flex .flex-item .design-item .top {
+  text-transform: uppercase;
+}
+
+#Crunchishm .container .flex .flex-item .design-item .top .text {
+  height: 34px;
+  margin: 0px 0 14px 0;
+}
+
+#Crunchishm .container .flex .flex-item .design-item .top .text h3 {
+  font-size: 16px;
+  margin: 0;
+}
+
+#Crunchishm .container .flex .flex-item .design-item .top .icon {
+  border-radius: 50%;
+  background: #282828;
+  width: 40px;
+  height: 40px;
+  padding: 9px;
+  position: relative;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  top: -22px;
+}
+
+#Crunchishm .container .flex .flex-item .design-item .top .icon span {
+  -webkit-transition: color 1s;
+  transition: color 1s;
+  font-size: 32px;
+}
+
+#Crunchishm .container .flex .flex-item .design-item .top .icon i {
+  font-size: 32px;
+  -webkit-transition: color 1s;
+  transition: color 1s;
+}
+
+#Crunchishm .container .flex .flex-item .design-item .bottom .text p {
+  font-size: 16px;
+  line-height: 24px;
+}
+
 #locations {
   margin-bottom: 200px;
   padding-top: 50px;

@@ -135,3 +135,96 @@
             }
         }
     }
+    
+    //3
+    #Crunchishm {
+        .container {
+            .flex {
+                margin-left: -6px;
+                width: calc(100% + 18px);
+                flex-wrap: wrap;
+                .flex-item {
+                    transition: 0.5s all;
+                    overflow: hidden;
+                    &:hover {
+                        .design-item {
+                            background: rgba(222, 18, 69, 0.9);
+                            top: 0px;
+                            height: 100%;
+                            .top {
+                                position: relative;
+                                top: 80px;
+                                .icon {
+                                    background: white;
+                                    color: rgba(222, 18, 69, 1);
+                                }
+                            }
+                            .bottom {
+                                position: relative;
+                                top: 80px;
+                            }
+                        }
+                    }
+                    position: relative;
+                    margin: 3px;
+                    min-width: 300px;
+                    max-width: calc(33.333% - 6px);
+                    img {
+                        width: 100%;
+                        display: block;
+                        object-fit: cover;
+                    }
+                    .design-item-center {
+                        bottom: -75px !important;
+                    }
+                    .design-item {
+                        transition: 0.5s all;
+                        text-align: center;
+                        background: #282828;
+                        color: white;
+                        position: absolute;
+                        width: 100%;
+                        bottom: -50px;
+                        .top {
+                            text-transform: uppercase;
+                            .text {
+                                height: 34px;
+                                margin: 0px 0 14px 0;
+                                h3 {
+                                    font-size: 16px;
+                                    margin: 0;
+                                }
+                            }
+                            .icon {
+                                border-radius: 50%;
+                                background: #282828;
+                                width: 40px;
+                                height: 40px;
+                                padding: 9px;
+                                position: relative;
+                                left: 50%;
+                                transform: translateX(-50%);
+                                top: -22px;
+                                span {
+                                    transition: color 1s;
+                                    font-size: 32px;
+                                }
+                                i {
+                                    font-size: 32px;
+                                    transition: color 1s;
+                                }
+                            }
+                        }
+                        .bottom {
+                            .text {
+                                p {
+                                    font-size: 16px;
+                                    line-height: 24px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
