@@ -2974,9 +2974,10 @@ article .class .message .no {
   cursor: pointer;
 }
 
-#JoinAClub .container .custom-buttom {
+#JoinAClub .container .custom-button {
   display: inline-block;
-  max-width: 100%;
+  max-width: 270px;
+  min-width: 170px;
   width: auto;
   margin-left: auto;
   margin-right: auto;
@@ -2992,12 +2993,75 @@ article .class .message .no {
   letter-spacing: 1px;
 }
 
-#JoinAClub .container .custom-buttom #jn {
+#JoinAClub .container .custom-button #jn {
   color: #f99919;
 }
 
-#JoinAClub .container .custom-buttom:hover {
+#JoinAClub .container .custom-button:hover {
   background: rgba(255, 255, 255, 0.85);
+}
+
+.forFooter {
+  margin-bottom: 160px;
+}
+
+.showResponse {
+  display: none;
+}
+
+@media screen and (max-width: 850px) {
+  .hideResponse {
+    display: none;
+  }
+  .showResponse {
+    display: block;
+  }
+  #Crunchishm .owl-stage-outer {
+    background-color: #f99919;
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 960px) {
+  #Crunchishm .container .crunchism-h2 {
+    font-size: 30px;
+  }
+  #Crunchishm .container p {
+    font-size: 14px;
+  }
+  #Crunchishm .flex {
+    margin-right: auto;
+    margin-left: auto;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 850px) {
+  #Crunchishm .cards {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  #Crunchishm .cards .card {
+    min-width: 250px;
+  }
+}
+
+@media screen and (max-width: 606px) {
+  #JoinAClub .custom-button {
+    margin-bottom: 20px;
+  }
+  #JoinAClub i {
+    margin-left: 47px;
+  }
 }
 
 #locations {
