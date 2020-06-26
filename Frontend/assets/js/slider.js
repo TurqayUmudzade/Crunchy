@@ -1,4 +1,5 @@
 let ID;
+var images = ["", "group", "lift", "cardio", "people", "clean"];
 $('.slider-nav li').on("click", function() {
     $(this).children("p").removeClass('hidden');
     $(this).siblings().children("p").addClass('hidden');
@@ -8,6 +9,9 @@ $('.slider-nav li').on("click", function() {
         $('.js-carousel-highlight').css('top', 82 * parseInt(ID - 1) + 15 + 'px');
     } else
         $('.js-carousel-highlight').css('top', 82 * parseInt(ID - 1) + 16 + 'px');
+
+
+    $('#sliderImage').attr('src', "./assets/image/sliderHome/" + images[ID] + ".jpg")
 });
 
 
@@ -26,4 +30,4 @@ $('.owl-carousel').owlCarousel({
             items: 5
         }
     }
-})
+});

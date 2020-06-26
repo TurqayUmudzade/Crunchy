@@ -2920,6 +2920,86 @@ article .class .message .no {
   line-height: 24px;
 }
 
+#JoinAClub {
+  margin-top: 50px;
+  padding: 25px 0 40px 0;
+  color: white !important;
+  background: -webkit-gradient(linear, left top, right top, from(#de1245), to(#ffbc15));
+  background: linear-gradient(to right, #de1245 0%, #ffbc15 100%);
+}
+
+#JoinAClub .container {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1282px;
+  padding: 0 30px;
+}
+
+#JoinAClub .container p {
+  margin-bottom: 18px;
+  line-height: 18px;
+  font-size: 13px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+#JoinAClub .container h1 {
+  line-height: 1;
+  margin-bottom: 25px;
+  font-size: 33px;
+}
+
+#JoinAClub .container h1 span {
+  margin-right: 15px;
+  font-weight: 400;
+}
+
+#JoinAClub .container h1 .edit {
+  margin-left: 6px;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  opacity: 1;
+  font-size: 16px;
+  color: white;
+  text-transform: uppercase;
+  font-weight: 400;
+}
+
+#JoinAClub .container h1 .edit:hover {
+  opacity: 0.5;
+}
+
+#JoinAClub .container .location:hover {
+  cursor: pointer;
+}
+
+#JoinAClub .container .custom-buttom {
+  display: inline-block;
+  max-width: 100%;
+  width: auto;
+  margin-left: auto;
+  margin-right: auto;
+  color: #de1245;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  background: white;
+  border: 0;
+  padding: 18px 50px;
+  font-size: 15px;
+  text-transform: uppercase;
+  line-height: 18px;
+  letter-spacing: 1px;
+}
+
+#JoinAClub .container .custom-buttom #jn {
+  color: #f99919;
+}
+
+#JoinAClub .container .custom-buttom:hover {
+  background: rgba(255, 255, 255, 0.85);
+}
+
 #locations {
   margin-bottom: 200px;
   padding-top: 50px;
