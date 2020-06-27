@@ -2,7 +2,6 @@
     p {
         font-size: 14px;
     }
-
     h3 {
         color: #00aeef;
         padding: 12px 0;
@@ -12,22 +11,18 @@
         text-align: left;
         margin-bottom: 40px;
     }
-
     .payments {
         margin-bottom: 12px;
-
         .flex {
             padding: 7px 28px;
             justify-content: space-between;
             font-size: 14px;
         }
-
         .blue {
             color: white;
             background-color: #00aeef;
             border: 10px solid rgba(255, 255, 255, 0);
             font-weight: bold;
-
             p {
                 margin-bottom: 0px;
             }
@@ -38,15 +33,12 @@
 #payment-option {
     width: 80%;
     margin: 0 auto;
-
     .radios {
         display: flex;
         justify-content: space-evenly;
-
         .block {
             width: 50%;
             position: relative;
-
             input {
                 opacity: 0;
                 position: absolute;
@@ -54,7 +46,6 @@
                 left: 0;
                 width: 117px;
             }
-
             label {
                 font-size: 14px;
                 padding-left: 30px;
@@ -69,7 +60,6 @@
 @media screen and (max-width: 800px) {
     #mobile-radios {
         flex-direction: column;
-
         .block {
             margin: 10px 0;
         }

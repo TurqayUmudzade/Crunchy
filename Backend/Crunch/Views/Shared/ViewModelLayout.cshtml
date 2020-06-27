@@ -24,14 +24,11 @@
 
     <nav>
         <div class="flex">
-            <a href="" id="logo">
-                <img class="menu-bar__logo" alt="Crunch Logo" src="https://d2l0v8ee8pblzo.cloudfront.net/assets/core/logo-f0321dadbee0b6b8ec6d98159305c76e56590ff97a88d28d4eb2400b3baafe49.svg">
-            </a>
-            <a class="nav-anchor" href="" id="1">LOCATIONS</a>
-            <a class="nav-anchor" href="" id="2">CLASSES</a>
-            <a class="nav-anchor" href="" id="3">HIITZONE</a>
-            <a class="nav-anchor" href="" id="4">TRANING</a>
-            <a class="nav-anchor" href="" id="5">ABOUT</a>
+            <a class="nav-anchor" href="@Url.ActionLink("Index","Home")" id="1">Home</a>
+            <a class="nav-anchor" href="@Url.ActionLink("Index","Locations")" id="2">LOCATIONS</a>
+            <a class="nav-anchor" href="" id="3">CLASSES</a>
+            <a class="nav-anchor" href="@Url.ActionLink("Index","Training")" id="4">TRANING</a>
+            <a class="nav-anchor" href="@Url.ActionLink("Index","About")" id="5">ABOUT</a>
             <i class="fas fa-bars"></i>
             <div class="lang_picker flex">
                 <img class="flag" src="https://dj7w0h47bhjwk.cloudfront.net/assets/core/flags/en-07772f1861e8e765c83be31bb1af70a23ecf038fc73041705d6f67f26ae4521a.png" alt="En">

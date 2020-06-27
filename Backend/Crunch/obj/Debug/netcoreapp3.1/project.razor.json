@@ -20551,6 +20551,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\Turqay\\Desktop\\Crunch\\Backend\\Crunch\\Views\\Training\\Index.cshtml",
+      "TargetPath": "Views\\Training\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\Turqay\\Desktop\\Crunch\\Backend\\Crunch\\Areas\\Admin\\Views\\Classes\\Create.cshtml",
       "TargetPath": "Areas\\Admin\\Views\\Classes\\Create.cshtml",
       "FileKind": "mvc"

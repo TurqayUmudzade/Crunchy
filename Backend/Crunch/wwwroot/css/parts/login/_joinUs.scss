@@ -12,7 +12,6 @@
     display: flex;
     justify-content: center;
     background: white;
-
     a {
         padding: 20px 30px;
         font-size: 25px;
@@ -23,11 +22,9 @@
         color: #7b7b7b;
         text-decoration: none;
     }
-
     .active {
         background-color: #f06880;
         color: white;
-
         &:hover {
             background-color: #e94960;
         }

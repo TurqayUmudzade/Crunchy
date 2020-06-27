@@ -1,93 +1,81 @@
-.trainer-body {
-    p {
-        line-height: 1.5;
-        margin-bottom: 10px;
-        color: #666;
-    }
-
-    .trainers {
-        display: flex;
-        flex-wrap: wrap;
-
-        .trainer {
-            position: relative;
-            min-width: 250px;
-            width: 32%;
-            margin: 0 auto 34px;
-            overflow: hidden;
-            background-color: #fff;
-            border-radius: 6px;
-            background-clip: padding-box;
-            border: 1px solid #d6d6d6;
-            text-align: center;
-
-            .top {
-                position: relative;
-                width: 100%;
-                min-height: 78px;
-                background: url(./../image/trainers.jpg);
-
-                .circle {
-                    border-radius: 50%;
-                    overflow: hidden;
-                    position: absolute;
-                    background-clip: padding-box;
-                    top: 100%;
-                    left: 50%;
-                    transform: translate(-50%, -50%);
-                    height: 110px;
-                    width: 110px;
-                    border: .3rem solid #fff
-                }
-
-                img {
-                    width: 100%;
-                }
-            }
-
-            .bottom {
-                margin-top: 65px;
-
-                .about {
-                    width: 80%;
-                    margin: 0 auto;
-                    margin-bottom: 100px;
-
-                    .name {
-                        color: #364e72;
-                    }
-
-                    p {
-                        line-height: 1.5;
-                        margin-bottom: 10px;
-                        font-size: 14px;
-                        color: #666
-                    }
-                }
-
-                .foot {
-                    position: absolute;
-                    margin-left: auto;
-                    margin-right: auto;
-                    left: 0;
-                    right: 0;
-                    bottom: 0;
-                    padding: 20px 0;
-
-                    .trainer-info-a {
-                        border-top: 1px solid #d6d6d6;
-                        padding: 16px 35px;
-                        text-decoration: none;
-                        color: #009fdf;
-                        font-size: 22px;
-
-                        i {
-                            padding-left: 10px;
-                            font-size: 18px;
-                        }
-                    }
-                }
-            }
-        }
-    }
-}
+ .trainer-body {
+     p {
+         line-height: 1.5;
+         margin-bottom: 10px;
+         color: #666;
+     }
+     .trainers {
+         display: flex;
+         flex-wrap: wrap;
+         .trainer {
+             position: relative;
+             min-width: 250px;
+             width: 32%;
+             margin: 0 auto 34px;
+             overflow: hidden;
+             background-color: #fff;
+             border-radius: 6px;
+             background-clip: padding-box;
+             border: 1px solid #d6d6d6;
+             text-align: center;
+             .top {
+                 position: relative;
+                 width: 100%;
+                 min-height: 78px;
+                 background: url(./../image/trainers.jpg);
+                 .circle {
+                     border-radius: 50%;
+                     overflow: hidden;
+                     position: absolute;
+                     background-clip: padding-box;
+                     top: 100%;
+                     left: 50%;
+                     transform: translate(-50%, -50%);
+                     height: 110px;
+                     width: 110px;
+                     border: .3rem solid #fff
+                 }
+                 img {
+                     width: 100%;
+                 }
+             }
+             .bottom {
+                 margin-top: 65px;
+                 .about {
+                     width: 80%;
+                     margin: 0 auto;
+                     margin-bottom: 100px;
+                     .name {
+                         color: #364e72;
+                     }
+                     p {
+                         line-height: 1.5;
+                         margin-bottom: 10px;
+                         font-size: 14px;
+                         color: #666
+                     }
+                 }
+                 .foot {
+                     position: absolute;
+                     margin-left: auto;
+                     margin-right: auto;
+                     left: 0;
+                     right: 0;
+                     bottom: 0;
+                     padding: 20px 0;
+                     .trainer-info-a {
+                         border-top: 1px solid #d6d6d6;
+                         padding: 16px 35px;
+                         text-decoration: none;
+                         color: #009fdf;
+                         font-size: 22px;
+                         i {
+                             padding-left: 10px;
+                             font-size: 18px;
+                         }
+                     }
+                 }
+             }
+         }
+     }
+ }
