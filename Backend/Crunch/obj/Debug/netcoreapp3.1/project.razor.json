@@ -20731,6 +20731,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\Turqay\\Desktop\\Crunch\\Backend\\Crunch\\Areas\\Admin\\Views\\Trainer\\FileDownload.cshtml",
+      "TargetPath": "Areas\\Admin\\Views\\Trainer\\FileDownload.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\Turqay\\Desktop\\Crunch\\Backend\\Crunch\\Views\\MyGym\\MyGymUsage.cshtml",
       "TargetPath": "Views\\MyGym\\MyGymUsage.cshtml",
       "FileKind": "mvc"

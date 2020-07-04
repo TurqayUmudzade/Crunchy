@@ -1,5 +1,7 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Http;
+using System;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Crunch.Models
 {
@@ -30,9 +32,8 @@ namespace Crunch.Models
         [Required]
         public Gym gym { get; set; }
 
-        /*[NotMapped]
-        public HttpPostedFileBase Upload { get; set; }*/
-
+        [NotMapped]
+        public IFormFile Upload { get; set; }
 
     }
 }

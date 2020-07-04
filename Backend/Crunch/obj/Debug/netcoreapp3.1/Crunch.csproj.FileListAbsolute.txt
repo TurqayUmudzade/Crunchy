@@ -561,3 +561,4 @@ C:\Users\Turqay\Desktop\Crunch\Backend\Crunch\obj\Debug\netcoreapp3.1\Razor\Area
 C:\Users\Turqay\Desktop\Crunch\Backend\Crunch\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Trainer\EditTrainer.cshtml.g.cs
 C:\Users\Turqay\Desktop\Crunch\Backend\Crunch\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Trainer\Trainers.cshtml.g.cs
 C:\Users\Turqay\Desktop\Crunch\Backend\Crunch\obj\Debug\netcoreapp3.1\Razor\Views\Training\Index.cshtml.g.cs
+C:\Users\Turqay\Desktop\Crunch\Backend\Crunch\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Trainer\FileDownload.cshtml.g.cs

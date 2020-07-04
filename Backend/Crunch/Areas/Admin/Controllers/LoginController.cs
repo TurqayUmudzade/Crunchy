@@ -8,7 +8,6 @@ using Crunch.Areas.Admin.Models;
 namespace Crunch.Areas.Admin.Controllers
 {
     [Area("Admin")]
-    [TypeFilter(typeof(CheckAdminAuth))]
     public class LoginController : Controller
     {
         private readonly Context _context;
@@ -25,7 +24,6 @@ namespace Crunch.Areas.Admin.Controllers
 
             return View();
         }
-
         [HttpPost]
         public IActionResult Login(AdminM model)
         {
