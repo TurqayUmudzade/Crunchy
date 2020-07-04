@@ -10,7 +10,7 @@
         <h1>EditGym</h1>
 
         <hr />
-        <form method="post" asp-action="EditGym">
+        <form method="post" asp-action="EditGym" enctype="multipart/form-data">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="gymID" />
             <div class="form-row">
@@ -55,4 +55,5 @@
 </div>
 
 
+<script src="~/js/fileInput.js"></script>
 

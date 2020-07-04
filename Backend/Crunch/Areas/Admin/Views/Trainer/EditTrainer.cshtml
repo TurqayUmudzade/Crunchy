@@ -6,7 +6,9 @@
 
 <div class="container mt-2 ">
     <h1 class="h2 pb-3 border-bottom ">Edit Trainer</h1>
-    <form method="post" asp-action="EditTrainer" asp-controller="Home" asp-area="Admin">
+
+
+    <form method="post" asp-action="EditTrainer" asp-controller="Trainer" asp-area="Admin" enctype="multipart/form-data">
         <input type="hidden" asp-for="trainer.ID" />
         <div class="form-row">
             <div class="form-group col-md-6 ">
@@ -39,9 +41,9 @@
             </div>
             <div class="form-group col-md-3 ">
                 <p>Picture</p>
-                <input type="file" class="custom-file-input" id="customFile" asp-for="trainer.image">
-                <label class="custom-file-label" asp-for="trainer.image">Choose file</label>
-                <span asp-validation-for="trainer.image"></span>
+                <input type="file" class="custom-file-input" id="customFile" asp-for="trainer.Upload">
+                <label class="custom-file-label" asp-for="trainer.Upload">Choose file</label>
+                <span asp-validation-for="trainer.Upload"></span>
             </div>
             <div class="form-group col-md-6 ">
                 <label asp-for="trainer.email">Email</label>
@@ -71,3 +73,4 @@
     </form>
 </div>
 
+<script src="~/js/fileInput.js"></script>

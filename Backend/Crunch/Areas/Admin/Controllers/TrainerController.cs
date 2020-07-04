@@ -73,7 +73,7 @@ namespace Crunch.Areas.Admin.Controllers
 
             if (ModelState.IsValid)
             {
-                
+
                 Trainer trainer = new Trainer
                 {
                     title = model.trainer.title,
@@ -86,13 +86,13 @@ namespace Crunch.Areas.Admin.Controllers
                     image = model.trainer.Upload.FileName
                 };
 
-                var saving = Path.Combine(_webHost.WebRootPath, "image/Trainers", model.trainer.Upload.FileName) ;
+                var saving = Path.Combine(_webHost.WebRootPath, "image/Trainers", model.trainer.Upload.FileName);
                 string imgext = Path.GetExtension(model.trainer.Upload.FileName);
                 if (imgext == ".jpg" || imgext == ".png")
                 {
                     using (var uploading = new FileStream(saving, FileMode.Create))
                     {
-                       
+
                         await model.trainer.Upload.CopyToAsync(uploading);
                     }
 
