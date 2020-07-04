@@ -41,7 +41,7 @@
             </div>
             <div class="form-group col-md-3 ">
                 <p>Picture</p>
-                <input type="file" class="custom-file-input" id="customFile" asp-for="trainer.Upload">
+                <input type="file" class="custom-file-input" id="customFile" asp-for="trainer.Upload"  accept="image/x-png,image/jpeg">
                 <label class="custom-file-label" asp-for="trainer.Upload">Choose file</label>
                 <span asp-validation-for="trainer.Upload"></span>
             </div>

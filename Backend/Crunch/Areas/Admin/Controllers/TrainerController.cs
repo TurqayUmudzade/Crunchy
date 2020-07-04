@@ -18,7 +18,9 @@ namespace Crunch.Areas.Admin.Controllers
     [TypeFilter(typeof(CheckAdminAuth))]
     public class TrainerController : Controller
     {
+        //Database
         private readonly Context _context;
+        //Access to wwwroot path
         private readonly IWebHostEnvironment _webHost;
 
         public TrainerController(Context context, IWebHostEnvironment webHost)
@@ -27,27 +29,7 @@ namespace Crunch.Areas.Admin.Controllers
             _webHost = webHost;
         }
 
-        [HttpGet]
-        public IActionResult FileDownload()
-        {
-            return View();
-        }
-
-        [HttpPost]
-        public async Task<IActionResult> FileDownload([FromForm(Name = "file")] IFormFile file)
-        {
-            var saving = Path.Combine(_webHost.WebRootPath, "image/Trainers", file.FileName);
-            string imgext = Path.GetExtension(file.FileName);
-            if (imgext == ".jpg" || imgext == ".png")
-            {
-                using (var uploading = new FileStream(saving, FileMode.Create))
-                {
-                    await file.CopyToAsync(uploading);
-                }
-
-            }
-            return View();
-        }
+        //Add and View  
         public IActionResult Index()
         {
             return RedirectToAction("Trainers");

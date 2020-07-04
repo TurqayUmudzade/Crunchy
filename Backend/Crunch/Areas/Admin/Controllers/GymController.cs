@@ -5,6 +5,9 @@ using Crunch.Models;
 using Microsoft.AspNetCore.Mvc;
 using Crunch.Areas.Admin.ViewModels;
 using Crunch.Areas.Admin.Authentication;
+using System.IO;
+using Microsoft.AspNetCore.Hosting;
+using System.Threading.Tasks;
 
 namespace Crunch.Areas.Admin.Controllers
 {
@@ -13,10 +16,13 @@ namespace Crunch.Areas.Admin.Controllers
     public class GymController : Controller
     {
         public readonly Context _context;
+        //Access to wwwroot path
+        private readonly IWebHostEnvironment _webHost;
 
-        public GymController(Context context)
+        public GymController(Context context, IWebHostEnvironment webHost)
         {
             _context = context;
+            _webHost = webHost;
         }
 
         public IActionResult Index()
@@ -30,7 +36,7 @@ namespace Crunch.Areas.Admin.Controllers
         }
 
         [HttpPost]
-        public IActionResult AddGym(AdminGymViewModel model)
+        public async Task<IActionResult> AddGym(AdminGymViewModel model)
         {
             if (ModelState.IsValid)
             {
@@ -40,9 +46,22 @@ namespace Crunch.Areas.Admin.Controllers
                     gymAdress = model.gym.gymAdress,
                     gymNumber = model.gym.gymNumber,
                     price = model.gym.price,
-                    image = model.gym.image
-
                 };
+
+                if (model.gym.Upload != null)
+                {
+                    gym.image = model.gym.Upload.FileName;
+                    var saving = Path.Combine(_webHost.WebRootPath, "image/Location", model.gym.Upload.FileName);
+                    string imgext = Path.GetExtension(model.gym.Upload.FileName);
+                    if (imgext == ".jpg" || imgext == ".png")
+                    {
+                        using (var uploading = new FileStream(saving, FileMode.Create))
+                        {
+                            await model.gym.Upload.CopyToAsync(uploading);
+                        }
+
+                    }
+                }
 
                 _context.gyms.Add(gym);
                 _context.SaveChanges();
@@ -52,7 +71,6 @@ namespace Crunch.Areas.Admin.Controllers
             }
             else
             {
-
                 var message = string.Join(" | ", ModelState.Values.SelectMany(v => v.Errors).Select(e => e.ErrorMessage));
                 TempData["Alert"] = message;
                 return RedirectToAction("Gyms", "Gym", new { area = "Admin" });
@@ -66,7 +84,7 @@ namespace Crunch.Areas.Admin.Controllers
         }
 
         [HttpPost]
-        public IActionResult EditGym(Gym formGym)
+        public async Task<IActionResult> EditGym(Gym formGym)
         {
             if (ModelState.IsValid)
             {
@@ -76,9 +94,21 @@ namespace Crunch.Areas.Admin.Controllers
                 gym.gymLocation = formGym.gymLocation;
                 gym.gymNumber = formGym.gymNumber;
                 gym.price = formGym.price;
-                if (!String.IsNullOrEmpty(formGym.image))
-                    gym.image = formGym.image;
+                if (formGym.Upload != null)
+                {
+                    gym.image = formGym.Upload.FileName;
 
+                    var saving = Path.Combine(_webHost.WebRootPath, "image/Location", formGym.Upload.FileName);
+                    string imgext = Path.GetExtension(formGym.Upload.FileName);
+                    if (imgext == ".jpg" || imgext == ".png")
+                    {
+                        using (var uploading = new FileStream(saving, FileMode.Create))
+                        {
+                            await formGym.Upload.CopyToAsync(uploading);
+                        }
+
+                    }
+                }
                 _context.SaveChanges();
 
                 TempData["Alert"] = "Gym Updated!";
