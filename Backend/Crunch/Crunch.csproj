@@ -5,6 +5,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="wwwroot\lib\%2540microsoft\**" />
+    <Content Remove="wwwroot\lib\%2540microsoft\**" />
+    <EmbeddedResource Remove="wwwroot\lib\%2540microsoft\**" />
+    <None Remove="wwwroot\lib\%2540microsoft\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Content Include="Injection\Auth.cs" />
   </ItemGroup>
 
@@ -26,7 +33,13 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Areas\Support\Data\" />
+    <Folder Include="Areas\Support\Models\" />
     <Folder Include="wwwroot\image\Trainers\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\lib\signalR\chat.js" />
   </ItemGroup>
 
 

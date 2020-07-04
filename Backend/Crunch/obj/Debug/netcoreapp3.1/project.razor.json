@@ -20586,6 +20586,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\Turqay\\Desktop\\Crunch\\Backend\\Crunch\\Areas\\Support\\Views\\Shared\\_Layout.cshtml",
+      "TargetPath": "Areas\\Support\\Views\\Shared\\_Layout.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\Turqay\\Desktop\\Crunch\\Backend\\Crunch\\Views\\Classes\\Index.cshtml",
       "TargetPath": "Views\\Classes\\Index.cshtml",
       "FileKind": "mvc"
@@ -20623,6 +20628,16 @@
     {
       "FilePath": "c:\\Users\\Turqay\\Desktop\\Crunch\\Backend\\Crunch\\Areas\\Admin\\Views\\Gym\\Gyms.cshtml",
       "TargetPath": "Areas\\Admin\\Views\\Gym\\Gyms.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Turqay\\Desktop\\Crunch\\Backend\\Crunch\\Areas\\Support\\Views\\Home\\Index2.cshtml",
+      "TargetPath": "Areas\\Support\\Views\\Home\\Index2.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Turqay\\Desktop\\Crunch\\Backend\\Crunch\\Areas\\Support\\Views\\_ViewStart.cshtml",
+      "TargetPath": "Areas\\Support\\Views\\_ViewStart.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -20728,6 +20743,11 @@
     {
       "FilePath": "c:\\Users\\Turqay\\Desktop\\Crunch\\Backend\\Crunch\\Areas\\Admin\\Views\\_ViewImports.cshtml",
       "TargetPath": "Areas\\Admin\\Views\\_ViewImports.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Turqay\\Desktop\\Crunch\\Backend\\Crunch\\Areas\\Support\\Views\\Home\\Index.cshtml",
+      "TargetPath": "Areas\\Support\\Views\\Home\\Index.cshtml",
       "FileKind": "mvc"
     },
     {

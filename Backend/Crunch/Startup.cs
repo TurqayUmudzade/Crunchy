@@ -10,6 +10,9 @@ using Microsoft.Extensions.DependencyInjection.Extensions;
 using Microsoft.AspNetCore.Http;
 using Crunch.Injection;
 using Crunch.Areas.Admin.Authentication;
+using Crunch.Hubs;
+
+
 
 namespace Crunch
 {
@@ -33,6 +36,7 @@ namespace Crunch
                 options.IdleTimeout = TimeSpan.FromSeconds(3600);
             });
 
+            services.AddSignalR();
             services.AddControllersWithViews();
 
             services.AddDbContext<Context>(options =>
@@ -63,10 +67,11 @@ namespace Crunch
             app.UseHttpsRedirection();
             app.UseStaticFiles();
 
-
+            
             app.UseRouting();
             app.UseSession();
 
+            
 
             app.UseAuthorization();
 
@@ -77,9 +82,16 @@ namespace Crunch
                     areaName: "Admin",
                     pattern: "Admin/{controller=Home}/{action=Index}/{id?}");
 
+                endpoints.MapAreaControllerRoute(
+                    name: "Support",
+                    areaName: "Support",
+                    pattern: "Support/{controller=Home}/{action=Index}/{id?}");
+
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
+
+                endpoints.MapHub<ChatHub>("/chathub");
             });
 
         }
