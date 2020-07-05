@@ -20631,6 +20631,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\Turqay\\Desktop\\Crunch\\Backend\\Crunch\\Views\\Faq\\Index.cshtml",
+      "TargetPath": "Views\\Faq\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\Turqay\\Desktop\\Crunch\\Backend\\Crunch\\Areas\\Support\\Views\\Home\\Index2.cshtml",
       "TargetPath": "Areas\\Support\\Views\\Home\\Index2.cshtml",
       "FileKind": "mvc"

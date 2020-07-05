@@ -23,11 +23,12 @@
             <a href="" id="logo">
                 <img class="menu-bar__logo" alt="Crunch Logo" src="https://d2l0v8ee8pblzo.cloudfront.net/assets/core/logo-f0321dadbee0b6b8ec6d98159305c76e56590ff97a88d28d4eb2400b3baafe49.svg">
             </a>
-            <a href="" id="1">LOCATIONS</a>
-            <a href="" id="2">CLASSES</a>
-            <a href="" id="3">HIITZONE</a>
-            <a href="" id="4">TRANING</a>
-            <a href="" id="5">ABOUT</a>
+            <a class="nav-anchor" href="" id="1">LOCATIONS</a>
+            <a class="nav-anchor" href="" id="2">CLASSES</a>
+            <a class="nav-anchor" href="" id="3">HIITZONE</a>
+            <a class="nav-anchor" href="" id="4">TRANING</a>
+            <a class="nav-anchor" href="" id="5">ABOUT</a>
+            <i class="fas fa-bars"></i>
             <div class="lang_picker flex">
                 <img class="flag" src="https://dj7w0h47bhjwk.cloudfront.net/assets/core/flags/en-07772f1861e8e765c83be31bb1af70a23ecf038fc73041705d6f67f26ae4521a.png" alt="En">
                 <h2>EN</h2>
@@ -81,16 +82,38 @@
                     </li>
                 </ul>
             </div>
-            <a id="free-trial" href="">FREE TRIAL</a>
+            <a id="free-trial" class="nav-anchor" href="">FREE TRIAL</a>
             <a id="join" href="">JOIN</a>
         </div>
     </nav>
 
-    <section id="first">
-        <div class="wrapper">
-            <!-- <img class="promo--hero__loader" alt="Crunch logo loader" src="https://dj7w0h47bhjwk.cloudfront.net/assets/logo--loader-7da27c2fc5ddebd0adcc65c1b553e2664ed64c73976e7c2f492cf55905df844c.gif"> -->
+    <section id="faq">
+        <div class="container">
+            <div class="faq-nav">
+                <ul>
+                    <li><a href="#membership">MEMBERSHIP</a></li>
+                    <li><a href="#memberaccount">MEMBER ACCOUNT</a></li>
+                    <li><a href="#personaltraining">PERSONAL TRAINING</a></li>
+                    <li><a href="#groupfitness">GROUP FITNESS</a></li>
+                    <li><a href="#aroundthegym">AROUND THE GYM</a></li>
+                </ul>
+                <div class="dots-bottom"></div>
+            </div>
+            <div id="membership" class="sub-faq">
+                <header>
+                    <h2>Membership</h2>
+                    <div class="dots-bottom"></div>
+                </header>
+                <div class="faq-question">
+                    <h3>How can I request a free trial to Crunch?</h3>
+                    <p>Click here to sign up for a complimentary guest pass on us!</p>
+                    <div class="dots-bottom"></div>
+                </div>
+            </div>
+
         </div>
     </section>
+
 
     <footer>
         <div class="footer-wrapper flex">
@@ -106,13 +129,16 @@
             </div>
             <div class="right">
                 <p>FREE TRIAL</p>
-                <p id="grey">OWN A CRUNCH • CONTACT • FAQ • CORPORATE MEMBERSHIPS • CAREERS • TERMS OF USE • PRIVACY • POLICY</p>
+                <p id="grey">OWN A CRUNCH • CONTACT • FAQ • CORPORATE MEMBERSHIPS • CAREERS • TERMS OF USE • PRIVACY • POLICY
+                </p>
             </div>
 
         </div>
     </footer>
 
     <script src="assets/js/navbar.js"></script>
+    <script src="assets/js/login.js"></script>
+    <script src="assets/js/faq.js"></script>
 </body>
 
 

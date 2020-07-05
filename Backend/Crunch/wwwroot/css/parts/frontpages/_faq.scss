@@ -1,0 +1,93 @@
+#faq {
+    margin: 120px 0 250px;
+    .container {
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 1140px;
+        padding: 0 50px;
+        .faq-nav {
+            ul {
+                display: flex;
+                justify-content: space-between;
+                flex-wrap: wrap;
+                margin: 0;
+                padding: 0;
+                text-align: center;
+                li {
+                    a {
+                        cursor: pointer;
+                        color: #e44473;
+                        transition: all 0.3s;
+                        line-height: 14px;
+                        font-size: 16px;
+                        letter-spacing: 2px;
+                        &:hover {
+                            color: black;
+                        }
+                    }
+                }
+            }
+            .dots-bottom {
+                position: relative;
+                padding: 30px 0 0 0;
+                &::after {
+                    background-size: auto 100%;
+                    background: url("https://dj7w0h47bhjwk.cloudfront.net/assets/border--dot-gray-f09e6132cdbca0b2b1cca50ba2eb87e4d3fc7ea900f66a90ae48a3c741d04a7a.png") repeat-x;
+                    content: '';
+                    height: 2px;
+                    left: 0;
+                    position: absolute;
+                    width: 100%;
+                    z-index: 1;
+                }
+            }
+        }
+        .dots-bottom {
+            position: relative;
+            padding: 30px 0 0 0;
+            &::after {
+                background-size: auto 100%;
+                background: url("https://dj7w0h47bhjwk.cloudfront.net/assets/border--dot-gray-f09e6132cdbca0b2b1cca50ba2eb87e4d3fc7ea900f66a90ae48a3c741d04a7a.png") repeat-x;
+                content: '';
+                height: 2px;
+                left: 0;
+                position: absolute;
+                width: 100%;
+                z-index: 1;
+            }
+        }
+        .sub-faq {
+            margin-top: 120px;
+            header {
+                h2 {
+                    color: #0e0447;
+                    font-size: 40px;
+                    line-height: 35px;
+                }
+            }
+            .faq-question {
+                h3 {
+                    margin-bottom: 5px;
+                    color: #0e0447;
+                    line-height: 30px;
+                    font-size: 26px;
+                }
+                p {
+                    color: #686868;
+                    margin-bottom: 15px;
+                    line-height: 26px;
+                    font-size: 17px;
+                }
+                .click-here {
+                    color: #e44473;
+                    transition: all 0.3s;
+                    text-decoration: underline;
+                    cursor: pointer;
+                    &:hover {
+                        color: black;
+                    }
+                }
+            }
+        }
+    }
+}

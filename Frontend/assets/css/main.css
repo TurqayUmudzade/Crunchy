@@ -3574,4 +3574,111 @@ article .class .message .no {
     bottom: 10px !important;
   }
 }
+
+#faq {
+  margin: 120px 0 250px;
+}
+
+#faq .container {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1140px;
+  padding: 0 50px;
+}
+
+#faq .container .faq-nav ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+#faq .container .faq-nav ul li a {
+  cursor: pointer;
+  color: #e44473;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  line-height: 14px;
+  font-size: 16px;
+  letter-spacing: 2px;
+}
+
+#faq .container .faq-nav ul li a:hover {
+  color: black;
+}
+
+#faq .container .faq-nav .dots-bottom {
+  position: relative;
+  padding: 30px 0 0 0;
+}
+
+#faq .container .faq-nav .dots-bottom::after {
+  background-size: auto 100%;
+  background: url("https://dj7w0h47bhjwk.cloudfront.net/assets/border--dot-gray-f09e6132cdbca0b2b1cca50ba2eb87e4d3fc7ea900f66a90ae48a3c741d04a7a.png") repeat-x;
+  content: '';
+  height: 2px;
+  left: 0;
+  position: absolute;
+  width: 100%;
+  z-index: 1;
+}
+
+#faq .container .dots-bottom {
+  position: relative;
+  padding: 30px 0 0 0;
+}
+
+#faq .container .dots-bottom::after {
+  background-size: auto 100%;
+  background: url("https://dj7w0h47bhjwk.cloudfront.net/assets/border--dot-gray-f09e6132cdbca0b2b1cca50ba2eb87e4d3fc7ea900f66a90ae48a3c741d04a7a.png") repeat-x;
+  content: '';
+  height: 2px;
+  left: 0;
+  position: absolute;
+  width: 100%;
+  z-index: 1;
+}
+
+#faq .container .sub-faq {
+  margin-top: 120px;
+}
+
+#faq .container .sub-faq header h2 {
+  color: #0e0447;
+  font-size: 40px;
+  line-height: 35px;
+}
+
+#faq .container .sub-faq .faq-question h3 {
+  margin-bottom: 5px;
+  color: #0e0447;
+  line-height: 30px;
+  font-size: 26px;
+}
+
+#faq .container .sub-faq .faq-question p {
+  color: #686868;
+  margin-bottom: 15px;
+  line-height: 26px;
+  font-size: 17px;
+}
+
+#faq .container .sub-faq .faq-question .click-here {
+  color: #e44473;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+#faq .container .sub-faq .faq-question .click-here:hover {
+  color: black;
+}
 /*# sourceMappingURL=main.css.map */

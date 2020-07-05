@@ -3,6 +3,8 @@ using System.Linq;
 using Microsoft.AspNetCore.Mvc;
 using Crunch.Data;
 using Crunch.Models;
+using Crunch.Injection;
+using Crunch.ViewModels;
 
 namespace Crunch.Controllers
 {
@@ -10,13 +12,22 @@ namespace Crunch.Controllers
     {
 
         private readonly Context _context;
+        private readonly IAuth _auth;
 
-        public LocationsController(Context context)
+
+        public LocationsController(Context context, IAuth auth)
         {
+            _auth = auth;
             _context = context;
         }
         public IActionResult Index()
         {
+            /*if (_auth.User != null)
+            {
+
+                ViewData["Layout"] = "~/Views/Shared/UserLayout.cshtml";
+                return View(_auth.User);
+            }*/
 
             return View(_context.gyms.ToList());
         }

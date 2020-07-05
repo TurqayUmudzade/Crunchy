@@ -2,20 +2,30 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Crunch.Models;
+using Crunch.Injection;
 
 namespace Crunch.Controllers
 {
     public class HomeController : Controller
     {
+
+        private readonly IAuth _auth;
         private readonly ILogger<HomeController> _logger;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger, IAuth auth)
         {
             _logger = logger;
+            _auth = auth;
         }
 
         public IActionResult Index()
         {
+
+            if (_auth.User != null)
+            {
+                ViewData["Layout"] = "~/Views/Shared/UserLayout.cshtml";
+                return View(_auth.User);
+            }
             return View();
         }
 
