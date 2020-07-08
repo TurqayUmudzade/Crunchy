@@ -1,8 +1,8 @@
 ﻿
 @{
     ViewData["Title"] = "FAQ";
-    if(ViewData["Layout"]!=null)
-    Layout = ViewData["Layout"].ToString();
+    if (ViewData["Layout"] != null)
+        Layout = ViewData["Layout"].ToString();
 }
 
 <section id="faq">
@@ -119,4 +119,28 @@
 </section>
 
 
+<section id="support">
+
+    <div class="chat-support">
+        <i class="fas fa-comments"></i>
+    </div>
+
+    <div class="chat hidden">
+
+        <div class="top">
+            <i class="fas fa-times-circle exit-icon"></i>
+            <h2> Customer Support </h2>
+        </div>
+        <div class="body">
+        </div>
+        <div class="bottom">
+            <textarea type="text" id="chat-input" placeholder="Enter message"></textarea>
+            <i class="fas fa-arrow-up js-send"></i>
+        </div>
+    </div>
+</section>
+
+<script src="~/js/scrollWheel.js"></script>
+<script src="~/lib/signalR/signalr.js"></script>
+<script src="~/lib/signalR/chat.js"></script>
 

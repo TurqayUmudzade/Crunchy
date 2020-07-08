@@ -1,32 +1,23 @@
 ﻿
+@{
+    ViewData["Title"] = "Support";
+}
 
+<style>
+    .card {
+        margin-top: 20px;
+        width: 18rem;
+    }
+</style>
 
-<div class="container">
-    <div class="row">&nbsp;</div>
-    <div class="row">
-        <div class="col-2">User</div>
-        <div class="col-4"><input type="text" id="userInput" /></div>
-    </div>
-    <div class="row">
-        <div class="col-2">Message</div>
-        <div class="col-4"><input type="text" id="messageInput" /></div>
-    </div>
-    <div class="row">&nbsp;</div>
-    <div class="row">
-        <div class="col-6">
-            <input type="button" id="sendButton" value="Send Message" />
+<div class="container d-flex justify-content-between mt-3 flex-wrap">
+
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-title">Support Type</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <a href="#" class="btn btn-primary">Join Conversation</a>
         </div>
     </div>
 </div>
-<div class="row">
-    <div class="col-12">
-        <hr />
-    </div>
-</div>
-<div class="row">
-    <div class="col-6">
-        <ul id="messagesList"></ul>
-    </div>
-</div>
-<script src="~/lib/signalR/signalr.js"></script>
-<script src="~/lib/signalR/chat.js"></script>
+

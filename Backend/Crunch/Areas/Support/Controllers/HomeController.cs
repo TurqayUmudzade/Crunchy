@@ -14,7 +14,7 @@ namespace Crunch.Areas.support.Controllers
             return View();
         }
         [Area("Support")]
-        public IActionResult Index2()
+        public IActionResult Chat()
         {
             return View();
         }

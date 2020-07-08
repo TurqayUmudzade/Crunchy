@@ -202,3 +202,28 @@
         }
     }
 }
+
+//for support panel
+#support {
+    .support-panel {
+        position: static !important;
+        border-radius: 0;
+        width: 50%;
+        height: 800px;
+        margin: 30px auto;
+        .top {
+            background-color: #343a40!important;
+        }
+        .body {
+            .sent-text-container {
+                background-color: #343a40;
+            }
+        }
+        .bottom {
+            i {
+                cursor: pointer;
+                background: #343a40;
+            }
+        }
+    }
+}

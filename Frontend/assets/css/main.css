@@ -3813,4 +3813,25 @@ article .class .message .no {
   position: relative;
   top: -12px;
 }
+
+#support .support-panel {
+  position: static !important;
+  border-radius: 0;
+  width: 50%;
+  height: 800px;
+  margin: 30px auto;
+}
+
+#support .support-panel .top {
+  background-color: #343a40 !important;
+}
+
+#support .support-panel .body .sent-text-container {
+  background-color: #343a40;
+}
+
+#support .support-panel .bottom i {
+  cursor: pointer;
+  background: #343a40;
+}
 /*# sourceMappingURL=main.css.map */

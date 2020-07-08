@@ -20636,11 +20636,6 @@
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\Users\\Turqay\\Desktop\\Crunch\\Backend\\Crunch\\Areas\\Support\\Views\\Home\\Index2.cshtml",
-      "TargetPath": "Areas\\Support\\Views\\Home\\Index2.cshtml",
-      "FileKind": "mvc"
-    },
-    {
       "FilePath": "c:\\Users\\Turqay\\Desktop\\Crunch\\Backend\\Crunch\\Areas\\Support\\Views\\_ViewStart.cshtml",
       "TargetPath": "Areas\\Support\\Views\\_ViewStart.cshtml",
       "FileKind": "mvc"
@@ -20738,6 +20733,11 @@
     {
       "FilePath": "c:\\Users\\Turqay\\Desktop\\Crunch\\Backend\\Crunch\\Views\\PartialViews\\PromoStatus.cshtml",
       "TargetPath": "Views\\PartialViews\\PromoStatus.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Turqay\\Desktop\\Crunch\\Backend\\Crunch\\Areas\\Support\\Views\\Home\\Chat.cshtml",
+      "TargetPath": "Areas\\Support\\Views\\Home\\Chat.cshtml",
       "FileKind": "mvc"
     },
     {
