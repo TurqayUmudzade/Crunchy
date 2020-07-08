@@ -2,12 +2,12 @@
 @{
     ViewData["Title"] = "Chat";
 }
-
+@model String
 <section id="support">
 
     <div class="chat support-panel">
         <div class="top">
-            <h2>Mike Bain </h2>
+            <h2 id="groupID">Conversation ID of @Model</h2>
         </div>
         <div class="body">
         </div>
@@ -17,5 +17,6 @@
         </div>
     </div>
 </section>
+
 
 

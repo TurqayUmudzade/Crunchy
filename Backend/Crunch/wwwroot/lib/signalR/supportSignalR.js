@@ -2,7 +2,7 @@
 let requestChat = false;
 let msg = "";
 let connectionID;
-
+let groupID="";
 
 var connection = new signalR.HubConnectionBuilder().withUrl("/chatHub").build();
 
@@ -48,26 +48,18 @@ $('.js-send').on('click', function () {
 });
 
 function SendMsg() {
+    if (groupID === "") {
+        groupID = $('#groupID').text();
+        console.log(groupID)
+    }
+    console.log("here")
      msg = $('#chat-input').val();
-    if (requestChat === false)
-    {
-        connection.start().then(function () { }).catch(function (err) {
-            return console.error(err.toString());
-        });
-        console.log("Conncetion Started")
-        requestChat = true;
-    }
-    else
-    {
-        connection.invoke("SendMessage", msg,connectionID).catch(function (err) {
-            return console.error(err.toString());
-        });
-    }
-
     $('.body').append("<div class='sent-text-container'>" + msg + "</div>");
     //clean textarea
     document.getElementById('chat-input').value = "";
-
+    connection.invoke("SendMessage", msg,groupID).catch(function (err) {
+        return console.error(err.toString());
+    });
 }
 
 function RecieveMsg(msg) {
@@ -75,18 +67,32 @@ function RecieveMsg(msg) {
 }
 
 //!SIGNALR
+connection.start().then(function () { }).catch(function (err) {
+    return console.error(err.toString());
+});
 
+//CALLER
 connection.on("UserConnected", function (conID) {
-    connection.invoke("JoinGroup", conID).catch(function (err) {
-        return console.error(err.toString());
-    });
-    connection.invoke("AddSupportCard", msg,conID).catch(function (err) {
-        return console.error(err.toString());
-    });
     connectionID = conID;
 });
 
+//COMES FROM USR CALLING OTHERS
+connection.on("AddSupportCard", function (firstMSG, GroupID) {
+     groupID = GroupID; 
+    $('.signalR-cards').append("<div class='card'> <div class='card-body'> <h5 class='card-title'>#" + GroupID + "</h5> <p class='card-text'>" + firstMSG + "</p> <a href='/support/home/chat?id=" + GroupID + "' class='btn btn-primary js-joinConvo'>Join Conversation</a> </div> </div>");
+
+});
+
+//
+$(document).on('click', '.js-joinConvo', function (e) {
+    console.log(groupID)
+    connection.invoke("JoinGroup", groupID).catch(function (err) {
+        return console.error(err.toString());
+    });
+});
 
 connection.on("ReceiveMessage", function (message) {
     RecieveMsg(message);
 });
+
+

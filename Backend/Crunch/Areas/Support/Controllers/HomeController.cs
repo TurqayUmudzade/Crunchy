@@ -1,4 +1,5 @@
-﻿using System;
+﻿#nullable enable
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -14,9 +15,11 @@ namespace Crunch.Areas.support.Controllers
             return View();
         }
         [Area("Support")]
-        public IActionResult Chat()
+        public IActionResult Chat(string? ID)
         {
-            return View();
+
+
+            return View((object?)ID);
         }
     }
 }
