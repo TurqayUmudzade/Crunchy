@@ -24,6 +24,10 @@
   background-color: #e94960;
 }
 
+input {
+  outline: 0;
+}
+
 .btn-off {
   background-color: rgba(214, 214, 214, 0.5);
   color: #7b7b7b;
@@ -3797,10 +3801,6 @@ article .class .message .no {
   border: none;
   font-size: 16px;
   resize: none;
-}
-
-#support .chat .bottom #chat-input:focus {
-  border-color: #white;
   outline: 0;
 }
 

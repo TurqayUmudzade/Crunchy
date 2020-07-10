@@ -20,18 +20,28 @@ namespace Crunch.Controllers
             _auth = auth;
             _context = context;
         }
+
+        //Front Locations Page
         public IActionResult Index()
         {
-            /*if (_auth.User != null)
+            ChangeGymViewModel model = new ChangeGymViewModel()
             {
+                gyms = _context.gyms.ToList()
+            };
 
-                ViewData["Layout"] = "~/Views/Shared/UserLayout.cshtml";
-                return View(_auth.User);
-            }*/
+            if (_auth.User != null)
+            {
+                model.user = _auth.User;
 
-            return View(_context.gyms.ToList());
+                ViewData["Layout"] = "~/Views/Shared/_LayoutViewModelUser.cshtml";
+                return View(model);
+            }
+
+
+            return View(model);
         }
 
+        //Full gym informations after search or select
         public IActionResult selectFill(string searchStr)
         {
             //format the string to match database type of Name first capital and other lower
@@ -49,6 +59,7 @@ namespace Crunch.Controllers
             }
         }
 
+        //GYM names for autofill
         public IActionResult search(string searchStr)
         {
             //format the string to match database type of Name first capital and other lower

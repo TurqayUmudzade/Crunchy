@@ -185,10 +185,7 @@
                 border: none;
                 font-size: 16px;
                 resize: none;
-                &:focus {
-                    border-color: #white;
-                    outline: 0;
-                }
+                outline: 0;
             }
             i {
                 cursor: pointer;

@@ -1,6 +1,8 @@
 ﻿
 @{
     ViewData["Title"] = "Training";
+    if (ViewData["Layout"] != null)
+        Layout = ViewData["Layout"].ToString();
 }
 <section id="top-pic-section">
     <div class="background-img">
@@ -55,7 +57,7 @@
         </div>
         <div class="right" id="order1">
             <div class="img-container">
-                <img src="./assets/image/training/training1.jpg" alt="">
+                <img src="~/image/training/training1.jpg" alt="">
             </div>
         </div>
     </div>
@@ -89,7 +91,7 @@
         <div class="right">
             <div class="img-container">
 
-                <img src="./assets/image/training/personal-training.jpg" alt="">
+                <img src="~/image/training/personal-training.jpg" alt="">
             </div>
         </div>
     </div>
@@ -117,7 +119,7 @@
         </div>
         <div class="right">
             <div class="img-container">
-                <img src="./assets/image/training/small-group.jpg" alt="">
+                <img src="~/image/training/small-group.jpg" alt="">
             </div>
         </div>
     </div>
@@ -166,7 +168,7 @@
         </div>
         <div class="right">
             <div class="img-container">
-                <img src="./assets/image/training/nutrition.jpg" alt="">
+                <img src="~/image/training/nutrition.jpg" alt="">
             </div>
         </div>
     </div>
