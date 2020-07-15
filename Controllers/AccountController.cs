@@ -229,7 +229,7 @@ namespace Crunch.Controllers
             _context.SaveChanges();
             Response.Cookies.Delete("token");
 
-            return RedirectToAction("index");
+            return RedirectToAction("Login");
         }
 
         //generate a number pin with a size of 8
